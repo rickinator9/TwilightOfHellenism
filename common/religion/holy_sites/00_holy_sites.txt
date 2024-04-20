@@ -124,6 +124,18 @@ aigina = {
 		retreat_losses = -0.1
 	}
 }
+knossos = {
+	county = c_knossos
+	barony = b_knossos_knossos
+
+	# Minos Palace, Labirynth
+	character_modifier = {
+		name = holy_site_aigina_effect_name
+		stewardship = 1
+		monthly_county_control_change_factor = 0.05
+	}
+}
+
 
 # Lykaionism
 
