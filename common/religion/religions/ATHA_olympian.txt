@@ -297,7 +297,6 @@
 			holy_site = dodona
 			holy_site = kichyros # Nekromanteion
 			holy_site = samothrake # Olympias was an initiate in the mystery cult there
-			holy_site = heraion # Cult of Hera (Is already represented at Samos), Furthest Pyrrhus Conquest (Argos).
 
 			# Tenets
 			doctrine = tenet_sanctity_of_nature
@@ -382,6 +381,7 @@
 			holy_site = diktynnaion
 			holy_site = idaion_antron
 			holy_site = aigina # where Britomartis fled to escape Minos, here she was worshipped under the name Aphaea
+			holy_site = knossos
 
 			# Tenets
 			doctrine = tenet_mountain_sanctuaries
@@ -498,7 +498,7 @@
 			# Tenets
 			doctrine = tenet_adaptive # simple as that, especially with The Western Europe but also The East.
 			doctrine = tenet_ancestor_worship # afterlife, household cults
-			doctrine = tenet_ritual_celebrations # the isidia
+			doctrine = tenet_ritual_celebrations # the isidia, - TO DO, Kemetic Syncretism
 
 			#Main Group
 			doctrine = doctrine_spiritual_head
@@ -553,7 +553,7 @@
 
 			#Main Group
 			doctrine = doctrine_temporal_head
-			doctrine = doctrine_pluralism_righteous # it was within faith itself, considering the Theocratic Power of Cypriot Koinon.
+			doctrine = doctrine_pluralism_righteous
 			
 			#Ritual Character
 			doctrine = popular_ritual_character_doctrine
