@@ -433,10 +433,9 @@
 				EvilGodNames = { GOD_ZUML }
 			}
 		}
-        
         zalmoxian_faith = { # Zalmoxianism TODO
 		    color = zalmoxian_faith
-			icon = zalmoxis
+			icon = zalmoxianism
 
 			#holy_site = sarmizegetusa
 			#holy_site = kogaionon
@@ -568,5 +567,141 @@
 				EvilGodNames = { GOD_ZUML }
 			}
 		}
+	tauric_faith = { # Taurism TODO
+			color = tauric_faith 
+			icon = taurism # Agender Figurine, possibly Cult of Artemis?
+
+			#holy_site = sarmizegetusa
+			#holy_site = kogaionon
+
+			#TEMP
+			holy_site = hieron_chalkedon
+
+			# Tenets
+			doctrine = tenet_communal_identity # Exclusive to Tauri/Scythotauri
+			doctrine = tenet_human_sacrifice # Thracian Thing, but also attested in Mythohistorical Sources: The Greeks identified the Tauric goddess with Artemis Tauropolos or with Iphigeneia, daughter of Agamemnon. The Tauric custom of human sacrifice inspired the Greek legends of Iphigeneia and Orestes, recounted in Iphigeneia in Tauris by the playwright Euripides.[6][7][8] The original Greek title given by Euripides literally means Iphigeneia among the taurians. Such a place as "Tauris" does not exist. https://en.wikipedia.org/wiki/Tauri#History
+			doctrine = tenet_adaptive # Interchange with the Scythians and Greeks
+
+			#Main Group
+			doctrine = doctrine_no_head
+			
+			# Myth: https://en.wikipedia.org/wiki/Iphigenia#Among_the_Taurians
+			doctrine = doctrine_clerical_gender_either # Myth: https://en.wikipedia.org/wiki/Thoas_(king_of_the_Taurians)
+
+			localization = {
+				#High God
+				HighGodName = GOD_ZALMOXIS
+				HighGodNamePossessive = GOD_ZALMOXIS_possessive
+				HighGodNameSheHe = CHARACTER_SHEHE_HE
+				HighGodHerselfHimself = CHARACTER_HIMSELF
+				HighGodHerHis = CHARACTER_HERHIS_HIS
+				HighGodNameAlternate = GOD_ZALMOXIS
+				HighGodNameAlternatePossessive = GOD_ZALMOXIS_possessive
+		
+				#Creator
+				CreatorName = GOD_PERKE
+				CreatorNamePossessive = GOD_PERKE_possessive
+				CreatorSheHe = CHARACTER_SHEHE_SHE
+				CreatorHerHis = CHARACTER_HERHIS_HER
+				CreatorHerHim = CHARACTER_HERHIM_HER
+		
+				#HealthGod
+				HealthGodName = GOD_ZALMOXIS
+				HealthGodNamePossessive = GOD_ZALMOXIS_possessive
+				HealthGodSheHe = CHARACTER_SHEHE_HE
+				HealthGodHerHis = CHARACTER_HERHIS_HIS
+				HealthGodHerHim = CHARACTER_HERHIM_HIM
+				
+				#FertilityGod
+				FertilityGodName = GOD_PERKE
+				FertilityGodNamePossessive = GOD_PERKE_possessive
+				FertilityGodSheHe = CHARACTER_SHEHE_SHE
+				FertilityGodHerHis = CHARACTER_HERHIS_HER
+				FertilityGodHerHim = CHARACTER_HERHIM_HER
+		
+				#WealthGod
+				WealthGodName = GOD_DARZALAS
+				WealthGodNamePossessive = GOD_DARZALAS_possessive
+				WealthGodSheHe = CHARACTER_SHEHE_HE
+				WealthGodHerHis = CHARACTER_HERHIS_HIS
+				WealthGodHerHim = CHARACTER_HERHIM_HIM
+		
+				#HouseholdGod
+				HouseholdGodName = GOD_PERKE
+				HouseholdGodNamePossessive = GOD_PERKE_possessive
+				HouseholdGodSheHe = CHARACTER_SHEHE_SHE
+				HouseholdGodHerHis = CHARACTER_HERHIS_HER
+				HouseholdGodHerHim = CHARACTER_HERHIM_HER
+		
+				#FateGod
+				FateGodName = GOD_ZALMOXIS
+				FateGodNamePossessive = GOD_ZALMOXIS_possessive
+				FateGodSheHe = CHARACTER_SHEHE_HE
+				FateGodHerHis = CHARACTER_HERHIS_HIS
+				FateGodHerHim = CHARACTER_HERHIM_HIM
+		
+				#KnowledgeGod
+				KnowledgeGodName = GOD_ZALMOXIS
+				KnowledgeGodNamePossessive = GOD_ZALMOXIS_possessive
+				KnowledgeGodSheHe = CHARACTER_SHEHE_HE
+				KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
+				KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
+		
+				#WarGod
+				WarGodName = GOD_GEBELEIZIS
+				WarGodNamePossessive = GOD_GEBELEIZIS_possessive
+				WarGodSheHe = CHARACTER_SHEHE_HE
+				WarGodHerHis = CHARACTER_HERHIS_HIS
+				WarGodHerHim = CHARACTER_HERHIM_HIM
+		
+				#TricksterGod
+				TricksterGodName = GOD_ZALMOXIS
+				TricksterGodNamePossessive = GOD_ZALMOXIS_possessive
+				TricksterGodSheHe = CHARACTER_SHEHE_HE
+				TricksterGodHerHis = CHARACTER_HERHIS_HIS
+				TricksterGodHerHim = CHARACTER_HERHIM_HIM
+
+				#NightGod
+				NightGodName = GOD_DARZALAS
+				NightGodNamePossessive = GOD_DARZALAS_possessive
+				NightGodSheHe = CHARACTER_SHEHE_HE
+				NightGodHerHis = CHARACTER_HERHIS_HIS
+				NightGodHerHim = CHARACTER_HERHIM_HIM
+		
+				#WaterGod
+				WaterGodName = GOD_PERKE
+				WaterGodNamePossessive = GOD_PERKE_possessive
+				WaterGodSheHe = CHARACTER_SHEHE_SHE
+				WaterGodHerHis = CHARACTER_HERHIS_HER
+				WaterGodHerHim = CHARACTER_HERHIM_HER
+		
+				#DeathGod
+				DeathDeityName = GOD_DARZALAS
+				DeathDeityNamePossessive = GOD_DARZALAS_possessive
+				DeathDeitySheHe = CHARACTER_SHEHE_HE
+				DeathDeityHerHis = CHARACTER_HERHIS_HIS
+		
+				#WitchGod
+				WitchGodName = GOD_PERKE
+				WitchGodHerHis = CHARACTER_HERHIS_HER
+				WitchGodSheHe = CHARACTER_SHEHE_SHE
+				WitchGodHerHim = CHARACTER_HERHIM_HER
+				WitchGodMistressMaster = mistress
+				WitchGodMotherFather = mother
+		
+				#Devil
+				DevilName = GOD_ZUML #From reconstructed Thracian for 'dragon, snake'
+				DevilNamePossessive = GOD_ZUML_possessive
+				DevilSheHe = CHARACTER_SHEHE_IT
+				DevilHerHis = CHARACTER_HERHIS_ITS
+				DevilHerselfHimself = CHARACTER_ITSELF
+		
+				GoodGodNames = { GOD_PERKE GOD_ZALMOXIS GOD_GEBELEIZIS GOD_DARZALAS }
+				EvilGodNames = { GOD_ZUML }
+				}
+			}
+		}
+	}
+
     }
 }
