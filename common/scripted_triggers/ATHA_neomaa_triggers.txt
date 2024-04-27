@@ -395,12 +395,6 @@ can_recruit_maa_rhodioi_sphendonetai_trigger = {
     REGION = ATHA_aor_rhodian
   }
 }
-can_recruit_maa_komatai_epilektoi_trigger = {
-  OR = {
-    can_recruit_getic_elite_maa_trigger = yes
-  }
-  can_recruit_elite_maa = yes
-}
 
 ## Medium Infantry ###################################
 

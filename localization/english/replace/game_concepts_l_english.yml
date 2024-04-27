@@ -43,5 +43,5 @@
  game_concept_republic_desc:9 "$game_concept_republic_government$ is an unplayable [government_form|E] where the most prominent citizen rules for life — the $game_concept_government_form$ of small communities lacking an organised political class.\n\n$game_concept_republican$ [vassals|E] have static [obligations|E] that cannot be changed, and thus always provide a dependable and predictable amount of [levies|E] and [taxes|E]."
  game_concept_spearmen:9 "Pike Infantry"
  game_concept_spearmen_desc:9 "Pike Infantry are [men_at_arms|E] who fight on foot with various spears of considerable length.\n\nWhile each kind of Pike Infantry is unique, they generally [counter|E] [heavy_cavalry|E], and are in turn Countered by [heavy_infantry|E].\n\nPikemen are also often strong on flat [terrain|E], while their performance suffers in terrain that forces them out of formation like forests or hills."
- game_concept_skirmishers:9 "Light Infantry"
- game_concept_archers:9 "Bow Infantry"
+ game_concept_skirmishers:9 "Medium Infantry"
+ game_concept_archers:9 "Light Infantry"

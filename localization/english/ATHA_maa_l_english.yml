@@ -8,8 +8,6 @@
   peltenai:0 "Peltenai"
   peltenai_flavor:0 "Roaming forests and valleys are warbands of light armed warriors carrying peltai shields, these men are the main infantry line of many tribal warlords. Much like Greeks, these warriors paint their shields, often depicting animalistic or facial figures"
   ##Superior
-  komatai_epilektoi:0 "#color_light_blue Komatai Epilektoi#!"
-  komatai_epilektoi_flavor:0 "The Komatai Epilektoi are, a unit of warriors selected from among the Komatai. The basic komatai, equipped as fast-moving, hard-hitting skirmishers, made up a large percentage of most Getic armies."
   kretikoi_peltastai:0 "#color_goldy_yellow Kretikoi Peltastai#!"
   kretikoi_peltastai_flavor:0 "While not particularly common until the start of the Hellenistic period, In later years, units of Cretan peltastai were popular mercenaries throughout the Hellenistic world."
 
@@ -17,8 +15,8 @@
   ##Basic
   asanai:0 "Asanai"
   asanai_flavor:0 "These veteran tribal skirmishers are proficient in the use slings and javelins which they use in large numbers, these weapons although simple are lethal even against armored opponents, the tribes of Thracia are best known for its tactical expertise."
-  sphendonetai:0 "Sphendonetai"
-  sphendonetai_flavor:0 "Expert slingers that hurl metal or pebble bullets towards the enemy. They were usually recruited from poor and young farmers or shepherds who used slings to hunt or to protect their flocks. They are particularly effective against heavily armoured opponents as their projectiles are able to break armor, shields and bones."
+  sphendonetai:0 "Euzonoi"
+  sphendonetai_flavor:0 "The euzonoi or "well-girt ones" are the mainstay light troops of Hellenistic armies. Sacrificing heavy armour for mobility and range, they are the lightest of melee troops and heaviest of the skirmishers. Being experienced scouts, ambushers and harassers they are ideal for the uneven terrain conditions of the mediterranean."
   ##Superior
   rhodioi_sphendonetai:0 "#color_goldy_yellow Rhodioi Sphendonetai#!"
   rhodioi_sphendonetai_flavor:0 "Hailing from Rhodos, one of the most storied states and greatest mercantile powers in the Hellenistic world, famous for its reputable slingers throughout the Classical and Hellenistic periods. These adventurous mercenaries traveled with Xenophon, fought in the armies of Phillip and Alexander, and served with most of the major powers even through Roman domination."
