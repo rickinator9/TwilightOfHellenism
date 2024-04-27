@@ -85,7 +85,6 @@ culture_ai_weight_heavy_infantry = {
 	if = { # Cultures that favours heavy infantry
 		limit = {
 			OR = {
-				has_culture_or_parent_culture = { CULTURE = culture:dorian }
 				has_culture_or_parent_culture = { CULTURE = culture:laconian }
 				has_culture_or_parent_culture = { CULTURE = culture:boeotian }
 				has_culture_or_parent_culture = { CULTURE = culture:skordiskian }

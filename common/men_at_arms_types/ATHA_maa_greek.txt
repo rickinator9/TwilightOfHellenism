@@ -337,8 +337,7 @@ hoplitai = {
     screen = 0
 
     terrain_bonus = {
-        farmlands = { toughness = 5 }
-        plains = { toughness = 5 }
+        farmlands = { toughness = 10 }
         mountains = { toughness = -5 }
         hills = { toughness = -5 }
     }
@@ -373,8 +372,7 @@ epilektoi_hoplitai = {
     screen = 0
 
     terrain_bonus = {
-        farmlands = { toughness = 5 }
-        plains = { toughness = 5 }
+        farmlands = { toughness = 10 }
         mountains = { toughness = -5 }
         hills = { toughness = -5 }
     }
@@ -410,8 +408,7 @@ lakonikoi_hoplitai = {
     screen = 0
 
     terrain_bonus = {
-        farmlands = { toughness = 5 }
-        plains = { toughness = 5 }
+        farmlands = { toughness = 10 }
         mountains = { toughness = -5 }
         hills = { toughness = -5 }
     }
@@ -446,8 +443,7 @@ homoioi_hoplitai = {
     screen = 0
 
     terrain_bonus = {
-        farmlands = { toughness = 5 }
-        plains = { toughness = 5 }
+        farmlands = { toughness = 10 }
         mountains = { toughness = -5 }
         hills = { toughness = -5 }
     }
@@ -483,8 +479,7 @@ homoioi_hippeis = {
     screen = 0
 
     terrain_bonus = {
-        farmlands = { toughness = 5 }
-        plains = { toughness = 5 }
+        farmlands = { toughness = 10 }
         mountains = { toughness = -5 }
         hills = { toughness = -5 }
     }
@@ -522,12 +517,10 @@ phalangitai = {
     screen = 0
 
     terrain_bonus = {
-        drylands = { damage = 10 toughness = 10 }
-        plains = { damage = 10 toughness = 10 }
+        drylands = { damage = 5 toughness = 5 }
+        plains = { damage = 5 toughness = 5 }
         mountains = { toughness = -5 damage = -5 }
-        desert_mountains = { toughness = -5 damage = -5 }
         hills = { toughness = -5 damage = -5 }
-        wetlands = { toughness = -5 damage = -5 }
     }
 
     counters = {
@@ -559,12 +552,10 @@ chalkaspides = {
     screen = 0
 
     terrain_bonus = {
-        drylands = { damage = 15 toughness = 10 }
-        plains = { damage = 15 toughness = 10 }
+        drylands = { damage = 10 toughness = 5 }
+        plains = { damage = 10 toughness = 5 }
         mountains = { toughness = -5 damage = -5 }
-        desert_mountains = { toughness = -5 damage = -5 }
         hills = { toughness = -5 damage = -5 }
-        wetlands = { toughness = -5 damage = -5 }
     }
 
     counters = {
@@ -597,12 +588,10 @@ agema_phalangitai = {
     screen = 0
 
     terrain_bonus = {
-        drylands = { damage = 10 toughness = 10 }
-        plains = { damage = 10 toughness = 10 }
+        drylands = { damage = 5 toughness = 5 }
+        plains = { damage = 5 toughness = 5 }
         mountains = { toughness = -5 damage = -5 }
-        desert_mountains = { toughness = -5 damage = -5 }
         hills = { toughness = -5 damage = -5 }
-        wetlands = { toughness = -5 damage = -5 }
     }
 
     counters = {
@@ -675,10 +664,9 @@ prodromoi = {
     screen = 20
 
     terrain_bonus = {
-        plains = { damage = 15 }
-        drylands = { damage = 15 }
+        plains = { damage = 10 }
+        drylands = { damage = 10 }
         mountains = { pursuit = -10 screen = -10 }
-        desert_mountains = { pursuit = -10 screen = -10 }
         hills = { pursuit = -10 screen = -10 }
     }
 
@@ -712,9 +700,8 @@ mandonai = {
     screen = 20
 
     terrain_bonus = {
-        plains = { damage = 20 }
+        plains = { damage = 5 toughness = 5 }
         mountains = { pursuit = -5 screen = -5 }
-        desert_mountains = { pursuit = -10 screen = -10 }
         hills = { pursuit = -5 screen = -5 }
     }
 
@@ -749,10 +736,9 @@ hippeis = {
     screen = 10
 
     terrain_bonus = {
-        plains = { damage = 10 toughness = 5 }
-        drylands = { damage = 10 toughness = 5 }
+        plains = { damage = 5 toughness = 5 }
+        drylands = { damage = 5 toughness = 5 }
         mountains = { pursuit = -10 screen = -10 }
-        desert_mountains = { pursuit = -10 screen = -10 }
         hills = { pursuit = -10 screen = -10 }
     }
 
@@ -786,10 +772,9 @@ thessalikoi_hippeis = {
     screen = 10
 
     terrain_bonus = {
-        plains = { damage = 15 }
-        drylands = { damage = 15 }
+        plains = { damage = 10 }
+        drylands = { damage = 10 }
         mountains = { pursuit = -10 screen = -10 }
-        desert_mountains = { pursuit = -10 screen = -10 }
         hills = { pursuit = -10 screen = -10 }
     }
 
@@ -824,10 +809,9 @@ hiera_ile = {
     screen = 10
 
     terrain_bonus = {
-        plains = { damage = 10 toughness = 5 }
-        drylands = { damage = 10 toughness = 5 }
+        plains = { damage = 10 }
+        drylands = { damage = 10 }
         mountains = { pursuit = -10 screen = -10 }
-        desert_mountains = { pursuit = -10 screen = -10 }
         hills = { pursuit = -10 screen = -10 }
     }
 
@@ -965,9 +949,7 @@ tarupeltenai = {
     screen = 0
 
     terrain_bonus = {
-        drylands = { toughness = 5 }
         plains = { toughness = 5 }
-        mountains = { damage = -5 }
         desert_mountains = { damage = -5 }
     }
 
@@ -1000,10 +982,9 @@ moukamezenai = {
     screen = 10
 
     terrain_bonus = {
-        plains = { damage = 10 }
-        farmlands = { damage = 10 }
-        forest = { screen = 10 }
-        mountains = { pursuit = -10 screen = -10 }
+        plains = { damage = 15 }
+        forest = { screen = 10 pursuit = 10 }
+        desert_mountains = { pursuit = -10 screen = -10 }
         drylands = { pursuit = -5 screen = -5 }
         hills = { pursuit = -10 screen = -10 }
     }
@@ -1038,9 +1019,8 @@ mezenai = {
 
     terrain_bonus = {
         plains = { damage = 10 }
-        farmlands = { damage = 10 }
-        forest = { screen = 20 }
-        mountains = { pursuit = -10 screen = -10 }
+        forest = { screen = 10 pursuit = 10 }
+        desert_mountains = { pursuit = -10 screen = -10 }
         drylands = { pursuit = -10 screen = -10 }
         hills = { pursuit = -10 screen = -10 }
     }
@@ -1075,9 +1055,10 @@ angamezenai = {
     screen = 30
 
     terrain_bonus = {
-        plains = { damage = 15 }
-        steppe = { damage = 15 }
-        mountains = { pursuit = -10 screen = -10 }
+        plains = { damage = 10 }
+        steppe = { damage = 10 }
+        drylands = { damage = 10 }
+        desert_mountains = { pursuit = -10 screen = -10 }
         hills = { pursuit = -10 screen = -10 }
         wetlands = { pursuit = -10 screen = -10 }
     }
@@ -1116,11 +1097,11 @@ zibutai = {
     screen = 0
 
     terrain_bonus = {
-        plains = { damage = 20 }
+        plains = { damage = 10 }
         forest = { toughness = 10 }
-        drylands = { pursuit = -20 }
-        mountains = { pursuit = -20 }
-        hills = { pursuit = -20 }
+        drylands = { pursuit = -10 }
+        desert_mountains = { pursuit = -20 }
+        hills = { pursuit = -10 }
     }
 
     counters = {
@@ -1154,7 +1135,7 @@ ischyroi_orditon = {
 
     terrain_bonus = {
         plains = { damage = 10 }
-        mountains = { toughness = -5 damage = -5 }
+        desert_mountains = { toughness = -5 damage = -5 }
     }
 
     counters = {
@@ -1189,8 +1170,8 @@ cordinau_orca = {
     screen = 5
 
     terrain_bonus = {
-        valley = { damage = 5 }
-        mountains = { toughness = -5 }
+        valley = { damage = 5 toughness = 5 }
+        desert_mountains = { toughness = -5 damage = -5 }
     }
 
     counters = {
@@ -1227,8 +1208,8 @@ nedes_nesamoi = {
     screen = 5
 
     terrain_bonus = {
-        valley = { damage = 5 }
-        mountains = { toughness = -5 }
+        valley = { damage = 5 toughness = 5 }
+        desert_mountains = { toughness = -5 damage = -5 }
     }
 
     counters = {
@@ -1330,8 +1311,9 @@ rompaianai = {
     screen = 0
 
     terrain_bonus = {
-        forest = { pursuit = 10 screen = 10 }
-        mountains = { pursuit = -10 }
+        mountains = { screen = 10 }
+        forest = { screen = 10 }
+        desert_mountains = { pursuit = -10 }
         drylands = { pursuit = -10 }
     }
 
