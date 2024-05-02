@@ -44,8 +44,7 @@
 	}
 
 	custom_faith_icons = {
-		ATHA_custom_1 bendism_custom_1 labraundan_custom_1
-		custom_faith_1 custom_faith_2 custom_faith_3 custom_faith_4 custom_faith_5 custom_faith_6 custom_faith_7 custom_faith_8 custom_faith_9 custom_faith_10 dualism_custom_1 zoroastrian_custom_1 zoroastrian_custom_2 buddhism_custom_1 buddhism_custom_2 buddhism_custom_3 buddhism_custom_4 taoism_custom_1 yazidi_custom_1 sunni_custom_2 sunni_custom_3 sunni_custom_4 ibadi_custom muhakkima_1 muhakkima_2 muhakkima_4 muhakkima_5 muhakkima_6 judaism_custom_1 custom_faith_fp1_fenrir custom_faith_fp1_irminsul custom_faith_fp1_jormungandr custom_faith_fp1_odins_ravens custom_faith_fp1_runestone_moon custom_faith_fp1_thors_hammer custom_faith_fp1_valknut custom_faith_fp1_yggdrasil custom_faith_boromian_circles custom_faith_lotus custom_faith_aum_tibetan custom_faith_pentagram custom_faith_pentagram_inverted custom_faith_burning_bush custom_faith_allah custom_faith_gankyil custom_faith_eye_of_providence custom_faith_dove custom_faith_ichthys custom_faith_lamb custom_faith_black_sheep custom_faith_ankh custom_faith_chi_rho custom_faith_hamsa custom_faith_cool_s
+		ATHA_custom_1 ATHA_custom_2 ATHA_custom_3 ATHA_custom_4 ATHA_custom_5 ATHA_custom_6 ATHA_custom_7 ATHA_custom_8
 	}
 
 	holy_order_names = {
@@ -205,7 +204,7 @@
 
 
 		    color = bendism_faith
-			icon = bendism
+			icon = bendist
 
 			holy_site = ioros
 			holy_site = mount_dindymon
@@ -224,7 +223,7 @@
         	# Dedications & sanctuaries to Apollo are more common in these areas, and there is greater archeological evidence for human sacrifice here than in other parts of Thrace
 
 		    color = odrysian_faith
-			icon = odrysian
+			icon = mezenist
 
 			holy_site = hieron_oros
 			holy_site = pangaion
@@ -243,7 +242,7 @@
         	# The Apsinthioi were said to worship the war god Pleistorus, and they and the Kainoi allegedly practised human sacrifice
 
 		    color = pleistorism_faith
-			icon = pleistorian # TODO
+			icon = pleistorist #TO DO
 
 			holy_site = hieron_oros
 			holy_site = mount_dindymon
@@ -281,7 +280,7 @@
         	# Deities corresponding to Hera and Ares seem to have been more prevalent in these areas
 
 		    color = thrausian_faith
-			icon = thrausian
+			icon = perperan
 
 			holy_site = dolno_dryanovo
 			holy_site = hyperperakion
@@ -297,7 +296,7 @@
 
 		tithanism_faith = { #From reconstructed Thracian 'titha' meaning 'light, radiance'
 			color = tithanism_faith
-			icon = tithanism
+			icon = tithanist
 			religious_head = d_tithanos
 
 			#TODO: Consider other holy sites when more of Thrace is added
@@ -435,7 +434,7 @@
 		}
         zalmoxian_faith = { # Zalmoxianism TODO
 		    color = zalmoxian_faith
-			icon = zalmoxianism
+			icon = zalmoxian
 
 			#holy_site = sarmizegetusa
 			#holy_site = kogaionon
@@ -569,7 +568,7 @@
 		}
 	tauric_faith = { # Taurism TODO
 			color = tauric_faith 
-			icon = taurism # Agender Figurine, possibly Cult of Artemis?
+			icon = tauric # Agender Figurine, possibly Cult of Artemis?
 
 			#holy_site = sarmizegetusa
 			#holy_site = kogaionon

@@ -45,12 +45,11 @@
 		virtues = { brave just honest }
 		sins = { craven arbitrary deceitful }
 	}
-
+	
 	custom_faith_icons = {
-		ATHA_custom_1 bendism_custom_1 labraundan_custom_1
-		custom_faith_1 custom_faith_2 custom_faith_3 custom_faith_4 custom_faith_5 custom_faith_6 custom_faith_7 custom_faith_8 custom_faith_9 custom_faith_10 dualism_custom_1 zoroastrian_custom_1 zoroastrian_custom_2 buddhism_custom_1 buddhism_custom_2 buddhism_custom_3 buddhism_custom_4 taoism_custom_1 yazidi_custom_1 sunni_custom_2 sunni_custom_3 sunni_custom_4 ibadi_custom muhakkima_1 muhakkima_2 muhakkima_4 muhakkima_5 muhakkima_6 judaism_custom_1 custom_faith_fp1_fenrir custom_faith_fp1_irminsul custom_faith_fp1_jormungandr custom_faith_fp1_odins_ravens custom_faith_fp1_runestone_moon custom_faith_fp1_thors_hammer custom_faith_fp1_valknut custom_faith_fp1_yggdrasil custom_faith_boromian_circles custom_faith_lotus custom_faith_aum_tibetan custom_faith_pentagram custom_faith_pentagram_inverted custom_faith_burning_bush custom_faith_allah custom_faith_gankyil custom_faith_eye_of_providence custom_faith_dove custom_faith_ichthys custom_faith_lamb custom_faith_black_sheep custom_faith_ankh custom_faith_chi_rho custom_faith_hamsa custom_faith_cool_s
+		ATHA_custom_1 ATHA_custom_2 ATHA_custom_3 ATHA_custom_4 ATHA_custom_5 ATHA_custom_6 ATHA_custom_7 ATHA_custom_8
 	}
-
+	
 	holy_order_names = {
 	}
 
@@ -207,7 +206,7 @@
         pythian_faith = { # Pythodorianism
 		    color = { 0.4 0.7 0.8 }
 			religious_head = d_pythia
-			icon = pythian
+			icon = pythodorian
 
 			holy_site = delphi
 			holy_site = olympia
@@ -237,7 +236,7 @@
 
         soterism_faith = { # Soterism (a development of Macedonian religion which includes ruler cults)
 		    color = { 0.8 0.8 0.8 }
-			icon = soterism
+			icon = soterist
 
 			holy_site = delphi
 			holy_site = olympia
@@ -263,7 +262,7 @@
 
         alexandrian_faith = { # Alexandrianism (Ptolemaic-flavoured Soterism)
 		    color = { 0.9 0.5 0.9 }
-			icon = alexandrian
+			icon = alexandrianist
 
 			holy_site = delphi
 			holy_site = olympia
@@ -290,7 +289,7 @@
 
         epirote_faith = { # Naïsm
 		    color = { 0.4 0.6 0.3 }
-			icon = epirote
+			icon = naist
 
 			holy_site = delphi
 			holy_site = olympia
@@ -309,7 +308,7 @@
 
         macedonian_faith = { # Propatorism (representing traditional Macedonian religious practices - cosmopolitan but lacking ruler cults)
 		    color = { 0.5 0.5 0.8 }
-			icon = macedonian
+			icon = propatorist
 
 			holy_site = delphi
 			holy_site = olympia
@@ -332,7 +331,7 @@
         
         arcadian_faith = { # Lykaionism
 		    color = { 0.2 0.4 0.3 }
-			icon = arcadian
+			icon = lykaionian
 
 			holy_site = delphi
 			holy_site = olympia
@@ -352,7 +351,7 @@
         
         orphism_faith = { # Orphism
 		    color = { 0.4 0.4 0.5 }
-			icon = orphism
+			icon = orphic
 
 			holy_site = delphi
 			holy_site = samothrake # Orpheus was initated in the Samothracian mysteries
@@ -374,7 +373,7 @@
                 
         cretan_faith = { # Kretagenism
 		    color = { 0.8 0.5 0.4 }
-			icon = cretan
+			icon = kretagenist
 
 			holy_site = delphi
 			holy_site = olympia
@@ -395,7 +394,7 @@
                 
         cabeiric_faith = { # Kabeirism (covers chthonic cults including the Megaloi Theoi and Cabeiri)
 		    color = { 0.6 0.5 0.7 }
-			icon = cabeiric
+			icon = kabeiric
 
 			holy_site = samothrake
 			holy_site = delphi
@@ -411,7 +410,7 @@
                 
         delian_faith = { # Kykladism
 		    color = { 0.2 0.6 0.6 }
-			icon = delian
+			icon = kykladian
 
 			holy_site = delos
 			holy_site = delphi
@@ -428,7 +427,7 @@
         spartan_faith = { # Tyndaridism
 		    color = { 0.5 0.1 0.1 }
 			#religious_head = k_lakedaimon # ideally there should be two versions of k_lakedaimon - one attached to the faith and one that isn't
-			icon = spartan
+			icon = tyndarid
 
 			# 6 holysites because it resembles the Might of the Macedonians.
 
@@ -459,7 +458,7 @@
 	cypriot_faith = { # Aphrodisianism
 		    color = { 0.5 0.1 0.1 }
 			#religious_head = 
-			icon = cypriot
+			icon = aphrodisian
 
 			#holy_site = paphos # is ideally Old Paphos temple.
 			holy_site = kythera # https://en.wikipedia.org/wiki/Temple_of_Aphrodite,_Kythira + https://en.wikipedia.org/wiki/Aphrodite#Classical_period
@@ -484,7 +483,7 @@
 	serapisianist_faith = { # Serapisianism, pre-ptolemaic and alike to alexandrianist cult of the Egyptian Gods in Graeco-Roman World - renowned Serapis and Isis.
 		    color = { 0.5 0.1 0.1 } # Alexandrianism will be much more Diadochi-based, while Serapisianism will spread through mysteries-sectarian means.
 			#religious_head = 
-			icon = serapisian
+			icon = serapisianist
 
 			# 6 holysites because it is akin to Alexandrianist, Propatorist etc.
  
@@ -545,6 +544,108 @@
 		    color = { 0.5 0.1 0.1 }
 			#religious_head = 
 			icon = mithraic
+
+			# Tenets
+			doctrine = tenet_adaptive
+			doctrine = tenet_pastoral_isolation
+			doctrine = tenet_ritual_celebrations
+
+			#Main Group
+			doctrine = doctrine_temporal_head
+			doctrine = doctrine_pluralism_righteous
+			
+			#Ritual Character
+			doctrine = popular_ritual_character_doctrine
+
+			#Clerical Functions
+			doctrine = doctrine_clerical_succession_temporal_fixed_appointment
+        }
+	
+	heraiosianism_faith = {
+		    color = { 0.5 0.1 0.1 }
+			#religious_head = 
+			icon = heraiosian
+			
+			holy_site = heraion # Heraion of Argos
+			holy_site = samos # Heraion of Samos
+			holy_site = olympia # Temple of Hera at Olympia
+			holy_site = korinthos # Heraion of Perachora
+			#holy_site = poseidonia # Paestum Temple Complex - on the west coast of Italy near Naples. The Greek name of the city was Poseidonia. The Doric temple was built in early 6th century BC and it was believed that it was a temple of Poseidon. Traditionally this name is associated with the 5th century BC temple at Paestum, however recent excavations indicate that both temples were dedicated to Hera. The so called Basilica measured 24,5 X54,3 m at the stylobate and the number of pteron columns was 9x18. The temple is wider than most Greek temples it had two doors. This may indicate a dual dedication of the temple. [157] [158] A Doric temple the so called temple of Poseidon was built in the first half of the 5th century BC and is usually placed later than Parthenon. The temple measured 24,3 X 60,00 m at the stylobate.It was an hexastyle structure and the number of pteron columns was 6X14. The temple was also used to worship Zeus and another deity, whose identity is unknown. [159] Poseidon - Wikipedia
+
+			# Tenets
+			doctrine = tenet_adaptive
+			doctrine = tenet_pastoral_isolation
+			doctrine = tenet_ritual_celebrations
+
+			#Main Group
+			doctrine = doctrine_temporal_head
+			doctrine = doctrine_pluralism_righteous
+			
+			#Ritual Character
+			doctrine = popular_ritual_character_doctrine
+
+			#Clerical Functions
+			doctrine = doctrine_clerical_succession_temporal_fixed_appointment
+        }
+
+	athenaism_faith = {
+		    color = { 0.5 0.1 0.1 }
+			#religious_head = 
+			icon = athenaism
+
+			holy_site = athenai # Self-Explanatory, Acropolis of Athens
+			holy_site = peiraieus # Self-Explanatory, Port of Piraeus
+			holy_site = knossos # Theseus Labours
+			holy_site = sounion # Temples to Athena and Poseidon, Mines of Laureion kinda like Bendism
+			holy_site = kalaureion # Important Site for the Cult of Poseidon
+			
+			# Tenets
+			doctrine = tenet_adaptive
+			doctrine = tenet_pastoral_isolation
+			doctrine = tenet_ritual_celebrations
+
+			#Main Group
+			doctrine = doctrine_temporal_head
+			doctrine = doctrine_pluralism_righteous
+			
+			#Ritual Character
+			doctrine = popular_ritual_character_doctrine
+
+			#Clerical Functions
+			doctrine = doctrine_clerical_succession_temporal_fixed_appointment
+        }
+	
+	kalaureianism_faith = {
+		    color = { 0.5 0.1 0.1 }
+			#religious_head = 
+			icon = kalaureianism
+
+			holy_site = kalaureion # Important Site for the Cult of Poseidon, Temples
+			holy_site = sounion # Temple to Poseidon, connection to the Coast and Attica
+			holy_site = tainaron # Temple to Poseidon, Cave and shelter for those seeking protection, Spartans didn't spare the refugees
+			holy_site = delos # Represents both Tinos and “The Establishment of the Poseidoniasts, clubhouse of "the Koinon of the Berytian Poseidoniast merchants, shipmasters, and warehousemen"
+			#holy_site = poseidonia # Paestum Temple Complex - on the west coast of Italy near Naples. The Greek name of the city was Poseidonia. The Doric temple was built in early 6th century BC and it was believed that it was a temple of Poseidon. Traditionally this name is associated with the 5th century BC temple at Paestum, however recent excavations indicate that both temples were dedicated to Hera. The so called Basilica measured 24,5 X54,3 m at the stylobate and the number of pteron columns was 9x18. The temple is wider than most Greek temples it had two doors. This may indicate a dual dedication of the temple. [157] [158] A Doric temple the so called temple of Poseidon was built in the first half of the 5th century BC and is usually placed later than Parthenon. The temple measured 24,3 X 60,00 m at the stylobate.It was an hexastyle structure and the number of pteron columns was 6X14. The temple was also used to worship Zeus and another deity, whose identity is unknown. [159] Poseidon - Wikipedia
+
+			# Tenets
+			doctrine = tenet_adaptive
+			doctrine = tenet_pastoral_isolation
+			doctrine = tenet_ritual_celebrations
+
+			#Main Group
+			doctrine = doctrine_temporal_head
+			doctrine = doctrine_pluralism_righteous
+			
+			#Ritual Character
+			doctrine = popular_ritual_character_doctrine
+
+			#Clerical Functions
+			doctrine = doctrine_clerical_succession_temporal_fixed_appointment
+        }
+	
+	apollorhodianism_faith = {
+		    color = { 0.5 0.1 0.1 }
+			#religious_head = 
+			icon = apollorhodianism
 
 			# Tenets
 			doctrine = tenet_adaptive

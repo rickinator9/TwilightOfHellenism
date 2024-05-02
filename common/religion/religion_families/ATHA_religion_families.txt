@@ -19,7 +19,14 @@ rf_anatolian = {
 	doctrine_background_icon = core_tenet_banner_pagan.dds
 }
 
-rf_celtic = {
+rf_nemetic = {
+    is_pagan = yes
+    piety_icon_group = "pagan"
+	hostility_doctrine = pluralistic_hostility_doctrine
+	doctrine_background_icon = core_tenet_banner_pagan.dds
+}
+
+rf_canaanite = {
     is_pagan = yes
     piety_icon_group = "pagan"
 	hostility_doctrine = pluralistic_hostility_doctrine
