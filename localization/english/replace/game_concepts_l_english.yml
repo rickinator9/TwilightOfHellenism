@@ -44,8 +44,6 @@
  game_concept_spearmen:9 "Pike Infantry"
  game_concept_skirmishers:9 "Medium Infantry"
  game_concept_archers:9 "Light Infantry"
- game_concept_regiment:0 "Cohort"
- game_concept_regiments:0 "Cohorts"
  game_concept_knight:0 "Warlord"
  game_concept_knights:0 "Warlords"
  game_concept_knight_army_modifier:0 "Warlord Army Modifier"
