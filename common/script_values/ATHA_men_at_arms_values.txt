@@ -114,6 +114,7 @@ culture_ai_weight_light_cavalry = {
 	if = { # Cultures that favours light cavalry
 		limit = {
 			OR = {
+				has_culture_or_parent_culture = { CULTURE = culture:delmatian }
 			}
 		}
 		add = 30
