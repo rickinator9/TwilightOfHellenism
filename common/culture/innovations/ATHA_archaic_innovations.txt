@@ -113,7 +113,9 @@ innovation_archaic_blacksmithing = {
 	culture_era = culture_era_archaic
 	icon = @weapons_and_armor_01
 
-	# unlock_maa = armored_footmen
+	character_modifier = {
+		levy_size = 0.05
+	}
 
 	custom = eligible_accolade_vanguard_attribute
 

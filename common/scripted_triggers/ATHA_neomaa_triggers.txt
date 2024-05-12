@@ -436,6 +436,10 @@ can_recruit_maa_hoplitai_trigger = {
   }
 }
 
+can_recruit_maa_sikeliotai_hoplitai_trigger = {
+  can_recruit_siceliote_maa_trigger = yes
+}
+
 can_recruit_maa_tarunai_trigger = {
   OR = {
     can_recruit_thracian_maa_trigger = yes

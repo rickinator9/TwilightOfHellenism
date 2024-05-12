@@ -42,6 +42,8 @@
   ##Basic
   hoplitai:0 "Hoplitai"
   hoplitai_flavor:0 "One of the most iconic warriors in history, these heavy spearmen are drawn from landowner citizens willing to serve their city-state or ruler cause. These men are bound to eachother by a patriotic feeling able to withstand against overwhelming odds with their impressive shieldwalls, they bear the famous round Aspis shield, which features artistic depictions of their home state symbols."
+  sikeliotai_hoplitai:0 "Sikeliotai Hoplitai"
+  sikeliotai_hoplitai_flavor:0 "Hailing from the great City-states of magna Graecia and adapted to counter many kinds of nearby foes, these men fight in a less dense formation than normal for hoplites, as well bearing longer spears which they wielded with underhand thrusts. Historically this warfare douctrine was influenced by constant struggles against Celtic tribes and Carthaginian settlers."
   tarunai:0 "Tarunai"
   tarunai_flavor:0 "A warband of fierce tribal warriors the tarunai may not be as armored or organized as the Hellenes but are flexible and mobile be it running through thick forests or climbing mountains their effectiveness remains unchanged. These men are levied among the tribe labourers and while they lack quality armor or weapons they carry a ferocious disposition in the battlefield."
   thorakitai:0 "#color_goldy_yellow Thorakitai#!"

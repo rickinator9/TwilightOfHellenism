@@ -1,5 +1,0 @@
-﻿NAI = {
-	# When buying/disbanding MaA, these mults are used to figure out the score. Note that the score is divided by cost, and multiplied by stack size (except for siege value, which is only divided by cost)
-	NEGATIVE_SCORE_PER_EXISTING_REGIMENT = 60			# How much is the score of the regiment type reduced per existing subregiment of that type?
-	REGIMENT_OBSOLETION_SCORE_DIFFERENCE = 60			# The AI will disband a regiment if it is this much worse than the best available regiment, and it is unable to hire more regiments (due to cost or being at cap). Quick math: 10 damage * 100 men / 200 cost = 5 score difference
-}
