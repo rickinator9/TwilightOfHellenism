@@ -48,3 +48,7 @@
  game_concept_regiments:0 "Cohorts"
  game_concept_knight:0 "Warlord"
  game_concept_knights:0 "Warlords"
+ game_concept_knight_army_modifier:0 "Warlord Army Modifier"
+ game_concept_knight_army_modifiers:0 "Warlord Army Modifiers"
+ game_concept_acclaimed_knight:0 "Distinguished Warlord"
+ game_concept_acclaimed_knights:0 "Distinguished Warlords"
