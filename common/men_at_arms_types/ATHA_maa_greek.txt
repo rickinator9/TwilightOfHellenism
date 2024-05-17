@@ -1456,8 +1456,8 @@ epilektoi_thorakitai = {
         can_recruit_maa_epilektoi_thorakitai_trigger = yes
     }
 
-    damage = 16
-    toughness = 16
+    damage = 13
+    toughness = 19
     pursuit = 5
     screen = 5
 
