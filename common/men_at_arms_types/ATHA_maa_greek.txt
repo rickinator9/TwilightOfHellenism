@@ -80,8 +80,8 @@ rhodioi_sphendonetai = {
 
     terrain_bonus = {
         hills = { toughness = 10 } 
-        plains = { screen = -5 pursuit = -5  }
-        drylands = { screen = -5 pursuit = -5 }
+        plains = { screen = -10 }
+        drylands = { screen = -10 }
     }
 
     counters = {
@@ -440,8 +440,8 @@ lakonikoi_hoplitai = {
         can_recruit_maa_lakonikoi_hoplitai_trigger = yes
     }
 
-    damage = 6
-    toughness = 19
+    damage = 9
+    toughness = 16
     pursuit = 0
     screen = 0
 
@@ -476,8 +476,8 @@ homoioi_hoplitai = {
         can_recruit_maa_homoioi_hoplitai_trigger = yes
     }
 
-    damage = 9
-    toughness = 26
+    damage = 10
+    toughness = 25
     pursuit = 0
     screen = 0
 
@@ -1390,21 +1390,21 @@ thorakitai = {
         can_recruit_maa_thorakitai_trigger = yes
     }
 
-    damage = 10
-    toughness = 15
-    pursuit = 0
-    screen = 0
+    damage = 9
+    toughness = 13
+    pursuit = 5
+    screen = 5
 
     terrain_bonus = {
     }
 
     counters = {
+        heavy_infantry = 0.5
         pikemen = 0.5
         light_cavalry = 0.5
-        heavy_infantry = 0.5
     }
 
-    buy_cost = { gold = 70 }
+    buy_cost = { gold = 75 }
     low_maintenance_cost = { gold = 0.35 }
     high_maintenance_cost = { gold = 1.05 }
     
@@ -1425,8 +1425,8 @@ thureophoroi = {
 
     damage = 7
     toughness = 10
-    pursuit = 8
-    screen = 8
+    pursuit = 10
+    screen = 10
 
     terrain_bonus = {
     }
@@ -1437,9 +1437,9 @@ thureophoroi = {
         light_cavalry = 0.5
     }
 
-    buy_cost = { gold = 60 }
-    low_maintenance_cost = { gold = 0.25 }
-    high_maintenance_cost = { gold = 0.75 }
+    buy_cost = { gold = 70 }
+    low_maintenance_cost = { gold = 0.3 }
+    high_maintenance_cost = { gold = 0.9 }
     
     mercenary_fallback = yes
     holy_order_fallback = yes
@@ -1456,21 +1456,21 @@ epilektoi_thorakitai = {
         can_recruit_maa_epilektoi_thorakitai_trigger = yes
     }
 
-    damage = 15
-    toughness = 20
-    pursuit = 0
-    screen = 0
+    damage = 16
+    toughness = 16
+    pursuit = 5
+    screen = 5
 
     terrain_bonus = {
     }
 
     counters = {
+        heavy_infantry = 0.5
         pikemen = 0.5
         light_cavalry = 0.5
-        heavy_infantry = 0.5
     }
 
-    buy_cost = { gold = 90 }
+    buy_cost = { gold = 95 }
     low_maintenance_cost = { gold = 0.55 }
     high_maintenance_cost = { gold = 1.65 }
     

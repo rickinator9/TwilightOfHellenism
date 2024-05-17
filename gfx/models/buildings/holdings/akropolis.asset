@@ -1,0 +1,20 @@
+﻿pdxmesh = {
+	name = "akropolis_mesh"
+	file = "akropolis.mesh"
+	scale = 1
+	meshsettings = {
+		name = "akropolis"
+		index = 0
+		texture_diffuse = "akropolis_diffuse.dds"
+		texture_normal = "akropolis_normal.dds"
+		texture_specular = "akropolis_properties.dds"
+		texture = { file = "akropolis_unique.dds" index = 5 }
+		shader = "standard_atlas"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}
+
+entity = {
+	name = "akropolis_entity"
+	pdxmesh = "akropolis_mesh"
+}
