@@ -1,0 +1,72 @@
+﻿base_modifier = { # Modifications made by Iannos of Kallatis
+}
+
+count_modifier = { #City-State
+	domain_limit = 2
+        tax_slot_add = 1
+        mercenary_hire_cost_mult = -0.25
+        men_at_arms_maintenance = -0.05
+
+	knight_limit = 5
+        knight_effectiveness_mult = 0.2
+
+        levy_reinforcement_rate = -0.3
+        levy_size = 0.1
+        garrison_size = 0.1
+
+        ai_war_chance = 0.0
+}
+
+duke_modifier = { #State
+	domain_limit = 2
+        vassal_limit = 20
+	tax_slot_add = 1
+        men_at_arms_maintenance = 0.0
+        mercenary_hire_cost_mult = 0.0
+
+	knight_limit = 6
+        knight_effectiveness_mult = 0.1
+
+	levy_reinforcement_rate = -0.15
+        levy_size = 0.05
+        garrison_size = 0.05
+
+        ai_war_chance = 0.1
+}
+
+king_modifier = { #Kingdom
+	domain_limit = 3
+        vassal_limit = 40
+	active_accolades = 1
+	tax_slot_add = 2
+        men_at_arms_maintenance = 0.05
+        mercenary_hire_cost_mult = 0.25
+
+	knight_limit = 7
+	knight_effectiveness_mult = -0.1
+
+        levy_reinforcement_rate = 0.15
+        levy_size = -0.05
+        garrison_size = -0.05
+
+        ai_war_chance = 0.2
+}
+
+emperor_modifier = { #Empire
+	domain_limit = 4
+        ai_amenity_target_baseline = 0.3
+	active_accolades = 2
+	tax_slot_add = 2
+        vassal_limit = 60
+        men_at_arms_maintenance = 0.1
+        mercenary_hire_cost_mult = 0.5
+
+	knight_limit = 8
+        knight_effectiveness_mult = -0.2
+
+        levy_reinforcement_rate = 0.3
+        levy_size = -0.1
+        garrison_size = -0.1
+
+        ai_war_chance = 0.3
+}
