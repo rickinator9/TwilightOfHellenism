@@ -79,13 +79,14 @@ rhodioi_sphendonetai = {
     screen = 10
 
     terrain_bonus = {
-        hills = { toughness = 10 } 
-        plains = { screen = -10 }
-        drylands = { screen = -10 }
+        hills = { toughness = 5 } 
+        plains = { screen = -5 }
+        drylands = { screen = -5 }
     }
 
     counters = {
-        heavy_infantry = 0.5
+        heavy_infantry = 0.75
+        light_cavalry = 0.25
         archers = 0.5
     }
 
@@ -372,8 +373,7 @@ sikeliotai_hoplitai = {
     screen = 0
 
     terrain_bonus = {
-        farmlands = { damage = 5 }
-        valley = { damage = 5 }
+        farmlands = { damage = 5 toughness = 5 }
         mountains = { toughness = -5 }
         desert_mountains = { toughness = -5 }
     }
@@ -552,8 +552,8 @@ phalangitai = {
         can_recruit_maa_phalangitai_trigger = yes
     }
 
-    damage = 11
-    toughness = 11
+    damage = 10
+    toughness = 12
     pursuit = 0
     screen = 0
 
@@ -627,8 +627,8 @@ agema_phalangitai = {
         can_recruit_maa_agema_phalangitai_trigger = yes
     }
 
-    damage = 16
-    toughness = 16
+    damage = 14
+    toughness = 18
     pursuit = 0
     screen = 0
 
@@ -897,8 +897,8 @@ peltanai = {
     screen = 10
 
     terrain_bonus = {
-        forest = { toughness = 5 }
-        hills = { toughness = 5 }
+        forest = { damage = 5 }
+        hills = { damage = 5 }
         plains = { screen = -5 pursuit = -5 }
         drylands = { screen = -5 pursuit = -5 }
     }
@@ -932,8 +932,8 @@ anganai = {
     screen = 10
 
     terrain_bonus = {
-        mountains = { toughness = 5 }
-        forest = { toughness = 5 }
+        mountains = { damage = 5 }
+        forest = { damage = 5 }
         plains = { screen = -10 }
         drylands = { screen = -10 }
     }
@@ -992,8 +992,8 @@ tarupeltenai = {
         can_recruit_maa_tarupeltenai_trigger = yes
     }
 
-    damage = 13
-    toughness = 9
+    damage = 12
+    toughness = 10
     pursuit = 0
     screen = 0
 
@@ -1032,12 +1032,11 @@ moukamezenai = {
     screen = 10
 
     terrain_bonus = {
-        plains = { damage = 5 screen = 10 pursuit = 10 }
-        forest = { toughness = 5 screen = 10 pursuit = 10 }
-        desert_mountains = { pursuit = -10 screen = -10 }
+        plains = { screen = 10 pursuit = 10 }
+        steppe = { screen = 10 pursuit = 10 }
+        desert_mountains = { pursuit = -10 screen = -5 }
         drylands = { pursuit = -5 screen = -5 }
-        mountains = { pursuit = -5 screen = -5 }
-        hills = { pursuit = -10 screen = -10 }
+        mountains = { pursuit = -10 screen = -5 }
     }
 
     counters = {
@@ -1069,12 +1068,11 @@ mezenai = {
     screen = 20
 
     terrain_bonus = {
-        plains = { damage = 10 }
-        forest = { damage = 10 }
-        desert_mountains = { pursuit = -10 screen = -10 }
-        mountains = { pursuit = -5 screen = -5 }
-        drylands = { pursuit = -10 screen = -10 }
-        hills = { pursuit = -5 screen = -5 }
+        plains = { damage = 5 }
+        steppe = { damage = 5 }
+        desert_mountains = { pursuit = -10 screen = -5 }
+        mountains = { pursuit = -10 screen = -5 }
+        drylands = { pursuit = -5 screen = -5 }
     }
 
     counters = {
@@ -1318,24 +1316,25 @@ elephantes_kataphraktoi = {
         always = no
     }
 
-    damage = 40
+    damage = 45
     toughness = 45
     pursuit = 0
     screen = 0
 
     terrain_bonus = {
-        plains = { damage = 10 }
-        farmlands = { damage = 10 }
-        drylands = { damage = 10 }
+        plains = { damage = 10 toughness = 10 }
+        farmlands = { damage = 10 toughness = 10 }
+        drylands = { damage = 10 toughness = 10 }
         mountains = { damage = -15 toughness = -15 }
+        desert_mountains = { damage = -15 toughness = -15 }
     }
 
     counters = {
     }
 
-    buy_cost = { gold = 110 }
-    low_maintenance_cost = { gold = 0.8 }
-    high_maintenance_cost = { gold = 2.4 }
+    buy_cost = { gold = 120 }
+    low_maintenance_cost = { gold = 0.9 }
+    high_maintenance_cost = { gold = 2.7 }
     
     mercenary_fallback = yes
     holy_order_fallback = no
@@ -1390,10 +1389,10 @@ thorakitai = {
         can_recruit_maa_thorakitai_trigger = yes
     }
 
-    damage = 9
-    toughness = 13
-    pursuit = 5
-    screen = 5
+    damage = 12
+    toughness = 15
+    pursuit = 0
+    screen = 0
 
     terrain_bonus = {
     }
@@ -1404,9 +1403,9 @@ thorakitai = {
         light_cavalry = 0.5
     }
 
-    buy_cost = { gold = 75 }
-    low_maintenance_cost = { gold = 0.35 }
-    high_maintenance_cost = { gold = 1.05 }
+    buy_cost = { gold = 80 }
+    low_maintenance_cost = { gold = 0.4 }
+    high_maintenance_cost = { gold = 1.2 }
     
     mercenary_fallback = yes
     holy_order_fallback = yes
@@ -1495,9 +1494,9 @@ agrianoi_peltastai = {
     screen = 10
 
     terrain_bonus = {
-        mountains = { damage = 10 }
-        plains = { screen = -5 pursuit = -5 }
-        drylands = { screen = -5 pursuit = -5 }
+        mountains = { damage = 15 toughness = 5 }
+        plains = { screen = -5 pursuit = -5 damage = -5 }
+        drylands = { screen = -5 pursuit = -5 damage = -5 }
     }
 
     counters = {
@@ -1532,8 +1531,10 @@ uazali = {
     terrain_bonus = {
         hills = { damage = 5 }
         mountains = { damage = 5 }
+        desert_mountains = { damage = 5 }
         plains = { screen = -5 pursuit = -5 }
         drylands = { screen = -5 pursuit = -5 }
+        steppe = { screen = -5 pursuit = -5 }
     }
 
     counters = {
