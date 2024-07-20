@@ -5,7 +5,6 @@
 
 window = {
 	name = "military_view"
-	widgetid = "military_view"
 	datacontext = "[GetVariableSystem]"
 	datacontext = "[GetPlayer]"
 	parentanchor = top|right
@@ -203,6 +202,8 @@ window = {
 							
 							using = Mask_Rough_Edges
 
+							using = Mask_Rough_Edges
+
 							modify_texture = {
 								texture = "gfx/interface/component_masks/mask_fade_vertical.dds"
 								blend_mode = alphamultiply
@@ -234,7 +235,6 @@ window = {
 										}
 
 										hbox = {
-											name = tutorial_highlight_soldiers_total
 											layoutpolicy_horizontal = expanding
 											spacing = 10
 
@@ -1396,7 +1396,7 @@ types HiredTroops
 		}
 
 		tooltip = "HIRED_TROOPS_VIEW_LIST_MC_BUTTON_TOOLTIP"
-		tooltip_visible = "[Or(Not(MercenaryCompany.IsHired), MercenaryCompany.IsHiredByLocalPlayer)]"
+		tooltip_enabled = "[Or(Not(MercenaryCompany.IsHired), MercenaryCompany.IsHiredByLocalPlayer)]"
 
 		down = "[IsMercenaryCompanyDetailViewShown(MercenaryCompany.Self)]"
 

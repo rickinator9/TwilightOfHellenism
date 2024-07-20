@@ -4,7 +4,6 @@
 
 window = {
 	name = "intrigue_window"
-	widgetid = "intrigue_window"
 	parentanchor = top|right
 	layer = windows_layer
 	movable = no
@@ -130,7 +129,6 @@ window = {
 							## My Schemes
 							vbox = {
 								name = "my_own_schemes"
-								widgetid = "my_own_schemes"
 								layoutpolicy_horizontal = expanding
 								spacing = 10
 
@@ -266,7 +264,6 @@ window = {
 					### HOOKS AND SECRETS
 					scrollbox = {
 						name = "hooks_and_secrets"
-						widgetid = "hooks_and_secrets"
 						visible = "[IntrigueWindow.IsTabShown( 'hooks_and_secrets' )]"
 						layoutpolicy_horizontal = expanding
 						layoutpolicy_vertical = expanding

@@ -5,7 +5,7 @@
 
 window = {
 	name = "council_window"
-	widgetid = "council_window"
+	widgetid = "council_window_id"
 	parentanchor = top|right
 	layer = windows_layer
 	movable = no
@@ -590,7 +590,7 @@ types CouncilWindow
 
 					blockoverride "tooltip"
 					{
-						tooltip_visible = "[And( ActiveCouncilTask.HasMainSkill, ActiveCouncilTask.HasCouncillor )]"
+						tooltip_enabled = "[And( ActiveCouncilTask.HasMainSkill, ActiveCouncilTask.HasCouncillor )]"
 						tooltip = "[SkillItem.GetSkillBreakdownTooltip]"
 					}
 				}
@@ -984,7 +984,7 @@ types CouncilWindow
 					layoutpolicy_horizontal = expanding
 				}
 
-				block "assist_task" {}
+				block "spouse_task" {}
 			}
 		}
 	}
