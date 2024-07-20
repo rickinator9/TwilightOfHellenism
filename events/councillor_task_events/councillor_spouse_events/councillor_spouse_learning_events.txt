@@ -1379,8 +1379,11 @@ councillor_spouse_learning.1602 = {
 					chance = 20
 					set_relation_friend = { reason = friend_child_special_attention target = scope:tutored_child }
 				}
-
-				change_nickname_weight_effect = { NICKNAME = nick_the_scholar CHANGE = nickname_weight_small_increase }
+				random_list = {
+					1 = { set_nickname_effect = { NICKNAME = nick_the_scholar } }
+					1 = { set_nickname_effect = { NICKNAME = nick_the_wise } }
+					10 = { }
+				}
 			}
 		}
 	}
@@ -1965,8 +1968,15 @@ councillor_spouse_learning.2301 = {
 				}
 				add_piety = massive_piety_gain
 			}
-
-			change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_increase }
+			if = {
+				limit = { is_ai = yes }
+				random_list = {
+					1 = { set_nickname_effect = { NICKNAME = nick_the_pious } }
+					1 = { set_nickname_effect = { NICKNAME = nick_the_blessed } }
+					1 = { set_nickname_effect = { NICKNAME = nick_the_holy } }
+					10 = { }
+				}
+			}
 		}
 	}
 

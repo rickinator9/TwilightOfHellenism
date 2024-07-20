@@ -396,6 +396,17 @@ stress_threshold.1001 = {
 			can_be_journaller = yes
 			add = 5
 		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = contrite }
+				has_witnessed_stress_coping_trait = { TRAIT = flagellant }
+				has_witnessed_stress_coping_trait = { TRAIT = journaller }
+				has_witnessed_stress_coping_trait = { TRAIT = drunkard }
+				has_witnessed_stress_coping_trait = { TRAIT = hashishiyah }
+			}
+			add = 5
+		}
 	}
 
 	widget = {
@@ -800,6 +811,14 @@ stress_threshold.1011 = {
 			can_be_athletic = yes
 			add = 5
 		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = reclusive }
+				has_witnessed_stress_coping_trait = { TRAIT = athletic }
+			}
+			add = 5
+		}
 	}
 
 	widget = {
@@ -1180,6 +1199,14 @@ stress_threshold.1501 = {
 			add = -5
 			has_trait = cynical
 		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = reclusive }
+				has_witnessed_stress_coping_trait = { TRAIT = inappetetic }
+			}
+			add = 5
+		}
 	}
 
 	widget = {
@@ -1543,6 +1570,15 @@ stress_threshold.1502 = {
 			add = -5
 			has_trait = generous
 		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = irritable }
+				has_witnessed_stress_coping_trait = { TRAIT = journaller }
+				has_witnessed_stress_coping_trait = { TRAIT = drunkard }
+			}
+			add = 5
+		}
 	}
 
 	widget = {
@@ -1884,6 +1920,14 @@ stress_threshold.1503 = {
 		modifier = {
 			add = -5
 			has_trait = content
+		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = profligate }
+				has_witnessed_stress_coping_trait = { TRAIT = comfort_eater }
+			}
+			add = 5
 		}
 	}
 
@@ -2661,27 +2705,52 @@ scripted_effect stress_threshold_fallback_event_select_options_effect = {
 				}
 				10 = {
 					trigger = { has_character_flag = stress_threshold_contrite }
+					modifier = {
+						#One of your parents/guardian has issues
+						var:witnessed_trait ?= flag:contrite
+						add = 20
+					}
 					add_character_flag = stress_threshold_option_contrite
 					remove_character_flag = stress_threshold_contrite
 					contrite_get_secret_scopes_effect = yes
 				}
 				10 = {
 					trigger = { has_character_flag = stress_threshold_flagellant }
+					modifier = {
+						#One of your parents/guardian has issues
+						var:witnessed_trait ?= flag:flagellant
+						add = 20
+					}
 					add_character_flag = stress_threshold_option_flagellant
 					remove_character_flag = stress_threshold_flagellant
 				}
 				10 = {
 					trigger = { has_character_flag = stress_threshold_improvident }
+					modifier = {
+						#One of your parents/guardian has issues
+						var:witnessed_trait ?= flag:improvident
+						add = 20
+					}
 					add_character_flag = stress_threshold_option_improvident
 					remove_character_flag = stress_threshold_improvident
 				}
 				10 = {
 					trigger = { has_character_flag = stress_threshold_journaller }
+					modifier = {
+						#One of your parents/guardian has issues
+						var:witnessed_trait ?= flag:journaller
+						add = 20
+					}
 					add_character_flag = stress_threshold_option_journaller
 					remove_character_flag = stress_threshold_journaller
 				}
 				10 = {
 					trigger = { has_character_flag = stress_threshold_confider }
+					modifier = {
+						#One of your parents/guardian has issues
+						var:witnessed_trait ?= flag:confider
+						add = 20
+					}
 					add_character_flag = stress_threshold_option_confider
 					remove_character_flag = stress_threshold_confider
 					if = { #To save the confidant!
@@ -2739,11 +2808,21 @@ scripted_effect stress_threshold_fallback_event_select_options_effect = {
 				}
 				10 = {
 					trigger = { has_character_flag = stress_threshold_drunkard }
+					modifier = {
+						#One of your parents/guardian has issues
+						var:witnessed_trait ?= flag:drunkard
+						add = 20
+					}
 					add_character_flag = stress_threshold_option_drunkard
 					remove_character_flag = stress_threshold_drunkard
 				}
 				10 = {
 					trigger = { has_character_flag = stress_threshold_hashishiyah }
+					modifier = {
+						#One of your parents/guardian has issues
+						var:witnessed_trait ?= flag:hashishiyah
+						add = 20
+					}
 					add_character_flag = stress_threshold_option_hashishiyah
 					remove_character_flag = stress_threshold_hashishiyah
 				}
@@ -4451,6 +4530,21 @@ stress_threshold.1701 = {
 				has_trait = hashishiyah
 			}
 		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = irritable }
+				has_witnessed_stress_coping_trait = { TRAIT = flagellant }
+				has_witnessed_stress_coping_trait = { TRAIT = profligate }
+				has_witnessed_stress_coping_trait = { TRAIT = comfort_eater }
+				has_witnessed_stress_coping_trait = { TRAIT = inappetetic }
+				has_witnessed_stress_coping_trait = { TRAIT = journaller }
+				has_witnessed_stress_coping_trait = { TRAIT = confider }
+				has_witnessed_stress_coping_trait = { TRAIT = drunkard }
+				has_witnessed_stress_coping_trait = { TRAIT = hashishiyah }
+			}
+			add = 5
+		}
 	}
 	
 	widget = {
@@ -5221,6 +5315,20 @@ stress_threshold.1711 = {
 				has_trait = drunkard
 				has_trait = hashishiyah
 			}
+		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = reclusive }
+				has_witnessed_stress_coping_trait = { TRAIT = flagellant }
+				has_witnessed_stress_coping_trait = { TRAIT = profligate }
+				has_witnessed_stress_coping_trait = { TRAIT = improvident }
+				has_witnessed_stress_coping_trait = { TRAIT = journaller }
+				has_witnessed_stress_coping_trait = { TRAIT = athletic }
+				has_witnessed_stress_coping_trait = { TRAIT = drunkard }
+				has_witnessed_stress_coping_trait = { TRAIT = hashishiyah }
+			}
+			add = 5
 		}
 	}
 	
@@ -6000,6 +6108,24 @@ stress_threshold.1721 = {
 				has_trait = drunkard
 				has_trait = hashishiyah
 			}
+		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = reclusive }
+				has_witnessed_stress_coping_trait = { TRAIT = irritable }
+				has_witnessed_stress_coping_trait = { TRAIT = flagellant }
+				has_witnessed_stress_coping_trait = { TRAIT = profligate }
+				has_witnessed_stress_coping_trait = { TRAIT = improvident }
+				has_witnessed_stress_coping_trait = { TRAIT = contrite }
+				has_witnessed_stress_coping_trait = { TRAIT = comfort_eater }
+				has_witnessed_stress_coping_trait = { TRAIT = inappetetic }
+				has_witnessed_stress_coping_trait = { TRAIT = journaller }
+				has_witnessed_stress_coping_trait = { TRAIT = confider }
+				has_witnessed_stress_coping_trait = { TRAIT = drunkard }
+				has_witnessed_stress_coping_trait = { TRAIT = hashishiyah }
+			}
+			add = 5
 		}
 	}
 	
@@ -7068,6 +7194,21 @@ stress_threshold.1731 = {
 				has_trait = hashishiyah
 			}
 		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = reclusive }
+				has_witnessed_stress_coping_trait = { TRAIT = profligate }
+				has_witnessed_stress_coping_trait = { TRAIT = improvident }
+				has_witnessed_stress_coping_trait = { TRAIT = comfort_eater }
+				has_witnessed_stress_coping_trait = { TRAIT = journaller }
+				has_witnessed_stress_coping_trait = { TRAIT = confider }
+				has_witnessed_stress_coping_trait = { TRAIT = athletic }
+				has_witnessed_stress_coping_trait = { TRAIT = drunkard }
+				has_witnessed_stress_coping_trait = { TRAIT = hashishiyah }
+			}
+			add = 5
+		}
 	}
 	
 	widget = {
@@ -7905,10 +8046,48 @@ stress_threshold.2101 = {
 				add_secret = {
 					type = secret_witch
 				}
+				# If you have a legend maybe we change it?
+				if = {
+					limit = {
+						has_legend_chapter_trigger = { CHAPTER = opening }
+					}
+					random = {
+						chance = 75
+						send_interface_toast = {
+							title = legend_chapter_change_toast
+							left_icon = root
+							promoted_legend = {
+								set_legend_chapter = {
+									name = opening
+									localization_key = legend_chapter_opening_witch
+								}
+							}
+						}
+					}
+				}
 			}
 			else = {
 				add_trait = witch
 				add_piety_level = -1
+				# If you have a legend maybe we change it?
+				if = {
+					limit = {
+						has_legend_chapter_trigger = { CHAPTER = opening }
+					}
+					random = {
+						chance = 75
+						send_interface_toast = {
+							title = legend_chapter_change_toast
+							left_icon = root
+							promoted_legend = {
+								set_legend_chapter = {
+									name = opening
+									localization_key = legend_chapter_opening_witch
+								}
+							}
+						}
+					}
+				}
 			}
 			
 		}
@@ -8489,6 +8668,16 @@ stress_threshold.2301 = {
 				has_trait = drunkard
 				has_trait = hashishiyah
 			}
+		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = profligate }
+				has_witnessed_stress_coping_trait = { TRAIT = comfort_eater }
+				has_witnessed_stress_coping_trait = { TRAIT = drunkard }
+				has_witnessed_stress_coping_trait = { TRAIT = hashishiyah }
+			}
+			add = 5
 		}
 	}
 	
@@ -9078,6 +9267,22 @@ stress_threshold.2311 = {
 				has_trait = drunkard
 				has_trait = hashishiyah
 			}
+		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = irritable }
+				has_witnessed_stress_coping_trait = { TRAIT = flagellant }
+				has_witnessed_stress_coping_trait = { TRAIT = improvident }
+				has_witnessed_stress_coping_trait = { TRAIT = contrite }
+				has_witnessed_stress_coping_trait = { TRAIT = inappetetic }
+				has_witnessed_stress_coping_trait = { TRAIT = journaller }
+				has_witnessed_stress_coping_trait = { TRAIT = confider }
+				has_witnessed_stress_coping_trait = { TRAIT = athletic }
+				has_witnessed_stress_coping_trait = { TRAIT = drunkard }
+				has_witnessed_stress_coping_trait = { TRAIT = hashishiyah }
+			}
+			add = 5
 		}
 	}
 	
@@ -10060,6 +10265,21 @@ stress_threshold.2321 = {
 				has_trait = drunkard
 				has_trait = hashishiyah
 			}
+		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = irritable }
+				has_witnessed_stress_coping_trait = { TRAIT = profligate }
+				has_witnessed_stress_coping_trait = { TRAIT = improvident }
+				has_witnessed_stress_coping_trait = { TRAIT = contrite }
+				has_witnessed_stress_coping_trait = { TRAIT = comfort_eater }
+				has_witnessed_stress_coping_trait = { TRAIT = journaller }
+				has_witnessed_stress_coping_trait = { TRAIT = confider }
+				has_witnessed_stress_coping_trait = { TRAIT = drunkard }
+				has_witnessed_stress_coping_trait = { TRAIT = hashishiyah }
+			}
+			add = 5
 		}
 	}
 	
@@ -11082,6 +11302,21 @@ stress_threshold.2331 = {
 				has_trait = hashishiyah
 			}
 		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = reclusive }
+				has_witnessed_stress_coping_trait = { TRAIT = irritable }
+				has_witnessed_stress_coping_trait = { TRAIT = profligate }
+				has_witnessed_stress_coping_trait = { TRAIT = improvident }
+				has_witnessed_stress_coping_trait = { TRAIT = journaller }
+				has_witnessed_stress_coping_trait = { TRAIT = confider }
+				has_witnessed_stress_coping_trait = { TRAIT = athletic }
+				has_witnessed_stress_coping_trait = { TRAIT = drunkard }
+				has_witnessed_stress_coping_trait = { TRAIT = hashishiyah }
+			}
+			add = 5
+		}
 	}
 	
 	widget = {
@@ -11910,6 +12145,20 @@ stress_threshold.2341 = {
 				has_trait = hashishiyah
 			}
 		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = reclusive }
+				has_witnessed_stress_coping_trait = { TRAIT = profligate }
+				has_witnessed_stress_coping_trait = { TRAIT = comfort_eater }
+				has_witnessed_stress_coping_trait = { TRAIT = inappetetic }
+				has_witnessed_stress_coping_trait = { TRAIT = journaller }
+				has_witnessed_stress_coping_trait = { TRAIT = confider }
+				has_witnessed_stress_coping_trait = { TRAIT = drunkard }
+				has_witnessed_stress_coping_trait = { TRAIT = hashishiyah }
+			}
+			add = 5
+		}
 	}
 	
 	widget = {
@@ -12185,7 +12434,24 @@ stress_threshold.2341 = {
 		add_stress = medium_stress_impact_loss
 		
 		#Your feast gives you a poor nickname.
-		change_nickname_weight_effect = { NICKNAME = nick_the_fat CHANGE = nickname_weight_medium_increase }
+		if = {
+			limit = { has_any_nickname = no }
+			custom_tooltip = stress_threshold.2341.c.comfort_eater.tt
+			hidden_effect = {
+				random_list = {	#nick_the_fat excluded from the list, as it feels a little too mean-spirited.
+					13 = { give_nickname = nick_the_greedy }
+					13 = { give_nickname = nick_the_unworthy }
+					13 = { give_nickname = nick_the_selfish }
+					12 = { give_nickname = nick_the_wicked }
+					13 = { give_nickname = nick_the_terrible }
+					12 = { give_nickname = nick_the_plump }
+					12 = { give_nickname = nick_the_little } #Ironically.
+					12 = { give_nickname = nick_the_wicked }
+				}
+			}
+		}
+		#... Or else just lost prestige.
+		else = { add_prestige = medium_prestige_loss }
 
 		ai_chance = {
 			base = 25
@@ -12670,6 +12936,20 @@ stress_threshold.2351 = {
 				has_trait = drunkard
 				has_trait = hashishiyah
 			}
+		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = reclusive }
+				has_witnessed_stress_coping_trait = { TRAIT = irritable }
+				has_witnessed_stress_coping_trait = { TRAIT = profligate }
+				has_witnessed_stress_coping_trait = { TRAIT = improvident }
+				has_witnessed_stress_coping_trait = { TRAIT = inappetetic }
+				has_witnessed_stress_coping_trait = { TRAIT = journaller }
+				has_witnessed_stress_coping_trait = { TRAIT = drunkard }
+				has_witnessed_stress_coping_trait = { TRAIT = hashishiyah }
+			}
+			add = 5
 		}
 	}
 	
@@ -13222,6 +13502,138 @@ stress_threshold.2351 = {
 				}
 			}
 		}
+	}
+}
+
+
+##################################################
+# Eccentric stress break
+# by James Beaumont
+# #2360
+##################################################
+stress_threshold.2360 = {
+	type = character_event
+	title = stress_threshold.2360.t
+	desc = stress_threshold.2360.desc
+	theme = mental_break
+	override_background = {
+		reference = bedchamber
+	}
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+
+	trigger = {
+		is_ai = no # We want the eccentric trait to be rare
+		is_travelling = no
+		number_of_personality_traits < personality_trait_limit
+	}
+	
+	widget = {
+		gui = "event_window_widget_stress"
+		container = "custom_widgets_container"
+	}
+
+	immediate = {
+		root = { save_scope_as = stress_character } #For stress widget.
+	}
+	
+	#Become eccentric, big stress loss
+	option = {
+		name = {
+			trigger = { NOT = { has_trait = eccentric } }
+			text = stress_threshold.2360.a.eccentric.gain
+		}
+		name = {
+			trigger = { has_trait = eccentric }
+			text = stress_threshold.2360.a.eccentric.effect
+		}
+		if = {
+			limit = {
+				has_trait = fickle
+			}
+			remove_trait = fickle
+		}
+		if = {
+			limit = {
+				has_trait = stubborn
+			}
+			remove_trait = stubborn
+		}
+		add_trait_force_tooltip = eccentric
+		trait = eccentric
+
+		#Account for stress.
+		add_stress = major_stress_impact_loss
+		
+		#You gain a reputation as eccentric and strange.
+		add_character_modifier = {
+			modifier = erratic_behaviour
+			years = 10
+		}
+
+		ai_chance = {
+			base = 25
+			ai_value_modifier = {
+				ai_rationality = -1
+			}
+			modifier = {	#Pick this option if you have the relevant coping mechanism.
+				add = 200
+				has_trait = eccentric
+			}
+		}
+	}
+	
+	#Become irritable, stress loss
+	option = {
+		trigger = {
+			OR = {
+				can_be_irritable = yes
+				has_trait = irritable
+			}
+		}
+		name = {
+			trigger = { can_be_irritable = yes }
+			text = stress_threshold.2360.b.irritable.gain
+		}
+		name = {
+			trigger = { has_trait = irritable }
+			text = stress_threshold.2360.b.irritable.effect
+		}
+		add_trait = irritable
+		trait = irritable
+
+		#Account for stress.
+		add_stress = medium_stress_impact_loss
+		
+		#You're smashing birds and that's weird
+		add_character_modifier = {
+			modifier = bird_cruelty
+			years = 10
+		}
+
+		ai_chance = {
+			base = 25
+			ai_value_modifier = {
+				ai_vengefulness = 0.5
+				ai_compassion = -0.5
+			}
+			modifier = {	#Pick this option if you have the relevant coping mechanism.
+				add = 200
+				has_trait = irritable
+			}
+		}
+	}
+	#Opt out, get another stress event
+	option = {
+		name = stress_threshold.2360.c
+		add_stress = minor_stress_impact_gain
+		ai_chance = { base = 300 }	#AI shouldn't become eccentric through stress
+	}
+
+	after = {
+		stress_threshold_event_aftereffects = yes
 	}
 }
 
@@ -13928,6 +14340,18 @@ stress_threshold.3401 = {
 				has_trait = drunkard
 				has_trait = hashishiyah
 			}
+		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = reclusive }
+				has_witnessed_stress_coping_trait = { TRAIT = irritable }
+				has_witnessed_stress_coping_trait = { TRAIT = journaller }
+				has_witnessed_stress_coping_trait = { TRAIT = confider }
+				has_witnessed_stress_coping_trait = { TRAIT = drunkard }
+				has_witnessed_stress_coping_trait = { TRAIT = hashishiyah }
+			}
+			add = 5
 		}
 	}
 	
@@ -14756,6 +15180,23 @@ stress_threshold.3411 = {
 				has_trait = drunkard
 				has_trait = hashishiyah
 			}
+		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = reclusive }
+				has_witnessed_stress_coping_trait = { TRAIT = flagellant }
+				has_witnessed_stress_coping_trait = { TRAIT = profligate }
+				has_witnessed_stress_coping_trait = { TRAIT = improvident }
+				has_witnessed_stress_coping_trait = { TRAIT = contrite }
+				has_witnessed_stress_coping_trait = { TRAIT = inappetetic }
+				has_witnessed_stress_coping_trait = { TRAIT = journaller }
+				has_witnessed_stress_coping_trait = { TRAIT = confider }
+				has_witnessed_stress_coping_trait = { TRAIT = athletic }
+				has_witnessed_stress_coping_trait = { TRAIT = drunkard }
+				has_witnessed_stress_coping_trait = { TRAIT = hashishiyah }
+			}
+			add = 5
 		}
 	}
 	
@@ -15857,6 +16298,20 @@ stress_threshold.3421 = {
 				has_trait = drunkard
 				has_trait = hashishiyah
 			}
+		}
+		#One of your parents/guardian has issues
+		modifier = {
+			OR = {
+				has_witnessed_stress_coping_trait = { TRAIT = reclusive }
+				has_witnessed_stress_coping_trait = { TRAIT = irritable }
+				has_witnessed_stress_coping_trait = { TRAIT = flagellant }
+				has_witnessed_stress_coping_trait = { TRAIT = profligate }
+				has_witnessed_stress_coping_trait = { TRAIT = contrite }
+				has_witnessed_stress_coping_trait = { TRAIT = comfort_eater }
+				has_witnessed_stress_coping_trait = { TRAIT = drunkard }
+				has_witnessed_stress_coping_trait = { TRAIT = hashishiyah }
+			}
+			add = 5
 		}
 	}
 	

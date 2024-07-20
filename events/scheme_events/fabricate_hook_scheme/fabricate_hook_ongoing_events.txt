@@ -84,7 +84,6 @@ fabricate_hook_ongoing.0001 = {
 				type = fabricate_hook_family_success_modifier
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_miniscule_increase }
 	}
 
 	option = { # I need this to be as quick as possible
@@ -94,7 +93,6 @@ fabricate_hook_ongoing.0001 = {
 				type = fabricate_hook_family_speed_modifier
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_miniscule_increase }
 	}
 
 	after = {
@@ -200,7 +198,6 @@ fabricate_hook_ongoing.0002 = {
 				type = fabricate_hook_careful_study_modifier
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_miniscule_increase }
 	}
 
 	option = { # How are they making Target act?
@@ -208,7 +205,6 @@ fabricate_hook_ongoing.0002 = {
 		scope:scheme = {
 			add_scheme_progress = 2
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_miniscule_increase }
 	}
 }
 
@@ -326,7 +322,6 @@ fabricate_hook_ongoing.0003 = {
 				has_trait = greedy
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_miniscule_increase }
 	}
 
 	option = { # Work with the servant! Gregarious
@@ -347,9 +342,6 @@ fabricate_hook_ongoing.0003 = {
 				short_term_gold < minor_gold_value
 			}
 		}
-
-		change_city_state_corruption = { AMOUNT_ARG = corruption_miniscule_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { # Just recruit the servant
@@ -362,7 +354,6 @@ fabricate_hook_ongoing.0003 = {
 		ai_chance = {
 			base = 10
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_miniscule_increase }
 	}
 
 	option = { # Lustful opt out - work with the servant in other ways...
@@ -387,7 +378,6 @@ fabricate_hook_ongoing.0003 = {
 		ai_chance = {
 			base = 100
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_miniscule_increase }
 	}
 }
 
@@ -459,7 +449,6 @@ fabricate_hook_ongoing.0004 = {
 				}
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_miniscule_increase }
 	}
 
 	option = { # Take your time
@@ -470,7 +459,6 @@ fabricate_hook_ongoing.0004 = {
 			}
 			add_scheme_progress = -2
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_miniscule_decrease }
 	}
 }
 

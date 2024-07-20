@@ -55,8 +55,6 @@ claim_throne_ongoing.1001 = {
 				ai_honor = -0.5
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_hawk CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { # Only the clergy can interpret the will of heaven
@@ -68,8 +66,6 @@ claim_throne_ongoing.1001 = {
 				ai_zeal = 0.5
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_hawk CHANGE = nickname_weight_small_decrease }
 	}
 }
 
@@ -144,8 +140,6 @@ claim_throne_ongoing.1002 = {
 				ai_energy = 1
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_hawk CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { # Relax instead
@@ -156,8 +150,6 @@ claim_throne_ongoing.1002 = {
 		ai_chance = {
 			base = 100
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_hawk CHANGE = nickname_weight_small_decrease }
 	}
 }
 
@@ -222,7 +214,6 @@ claim_throne_ongoing.1003 = {
 				ai_greed = -0.5
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_major_increase }
 	}
 
 	option = { # I will need the gold for other things
@@ -234,9 +225,6 @@ claim_throne_ongoing.1003 = {
 		ai_chance = {
 			base = 100
 		}
-
-		change_city_state_corruption = { AMOUNT_ARG = corruption_major_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_hawk CHANGE = nickname_weight_small_decrease }
 	}
 }
 
@@ -300,8 +288,6 @@ claim_throne_ongoing.1004 = {
 		ai_chance = {
 			base = 100
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_hawk CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { # Why only the kingdom??
@@ -316,9 +302,6 @@ claim_throne_ongoing.1004 = {
 		ai_chance = {
 			base = 30
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_mad CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_hawk CHANGE = nickname_weight_medium_increase }
 	}
 
 	after = {
@@ -504,8 +487,6 @@ claim_throne_ongoing.1006 = {
 				ai_rationality = 0.5
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_hawk CHANGE = nickname_weight_small_decrease }
 	}
 }
 
@@ -605,7 +586,6 @@ claim_throne_ongoing.1007 = {
 				ai_honor = -0.5
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 
 	option = { # This isn't right. 
@@ -620,9 +600,6 @@ claim_throne_ongoing.1007 = {
 				ai_honor = 1
 			}
 		}
-
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_hawk CHANGE = nickname_weight_small_decrease }
 	}
 }
 
@@ -690,8 +667,6 @@ claim_throne_ongoing.1008 = {
 		ai_chance = {
 			base = 30
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_hawk CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { # Fool the nobles
@@ -717,8 +692,6 @@ claim_throne_ongoing.1008 = {
 				ai_boldness = 1
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_hawk CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { #Stay out of it
@@ -736,8 +709,6 @@ claim_throne_ongoing.1008 = {
 				ai_honor = 1
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_hawk CHANGE = nickname_weight_small_decrease }
 	}
 }
 
@@ -834,17 +805,6 @@ claim_throne_ongoing.1009 = {
 					add = 5
 					has_trait = education_intrigue_2
 				}
-
-				# ATHA - scholar/wise nickname modifiers.
-				modifier = {
-					has_character_modifier = nick_the_scholar_modifier
-					factor = 1.25
-				}
-				modifier = {
-					has_character_modifier = nick_the_wise_modifier
-					factor = 1.1
-				}
-
 				send_interface_toast = {
 					left_icon = root
 					title = tooltip.claim_throne_ongoing.1009.b.duel_success
@@ -861,17 +821,6 @@ claim_throne_ongoing.1009 = {
 					add = 5
 					has_trait = honest
 				}
-
-				# ATHA - scholar/wise nickname modifiers.
-				modifier = {
-					scope:fraud_catcher = { has_character_modifier = nick_the_scholar_modifier }
-					factor = 1.25
-				}
-				modifier = {
-					scope:fraud_catcher = { has_character_modifier = nick_the_wise_modifier }
-					factor = 1.1
-				}
-
 				send_interface_toast = {
 					left_icon = root
 					title = tooltip.claim_throne_ongoing.1009.b.duel_failure

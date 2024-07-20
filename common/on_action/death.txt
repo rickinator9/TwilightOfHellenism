@@ -7,6 +7,97 @@ on_death = {
 		play_music_cue = "mx_cue_death"
 
 		add_character_flag = { flag = about_to_die_but_not_dead_yet_flag } # Used in perk calc
+		
+		# Legend inheritance
+		if = {
+			limit = {
+				has_ce1_dlc_trigger = yes
+				is_ai = no
+				exists = promoted_legend
+			}
+			promoted_legend = {
+				set_variable = ce1_neverending_story_achievement_possible_legend
+			}
+			player_heir ?= {
+				set_variable = ce1_neverending_story_achievement_possible
+			}
+		}
+
+		if = {
+			limit = {
+				has_bp2_dlc_trigger = yes
+				prestige_level >= 3 #Illustrious
+				player_heir ?= {
+					is_child_of = root
+					age >= 6 #Can happen as a child, but also as an adult.
+					NOT = {
+						has_character_flag = bp2_prestige_piety_chain
+					}
+				}
+				NOR = {
+					has_character_flag = bp2_prestige_piety_chain
+					prestige_level < piety_level #higher stat gives the chain
+				}
+			}
+			save_scope_as = famous_parent
+			player_heir = {
+				set_variable = {
+					name = parent_fame_lvl
+					value = scope:famous_parent.prestige_level
+				}
+				create_character_memory = {
+					type = famed_parent_became_very_famous
+					participants = {
+						famed_parent = scope:famous_parent
+					}
+				}
+				trigger_event = {
+					id = bp2_yearly.4010
+					days = 5
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_bp2_dlc_trigger = yes
+				piety_level >= 3 #Illustrious
+				player_heir ?= {
+					is_child_of = root
+					age >= 6 #Can happen as a child, but also as an adult.
+					faith = root.faith
+					NOT = {
+						has_character_flag = bp2_prestige_piety_chain
+					}	
+				}
+				NOR = {
+					has_character_flag = bp2_prestige_piety_chain
+					piety_level < prestige_level #higher stat gives the chain
+				}
+				faith = {
+					NOR = {
+						trait_is_virtue = humble
+						trait_is_virtue = content
+					}
+				}
+			}
+			save_scope_as = pious_parent
+			player_heir = {
+				set_variable = {
+					name = parent_piety_lvl
+					value = scope:pious_parent.piety_level
+				}
+				create_character_memory = {
+					type = pious_parent_became_very_pious
+					participants = {
+						pious_parent = scope:pious_parent
+					}
+				}
+				trigger_event = {
+					id = bp2_yearly.4020
+					days = 10
+				}
+			}
+		}
 
 		if = {
 			limit = {
@@ -35,6 +126,16 @@ on_death = {
 						trigger_event = { id = fund_inspiration.9005 days = 5 }
 					}
 				}
+			}
+		}
+
+		if = {
+			limit = {
+				exists = player_heir
+			}
+			trigger_event = {
+				id = fp3_yearly.2030
+				days = 16
 			}
 		}
 		
@@ -536,6 +637,262 @@ on_death = {
 				current_travel_plan = { cancel_travel_plan = yes }
 			}
 		}
+
+		# Ward travel invalidation
+		if = {
+			limit = {
+				exists = var:ward_travelling_to_guardian
+				is_travelling = yes
+			}
+			save_scope_as = ward
+			var:ward_travelling_to_guardian = {
+				save_scope_as = guardian
+				liege ?= { save_scope_as = guardian_liege }
+			}
+			var:character_making_education_request ?= { save_scope_as = ward_liege }
+			# Inform Guardian
+			scope:guardian ?= {
+				send_interface_toast = {
+					title = ward_invalidated_during_travel_title
+					left_icon = scope:ward
+					right_icon = scope:ward_liege
+					show_as_tooltip = {
+						scope:ward = { death = { death_reason = death_fight } }
+					}
+				}
+			}
+			# Inform Liege
+			scope:ward_liege ?= {
+				send_interface_toast = {
+					title = ward_invalidated_during_travel_title
+					left_icon = scope:ward
+					right_icon = scope:guardian
+					show_as_tooltip = {
+						scope:ward = { death = { death_reason = death_fight } }
+					}
+				}
+			}
+			# Inform Guardian Liege
+			if = {
+				limit = {
+					exists = scope:guardian_liege
+					NOT = { scope:guardian_liege = scope:guardian }
+				}
+				scope:guardian_liege = {
+					send_interface_toast = {
+						title = ward_invalidated_during_travel_title
+						left_icon = scope:ward
+						right_icon = scope:guardian
+						show_as_tooltip = {
+							scope:ward = { death = { death_reason = death_fight } }
+						}
+					}
+				}
+			}
+		}
+		# Guardian travel invalidation
+		else_if = {
+			limit = {
+				exists = var:guardian_travelling_to_ward
+				is_travelling = yes
+			}
+			save_scope_as = guardian
+			liege ?= { save_scope_as = guardian_liege }
+			var:guardian_travelling_to_ward = {
+				save_scope_as = ward
+				var:character_making_education_request ?= { save_scope_as = ward_liege }
+			}
+			scope:ward = {
+				send_interface_toast = {
+					title = guardian_invalidated_during_travel_title
+					left_icon = scope:guardian
+					show_as_tooltip = {
+						scope:guardian = { death = { death_reason = death_fight } }
+					}
+				}
+			}
+			if = {
+				limit = {
+					exists = scope:ward_liege
+					NOT = { scope:ward_liege = scope:ward }
+				}
+				scope:ward_liege = {
+					send_interface_toast = {
+						title = guardian_invalidated_during_travel_title
+						left_icon = scope:guardian
+						right_icon = scope:ward
+						show_as_tooltip = {
+							scope:guardian = { death = { death_reason = death_fight } }
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					exists = scope:guardian_liege
+					NOT = { scope:guardian_liege = scope:guardian }
+				}
+				scope:guardian_liege = {
+					send_interface_toast = {
+						title = guardian_invalidated_during_travel_title
+						left_icon = scope:guardian
+						right_icon = scope:ward
+						show_as_tooltip = {
+							scope:guardian = { death = { death_reason = death_fight } }
+						}
+					}
+				}
+			}
+		}
+
+		# BP2
+		if = { # Hostage travel
+			limit = {
+				exists = var:hostage_travelling_to_warden
+				is_travelling = yes
+			}
+			save_scope_as = hostage
+			liege = {
+				send_interface_toast = {
+					title = hostage_invalidated_during_travel_title
+					left_icon = scope:hostage
+					right_icon = scope:hostage.var:hostage_travelling_to_warden
+					show_as_tooltip = {
+						scope:hostage = {
+							death = { death_reason = death_fight }
+						}
+					}
+				}
+			}
+			var:hostage_travelling_to_warden = {
+				save_scope_as = warden
+				send_interface_toast = {
+					title = hostage_invalidated_during_travel_title
+					left_icon = scope:hostage
+					right_icon = scope:hostage.liege
+					show_as_tooltip = {
+						scope:hostage = {
+							death = { death_reason = death_fight }
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { is_hostage = yes }
+			save_scope_as = hostage
+			home_court = {
+				save_scope_as = hostage_home_court
+				set_variable = {
+					name = let_my_hostage_die
+					value = scope:hostage.warden
+				}
+			}
+			warden = {
+				set_variable = {
+					name = hostage_died
+					value = scope:hostage_home_court
+				}
+				save_scope_as = hostage_warden
+				trigger_event = { id = bp2_hostage_system.0300 days = 1 }
+				if = {
+					limit = {
+						NOT = { is_close_family_of = scope:hostage }
+					}
+					create_character_memory = {
+						type = hostage_died
+				
+						participants = {
+							home_court = scope:hostage.home_court
+							hostage = scope:hostage
+						}
+					}
+				}
+			}
+		}
+		
+		# Clan Succession effects
+		if = {
+			limit = {
+				government_has_flag = government_is_clan
+				house ?= {
+					OR = {
+						has_house_unity_stage = competitive
+						has_house_unity_stage = antagonistic
+					}
+				}
+			}
+			every_vassal = {
+				limit = { house ?= root.house }
+				add_unpressed_claim = root.primary_title
+			}
+		}
+
+		# When the house head of a clan dies, they have an impact on their house's unity
+		# Effect of reducing the house unity has to be delayed in death_management.0100 so that your succession laws don't change from lowered house unity before the succession happens
+		if = {
+			limit = {
+				government_has_flag = government_is_clan
+				exists = house
+				house = {
+					house_head = root
+					NOT = { has_house_unity_stage = impassive }
+				}
+				primary_title.title_held_years >= 1
+			}
+			#calculate the unity value you should lose on this character and save it to pass it to the add_unity_value effect in the death_management.0100 event
+			save_scope_value_as = {
+				name = unity_change
+				value = {
+					value = 10
+					add = root.primary_title.title_held_years
+					multiply = -1
+					min = -50
+				}
+			}
+			save_scope_as = dead_house_head
+			#trigger the death_management.0100 event that will remove the unity after succession happens
+			if = {
+				limit = {
+					exists = player_heir
+				}
+				player_heir = {
+					trigger_event = {
+						id = death_management.0100
+						delayed = yes
+					}
+				}
+			}
+		}
+
+		# If someone has set out a revenge quest on you, give them an event
+		if = {
+			limit = {
+				exists = var:8180_marked_for_death
+			}
+			var:8180_marked_for_death = {
+				trigger_event = {
+					id = legend_spread_events.8181
+					weeks = 1
+				}
+			}
+		}
+
+		if = { # Add Legitimacy Legacy Level 2
+			limit = { 
+				dynasty ?= {
+					has_dynasty_perk = ce1_legitimacy_legacy_2
+				}
+				exists = player_heir
+			}				
+			player_heir = {
+				add_character_modifier = {
+					modifier = ce1_lasting_line
+					years = 10
+				}
+			}
+		}
+
 	}
 	events = {
 		death_management.0096	# Updates marriage opinions of other spouses if relevant.

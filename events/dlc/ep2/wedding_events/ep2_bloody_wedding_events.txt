@@ -318,6 +318,18 @@ ep2_wedding.0202 = {
 				gender_female_chance = root_soldier_female_chance
 				save_scope_as = mercenary_1
 			}
+			create_character = { #random peasant is present so the whole activity doesn't cancel
+				template = servant_character
+				dynasty = none
+				location = root.location
+				culture = root.location.culture
+				faith = root.location.faith
+				gender_female_chance = 50
+				save_scope_as = shocked_rob
+			}
+			scope:shocked_rob = {
+				add_to_activity = scope:activity
+			}
 		}
 		if = {
 			limit = {
@@ -688,7 +700,7 @@ ep2_wedding.3060 = {
 						spouse_2 = scope:spouse_2
 					}
 				}
-				change_nickname_weight_effect = { NICKNAME = nick_the_flayer CHANGE = nickname_weight_medium_increase }
+				give_nickname = nick_the_just_widowed
 			}
 			35 = { #they survive
 				compare_modifier = {
@@ -768,7 +780,7 @@ ep2_wedding.3060 = {
 						spouse_2 = scope:spouse_2
 					}
 				}
-				change_nickname_weight_effect = { NICKNAME = nick_the_flayer CHANGE = nickname_weight_medium_increase }
+				give_nickname = nick_the_just_widowed
 			}
 			20 = { #they survive
 				compare_modifier = {
@@ -853,7 +865,7 @@ ep2_wedding.3060 = {
 						spouse_2 = scope:spouse_2
 					}
 				}
-				change_nickname_weight_effect = { NICKNAME = nick_the_flayer CHANGE = nickname_weight_medium_increase }
+				give_nickname = nick_the_just_widowed
 			}
 			20 = { #they survive
 				compare_modifier = {

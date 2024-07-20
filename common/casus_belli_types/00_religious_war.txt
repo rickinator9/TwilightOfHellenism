@@ -7,17 +7,23 @@
 	combine_into_one = yes
 	should_show_war_goal_subview = yes
 	mutually_exclusive_titles = { always = yes }
+	
+	attacker_score_from_occupation_scale = 150
+	attacker_score_from_battles_scale = 150
+	defender_score_from_battles_scale = 150
 
 	# Already defined in 00_casus_belli_groups.txt
 	allowed_for_character = {
 		scope:attacker.faith = {
 			NOT = { has_doctrine_parameter = unreformed }
+			NOT = { has_doctrine_parameter = holy_wars_forbidden }
 		}
 	}
 
 	allowed_for_character_display_regardless = {
 		trigger_if = {
 			limit = {
+				is_alive = yes
 				has_variable_list = humsacd_hofs
 				is_target_in_variable_list = {
 					name = humsacd_hofs
@@ -104,6 +110,7 @@
 				scope:defender = {
 					any_character_struggle = {
 						involvement = involved
+						is_struggle_type = iberian_struggle
 					}
 				}
 			}
@@ -258,6 +265,9 @@
 	on_victory = {
 		scope:attacker = { show_pow_release_message_effect = yes }
 		
+		# Legitimacy
+		add_legitimacy_attacker_victory_effect = yes
+		
 		#EP2 accolade glory gain from winning against higher ranked enemy
 		scope:attacker = { accolade_attacker_war_end_glory_gain_low_effect = yes }
 
@@ -406,6 +416,9 @@
 
 	on_defeat = {
 		scope:attacker = { show_pow_release_message_effect = yes }
+		
+		# Legitimacy
+		add_legitimacy_attacker_defeat_effect = yes
 
 		#EP2 accolade glory gain for winning against higher ranked enemy
 		scope:defender = { accolade_defender_war_end_glory_gain_low_effect = yes }
@@ -520,17 +533,23 @@ religious_war = {
 	combine_into_one = yes
 	should_show_war_goal_subview = yes
 	mutually_exclusive_titles = { always = yes }
+	
+	attacker_score_from_occupation_scale = 150
+	attacker_score_from_battles_scale = 150
+	defender_score_from_battles_scale = 150
 
 	# Additional requirements to the defines in 00_casus_belli_groups.txt
 	allowed_for_character = {
 		scope:attacker.faith = {
 			NOT = { has_doctrine_parameter = unreformed }
+			NOT = { has_doctrine_parameter = holy_wars_forbidden }
 		}
 	}
 
 	allowed_for_character_display_regardless = {
 		trigger_if = {
 			limit = {
+				is_alive = yes
 				has_variable_list = humsacd_hofs
 				is_target_in_variable_list = {
 					name = humsacd_hofs
@@ -617,6 +636,7 @@ religious_war = {
 				scope:defender = {
 					any_character_struggle = {
 						involvement = involved
+						is_struggle_type = iberian_struggle
 					}
 				}
 			}
@@ -785,6 +805,9 @@ religious_war = {
 
 	on_victory = {
 		scope:attacker = { show_pow_release_message_effect = yes }
+		
+		# Legitimacy
+		add_legitimacy_attacker_victory_effect = yes
 
 		#EP2 accolade glory gain for winning against higher ranked enemy
 		scope:attacker = { accolade_attacker_war_end_glory_gain_med_effect = yes }
@@ -938,6 +961,9 @@ religious_war = {
 
 	on_defeat = {
 		scope:attacker = { show_pow_release_message_effect = yes }
+		
+		# Legitimacy
+		add_legitimacy_attacker_defeat_effect = yes
 
 		#EP2 accolade glory gain for winning against higher ranked enemy
 		scope:defender = { accolade_defender_war_end_glory_gain_med_effect = yes }
@@ -1089,6 +1115,7 @@ major_religious_war = {
 	allowed_for_character_display_regardless = {
 		trigger_if = {
 			limit = {
+				is_alive = yes
 				has_variable_list = humsacd_hofs
 				is_target_in_variable_list = {
 					name = humsacd_hofs
@@ -1188,6 +1215,7 @@ major_religious_war = {
 				scope:defender = {
 					any_character_struggle = {
 						involvement = involved
+						is_struggle_type = iberian_struggle
 					}
 				}
 			}
@@ -1320,6 +1348,9 @@ major_religious_war = {
 
 	on_victory = {
 		scope:attacker = { show_pow_release_message_effect = yes }
+		
+		# Legitimacy
+		add_legitimacy_attacker_victory_effect = yes
 
 		#EP2 accolade glory gain for winning against higher ranked enemy
 		scope:attacker = { accolade_attacker_war_end_glory_gain_high_effect = yes }
@@ -1472,6 +1503,9 @@ major_religious_war = {
 
 	on_defeat = {
 		scope:attacker = { show_pow_release_message_effect = yes }
+		
+		# Legitimacy
+		add_legitimacy_attacker_defeat_effect = yes
 
 		#EP2 accolade glory gain for winning against higher ranked enemy
 		scope:defender = { accolade_defender_war_end_glory_gain_high_effect = yes }
@@ -1607,9 +1641,13 @@ excommunication_war = {
 	icon = excommunication
 	group = religious
 	ai_only_against_neighbors = yes
+	allow_hostages = no
 
 	# Already defined in 00_casus_belli_groups.txt
 	# allowed_for_character = {}
+	
+	attacker_score_from_battles_scale = 150
+	defender_score_from_battles_scale = 150
 
 	allowed_against_character = {
 		scope:defender = {
@@ -1668,6 +1706,9 @@ excommunication_war = {
 
 	on_victory = {
 		scope:attacker = { show_pow_release_message_effect = yes }
+		
+		# Legitimacy
+		add_legitimacy_attacker_victory_effect = yes
 
 		#EP2 Accolade glory gain from winning against higher ranked enemy
 		scope:attacker = { accolade_attacker_war_end_glory_gain_med_effect = yes }
@@ -1759,6 +1800,9 @@ excommunication_war = {
 
 	on_defeat = {
 		scope:attacker = { show_pow_release_message_effect = yes }
+		
+		# Legitimacy
+		add_legitimacy_attacker_defeat_effect = yes
 
 		#EP2 Accolade glory gain for winning against higher ranked enemy
 		scope:defender = { accolade_defender_war_end_glory_gain_med_effect = yes }
@@ -1854,11 +1898,6 @@ excommunication_war = {
 	
 	max_defender_score_from_occupation = 150
 	max_attacker_score_from_occupation = 150
-
-	attacker_score_from_occupation_scale = 50
-	defender_score_from_occupation_scale = 50
-	#attacker_score_from_battles_scale = 50
-	#defender_score_from_battles_scale = 50
 	max_attacker_score_from_battles = 100
 	max_defender_score_from_battles = 100
 

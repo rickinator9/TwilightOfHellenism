@@ -50,7 +50,6 @@ fabricate_hook_outcome.0001 = {
 		ai_chance = {
 			base = 100
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 
 	option = { # Learnt a secret
@@ -68,7 +67,6 @@ fabricate_hook_outcome.0001 = {
 		ai_chance = {
 			base = 10
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 
 	option = { # Expose outright
@@ -84,7 +82,6 @@ fabricate_hook_outcome.0001 = {
 		ai_chance = {
 			base = 10
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 
 	after = {
@@ -154,21 +151,18 @@ fabricate_hook_outcome.1001 = {
 		fabricate_hook_success_effect = {
 			TYPE = fabrication_hook
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 
 	option = {
 		name = fabricate_hook_outcome.1001.b
 		trigger = { NOT = { exists = scope:scheme_discovered } }
 		fabricate_hook_decline_execution_effect = yes
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 	}
 	
 	option = {
 		name = fabricate_hook_outcome.1001.c
 		trigger = { exists = scope:scheme_discovered }
 		fabricate_hook_discovery_effect = yes
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 	}
 
 	after = {
@@ -244,21 +238,18 @@ fabricate_hook_outcome.1002 = {
 		fabricate_hook_success_effect = {
 			TYPE = fabrication_hook
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 
 	option = {
 		name = fabricate_hook_outcome.1001.b
 		trigger = { NOT = { exists = scope:scheme_discovered } }
 		fabricate_hook_decline_execution_effect = yes
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 	}
 	
 	option = {
 		name = fabricate_hook_outcome.1001.c
 		trigger = { exists = scope:scheme_discovered }
 		fabricate_hook_discovery_effect = yes
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 	}
 
 	after = {
@@ -292,33 +283,24 @@ fabricate_hook_outcome.1003 = {
 		is_travelling = no
 	}
 
-	immediate = {
-		scope:target.court_owner = { # For use in loc
-			save_scope_as = court_owner
-		}
-	}
-
 	option = {
 		name = fabricate_hook_outcome.1003.a
 		remove_short_term_gold = medium_gold_value
 		fabricate_hook_success_effect = {
 			TYPE = loyalty_hook
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 
 	option = {
 		name = fabricate_hook_outcome.1001.b
 		trigger = { NOT = { exists = scope:scheme_discovered } }
 		fabricate_hook_decline_execution_effect = yes
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 	}
 	
 	option = {
 		name = fabricate_hook_outcome.1001.c
 		trigger = { exists = scope:scheme_discovered }
 		fabricate_hook_discovery_effect = yes
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 	}
 }
 
@@ -365,7 +347,6 @@ fabricate_hook_outcome.1004 = {
 		fabricate_hook_success_effect = {
 			TYPE = loyalty_hook
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 
 	option = {
@@ -378,21 +359,18 @@ fabricate_hook_outcome.1004 = {
 		fabricate_hook_success_effect = {
 			TYPE = loyalty_hook
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 
 	option = {
 		name = fabricate_hook_outcome.1001.b
 		trigger = { NOT = { exists = scope:scheme_discovered } }
 		fabricate_hook_decline_execution_effect = yes
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 	}
 	
 	option = {
 		name = fabricate_hook_outcome.1001.c
 		trigger = { exists = scope:scheme_discovered }
 		fabricate_hook_discovery_effect = yes
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 	}
 }
 
@@ -453,21 +431,18 @@ fabricate_hook_outcome.1005 = {
 		fabricate_hook_success_effect = {
 			TYPE = life_threat_hook
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 
 	option = {
 		name = fabricate_hook_outcome.1001.b
 		trigger = { NOT = { exists = scope:scheme_discovered } }
 		fabricate_hook_decline_execution_effect = yes
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 	}
 	
 	option = {
 		name = fabricate_hook_outcome.1001.c
 		trigger = { exists = scope:scheme_discovered }
 		fabricate_hook_discovery_effect = yes
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 	}
 }
 

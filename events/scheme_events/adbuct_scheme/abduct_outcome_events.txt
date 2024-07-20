@@ -114,7 +114,6 @@ abduct_outcome.1001 = {
 		ai_chance = {
 			base = 100
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 	}
 
 	option = {
@@ -132,7 +131,6 @@ abduct_outcome.1001 = {
 			impatient = medium_stress_impact_gain
 			stubborn = medium_stress_impact_gain
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 	}
 }
 

@@ -21,6 +21,7 @@ accessory_genes = {
 				1 = male_legwear_secular_ep1_jester_01
 				1 = m_legwear_sec_ep2_western_era4_war_nob_01
 				1 = m_legwear_sec_ep2_western_era4_war_nob_02
+				1 = m_legwear_sec_afr_common_01
 			}
 			female = {
 				1 = female_legwear_secular_western_common_01
@@ -31,6 +32,7 @@ accessory_genes = {
 				1 = female_legwear_secular_ep1_jester_01
 				1 = f_legwear_sec_ep2_western_era4_war_nob_01
 				1 = f_legwear_sec_ep2_western_era4_war_nob_02
+				1 = f_legwear_sec_afr_common_01
 			}
 			boy = male
 			girl = female
@@ -197,18 +199,62 @@ accessory_genes = {
 			girl = female
 		}
 
-		western_royalty = {
+		all_cloaks = {
 			index = 1
+			male = {
+				1 = male_cloaks_secular_western_royalty_01
+				1 = male_cloaks_secular_fp1_nobility_01
+				1 = male_cloaks_secular_fp1_nobility_02
+				1 = male_cloaks_secular_fp1_nobility_03
+				1 = male_furs_secular_fp1_nobility_01
+				1 = male_furs_secular_fp1_nobility_02
+				1 = male_furs_secular_fp1_nobility_03
+				1 = male_furs_secular_fp1_nobility_03
+				1 = male_furs_secular_fp1_nobility_03
+				1 = male_cloaks_secular_ep1_adventurer_01
+				1 = m_cloaks_sec_ep2_western_era1_nob_01_lo
+				1 = m_cloaks_sec_ep2_western_era1_nob_01_hi
+				1 = m_cloaks_sec_sp2_western_imp_01
+				1 = m_cloaks_sec_ep2_western_travel_01
+				1 = m_cloaks_sec_ep2_mena_travel_01
+				1 = m_cloaks_sec_fp4_western_era3_nob_01
+				1 = m_cloaks_sec_fp4_western_era3_nob_02
+			}
+			female = {
+				1 = female_cloaks_secular_western_royalty_01
+				1 = female_cloaks_secular_fp1_nobility_01
+				1 = female_cloaks_secular_fp1_nobility_02
+				1 = female_cloaks_secular_fp1_nobility_03
+				1 = female_furs_secular_fp1_nobility_01
+				1 = female_furs_secular_fp1_nobility_02
+				1 = female_furs_secular_fp1_nobility_03
+				1 = f_cloaks_sec_sp2_western_imp_01
+				1 = f_cloaks_sec_ep2_western_era1_01_lo
+				1 = f_cloaks_sec_ep2_western_era1_01_hi
+				1 = f_cloaks_sec_ep2_western_travel_01
+				1 = f_cloaks_sec_ep2_mena_travel_01
+				1 = f_cloaks_sec_fp4_western_era3_nob_01
+				1 = f_cloaks_sec_fp4_western_era3_nob_02
+			}
+			
+			boy = male 
+			girl = female
+		}
+
+		western_royalty = {
+			index = 2
 			male = {
 				1 = male_cloaks_secular_western_royalty_01
 			}
 			female = {
 				1 = female_cloaks_secular_western_royalty_01
 			}
+			boy = male 
+			girl = female
 		}
 
 		fp1_cloak = {
-			index = 2
+			index = 3
 			male = {
 				1 = male_cloaks_secular_fp1_nobility_01
 				1 = male_cloaks_secular_fp1_nobility_02
@@ -228,7 +274,7 @@ accessory_genes = {
 		}
 
 		fp1_cloak_berserker = {
-			index = 3
+			index = 4
 			male = {
 				1 = male_furs_secular_fp1_nobility_03
 			}
@@ -238,7 +284,7 @@ accessory_genes = {
 		}
 
 		ep1_cloak_adventurer = {
-			index = 4
+			index = 5
 			male = {
 				1 = male_cloaks_secular_ep1_adventurer_01
 			}
@@ -248,7 +294,7 @@ accessory_genes = {
 		}
 
 		ep2_cloak_western_travel = {
-			index = 5
+			index = 6
 			male = {
 				1 = m_cloaks_sec_ep2_western_travel_01
 			}
@@ -260,7 +306,7 @@ accessory_genes = {
 		}
 
 		ep2_cloak_mena_travel = {
-			index = 6
+			index = 7
 			male = {
 				1 = m_cloaks_sec_ep2_mena_travel_01
 			}
@@ -272,26 +318,27 @@ accessory_genes = {
 		}
 
 		ep2_cloak_western_era1_low_nobility = {
-			index = 7
+			index = 8
 			male = {
-				1 = empty
 				1 = m_cloaks_sec_ep2_western_era1_nob_01_lo
 			}
 			female = {
-				1 = empty
 				1 = f_cloaks_sec_ep2_western_era1_01_lo
 			}
+			boy = male 
+			girl = female
 		}
 
 		ep2_cloak_western_era1_high_nobility = {
-			index = 8
+			index = 9
 			male = {
 				1 = m_cloaks_sec_ep2_western_era1_nob_01_hi
 			}
 			female = {
-				1 = empty
 				1 = f_cloaks_sec_ep2_western_era1_01_hi
 			}
+			boy = male 
+			girl = female
 		}
 
 		sp2_cloak_imperial = {
@@ -306,8 +353,38 @@ accessory_genes = {
 				girl = female
 		}
 
+		afr_cloaks = {
+			index = 11
+			male = {
+				1 = empty
+			}
+			female = {
+				1 = empty
+				1 = f_cloaks_sec_afr_common_01
+				1 = f_cloaks_sec_afr_low_nob_01
+				1 = f_cloaks_sec_afr_high_nob_01
+			}
+			boy = male
+			girl = female
+		}
+
+		sp3_cloak = {
+			index = 12
+			male = {
+				1 = m_cloaks_sec_sp3_western_roy_01
+
+			}
+			female = {
+				1 = f_cloaks_sec_sp3_western_roy_01
+		    }
+		    boy = male
+			girl = female
+	    }
+
+
+
 		all_cloaks = {
-			index = 9
+			index = 13
 			male = {
 				1 = male_cloaks_secular_western_royalty_01
 				1 = male_cloaks_secular_fp1_nobility_01
@@ -333,10 +410,27 @@ accessory_genes = {
 				1 = female_furs_secular_fp1_nobility_03
 				1 = f_cloaks_sec_ep2_western_travel_01
 				1 = f_cloaks_sec_ep2_mena_travel_01
+				1 = f_cloaks_sec_afr_common_01
+				1 = f_cloaks_sec_afr_low_nob_01
+				1 = f_cloaks_sec_afr_high_nob_01
 			}
-			
-			boy = male 
+
+			boy = male
 			girl = female
+		}
+
+		fp4_cloak_western = {
+				index = 14
+				male = {
+					1 = m_cloaks_sec_fp4_western_era3_nob_01
+					1 = m_cloaks_sec_fp4_western_era3_nob_02
+				}
+				female = {
+					1 = f_cloaks_sec_fp4_western_era3_nob_01
+					1 = f_cloaks_sec_fp4_western_era3_nob_02
+				}
+				boy = male
+				girl = female
 		}
 	}		
 
@@ -351,12 +445,9 @@ props_left = {
 		index = 0
 		male = {
 		}
-		female = {
-		}
-		boy = {
-		}
-		girl = {
-		}
+		female = male
+		boy = male
+		girl = female
 	}
 	grid = {
 		index = 1
@@ -372,10 +463,7 @@ props_left = {
 		male = {
 			1 = western_pouch_02
 		}
-		female = {
-			1 = western_pouch_02
-		
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -384,9 +472,7 @@ props_left = {
 		male = {
 			1 = western_scroll_01
 		}
-		female = {
-			1 = western_scroll_01
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -395,9 +481,7 @@ props_left = {
 		male = {
 			1 = prop_swaddled_baby_01
 		}
-		female = {
-			1 = prop_swaddled_baby_01
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -406,9 +490,7 @@ props_left = {
 		male = {
 			1 = prophet_shield
 		}
-		female = {
-			1 = prophet_shield
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -417,9 +499,7 @@ props_left = {
 		male = {
 			1 = fp1_rune_tablet_01
 		}
-		female = {
-			1 = fp1_rune_tablet_01		
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -428,9 +508,7 @@ props_left = {
 		male = {
 			1 = ep1_spear_01_left_hand
 		}
-		female = {
-			1 = ep1_spear_01_left_hand		
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -439,9 +517,7 @@ props_left = {
 		male = {
 			1 = ep1_mena_spear_01_left_hand
 		}
-		female = {
-			1 = ep1_mena_spear_01_left_hand		
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -450,9 +526,7 @@ props_left = {
 		male = {
 			1 = ep1_african_spear_01_left_hand
 		}
-		female = {
-			1 = ep1_african_spear_01_left_hand		
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -461,9 +535,7 @@ props_left = {
 		male = {
 			1 = ep1_indian_spear_01_left_hand
 		}
-		female = {
-			1 = ep1_indian_spear_01_left_hand		
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -472,20 +544,16 @@ props_left = {
 		male = {
 			1 = ep1_artifact_spear_equipped_01_left
 		}
-		female = {
-			1 = ep1_artifact_spear_equipped_01_left		
-		}
+		female = male
 		boy = male
 		girl = female
 	}
 	ep1_tool_quill = {
 		index = 12
 		male = {
-			1 = ep1_tool_quill_01
+			1 = ep1_tool_quill_01_left
 		}
-		female = {
-			1 = ep1_tool_quill_01		
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -494,9 +562,7 @@ props_left = {
 		male = {
 			1 = fp2_steward_pouch_01
 		}
-		female = {
-			1 = fp2_steward_pouch_01		
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -505,9 +571,7 @@ props_left = {
 		male = {
 			1 = fp2_steward_chess_piece_01_left_hand
 		}
-		female = {
-			1 = fp2_steward_chess_piece_01_left_hand		
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -516,9 +580,7 @@ props_left = {
 		male = {
 			1 = ep2_horn_01_left_hand
 		}
-		female = {
-			1 = ep2_horn_01_left_hand		
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -527,9 +589,7 @@ props_left = {
 		male = {
 			1 = ep2_rabbit_carcass_01_left_hand
 		}
-		female = {
-			1 = ep2_rabbit_carcass_01_left_hand		
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -539,9 +599,7 @@ props_left = {
 		male = {
 			1 = ep2_steppe_bow_01_a_left_hand
 		}
-		female = {
-			1 = ep2_steppe_bow_01_a_left_hand		
-		}
+		female = male
 		boy = male
 		girl = female
 	}	
@@ -550,9 +608,7 @@ props_left = {
 		male = {
 			1 = ep2_mediterranean_bow_01_a_left_hand
 		}
-		female = {
-			1 = ep2_mediterranean_bow_01_a_left_hand		
-		}
+		female = male
 		boy = male
 		girl = female
 	}	
@@ -561,9 +617,7 @@ props_left = {
 		male = {
 			1 = ep2_indian_bow_01_a_left_hand
 		}
-		female = {
-			1 = ep2_indian_bow_01_a_left_hand		
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -572,9 +626,7 @@ props_left = {
 		male = {
 			1 = ep2_long_bow_01_a_left_hand
 		}
-		female = {
-			1 = ep2_long_bow_01_a_left_hand		
-		}
+		female = male
 		boy = male
 		girl = female
 	}	
@@ -584,10 +636,7 @@ props_left = {
 			1 = ep2_short_bow_01_a_left_hand
 			1 = ep2_short_bow_01_b_left_hand
 		}
-		female = {
-			1 = ep2_short_bow_01_a_left_hand
-			1 = ep2_short_bow_01_b_left_hand
-		}
+		female = male
 		boy = male
 		girl = female
 	}	
@@ -597,9 +646,7 @@ props_left = {
 		male = {
 			1 = ep2_steppe_bow_01_a_drawn_left_hand
 		}
-		female = {
-			1 = ep2_steppe_bow_01_a_drawn_left_hand		
-		}
+		female = male
 		boy = male
 		girl = female
 	}	
@@ -608,9 +655,7 @@ props_left = {
 		male = {
 			1 = ep2_mediterranean_bow_01_a_drawn_left_hand
 		}
-		female = {
-			1 = ep2_mediterranean_bow_01_a_drawn_left_hand		
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -619,9 +664,7 @@ props_left = {
 		male = {
 			1 = ep2_indian_bow_01_a_drawn_left_hand
 		}
-		female = {
-			1 = ep2_indian_bow_01_a_drawn_left_hand		
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -630,9 +673,7 @@ props_left = {
 		male = {
 			1 = ep2_long_bow_01_a_drawn_left_hand
 		}
-		female = {
-			1 = ep2_long_bow_01_a_drawn_left_hand		
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -642,10 +683,7 @@ props_left = {
 			1 = ep2_short_bow_01_a_drawn_left_hand
 			1 = ep2_short_bow_01_b_drawn_left_hand
 		}
-		female = {
-			1 = ep2_short_bow_01_a_drawn_left_hand
-			1 = ep2_short_bow_01_b_drawn_left_hand
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -654,9 +692,7 @@ props_left = {
 		male = {
 			1 = ep2_african_bow_01_drawn_left_hand
 		}
-		female = {
-			1 = ep2_african_bow_01_drawn_left_hand		
-		}
+		female = male
 		boy = male
 		girl = female
 	}	
@@ -665,9 +701,7 @@ props_left = {
 		male = {
 			1 = ep2_african_bow_01_left_hand
 		}
-		female = {
-			1 = ep2_african_bow_01_left_hand		
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -677,10 +711,7 @@ props_left = {
 			1 = ep2_boar_spear_01_a_left_hand
 			1 = ep2_boar_spear_01_b_left_hand
 		}
-		female = {
-			1 = ep2_boar_spear_01_a_left_hand
-			1 = ep2_boar_spear_01_b_left_hand
-		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -689,9 +720,71 @@ props_left = {
 		male = {
 			1 = ep2_western_jousting_shield_01_a
 		}
-		female = {
-			1 = ep2_western_jousting_shield_01_a
+		female = male
+		boy = male
+		girl = female
+	}
+	ep2_falcon_peregrine = {
+		index = 31
+		male = {
+			1 = ep2_falcon_peregrine_01
 		}
+		female = male
+		boy = male
+		girl = female
+	}
+	bp2_reading_book_left = {
+		index = 32
+		male = {
+			1 = bp2_reading_book_01_a_left
+		}
+		female = male
+		boy = male
+		girl = female
+	}
+	# CE1
+	fp4_shawm = {
+		index = 33
+		male = {
+			1 = fp4_shawm_01_a
+		}
+		female = male
+		boy = male
+		girl = female
+	}
+	fp4_bronzemortar = {
+		index = 34
+		male = {
+			1 = fp4_bronzemortar_01_a
+		}
+		female = male
+		boy = male
+		girl = female
+	}
+	fp4_lute = {
+		index = 35
+		male = {
+			1 = fp4_lute_01_a
+		}
+		female = male
+		boy = male
+		girl = female
+	}
+	fp4_alto_flute = {
+		index = 36
+		male = {
+			1 = fp4_alto_flute_01_a
+		}
+		female = male
+		boy = male
+		girl = female
+	}
+	fp4_chifonie_still = {
+		index = 37
+		male = {
+			1 = fp4_chifonie_still_01_a
+		}
+		female = male
 		boy = male
 		girl = female
 	}
@@ -708,21 +801,16 @@ props_left = {
 			index = 0
 			male = {
 			}
-			female = {
-			}
-			boy = {
-			}
-			girl = {
-			}
+			female = male
+			boy = male
+			girl = female
 		}
 		ep1_mena_book_big = {
 			index = 1
 			male = {
 				1 = ep1_mena_book_big_01
 			}
-			female = {
-				1 = ep1_mena_book_big_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -731,9 +819,7 @@ props_left = {
 			male = {
 				1 = ep1_western_book_big_01
 			}
-			female = {
-				1 = ep1_western_book_big_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -742,9 +828,7 @@ props_left = {
 			male = {
 				1 = bp1_lantern
 			}
-			female = {
-				1 = bp1_lantern	
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -753,9 +837,7 @@ props_left = {
 			male = {
 				1 = fp2_iberian_muslim_scroll_01
 			}
-			female = {
-				1 = fp2_iberian_muslim_scroll_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -764,9 +846,7 @@ props_left = {
 			male = {
 				1 = rolled_scroll_01
 			}
-			female = {
-				1 = rolled_scroll_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -793,20 +873,17 @@ props_left = {
 			male = {
 				1 = western_dagger_01
 			}
-			female = {
-				1 = western_dagger_01
-			}
+			female = male
 			boy = male
 			girl = female
+			allow_game_entity_override = no
 		}
 		rondel_dagger = {
 			index = 9
 			male = {
 				1 = western_dagger_02
 			}
-			female = {
-				1 = western_dagger_02
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -815,31 +892,27 @@ props_left = {
 			male = {
 				1 = mena_dagger_01
 			}
-			female = {
-				1 = mena_dagger_01
-			}
+			female = male
 			boy = male
 			girl = female
+			allow_game_entity_override = no
 		}
 		spymaster_daggers_indian = {
 			index = 11
 			male = {
 				1 = indian_dagger_01
 			}
-			female = {
-				1 = indian_dagger_01
-			}
+			female = male
 			boy = male
 			girl = female
+			allow_game_entity_override = no
 		}
 		marshal_swords = {
 			index = 12
 			male = {
 				1 = western_sword_02
 			}
-			female = {
-				1 = western_sword_02
-			}
+			female = male
 			boy = male
 			girl = female
 		}		
@@ -848,9 +921,7 @@ props_left = {
 			male = {
 				1 = ep1_spear_01_right_hand
 			}
-			female = {
-				1 = ep1_spear_01_right_hand		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -859,9 +930,7 @@ props_left = {
 			male = {
 				1 = ep1_mena_spear_01_right_hand
 			}
-			female = {
-				1 = ep1_mena_spear_01_right_hand		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -870,9 +939,7 @@ props_left = {
 			male = {
 				1 = ep1_african_spear_01_right_hand
 			}
-			female = {
-				1 = ep1_african_spear_01_right_hand		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -881,9 +948,7 @@ props_left = {
 			male = {
 				1 = ep1_indian_spear_01_right_hand
 			}
-			female = {
-				1 = ep1_indian_spear_01_right_hand		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -892,9 +957,7 @@ props_left = {
 			male = {
 				1 = fp1_marshal_sword_01
 			}
-			female = {
-				1 = fp1_marshal_sword_01
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -903,9 +966,7 @@ props_left = {
 			male = {
 				1 = fp1_spymasters_dagger_01
 			}
-			female = {
-				1 = fp1_spymasters_dagger_01			
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -914,9 +975,7 @@ props_left = {
 			male = {
 				1 = ep1_sword_mena_01
 			}
-			female = {
-				1 = ep1_sword_mena_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -925,9 +984,7 @@ props_left = {
 			male = {
 				1 = ep1_sword_indian_01
 			}
-			female = {
-				1 = ep1_sword_indian_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -936,9 +993,7 @@ props_left = {
 			male = {
 				1 = ep1_sword_byzantine_01
 			}
-			female = {
-				1 = ep1_sword_byzantine_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -947,9 +1002,7 @@ props_left = {
 			male = {
 				1 = ep1_sword_steppe_01
 			}
-			female = {
-				1 = ep1_sword_steppe_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -958,9 +1011,7 @@ props_left = {
 			male = {
 				1 = ep1_sword_african_01
 			}
-			female = {
-				1 = ep1_sword_african_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -969,9 +1020,7 @@ props_left = {
 			male = {
 				1 = ep1_sword_northern_01
 			}
-			female = {
-				1 = ep1_sword_northern_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -980,9 +1029,7 @@ props_left = {
 			male = {
 				1 = ep1_axe_mena_01
 			}
-			female = {
-				1 = ep1_axe_mena_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -991,9 +1038,7 @@ props_left = {
 			male = {
 				1 = ep1_axe_01
 			}
-			female = {
-				1 = ep1_axe_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1002,9 +1047,7 @@ props_left = {
 			male = {
 				1 = ep1_axe_northern_pagan_01
 			}
-			female = {
-				1 = ep1_axe_northern_pagan_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1013,9 +1056,7 @@ props_left = {
 			male = {
 				1 = ep1_axe_indian_01
 			}
-			female = {
-				1 = ep1_axe_indian_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1024,9 +1065,7 @@ props_left = {
 			male = {
 				1 = ep1_axe_african_01
 			}
-			female = {
-				1 = ep1_axe_african_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1035,9 +1074,7 @@ props_left = {
 			male = {
 				1 = ep1_axe_steppe_01
 			}
-			female = {
-				1 = ep1_axe_steppe_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1046,9 +1083,7 @@ props_left = {
 			male = {
 				1 = ep1_axe_mediterranean_01
 			}
-			female = {
-				1 = ep1_axe_mediterranean_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1057,9 +1092,7 @@ props_left = {
 			male = {
 				1 = ep1_mace_african_01
 			}
-			female = {
-				1 = ep1_mace_african_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1068,9 +1101,7 @@ props_left = {
 			male = {
 				1 = ep1_mace_western_01
 			}
-			female = {
-				1 = ep1_mace_western_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1079,9 +1110,7 @@ props_left = {
 			male = {
 				1 = ep1_mace_steppe_01
 			}
-			female = {
-				1 = ep1_mace_steppe_01	
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1090,9 +1119,7 @@ props_left = {
 			male = {
 				1 = ep1_mace_byzantine_01
 			}
-			female = {
-				1 = ep1_mace_byzantine_01	
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1101,9 +1128,7 @@ props_left = {
 			male = {
 				1 = ep1_mace_mena_01
 			}
-			female = {
-				1 = ep1_mace_mena_01
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1112,9 +1137,7 @@ props_left = {
 			male = {
 				1 = ep1_mace_indian_01
 			}
-			female = {
-				1 = ep1_mace_indian_01
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1123,9 +1146,7 @@ props_left = {
 			male = {
 				1 = ep1_hammer_mena_01
 			}
-			female = {
-				1 = ep1_hammer_mena_01
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1134,9 +1155,7 @@ props_left = {
 			male = {
 				1 = ep1_hammer_western_01
 			}
-			female = {
-				1 = ep1_hammer_western_01
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1146,9 +1165,7 @@ props_left = {
 			male = {
 				1 = ep1_artifact_axe_equipped_01
 			}
-			female = {
-				1 = ep1_artifact_axe_equipped_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1157,9 +1174,7 @@ props_left = {
 			male = {
 				1 = ep1_artifact_mace_equipped_01
 			}
-			female = {
-				1 = ep1_artifact_mace_equipped_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1168,9 +1183,7 @@ props_left = {
 			male = {
 				1 = ep1_artifact_sword_equipped_01
 			}
-			female = {
-				1 = ep1_artifact_sword_equipped_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1179,9 +1192,7 @@ props_left = {
 			male = {
 				1 = ep1_artifact_dagger_equipped_01
 			}
-			female = {
-				1 = ep1_artifact_dagger_equipped_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1190,9 +1201,7 @@ props_left = {
 			male = {
 				1 = ep1_artifact_spear_equipped_01
 			}
-			female = {
-				1 = ep1_artifact_spear_equipped_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1201,9 +1210,7 @@ props_left = {
 			male = {
 				1 = ep1_artifact_hammer_equipped_01
 			}
-			female = {
-				1 = ep1_artifact_hammer_equipped_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1212,9 +1219,7 @@ props_left = {
 			male = {
 				1 = fp2_iberian_muslim_dagger_01
 			}
-			female = {
-				1 = fp2_iberian_muslim_dagger_01		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1223,9 +1228,7 @@ props_left = {
 			male = {
 				1 = fp2_iberian_muslim_sword_01
 			}
-			female = {
-				1 = fp2_iberian_muslim_sword_01	
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1234,9 +1237,7 @@ props_left = {
 			male = {
 				1 = fp2_iberian_christian_sword_01
 			}
-			female = {
-				1 = fp2_iberian_christian_sword_01	
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1245,9 +1246,7 @@ props_left = {
 			male = {
 				1 = bp1_tankard
 			}
-			female = {
-				1 = bp1_tankard
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1256,9 +1255,7 @@ props_left = {
 			male = {
 				1 = bp1_goblet
 			}
-			female = {
-				1 = bp1_goblet
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1267,9 +1264,7 @@ props_left = {
 			male = {
 				1 = fp2_steward_chess_piece_01_right_hand
 			}
-			female = {
-				1 = fp2_steward_chess_piece_01_right_hand		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1278,9 +1273,7 @@ props_left = {
 			male = {
 				1 = ep2_crossbow_01_right_hand
 			}
-			female = {
-				1 = ep2_crossbow_01_right_hand		
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1289,138 +1282,206 @@ props_left = {
 			male = {
 				1 = ep2_hunting_knife_01_right_hand
 			}
-			female = {
-				1 = ep2_hunting_knife_01_right_hand		
-			}
-			boy = male
-			girl = female
-		}	
-		ep2_western_longsword_01_right = {
-			index = 54
-			male = {
-				1 = ep2_western_longsword_01_a
-				1 = ep2_western_longsword_01_b
-			}
-			female = {
-				1 = ep2_western_longsword_01_a	
-				1 = ep2_western_longsword_01_b			
-			}
+			female = male
 			boy = male
 			girl = female
 		}	
 		# Arrows
 		ep2_arrow_right = {
-			index = 55
+			index = 54
 			male = {
 				1 = ep2_arrow_a_right_hand
 				1 = ep2_arrow_b_right_hand
 			}
-			female = {
-				1 = ep2_arrow_a_right_hand	
-				1 = ep2_arrow_b_right_hand
-			}
+			female = male
 			boy = male
 			girl = female
 		}	
 		ep2_arrowBlunt_right = {
+			index = 55
+			male = {
+				1 = ep2_arrowBlunt_a_right_hand
+				1 = ep2_arrowBlunt_b_right_hand	
+			}
+			female = male
+			boy = male
+			girl = female
+		}
+		ep2_hunting_sword_right = {
 			index = 56
 			male = {
-				1 = ep2_arrowBlunt_a_right_hand
-				1 = ep2_arrowBlunt_b_right_hand	
-			}
-			female = {
-				1 = ep2_arrowBlunt_a_right_hand
-				1 = ep2_arrowBlunt_b_right_hand	
-			}
-			boy = male
-			girl = female
-		}	
-		# Lance
-		ep2_lance_01_a_right = {
-			index = 57
-			male = {
-				1 = ep2_lance_01_a_right_hand
-			}
-			female = {
-				1 = ep2_lance_01_a_right_hand
-			}
-			boy = male
-			girl = female
-		}	
-		ep2_hunting_sword_right = {
-			index = 58
-			male = {
 				1 = ep2_hunting_sword_01_right_hand
 			}
-			female = {
-				1 = ep2_hunting_sword_01_right_hand
-			}
+			female = male
 			boy = male
 			girl = female
 		}
 		ep2_boar_spear_right = {
-			index = 59
+			index = 57
 			male = {
 				1 = ep2_boar_spear_01_a_right_hand
 				1 = ep2_boar_spear_01_b_right_hand
 			}
-			female = {
-				1 = ep2_boar_spear_01_a_right_hand
-				1 = ep2_boar_spear_01_b_right_hand
-			}
-			boy = male
-			girl = female
-		}
-		ep2_arrow_right = {
-			index = 60
-			male = {
-				1 = ep2_arrow_a_right_hand
-				1 = ep2_arrow_b_right_hand
-			}
-			female = {
-				1 = ep2_arrow_a_right_hand
-				1 = ep2_arrow_b_right_hand				
-			}
-			boy = male
-			girl = female
-		}
-		ep2_arrowBlunt_right = {
-			index = 61
-			male = {
-				1 = ep2_arrowBlunt_a_right_hand
-				1 = ep2_arrowBlunt_b_right_hand
-			}
-			female = {
-				1 = ep2_arrowBlunt_a_right_hand
-				1 = ep2_arrowBlunt_b_right_hand
-			}
+			female = male
 			boy = male
 			girl = female
 		}
 		ep2_lance_01_right = {
-			index = 62
+			index = 58
 			male = {
 				1 = ep2_lance_01_a_right_hand
 				1 = ep2_lance_01_b_right_hand
 				1 = ep2_lance_01_c_right_hand
 			}
+			female = male
+			boy = male
+			girl = female
+		}
+		ep2_western_longsword_01_right = {
+			index = 59
+			male = {
+				1 = ep2_western_longsword_01_a
+				1 = ep2_western_longsword_01_b
+			}
+			female = male
+			boy = male
+			girl = female
+		}	
+		# BP2
+		bp2_medieval_football = {
+			index = 60
+			male = {
+				1 = bp2_medieval_football_01_a
+			}
+			female = male
+			boy = male
+			girl = female
+		}
+		bp2_wooden_stick_horse = {
+			index = 61
+			male = {
+				1 = bp2_wooden_stick_horse_01_a
+				1 = bp2_wooden_stick_horse_01_b
+			}
+			female = male
+			boy = male
+			girl = female
+		}
+		bp2_wooden_longsword = {
+			index = 62
+			male = {
+				1 = bp2_wooden_longsword_01_a
+			}
+			female = male
+			boy = male
+			girl = female
+		}
+		bp2_wooden_shortsword = {
+			index = 63
+			male = {
+				1 = bp2_wooden_shortsword_01_a
+			}
+			female = male
+			boy = male
+			girl = female
+		}
+		bp2_medieval_doll = {
+			index = 64
+			male = {
+				1 = bp2_medieval_doll_01_a
+			}
+			female = male
+			boy = male
+			girl = female
+		}
+		bp2_wooden_sword = {
+			index = 65
+			male = {
+				1 = bp2_wooden_shortsword_01_a
+				1 = bp2_wooden_longsword_01_a
+			}
+			female = male
+			boy = male
+			girl = female
+		}
+		bp2_reading_book_right = {
+			index = 66
+			male = {
+				1 = bp2_reading_book_01_a_right
+			}
+			female = male
+			boy = male
+			girl = female
+		}
+		fp3_artifact_sword_equipped_01 = {
+			index = 67
+			male = {
+				1 = fp3_artifact_sword_equipped_01
+			}
 			female = {
-				1 = ep2_lance_01_a_right_hand
-				1 = ep2_lance_01_b_right_hand
-				1 = ep2_lance_01_c_right_hand
+				1 = fp3_artifact_sword_equipped_01	
 			}
 			boy = male
 			girl = female
 		}
-		ep2_falcon_peregrine = {
-			index = 63
+		afr_marshal_sword = {
+			index = 68
 			male = {
-				1 = ep2_falcon_peregrine_01
+				1 = afr_marshal_sword_01
 			}
-			
 			female = {
-				1 = ep2_falcon_peregrine_01
+				1 = afr_marshal_sword_01
 			}
+			boy = male
+			girl = female
+		}
+		afr_spymaster_dagger = {
+			index = 69
+			male = {
+				1 = afr_spymaster_dagger_01
+			}
+			female = {
+				1 = afr_spymaster_dagger_01
+			}
+			boy = male
+			girl = female
+		}
+
+		#CE1
+		fp4_qanun = {
+			index = 70
+			male = {
+				1 = fp4_qanun_01_a
+			}
+			female = male
+			boy = male
+			girl = female
+		}
+		fp4_quill = {
+			index = 71
+			male = {
+				1 = fp4_tool_quill_01_right
+			}
+			female = male
+			boy = male
+			girl = female
+		}
+		ep2_northern_mace = {
+			index = 72
+			male = {
+				1 = ep2_northern_mace_01_a
+				1 = ep2_northern_mace_01_b
+			}
+			female = male
+			boy = male
+			girl = female
+		}
+		fp4_bronzepestle = {
+			index = 73
+			male = {
+				1 = fp4_bronzepestle_01_a
+			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1437,22 +1498,16 @@ props_left = {
 			index = 0
 			male = {
 			}
-			female = {
-			}
-			boy = {
-			}
-			girl = {
-			}
+			female = male
+			boy = male
+			girl = female
 		}
 		ep2_falcon_peregrine = {
 			index = 1
 			male = {
 				1 = ep2_falcon_peregrine_01
 			}
-			
-			female = {
-				1 = ep2_falcon_peregrine_01
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1466,14 +1521,7 @@ props_left = {
 				1 = ep2_horse_03_idle
 				1 = ep2_horse_03_alt_idle
 			}
-			female = {
-				1 = ep2_horse_01_idle
-				1 = ep2_horse_01_alt_idle
-				1 = ep2_horse_02_idle
-				1 = ep2_horse_02_alt_idle
-				1 = ep2_horse_03_idle
-				1 = ep2_horse_03_alt_idle
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1487,14 +1535,7 @@ props_left = {
 				1 = ep2_horse_03_walk
 				1 = ep2_horse_03_alt_walk
 			}
-			female = {
-				1 = ep2_horse_01_walk
-				1 = ep2_horse_01_alt_walk
-				1 = ep2_horse_02_walk
-				1 = ep2_horse_02_alt_walk
-				1 = ep2_horse_03_walk
-				1 = ep2_horse_03_alt_walk
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1508,14 +1549,7 @@ props_left = {
 				1 = ep2_horse_03_victory
 				1 = ep2_horse_03_alt_victory
 			}
-			female = {
-				1 = ep2_horse_01_victory
-				1 = ep2_horse_01_alt_victory
-				1 = ep2_horse_02_victory
-				1 = ep2_horse_02_alt_victory
-				1 = ep2_horse_03_victory
-				1 = ep2_horse_03_alt_victory
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1529,14 +1563,7 @@ props_left = {
 				1 = ep2_horse_03_loss
 				1 = ep2_horse_03_alt_loss
 			}
-			female = {
-				1 = ep2_horse_01_loss
-				1 = ep2_horse_01_alt_loss
-				1 = ep2_horse_02_loss
-				1 = ep2_horse_02_alt_loss
-				1 = ep2_horse_03_loss
-				1 = ep2_horse_03_alt_loss
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1550,14 +1577,7 @@ props_left = {
 				1 = ep2_horse_03_tiltedl
 				1 = ep2_horse_03_alt_tiltedl
 			}
-			female = {
-				1 = ep2_horse_01_tiltedl
-				1 = ep2_horse_01_alt_tiltedl
-				1 = ep2_horse_02_tiltedl
-				1 = ep2_horse_02_alt_tiltedl
-				1 = ep2_horse_03_tiltedl
-				1 = ep2_horse_03_alt_tiltedl
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1571,14 +1591,7 @@ props_left = {
 				1 = ep2_horse_03_cgallop
 				1 = ep2_horse_03_alt_cgallop
 			}
-			female = {
-				1 = ep2_horse_01_cgallop
-				1 = ep2_horse_01_alt_cgallop
-				1 = ep2_horse_02_cgallop
-				1 = ep2_horse_02_alt_cgallop
-				1 = ep2_horse_03_cgallop
-				1 = ep2_horse_03_alt_cgallop
-			}
+			female = male
 			boy = male
 			girl = female
 		}
@@ -1592,14 +1605,25 @@ props_left = {
 				1 = ep2_horse_03_cgallopl
 				1 = ep2_horse_03_alt_cgallopl
 			}
-			female = {
-				1 = ep2_horse_01_cgallopl
-				1 = ep2_horse_01_alt_cgallopl
-				1 = ep2_horse_02_cgallopl
-				1 = ep2_horse_02_alt_cgallopl
-				1 = ep2_horse_03_cgallopl
-				1 = ep2_horse_03_alt_cgallopl
+			female = male
+			boy = male
+			girl = female
+		}
+		fp4_paged_book = {
+			index = 9
+			male = {
+				1 = fp4_paged_book_01_a
 			}
+			female = male
+			boy = male
+			girl = female
+		}
+		fp4_chifonie = {
+			index = 10
+			male = {
+				1 = fp4_chifonie_01_a
+			}
+			female = male
 			boy = male
 			girl = female
 		}

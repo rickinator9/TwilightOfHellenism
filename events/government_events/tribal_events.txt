@@ -795,26 +795,6 @@ tribal.1006 = {
 			skill = learning
 			target = scope:liege_to_challenge
 			10 = {
-				# ATHA - scholar/wise nickname modifiers.
-				modifier = {
-					has_character_modifier = nick_the_scholar_modifier
-					factor = 1.25
-				}
-				modifier = {
-					has_character_modifier = nick_the_wise_modifier
-					factor = 1.1
-				}
-
-				# ATHA - poet nickname effects.
-				modifier = {
-					factor = 1.25
-					has_character_modifier = nick_the_poet_good_modifier
-				}
-				modifier = {
-					factor = 0.75
-					has_character_modifier = nick_the_poet_bad_modifier
-				}
-
 				desc = tribal.1006.a_success
 				send_interface_toast = {
 					title = tribal.1006.a_success
@@ -826,8 +806,6 @@ tribal.1006 = {
 				scope:liege_to_challenge = {
 					trigger_event = tribal.1007
 				}
-
-				change_nickname_weight_effect = { NICKNAME = nick_the_poet_good CHANGE = nickname_weight_medium_increase }
 			}
 			10 = {
 				desc = tribal.1006.a_failure
@@ -835,27 +813,6 @@ tribal.1006 = {
 					value = scope:duel_value
 					multiplier = -2
 				}
-
-				# ATHA - scholar/wise nickname modifiers.
-				modifier = {
-					scope:liege_to_challenge = { has_character_modifier = nick_the_scholar_modifier }
-					factor = 1.25
-				}
-				modifier = {
-					scope:liege_to_challenge = { has_character_modifier = nick_the_wise_modifier }
-					factor = 1.1
-				}
-
-				# ATHA - poet nickname effects.
-				modifier = {
-					factor = 1.25
-					scope:liege_to_challenge = { has_character_modifier = nick_the_poet_good_modifier }
-				}
-				modifier = {
-					factor = 0.75
-					scope:liege_to_challenge = { has_character_modifier = nick_the_poet_bad_modifier }
-				}
-
 				send_interface_toast = {
 					title = tribal.1006.a_failure
 					left_icon = scope:liege_to_challenge
@@ -864,8 +821,6 @@ tribal.1006 = {
 				scope:liege_to_challenge = {
 					trigger_event = tribal.1008
 				}
-
-				change_nickname_weight_effect = { NICKNAME = nick_the_poet_bad CHANGE = nickname_weight_medium_increase }
 			}
 		}
 	}
@@ -876,9 +831,6 @@ tribal.1006 = {
 		scope:liege_to_challenge = {
 			trigger_event = tribal.1010
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_poet_good CHANGE = nickname_weight_medium_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_poet_bad CHANGE = nickname_weight_medium_decrease }
 	}
 }
 

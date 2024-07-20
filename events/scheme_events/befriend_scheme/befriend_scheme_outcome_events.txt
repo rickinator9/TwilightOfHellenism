@@ -291,8 +291,6 @@ befriend_outcome.0002 = { #by Mathilda Bjarnehed and Linnéa Thimrén
 			shy = medium_stress_impact_gain
 			callous = medium_stress_impact_gain
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_increase }
 	}
 
 	#Success: Okay, I like you more
@@ -388,8 +386,6 @@ befriend_outcome.0002 = { #by Mathilda Bjarnehed and Linnéa Thimrén
 				compassionate = minor_stress_impact_gain
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_decrease }
 	}
 
 	#Failure: be mean
@@ -419,9 +415,6 @@ befriend_outcome.0002 = { #by Mathilda Bjarnehed and Linnéa Thimrén
 				compassionate = medium_stress_impact_gain
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_decrease }
 	}
 }
 
@@ -2624,7 +2617,6 @@ befriend_outcome.8007 = {
 				has_trait = greedy
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 
 	option = { # Hook
@@ -2646,7 +2638,6 @@ befriend_outcome.8007 = {
 				has_trait = shy
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 	}
 
 	option = { # Shame
@@ -2664,7 +2655,6 @@ befriend_outcome.8007 = {
 				has_trait = honest
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_decrease }
 	}
 	after = {
 		scope:scheme = {

@@ -295,8 +295,6 @@ yearly.1001 = { #by Mathilda Bjarnehed
 			ai_greed_target_modifier = { VALUE = 50 }
 			ai_boldness_target_modifier = { VALUE = 50 }
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_decrease }
 	}
 
 	#Out them
@@ -395,8 +393,6 @@ yearly.1001 = { #by Mathilda Bjarnehed
 			ai_zeal_target_modifier = { VALUE = 200 }
 			ai_honor_target_modifier = { VALUE = 100 }
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_increase }
 	}
 	
 	#Resist
@@ -432,8 +428,6 @@ yearly.1001 = { #by Mathilda Bjarnehed
 			ai_boldness_target_modifier = { VALUE = -50 }
 			ai_compassion_target_modifier = { VALUE = 100 }
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_increase }
 	}
 }
 
@@ -667,7 +661,6 @@ scripted_effect yearly_1010_imprison_target_effect = {
 			TARGET = scope:target_prisoner
 			IMPRISONER = root
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 	}
 }
 
@@ -1451,10 +1444,6 @@ yearly.1010 = { #by Mathilda Bjarnehed
 				ai_boldness = tiny_chance_impact_positive_ai_value #nax 50
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_just CHANGE = nickname_weight_small_decrease }
 	}
 
 	#Kill
@@ -1480,10 +1469,6 @@ yearly.1010 = { #by Mathilda Bjarnehed
 				ai_boldness = tiny_chance_impact_positive_ai_value #nax 50
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_flayer CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_medium_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_just CHANGE = nickname_weight_small_decrease }
 	}
 	
 	#Just save abductee
@@ -1510,9 +1495,6 @@ yearly.1010 = { #by Mathilda Bjarnehed
 				ai_compassion = tiny_chance_impact_positive_ai_value #max 50
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_just CHANGE = nickname_weight_small_increase }
 	}
 
 	#Let them go
@@ -1540,11 +1522,6 @@ yearly.1010 = { #by Mathilda Bjarnehed
 				add = 50
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_flayer CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_just CHANGE = nickname_weight_small_increase }
 	}
 }
 
@@ -1579,8 +1556,6 @@ yearly.1011 = { #by Mathilda Bjarnehed
 				ai_compassion = medium_chance_impact_positive_ai_value #max 200
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_increase }
 	}
 
 	#Imprison them
@@ -1613,9 +1588,6 @@ yearly.1011 = { #by Mathilda Bjarnehed
 				has_trait = paranoid
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_just CHANGE = nickname_weight_small_decrease }
 	}
 	
 	#Kill them
@@ -1648,9 +1620,6 @@ yearly.1011 = { #by Mathilda Bjarnehed
 				has_trait = paranoid
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_just CHANGE = nickname_weight_medium_decrease }
 	}
 }
 
@@ -2490,10 +2459,6 @@ yearly.1020 = { #by Mathilda Bjarnehed
 				ai_greed = medium_chance_impact_positive_ai_value #Max +200
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_hawk CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_just CHANGE = nickname_weight_small_decrease }
 	}
 
 	#Agree, but warn the enemy in secret
@@ -2506,8 +2471,6 @@ yearly.1020 = { #by Mathilda Bjarnehed
 				gold = major_gold_value
 			}
 		}
-
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 
 		show_as_tooltip = {
 			reverse_add_opinion = {
@@ -2597,9 +2560,6 @@ yearly.1020 = { #by Mathilda Bjarnehed
 				ai_compassion = medium_chance_impact_positive_ai_value #Max +200
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_hawk CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_just CHANGE = nickname_weight_small_increase }
 	}
 	
 	#I want nothing to do with this
@@ -2612,8 +2572,6 @@ yearly.1020 = { #by Mathilda Bjarnehed
 			opinion = -10
 		}
 
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
-
 		stress_impact = {
 			ambitious = medium_stress_impact_gain
 		}
@@ -2625,10 +2583,6 @@ yearly.1020 = { #by Mathilda Bjarnehed
 				ai_honor = tiny_chance_impact_positive_ai_value #max +50
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_hawk CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_just CHANGE = nickname_weight_medium_increase }
 	}
 }
 
@@ -2687,8 +2641,6 @@ yearly.1021 = { #by Mathilda Bjarnehed
 			modifier = refusal_opinion
 			opinion = -15
 		}
-
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 
 		ai_chance = {
 			base = 30
@@ -2803,17 +2755,6 @@ scripted_trigger yearly_1030_could_get_deviant_secret_trigger = {
 	trait_is_shunned_or_criminal_in_my_or_lieges_faith_trigger = { TRAIT = deviant GENDER_CHARACTER = scope:shunned_or_criminal_check }
 }
 
-scripted_trigger yearly_1030_could_get_corrupt_secret_trigger = {
-	NOR = {
-		has_trait = corrupt
-		any_secret = { secret_type = secret_corrupt }
-		has_trait = content
-		has_trait = temperate
-	}
-	is_adult = yes
-	save_temporary_scope_as = shunned_or_criminal_check
-	trait_is_shunned_or_criminal_in_my_or_lieges_faith_trigger = { TRAIT = corrupt GENDER_CHARACTER = scope:shunned_or_criminal_check }
-}
 
 scripted_trigger yearly_1030_could_get_homosexual_secret_trigger = {
 	NOR = {
@@ -2874,7 +2815,6 @@ scripted_trigger yearly_1030_suitable_target_trigger = {
 		yearly_1030_could_get_cannibal_secret_trigger = yes
 		yearly_1030_could_get_non_believer_secret_trigger = yes
 		yearly_1030_could_get_witch_secret_trigger = yes
-		yearly_1030_could_get_corrupt_secret_trigger = yes
 	}
 	NOT = {
 		root = {
@@ -3019,10 +2959,6 @@ yearly.1030 = { #by Mathilda Bjarnehed
 							trigger = { yearly_1030_could_get_witch_secret_trigger = yes }
 							give_witch_secret_or_trait_effect = yes #Should always give secret based on scripted trigger
 						}
-						2 = {
-							trigger = { yearly_1030_could_get_corrupt_secret_trigger = yes }
-							give_corrupt_secret_or_trait_effect = yes #Should always give secret based on scripted trigger
-						}
 					}
 				}
 
@@ -3040,7 +2976,6 @@ yearly.1030 = { #by Mathilda Bjarnehed
 					give_homosexual_secret_or_nothing_effect = yes
 					give_deviant_secret_or_trait_effect = yes
 					give_non_believer_secret_effect = yes
-					give_corrupt_secret_or_trait_effect = yes
 					#Now this is someone I'd like to meet
 				}
 				
@@ -3089,8 +3024,6 @@ yearly.1030 = { #by Mathilda Bjarnehed
 		remove_hook = {
 			target = scope:hooked
 		}
-
-		change_city_state_corruption = { AMOUNT_ARG = corruption_miniscule_decrease }
 
 		reverse_add_opinion = {
 			target = scope:hooked
@@ -3143,9 +3076,6 @@ yearly.1030 = { #by Mathilda Bjarnehed
 				add = -85
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_overpromiser CHANGE = nickname_weight_small_decrease }
 	}
 
 	#You will tell me, or else!
@@ -3158,8 +3088,6 @@ yearly.1030 = { #by Mathilda Bjarnehed
 			modifier = cruelty_opinion
 			opinion = -30
 		}
-
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 
 		random = {
 			chance = 33
@@ -3222,11 +3150,6 @@ yearly.1030 = { #by Mathilda Bjarnehed
 				add = -300
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_hawk CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_just CHANGE = nickname_weight_small_decrease }
 	}
 	
 	#I am not interested
@@ -3264,9 +3187,6 @@ yearly.1030 = { #by Mathilda Bjarnehed
 				add = -85
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_increase }
 	}
 }	
 
@@ -3890,8 +3810,6 @@ yearly.1041 = { #by Mathilda Bjarnehed
 			else_if = {
 				limit = { scope:secret_type = flag:secret }
 				scope:secret = { reveal_to = root }
-
-				change_city_state_corruption = { AMOUNT_ARG = corruption_miniscule_increase }
 			}
 		}
 	}
@@ -4518,8 +4436,6 @@ yearly.1050 = { #by Mathilda Bjarnehed
 				add = 50
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_bold CHANGE = nickname_weight_small_increase }
 	}
 }
 
@@ -5533,8 +5449,6 @@ yearly.1060 = {
 				add = -80
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_decrease }
 	}
 
 	#How dare you!
@@ -6582,8 +6496,6 @@ yearly.1080 = { #by Mathilda Bjarnehed
 				else = {
 					trigger_event = yearly.1086 # Soothe
 				}
-
-				change_nickname_weight_effect = { NICKNAME = nick_the_mad CHANGE = nickname_weight_small_increase }
 			}
 		}
 
@@ -7103,8 +7015,6 @@ yearly.1084 = { #by Mathilda Bjarnehed
 			IMPRISONER = root
 		}
 
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
-
 		ai_chance = {
 			base = 100
 
@@ -7121,8 +7031,6 @@ yearly.1084 = { #by Mathilda Bjarnehed
 		name = yearly.1084.b
 
 		yearly_1081_reveal_guilt_effect = yes
-
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 		
 		ai_chance = {
 			base = 50
@@ -7202,8 +7110,6 @@ yearly.1085 = { #by Mathilda Bjarnehed
 
 		add_prestige = minor_prestige_loss
 
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
-
 		ai_chance = {
 			base = 50
 
@@ -7221,8 +7127,6 @@ yearly.1085 = { #by Mathilda Bjarnehed
 			TARGET = scope:suspicious
 			IMPRISONER = root
 		}
-
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 
 		ai_chance = {
 			base = 0
@@ -7611,8 +7515,6 @@ yearly.1090 = { #by Mathilda Bjarnehed
 					min = -90
 				}
 			}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_increase }
 	}
 
 	# All is welcome here!
@@ -7706,11 +7608,6 @@ yearly.1090 = { #by Mathilda Bjarnehed
 				add = -100
 				}
 			}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_decrease }
 	}
 	
 	# I have no room for you
@@ -7757,9 +7654,5 @@ yearly.1090 = { #by Mathilda Bjarnehed
 				add = 200
 				}
 			}
-			
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_increase }
 	}
 }

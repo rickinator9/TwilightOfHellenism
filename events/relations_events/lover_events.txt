@@ -445,7 +445,7 @@ lover.0002 = {
 	}
 
 	immediate = {
-		remove_relation_lover = scope:first_lover
+		remove_relation_lover = scope:first_lover 
 	}
 
 	option = { #But why...
@@ -521,6 +521,10 @@ lover.0002 = {
 				has_trait = forgiving
 				has_trait = compassionate
 			}
+			OR = {
+				can_set_relation_rival_trigger = { CHARACTER = scope:first_lover }
+				can_set_relation_nemesis_trigger = { CHARACTER = scope:first_lover }
+			}
 		}
 
 		show_as_tooltip = {
@@ -532,7 +536,7 @@ lover.0002 = {
 		}
 
 		hidden_effect = {
-			#The notification event actually removes the relation
+			#The notification event actually adds the relation
 			scope:first_lover = {
 				trigger_event = lover.0005
 			}
@@ -555,16 +559,17 @@ lover.0005 = {
 
 	trigger = {
 		NOT = { has_relation_lover = scope:lover }
+		OR = {
+			can_set_relation_rival_trigger = { CHARACTER = scope:lover }
+			can_set_relation_nemesis_trigger = { CHARACTER = scope:lover }
+		}
 	}
 	
 	immediate = {
 		play_music_cue = mx_cue_combat_2
 		if = {
 			limit = {		
-				NOT = {
-					has_relation_rival = scope:lover
-					has_relation_nemesis = scope:lover
-				}
+				can_set_relation_rival_trigger = { CHARACTER = scope:lover }
 			}
 			set_relation_rival = {
 				target = scope:lover
@@ -573,7 +578,7 @@ lover.0005 = {
 		}
 		else_if = {
 			limit = {
-				has_relation_rival = scope:lover
+				can_set_relation_nemesis_trigger = { CHARACTER = scope:lover }
 			}
 			set_relation_nemesis = {
 				target = scope:lover
@@ -1122,7 +1127,7 @@ lover.0104 = {
 		remove_relation_lover = scope:war_lover
 		random_character_war = {
 			limit = {
-			casus_belli = {
+				casus_belli = {
 					primary_attacker = root
 					primary_defender = scope:war_lover
 					any_target_title = { count >= 1 }
@@ -1592,30 +1597,22 @@ scripted_effect lover_0300_exclusivity_denied_effect = {
 			target = scope:lover
 			opinion = -15
 		}
-	}
-	else = {
 		hidden_effect = {
-			reverse_add_opinion = {
+			add_opinion = {
 				modifier = refusal_opinion
 				target = scope:lover
 				opinion = -15
 			}
 		}
 	}
-
-	# Proposing_lover's reaction
-	if = {
-		limit = { root = scope:lover }
-
+	else = { # Proposing_lover's reaction
 		reverse_add_opinion = {
 			modifier = hurt_opinion
 			target = scope:proposing_lover
 			opinion = -20
 		}
-	}
-	else = {
 		hidden_effect = {
-			reverse_add_opinion = {
+			add_opinion = {
 				modifier = hurt_opinion
 				target = scope:proposing_lover
 				opinion = -20
@@ -8200,6 +8197,7 @@ lover.8102 = {
 		}
 		add_courtier = scope:brothel_worker
 		stress_impact = {
+			eccentric = minor_stress_impact_loss
 			deceitful = medium_stress_impact_gain
 		}
 		ai_chance = {

@@ -272,6 +272,15 @@ start_hunt_mystical_animal_story_cycle_effect = {
 
 #Effect to end the story and apply everything - You got the animal!
 end_hunt_mystical_animal_story_cycle_effect = {
+	create_legend_seed = {
+		type = heroic
+		quality = famed
+		chronicle = beast_slayer
+		properties = {
+			beast = scope:activity.var:animal_type
+			location = root.location
+		}
+	}
 	add_prestige = major_prestige_gain
 	set_permanent_nickname_effect = { NICKNAME = nick_the_hunter }
 	add_trait_xp = {
@@ -585,6 +594,10 @@ hunt_activity_dangerous_game_effect = {
 			}
 			set_variable = { name = animal_type value = flag:bear years = 3 }
 		}
+	}
+	if = {
+		limit = { NOT = { exists = var:animal_type } }
+		set_variable = { name = animal_type value = flag:wolf years = 3 }
 	}
 }
 
@@ -1034,6 +1047,18 @@ hunt_individual_guest_awards_effect = {
 		}
 	}
 	accolades_activity_complete_hunt_glory_effect = yes
+	# LEGITIMACY GAIN FOR ACTIVITY PARTICIPATION - HUNT
+	if = {
+		limit = {
+			scope:activity = { # Special gain for Legendary Hunt
+				has_activity_option = { category = special_type option = hunt_type_legendary }
+			}
+		}
+		legendary_hunt_participation_legitimacy_effect = yes
+	}
+	else = {
+		standard_activity_participation_legitimacy_effect = yes
+	}
 }
 
 hunt_animal_wound_effect = {
@@ -3261,8 +3286,22 @@ hunt_murder_add_and_reveal_attempted_murder = {
 
 hunt_gift_trophy_opinion_effect = {
 	if = {
-		limit = { hunt_dharmic_pacificist_trigger = yes }
+		limit = {
+			hunt_dharmic_pacificist_trigger = yes
+			NOT = { this = scope:host }
+		}
 		add_opinion = {
+			target = scope:host
+			modifier = hunt_dharmic_mercy_opinion
+			opinion = -10
+		}
+	}
+	else_if = {
+		limit = {
+			hunt_dharmic_pacificist_trigger = yes
+			NOT = { $RECIPIENT$ = scope:host }
+		}
+		reverse_add_opinion = {
 			target = scope:host
 			modifier = hunt_dharmic_mercy_opinion
 			opinion = -10

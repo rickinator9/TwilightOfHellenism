@@ -3248,7 +3248,7 @@ bp1_yearly.5706 = {
 		has_bp1_dlc_trigger = yes
 
 		# Standard checks.
-		is_valid_for_narrow_yearly_events = yes
+		is_valid_for_narrow_yearly_events_adult = yes
 
 		# Should have a rival with a child
 		any_relation = {
@@ -4078,6 +4078,7 @@ bp1_yearly.5708 = {
 		any_relation = {
 			type = friend
 			is_available_ai_adult = yes
+			location = root.location
 			NOT = {
 				faith.religion = root.faith.religion
 			}
@@ -4090,6 +4091,7 @@ bp1_yearly.5708 = {
 			type = friend
 			limit = {
 				is_available_ai_adult = yes
+				location = root.location
 				NOT = {
 					faith.religion = root.faith.religion
 				}
@@ -6671,6 +6673,7 @@ bp1_yearly.5722 = {
 			type = nemesis
 			is_available_ai_adult = yes
 			top_liege = root.top_liege
+			has_trait = eccentric
 		}
 
 		#You have a cat

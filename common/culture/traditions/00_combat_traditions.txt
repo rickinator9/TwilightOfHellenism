@@ -1273,7 +1273,7 @@ tradition_quarrelsome = {
 		disloyal_trait_more_common = yes
 	}
 	character_modifier = {
-		monthly_county_control_change_factor = -0.4
+		monthly_county_control_growth_factor = -0.4
 		
 		ai_honor = -20
 		ai_war_chance = 0.5
@@ -1574,6 +1574,15 @@ tradition_stalwart_defenders = {
 				add = {
 					value = tradition_unfulfilled_criteria_penalty
 					desc = march_building_desc
+				}
+			}
+			if = {
+				limit = {
+					has_variable = defensive_traditionalist_discount
+				}
+				add = {
+					value = traditionalist_discount
+					desc = traditionalist_discount_desc
 				}
 			}
 			

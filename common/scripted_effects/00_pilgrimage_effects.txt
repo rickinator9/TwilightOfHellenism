@@ -189,7 +189,7 @@ pilgrimage_additional_reward_effect = {
 				else = {
 					add_trait_xp = {
 						trait = lifestyle_mystic
-						value = 5 #TODO_CD_EP2_FGK standardize TINY
+						value = 5
 					}
 				}
 			}
@@ -396,7 +396,7 @@ give_piety_reward_effect = {
 		## Experienced pilgrims may get more piety overall.
 		if = {
 			limit = { has_character_flag = should_get_trait_piety }
-			add = medium_piety_gain
+			add = minor_piety_gain
 		}
 		## Certain activity options may give you more piety also.
 		if = {
@@ -414,7 +414,7 @@ give_piety_reward_effect = {
 					}
 				}
 			}
-			add = medium_piety_gain
+			add = minor_piety_gain
 		}
 		else_if = {
 			limit = {
@@ -425,7 +425,7 @@ give_piety_reward_effect = {
 					}
 				}
 			}
-			add = major_piety_gain
+			add = medium_piety_gain
 		}
 	}
 }
@@ -961,6 +961,8 @@ give_pilgrimage_reward_effect = {
 	christian_saint_bone_tooltip_effect = yes
 	pilgrimage_additional_reward_effect = yes
 	remove_character_flag = should_get_trait_piety
+	# LEGITIMACY GAIN FOR STANDARD ACTIVITY PARTICIPATION - PILGRIMAGE
+	standard_activity_participation_legitimacy_effect = yes
 }
 
 #Stress loss when arriving at the holy site
@@ -1120,6 +1122,53 @@ resolve_pilgrimage_type_reward_effect = {
 			#Lousy piousness - 0-25
 			else = {
 				scope:host = { add_character_flag = low_worldly_reward }
+			}
+		}
+	}
+	if = {
+		limit = {
+			scope:host = {
+				has_trait_xp = {
+					trait = pilgrim
+					value >= 50
+				}
+				NOT = { has_character_flag = pilgrim_legend }
+				has_dlc_feature = legends
+			}
+		}
+		scope:host = {
+			random = {	
+				chance = { 
+					value = legend_seed_chance_low #15%
+					if = {
+						limit = {
+							has_trait_xp = {
+								trait = pilgrim
+								value >= 75
+							}
+						}
+						add = legend_seed_chance_medium #55% chance
+					}
+					else_if = {
+						limit = {
+							has_trait_xp = {
+								trait = pilgrim
+								value >= 60
+							}
+						}
+						add = legend_seed_chance_low #30% chance
+					}
+				}
+				add_character_flag = pilgrim_legend
+				create_legend_seed = {
+					type = holy
+					quality = famed
+					chronicle = saintly_deed
+					properties = {
+						ancestor = scope:host
+						religion = scope:host.religion
+					}
+				}
 			}
 		}
 	}

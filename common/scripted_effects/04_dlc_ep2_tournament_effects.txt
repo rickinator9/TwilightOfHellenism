@@ -4108,7 +4108,7 @@ tournament_contest_weapon_prize_effect = {
 		name = tournament_prize_weapon_name
 		creator = scope:host
 		description = placeholder # Will be regenerated in the post-creation effects
-		visuals = $TYPE$
+		visuals = $VISUALS$
 		type = $TYPE$
 		modifier = artifact_prowess_1_modifier
 		wealth = scope:wealth
@@ -5938,6 +5938,7 @@ disburse_xp_and_liege_prestige_effect = {
 				OR = {
 					exists = scope:melee_winner
 					exists = scope:joust_winner
+					exists = scope:horse_race_winner
 				}
 			}
 			add_trait_xp = {
@@ -5970,6 +5971,18 @@ disburse_xp_and_liege_prestige_effect = {
 						}
 						if = {
 							limit = { scope:joust_winner ?= this }
+							add = tournament_hastiludes_xp_gain_massive_value
+						}
+						else = { add = tournament_hastiludes_xp_gain_medium_value }
+					}
+					if = { # Horse Race
+						limit = {
+							scope:activity = {
+								any_guest_subset = { name = qualified phase = tournament_phase_horse_race this = root }
+							}	
+						}
+						if = {
+							limit = { scope:horse_race_winner ?= this }
 							add = tournament_hastiludes_xp_gain_massive_value
 						}
 						else = { add = tournament_hastiludes_xp_gain_medium_value }

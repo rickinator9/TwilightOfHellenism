@@ -1,7 +1,7 @@
 ﻿namespace = hold_court
 
-# Differences in namespace range down to the on-going CD civil war between whether a range starts at 0 or 1.
-# It starts at 001 and goes to 000, damn it, and anyone who says otherwise is a knave and a cur.
+# Differences in namespace range down to the ongoing CD civil war between whether a range starts at 0 or 1.
+## It starts at 001 and goes to 000, damn it, and anyone who says otherwise is a knave and a cur.
 
 ##################################################
 # # RANGES
@@ -265,6 +265,10 @@ hold_court.0021 = {
 
 	option = { 
 		name = hold_court.0021.a
+		# Guaranteed small grandeur reward, in addition to any from events
+		change_current_court_grandeur = minor_court_grandeur_gain
+		# LEGITIMACY GAIN FROM HOLDING COURT
+		add_legitimacy = minor_legitimacy_gain
 	}
 }
 
@@ -9517,7 +9521,7 @@ hold_court.5020 = {
 		roles = {
 			scope:peasant = {
 				group = petitioners_group
-				animation = sadness
+				animation = dancing_plague
 			}
 			scope:portrait_2 = {
 				group = petitioners_group
@@ -9533,23 +9537,10 @@ hold_court.5020 = {
 	}
 	
 	trigger = {
-		NOT = { has_character_flag = had_event_hold_court_5020 }
+		NOT = { has_character_flag = had_event_dancing_plague }
 		any_realm_province = {
 			hold_court_5020_province_trigger = yes
 		}
-	}
-
-	weight_multiplier = {
-		base = 0.25
-		modifier = {
-			add = 0.25
-			capital_province = {
-				geographical_region = world_europe
-				hold_court_5020_province_trigger = yes
-			}
-		}
-
-		# No court weighting, since no court would make this more likely.
 	}
 
 	immediate = {
@@ -9559,21 +9550,6 @@ hold_court.5020 = {
 		}
 		random_realm_province = {
 			limit = {
-				hold_court_5020_province_trigger = yes
-			}
-			alternative_limit = {
-				hold_court_5020_province_trigger = yes
-				county.title_province = {
-					geographical_region = ghw_region_saxony
-				}
-			}
-			alternative_limit = {
-				hold_court_5020_province_trigger = yes
-				county.title_province = {
-					geographical_region = world_europe
-				}
-			}
-			alternative_limit = {
 				hold_court_5020_province_trigger = yes
 			}
 			save_scope_as = province
@@ -9687,6 +9663,16 @@ hold_court.5020 = {
 			}
 		}
 
+		scope:province = {
+			random = {
+				chance = 25
+				create_epidemic_outbreak = {
+					type = ergotism
+					intensity = minor
+				}
+			}
+		}
+
 		stress_impact = {
 			zealous = medium_stress_impact_loss
 			cynical = medium_stress_impact_gain
@@ -9755,8 +9741,20 @@ hold_court.5020 = {
 				}
 			}
 		}
+
+		scope:province = {
+			random = {
+				chance = 90
+				create_epidemic_outbreak = {
+					type = ergotism
+					intensity = minor
+				}
+			}
+		}
+
 		stress_impact = {
 			lifestyle_reveler = major_stress_impact_loss
+			eccentric = major_stress_impact_loss
 		}
 	}
 	
@@ -10174,6 +10172,7 @@ scripted_trigger hold_court_6000_valid_inspector_trigger = {
 		has_trait = education_stewardship_2
 		has_trait = education_stewardship_3
 		has_trait = education_stewardship_4
+		has_trait = education_stewardship_5
 		has_trait = administrator
 	}
 	NOR = {
@@ -11761,6 +11760,7 @@ hold_court.6040 = {
 					scope:antiquarian = {
 						OR = {
 							has_trait = education_learning_4
+							has_trait = education_learning_5
 							has_trait = intellect_good_3
 							has_trait = scholar
 							learning > 20
@@ -11826,6 +11826,7 @@ hold_court.6040 = {
 					factor = 0
 					OR = {
 						has_trait = education_learning_4
+						has_trait = education_learning_5
 						has_trait = intellect_good_3
 						has_trait = scholar
 						learning > 20
@@ -12447,6 +12448,10 @@ hold_court.6060 = {
 							add = 1
 						}
 						if = {
+							limit = { has_trait = education_stewardship_5 }
+							add = 1.5
+						}
+						if = {
 							limit = { has_trait = avaricious }
 							add = 1
 						}
@@ -12539,6 +12544,12 @@ hold_court.6060 = {
 								scope:6060_rich = { has_trait = education_stewardship_4 }
 							}
 							add = -1
+						}
+						if = {
+							limit = {
+								scope:6060_rich = { has_trait = education_stewardship_5 }
+							}
+							add = -1.5
 						}
 						if = {
 							limit = {
@@ -12950,7 +12961,12 @@ hold_court.6070 = {
 			scope:6070_child = {
 				every_relation = {
 					type = guardian
-					remove_relation_ward = scope:6070_child
+					remove_guardian_effect = {
+						GUARDIAN = this
+						WARD = scope:6070_child
+						RETURN_WARD = no
+						HIDE_OPINION = no
+					}
 				}
 			}
 		}
@@ -13028,7 +13044,12 @@ hold_court.6070 = {
 			scope:6070_child = {
 				every_relation = {
 					type = guardian
-					remove_relation_ward = scope:6070_child
+					remove_guardian_effect = {
+						GUARDIAN = this
+						WARD = scope:6070_child
+						RETURN_WARD = no
+						HIDE_OPINION = no
+					}
 				}
 			}
 		}
@@ -13100,7 +13121,12 @@ hold_court.6070 = {
 			scope:6070_child = {
 				every_relation = {
 					type = guardian
-					remove_relation_ward = scope:6070_child
+					remove_guardian_effect = {
+						GUARDIAN = this
+						WARD = scope:6070_child
+						RETURN_WARD = no
+						HIDE_OPINION = no
+					}
 				}
 			}
 		}
@@ -29947,7 +29973,10 @@ scripted_trigger hold_court_8100_parent_trigger = { # is a parent eligible to ad
 	is_available_ai_adult = yes
 	OR = {
 		employer = root
-		employer = scope:ward_employer
+		AND = {
+			exists = scope:ward_employer
+			employer = scope:ward_employer
+		}	
 	}
 }
 
@@ -30853,7 +30882,7 @@ hold_court.8110 = {
 				tier = tier_county
 				county = {
 					county_control > 80
-					any_province = { has_holding = yes }
+					any_county_province = { has_holding = yes }
 				}
 			}
 			random_county_province = {

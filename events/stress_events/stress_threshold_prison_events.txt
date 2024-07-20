@@ -292,8 +292,6 @@ stress_threshold_prison.1011 = {
 		stress_impact = {
 			base = medium_stress_impact_loss
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_fat CHANGE = nickname_weight_large_decrease }
 	}
 
 	option = {
@@ -319,9 +317,6 @@ stress_threshold_prison.1011 = {
 			compassionate = medium_stress_impact_gain
 		}
 		add_internal_flag = special # Putting this at the end because of tooltip ordering.
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_fat CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
 	}
 
 	option = {
@@ -436,8 +431,6 @@ stress_threshold_prison.1012 = {
 			inappetetic = medium_stress_impact_gain
 			compassionate = medium_stress_impact_gain
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
 	}
 
 	after = {
@@ -519,9 +512,6 @@ stress_threshold_prison.1021 = {
 		stress_impact = {
 			base = major_stress_impact_loss
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
 	}
 
 	option = {
@@ -531,8 +521,6 @@ stress_threshold_prison.1021 = {
 		stress_impact = {
 			base = major_stress_impact_loss
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_decrease }
 	}
 	
 	option = {
@@ -543,8 +531,6 @@ stress_threshold_prison.1021 = {
 			forgiving = minor_stress_impact_gain
 			honest = minor_stress_impact_gain
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_decrease }
 	}
 
 	after = {
@@ -644,8 +630,6 @@ stress_threshold_prison.1031 = {
 		stress_impact = {
 			base = medium_stress_impact_loss
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
 	}
 
 	option = {
@@ -991,8 +975,6 @@ stress_threshold_prison.2011 = {
 		}
 		set_prison_pet_effect = yes
 		stress_threshold_event_post_immediate = yes
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_mad CHANGE = nickname_weight_small_increase }
 	}
 
 	option = {
@@ -1253,8 +1235,6 @@ stress_threshold_prison.3011 = {
 		stress_impact = {
 			base = major_stress_impact_loss
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_mad CHANGE = nickname_weight_small_increase }
 	}
 
 	after = {

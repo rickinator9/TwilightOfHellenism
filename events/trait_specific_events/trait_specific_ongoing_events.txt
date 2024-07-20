@@ -63,8 +63,6 @@ trait_specific_ongoing.1001 = {
 			modifier = lunatic_made_of_glass_modifier
 			years = 10
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_mad CHANGE = nickname_weight_small_increase }
 	}
 }
 
@@ -132,8 +130,6 @@ trait_specific_ongoing.1003 = {
 			modifier = exotic_animals_modifier
 			years = 5
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_mad CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { #I'll sell them off
@@ -339,8 +335,6 @@ trait_specific_ongoing.1005 = {
 				}
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_mad CHANGE = nickname_weight_small_increase }
 	}
 }
 
@@ -370,13 +364,11 @@ trait_specific_ongoing.1006 = {
 			modifier = seeing_dead_people_modifier
 			years = 5
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_mad CHANGE = nickname_weight_small_increase }
 	}
 }
 
 
-#A lunatic dreams of glass (enables the decision_lunatic_building decision)
+#A lunatic dreams of glass (enables the lunatic_building_decision decision)
 #by Linnéa Thimrén
 trait_specific_ongoing.1007 = {
 	type = character_event
@@ -463,8 +455,6 @@ trait_specific_ongoing.1008 = {
 			}
 			save_scope_as = secret
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_mad CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { #Ahhhh! What have I done?!
@@ -472,8 +462,6 @@ trait_specific_ongoing.1008 = {
 		trait = lunatic_1
 		trait = lunatic_genetic
 		add_stress = major_stress_gain
-
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 
 	option = { #I must confess!
@@ -527,8 +515,6 @@ trait_specific_ongoing.1009 = {
 				increase_wounds_effect = { REASON = fall }
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_mad CHANGE = nickname_weight_small_increase }
 	}
 }
 
@@ -598,8 +584,6 @@ trait_specific_ongoing.1010 = {
 			}
 		}	
 		level_horse_modifier_effect = yes
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_mad CHANGE = nickname_weight_small_increase }
 	}
 }
 
@@ -642,8 +626,6 @@ trait_specific_ongoing.1011 = {
 			}
 			add_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_mad CHANGE = nickname_weight_large_increase }
 	}
 }
 
@@ -678,8 +660,6 @@ trait_specific_ongoing.1012 = {
 		capital_barony = {
 			save_scope_as = capital
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_mad CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { #What is happening?
@@ -824,17 +804,6 @@ trait_specific_ongoing.2001 = { #by Mathilda Bjarnehed
 					scope:clergy = { has_trait = trusting }
 					add = 20
 				}
-
-				# ATHA - scholar/wise nickname modifiers.
-				modifier = {
-					has_character_modifier = nick_the_scholar_modifier
-					factor = 1.25
-				}
-				modifier = {
-					has_character_modifier = nick_the_wise_modifier
-					factor = 1.1
-				}
-
 				desc = trait_specific_ongoing.2001.a.success
 				send_interface_toast = {
 					title = trait_specific_ongoing.2001.a.success
@@ -844,8 +813,6 @@ trait_specific_ongoing.2001 = { #by Mathilda Bjarnehed
 					}
 					add_piety = medium_piety_gain
 				}
-
-				change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_medium_increase }
 			}
 			40 = { # They don't believe you
 				opinion_modifier = {
@@ -853,17 +820,6 @@ trait_specific_ongoing.2001 = { #by Mathilda Bjarnehed
 					opinion_target = root
 					multiplier = -0.5
 				}
-
-				# ATHA - scholar/wise nickname modifiers.
-				modifier = {
-					scope:clergy = { has_character_modifier = nick_the_scholar_modifier }
-					factor = 1.25
-				}
-				modifier = {
-					scope:clergy = { has_character_modifier = nick_the_wise_modifier }
-					factor = 1.1
-				}
-
 				desc = trait_specific_ongoing.2001.a.failure
 				send_interface_toast = {
 					title = trait_specific_ongoing.2001.a.failure
@@ -875,8 +831,6 @@ trait_specific_ongoing.2001 = { #by Mathilda Bjarnehed
 						opinion = -10
 					}
 				}
-
-				change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_medium_decrease }
 			}
 		}
 
@@ -948,8 +902,6 @@ trait_specific_ongoing.2001 = { #by Mathilda Bjarnehed
 				ai_boldness = 1
 			}
 		}	
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_medium_decrease }
 	}
 	
 	# I need to relax
@@ -1355,8 +1307,6 @@ trait_specific_ongoing.2010 = { #by Mathilda Bjarnehed
 			modifier = confident_scholar
 			years = 10
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_scholar CHANGE = nickname_weight_small_increase }
 	}
 
 	#war
@@ -1550,8 +1500,6 @@ trait_specific_ongoing.2015 = { #by Mathilda Bjarnehed
 				ai_boldness = 2
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_fat CHANGE = nickname_weight_medium_decrease }
 	}
 
 	#Court physician: get rest and avoid shiny objects
@@ -1835,7 +1783,7 @@ trait_specific_ongoing.2020 = {
 			limit = { has_inactive_trait = possessed_genetic }
 			make_trait_active = possessed_genetic
 		}
-		else_if = {
+		else = {
 			add_trait = possessed_1
 		}
 	}
@@ -2035,8 +1983,6 @@ trait_specific_ongoing.2025 = { #by Mathilda Bjarnehed
 				ai_boldness = -2
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_bold CHANGE = nickname_weight_small_decrease }
 	}
 
 	# Stay
@@ -2095,8 +2041,6 @@ trait_specific_ongoing.2025 = { #by Mathilda Bjarnehed
 				target = root
 			}
 		}
-
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 
 		stress_impact = {
 			callous = minor_stress_impact_gain
@@ -2198,8 +2142,6 @@ trait_specific_ongoing.2025 = { #by Mathilda Bjarnehed
 				}
 			}
 		}
-
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 
 		stress_impact = {
 			craven = minor_stress_impact_gain
@@ -3093,8 +3035,6 @@ trait_specific_ongoing.5001 = {
 			modifier = feast_good_food_modifier
 			years = 5
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_devourer CHANGE = nickname_weight_medium_increase }
 	}
 
 	option = { #Let's just talk
@@ -3178,6 +3118,7 @@ trait_specific_ongoing.5003 = {
 	
 	trigger = {
 		NOT = { has_character_flag = had_event_trait_specific_ongoing_5003 }
+		is_adult = yes
 		is_cannibal_trigger = yes
 		might_cheat_on_every_partner_trigger = yes
 		NOT = { has_trait = chaste }
@@ -3261,8 +3202,6 @@ trait_specific_ongoing.5004 = {
 			modifier = feast_good_food_modifier
 			years = 10
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_devourer CHANGE = nickname_weight_medium_increase }
 	}
 
 	option = { #So, what's up with the area?

@@ -11,6 +11,66 @@ on_birth_mother = {
 		birth.3011 #Mother dies
 	}
 	effect = {
+
+		scope:mother = {
+			if = {
+				limit = {
+					is_landed = yes
+					exists = scope:mother.location
+					exists = scope:child.location
+					scope:mother.location = scope:child.location
+				}
+				trigger_event = {
+					id = bp2_yearly.4000
+ 	  				days = 3
+				}
+				# If you have a legend maybe we change it?
+				if = {
+					limit = {
+						has_legend_chapter_trigger = { CHAPTER = motivation }
+						NOT = {
+							promoted_legend ?= {
+								has_legend_chapter = {
+									name = motivation
+									localization_key = legend_chapter_motivation_child_mother
+								}
+							}
+						}
+					}
+					random = {
+						chance = 10
+						send_interface_toast = {
+							title = legend_chapter_change_toast
+							left_icon = scope:mother
+							right_icon = scope:child
+							promoted_legend = {
+								set_legend_chapter = {
+									name = motivation
+									localization_key = legend_chapter_motivation_child_mother
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		random = { # legend_spread_events.8170 follow-up
+			chance = 10
+			scope:mother = {
+				trigger_event = {
+					id = legend_spread_events.8171
+					months = 3
+				}
+			}
+			scope:father ?= {
+				trigger_event = {
+					id = legend_spread_events.8171
+					months = 3
+				}
+			}
+		}
+
 		scope:mother.current_travel_plan ?= { 
 			if = {
 				limit = {
@@ -87,13 +147,14 @@ on_birth_mother = {
 
 		if = {
 			limit = {
-				NOT = {
+				NOR = {
 					any_child = {
 						even_if_dead = yes
 						NOT = {
 							this = scope:child
 						}
 					}
+					exists = scope:child_2
 				}
 			}
 			create_character_memory = {
@@ -136,6 +197,48 @@ on_birth_father = {
 
 	}
 	effect = {
+		scope:father = {
+			if = {
+				limit = {
+					is_landed = yes
+					exists = scope:father.location
+					exists = scope:child.location
+					scope:father.location = scope:child.location
+				}
+				trigger_event = {
+					id = bp2_yearly.4000
+ 	  				days = 3
+				}
+				# If you have a legend maybe we change it?
+				if = {
+					limit = {
+						has_legend_chapter_trigger = { CHAPTER = motivation }
+						NOT = {
+							promoted_legend ?= {
+								has_legend_chapter = {
+									name = motivation
+									localization_key = legend_chapter_motivation_child_father
+								}
+							}
+						}
+					}
+					random = {
+						chance = 10
+						send_interface_toast = {
+							title = legend_chapter_change_toast
+							left_icon = scope:father
+							right_icon = scope:child
+							promoted_legend = {
+								set_legend_chapter = {
+									name = motivation
+									localization_key = legend_chapter_motivation_child_father
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 
 		# Gain piety from Sacred Childbirth doctrine
 		if = {
@@ -192,25 +295,26 @@ on_birth_father = {
 				}
 			}
 		}
-        scope:child = {
-            if = {
-                limit = { has_trait = twin }
-                random_sibling = {
-                    limit = { is_twin_of = scope:child }
-                    save_scope_as = child_2
-                }
-            }
-        }
+		scope:child = {
+			if = {
+				limit = { has_trait = twin }
+				random_sibling = {
+					limit = { is_twin_of = scope:child }
+					save_scope_as = child_2
+				}
+			}
+		}
 		
 		if = {
 			limit = {
-				NOT = {
+				NOR = {
 					any_child = {
 						even_if_dead = yes
 						NOT = {
 							this = scope:child
 						}
 					}
+					exists = scope:child_2
 				}
 			}
 			create_character_memory = {
@@ -271,7 +375,10 @@ on_birth_child = {
 		# Make sure that children aren't Lowborn if one of their parents are, in fact, of noble stock
 		if = {
 			limit = {
-				scope:is_bastard = no
+				OR = {
+					scope:is_bastard = no
+					faith = { has_doctrine_parameter = bastards_none }
+				}
 				scope:child = {
 					is_lowborn = yes
 				}

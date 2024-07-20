@@ -44,13 +44,13 @@ subject_extortion.0001 = {
 		ai_chance = {
 			base = 100
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_major_increase }
 	}
 
 	option = { # I will have *everyone* pay!
 		name = subject_extortion.0001.b
 		add_tyranny = medium_tyranny_gain
 		add_gold = massive_gold_value
+		add_legitimacy = miniscule_legitimacy_loss
 		add_dread = medium_dread_gain
 		ai_chance = { # Keep the chance extremely low to prevent the AI from doing this very often
 			base = 1
@@ -58,7 +58,6 @@ subject_extortion.0001 = {
 				ai_greed = 0.1
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_massive_increase }
 	}
 
 	option = { # You *do* owe me...
@@ -68,7 +67,6 @@ subject_extortion.0001 = {
 		}
 		use_hook = scope:extortion_target
 		add_gold = medium_gold_value
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 	
 	option = { # Back out
@@ -78,7 +76,6 @@ subject_extortion.0001 = {
 		ai_chance = {
 			base = 10
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_decrease }
 	}
 }
 
@@ -113,7 +110,6 @@ subject_extortion.0002 = {
 				ai_honor = 0.5
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 
 	option = { # I take what I need
@@ -132,7 +128,6 @@ subject_extortion.0002 = {
 				ai_greed = 0.5
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 	
 	option = { # Back out
@@ -141,7 +136,6 @@ subject_extortion.0002 = {
 		ai_chance = {
 			base = 10
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_decrease }
 	}
 }
 
@@ -182,7 +176,6 @@ subject_extortion.0003 = {
 				ai_greed = 0.5
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_major_increase }
 	}
 
 	option = { # Have I not earned this, in HighGod's eyes?
@@ -195,7 +188,6 @@ subject_extortion.0003 = {
 				ai_zeal = 1
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 	
 	option = { # Back out
@@ -204,7 +196,6 @@ subject_extortion.0003 = {
 		ai_chance = {
 			base = 10
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_decrease }
 	}
 }
 
@@ -239,7 +230,6 @@ subject_extortion.0004 = {
 			years = 5
 		}
 		add_dread = minor_dread_gain
-		change_city_state_corruption = { AMOUNT_ARG = corruption_major_increase }
 	}
 
 	option = {
@@ -247,7 +237,6 @@ subject_extortion.0004 = {
 		add_gold = massive_gold_value
 		add_tyranny = medium_tyranny_gain
 		add_dread = medium_dread_gain
-		change_city_state_corruption = { AMOUNT_ARG = corruption_massive_increase }
 	}
 	
 	option = { # Back out
@@ -256,7 +245,6 @@ subject_extortion.0004 = {
 		ai_chance = {
 			base = 10
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_decrease }
 	}
 }
 
@@ -297,7 +285,6 @@ subject_extortion.0005 = {
 				ai_honor = -0.5
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_major_increase }
 	}
 
 	option = { # I believe gifts are in order
@@ -310,7 +297,6 @@ subject_extortion.0005 = {
 				ai_greed = 0.5
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 	
 	option = {
@@ -319,7 +305,6 @@ subject_extortion.0005 = {
 		ai_chance = {
 			base = 10
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_decrease }
 	}
 }
 
@@ -366,7 +351,6 @@ subject_extortion.9998 = {
 			exists = scope:steward
 		}
 		add_gold = minor_gold_value
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 	}
 	
 	option = {
@@ -375,7 +359,6 @@ subject_extortion.9998 = {
 			NOT = { exists = scope:steward }
 		}
 		add_gold = minor_gold_value
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 	}
 }
 

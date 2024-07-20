@@ -15,7 +15,7 @@ ask_for_conversion_interaction = {
 
 	is_valid_showing_failures_only = {
 		valid_demand_conversion_conditions_trigger = yes
-	}
+	} 
 	
 	ai_accept = {
 		base = 0
@@ -27,6 +27,24 @@ ask_for_conversion_interaction = {
 	
 	on_accept = {
 		new_faith_created_conversion_effect = yes
+
+		# If we're a clan this interaction affects unity
+		accept_faith_conversion_add_clan_unity_effect = yes
+
+		scope:actor = {
+			if = {
+				limit = {
+					any_character_struggle = {
+						involvement = involved
+						has_struggle_phase_parameter = piety_from_converting_involved_rulers
+						is_secondary_character_involvement_involved_trigger = {
+							CHAR = scope:recipient
+						}
+					}
+				}
+				add_piety = medium_piety_gain
+			}
+		}
 	}
 
 	on_decline = {
@@ -35,6 +53,9 @@ ask_for_conversion_interaction = {
 			title = ask_for_conversion_decline_notification
 			right_icon = scope:recipient
 		}
+
+		# If we're a clan this interaction affects unity
+		refuse_faith_conversion_add_clan_unity_effect = yes
 	}
 
 	#Use hook
@@ -53,6 +74,8 @@ ask_for_conversion_courtier_interaction = {
 	icon = religious
 
 	special_interaction = request_conversion_interaction
+	ai_maybe = yes
+	can_send_despite_rejection = yes
 	
 	desc = {
 		desc = ask_for_conversion_interaction_desc
@@ -87,12 +110,19 @@ ask_for_conversion_courtier_interaction = {
 		scope:recipient = { is_imprisoned = no }
 	}
 
+	cooldown_against_recipient = { years = 15 }
+
 	is_valid_showing_failures_only = {
 		valid_demand_conversion_conditions_trigger = yes
 	}
 	
 	ai_accept = {
 		base = 0
+		# Increase base chance
+		modifier = {
+			add = 50
+			desc = EDUCATE_CHILD_ACTOR_IS_MY_LIEGE
+		}
 		religion_demand_conversion_default_modifier = yes
 	}
 	
@@ -133,14 +163,42 @@ ask_for_conversion_courtier_interaction = {
 				}
 			}
 			scope:recipient = {
-				trigger_event = char_interaction.0180
+				# trigger_event = char_interaction.0180
+				trigger_event = false_conversion.0900
+				save_scope_value_as = {
+					name = forcibly_converted
+					value = yes
+				}
 			}
 		}
 		if = {
 			limit = { scope:recipient = { is_imprisoned_by = scope:actor } }
 			scope:recipient = { release_from_prison = yes }
 			scope:recipient = {
-				trigger_event = char_interaction.0180
+				# trigger_event = char_interaction.0180
+				trigger_event = false_conversion.0900
+				save_scope_value_as = {
+					name = forcibly_converted
+					value = yes
+				}
+			}
+		}
+
+		# If we're a clan this interaction affects unity
+		accept_faith_conversion_add_clan_unity_effect = yes
+
+		scope:actor = {
+			if = {
+				limit = {
+					any_character_struggle = {
+						involvement = involved
+						has_struggle_phase_parameter = piety_from_converting_involved_rulers
+						is_secondary_character_involvement_involved_trigger = {
+							CHAR = scope:recipient
+						}
+					}
+				}
+				add_piety = medium_piety_gain
 			}
 		}
 
@@ -150,9 +208,32 @@ ask_for_conversion_courtier_interaction = {
 	}
 
 	on_decline = {
-		send_interface_toast = {
-			title = ask_for_conversion_decline_notification
-			left_icon = scope:recipient
+		#Negative opinions
+		scope:recipient = {
+			if = {
+				limit = {
+					scope:actor = {
+						refusing_conversion_is_crime_trigger = {
+							CHARACTER = scope:recipient
+						}
+					}
+					scope:recipient = {
+						target_is_liege_or_above = scope:actor
+					}
+				}
+				reverse_add_opinion = {
+					target = scope:actor
+					modifier = illegal_resisted_conversion_opinion
+					years = 10
+				}
+			}
+			else = {
+				add_opinion = {
+					modifier = demanded_my_conversion_opinion
+					target = scope:actor
+					opinion = -10
+				}
+			}
 		}
 	}
 
@@ -274,6 +355,8 @@ demand_conversion_interaction = {
 	category = interaction_category_religion
 	popup_on_receive = yes
 	pause_on_receive = yes
+	can_send_despite_rejection = yes
+	ai_maybe = yes
 
 	notification_text = HOUSE_HEAD_DEMAND_CONVERSION
 
@@ -294,6 +377,9 @@ demand_conversion_interaction = {
 			is_ruler = yes
 		}
 	}
+
+	cooldown_against_recipient = { years = 15 }
+
 	desc = {
 		desc = demand_conversion_interaction_desc
 		triggered_desc = {
@@ -323,14 +409,24 @@ demand_conversion_interaction = {
 				use_hook = scope:recipient
 			}
 			scope:recipient = {
-				trigger_event = char_interaction.0180
+				# trigger_event = char_interaction.0180
+				trigger_event = false_conversion.0900
+				save_scope_value_as = {
+					name = forcibly_converted
+					value = yes
+				}
 			}
 		}
 		if = {
 			limit = { scope:recipient = { is_imprisoned_by = scope:actor } }
 			scope:recipient = { release_from_prison = yes }
 			scope:recipient = {
-				trigger_event = char_interaction.0180
+				# trigger_event = char_interaction.0180
+				trigger_event = false_conversion.0900
+				save_scope_value_as = {
+					name = forcibly_converted
+					value = yes
+				}
 			}
 		}
 		else = {
@@ -338,6 +434,24 @@ demand_conversion_interaction = {
 				trigger_event = char_interaction.0181
 			}
 		}
+
+		scope:actor = {
+			if = {
+				limit = {
+					any_character_struggle = {
+						involvement = involved
+						has_struggle_phase_parameter = piety_from_converting_involved_rulers
+						is_secondary_character_involvement_involved_trigger = {
+							CHAR = scope:recipient
+						}
+					}
+				}
+				add_piety = medium_piety_gain
+			}
+		}
+
+		# If we're a clan this interaction affects unity
+		accept_faith_conversion_add_clan_unity_effect = yes
 	}
 
 	on_decline = {
@@ -375,6 +489,9 @@ demand_conversion_interaction = {
 		scope:actor = {
 			trigger_event = char_interaction.0182
 		}
+
+		# If we're a clan this interaction affects unity
+		refuse_faith_conversion_add_clan_unity_effect = yes
 	}
 
 	auto_accept = {
@@ -386,9 +503,24 @@ demand_conversion_interaction = {
 			scope:actor = { has_strong_hook = scope:recipient }
 		}
 	}
+
+	#For loc
+	on_auto_accept = {
+		scope:recipient = {
+			save_scope_value_as = {
+				name = forcibly_converted
+				value = yes
+			}
+		}
+	}
 	
 	ai_accept = {
 		base = 0
+		# Increase base chance
+		modifier = {
+			add = 50
+			desc = EDUCATE_CHILD_ACTOR_IS_MY_LIEGE
+		}
 		modifier = {
 			add = 100
 			NOT = {
@@ -509,6 +641,24 @@ demand_conversion_vassal_ruler_interaction = {
 			trigger_event = religious_interaction.2002
 		}
 		demand_conversion_vassal_ruler_interaction_effect = yes
+
+		# If we're a clan this interaction affects unity
+		accept_faith_conversion_add_clan_unity_effect = yes
+
+		scope:actor = {
+			if = {
+				limit = {
+					any_character_struggle = {
+						involvement = involved
+						has_struggle_phase_parameter = piety_from_converting_involved_rulers
+						is_secondary_character_involvement_involved_trigger = {
+							CHAR = scope:recipient
+						}
+					}
+				}
+				add_piety = medium_piety_gain
+			}
+		}
 	}
 
 	on_decline = {
@@ -619,6 +769,9 @@ demand_conversion_vassal_ruler_interaction = {
 				}
 			}
 		}
+
+		# If we're a clan this interaction affects unity
+		refuse_faith_conversion_add_clan_unity_effect = yes
 	}
 	
 	ai_potential = {
@@ -802,6 +955,11 @@ demand_conversion_vassal_ruler_interaction = {
 	}
 	ai_accept = {
 		base = 0
+		# Increase base chance
+		modifier = {
+			add = 50
+			desc = EDUCATE_CHILD_ACTOR_IS_MY_LIEGE
+		}
 		religion_demand_conversion_default_modifier = yes
 
 		modifier = {
@@ -873,6 +1031,10 @@ demand_conversion_player_ruler_interaction = {
 		}
 	
 		scope:recipient = {
+			save_scope_value_as = {
+				name = forcibly_converted
+				value = yes
+			}
 			trigger_event = religious_interaction.2021
 		}
 	}
@@ -882,6 +1044,24 @@ demand_conversion_player_ruler_interaction = {
 		demand_conversion_player_ruler_interaction_effect = yes
 		scope:actor = {
 			trigger_event = char_interaction.0190
+		}
+
+		# If we're a clan this interaction affects unity
+		accept_faith_conversion_add_clan_unity_effect = yes
+
+		scope:actor = {
+			if = {
+				limit = {
+					any_character_struggle = {
+						involvement = involved
+						has_struggle_phase_parameter = piety_from_converting_involved_rulers
+						is_secondary_character_involvement_involved_trigger = {
+							CHAR = scope:recipient
+						}
+					}
+				}
+				add_piety = medium_piety_gain
+			}
 		}
 	}
 
@@ -909,6 +1089,9 @@ demand_conversion_player_ruler_interaction = {
 			}
 			trigger_event = char_interaction.0191
 		}
+
+		# If we're a clan this interaction affects unity
+		refuse_faith_conversion_add_clan_unity_effect = yes
 	}
 	
 	ai_potential = {
@@ -1435,6 +1618,14 @@ seek_indulgences_interaction = {
 				}
 			}
 		}
+
+		evaluate_action_increasing_house_unity = {
+			VALUE = 50
+		}
+
+		evaluate_action_decreasing_house_unity = {
+			VALUE = -100
+		}
 	}
 	
 	ai_min_reply_days = 1
@@ -1445,11 +1636,29 @@ seek_indulgences_interaction = {
 		scope:actor = {
 			trigger_event = religious_interaction.1010
 		}
+
+		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:actor
+			TARGET = scope:recipient
+			VALUE = medium_unity_gain
+			DESC = clan_unity_indulgences_accepted.desc
+			REVERSE_NON_HOUSE_TARGET = no
+		}
 	}
 
 	on_decline = {
 		scope:actor = {
 			trigger_event = religious_interaction.1011
+		}
+
+		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:actor
+			TARGET = scope:recipient
+			VALUE = minor_unity_loss
+			DESC = clan_unity_indulgences_declined.desc
+			REVERSE_NON_HOUSE_TARGET = no
 		}
 	}
 	
@@ -1505,6 +1714,10 @@ seek_indulgences_interaction = {
 				piety > major_piety_value
 				piety_level > 0
 			}
+		}
+
+		evaluate_action_increasing_house_unity = {
+			VALUE = 50
 		}
 	}
 }
@@ -1636,6 +1849,14 @@ declaration_of_repentance_interaction = {
 				}
 			}
 		}
+
+		evaluate_action_increasing_house_unity = {
+			VALUE = 50
+		}
+
+		evaluate_action_decreasing_house_unity = {
+			VALUE = -100
+		}
 	}
 	
 	ai_min_reply_days = 1
@@ -1650,6 +1871,15 @@ declaration_of_repentance_interaction = {
 				id = religious_interaction.1024
 			}
 		}
+
+		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:actor
+			TARGET = scope:recipient
+			VALUE = medium_unity_gain
+			DESC = clan_unity_repentance.desc
+			REVERSE_NON_HOUSE_TARGET = no
+		}
 	}
 
 	on_decline = {
@@ -1659,6 +1889,15 @@ declaration_of_repentance_interaction = {
 			trigger_event = {
 				id = religious_interaction.1025
 			}
+		}
+
+		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:actor
+			TARGET = scope:recipient
+			VALUE = minor_unity_loss
+			DESC =  clan_unity_repentance_declined.desc
+			REVERSE_NON_HOUSE_TARGET = no
 		}
 	}
 	
@@ -1768,6 +2007,15 @@ excommunicate_interaction = {
 				}
 			}
 		}
+
+		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:actor
+			TARGET = scope:recipient
+			VALUE = medium_unity_loss
+			DESC = clan_unity_excommunication.desc
+			REVERSE_NON_HOUSE_TARGET = no
+		}
 	}
 	
 	# AI will do
@@ -1843,6 +2091,15 @@ lift_excommunication_interaction = {
 		lift_character_excommunication_effect = {
 			TARGET_CHARACTER = scope:recipient
 			REQUESTING_CHARACTER = scope:actor
+		}
+
+		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:actor
+			TARGET = scope:recipient
+			VALUE = medium_unity_gain
+			DESC = clan_unity_excommunication_lifted
+			REVERSE_NON_HOUSE_TARGET = no
 		}
 	}
 	
@@ -2089,6 +2346,14 @@ request_excommunication_interaction = {
 					}
 				}
 			}
+			# If we're a clan this interaction affects unity
+			add_clan_unity_interaction_effect = {
+				CHARACTER = scope:actor
+				TARGET = scope:recipient
+				VALUE = medium_unity_loss
+				DESC = clan_unity_request_excommunication.desc
+				REVERSE_NON_HOUSE_TARGET = no
+			}
 		}
 	}
 
@@ -2098,6 +2363,15 @@ request_excommunication_interaction = {
 			trigger_event = {
 				id = religious_interaction.1023
 			}
+		}
+
+		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:actor
+			TARGET = scope:recipient
+			VALUE = miniscule_unity_gain
+			DESC = clan_unity_excommunication_request_denied.desc
+			REVERSE_NON_HOUSE_TARGET = no
 		}
 	}
 	
@@ -2263,6 +2537,26 @@ send_to_holy_order_interaction = {
 				limit = { scope:hook = yes }
 				use_hook = scope:recipient
 			}
+			
+			# Legitimacy loss if you're doing this to your children
+			if = {
+				limit = {
+					scope:recipient = { is_primary_heir_of = scope:actor }
+				}
+				add_legitimacy = {
+					value = minor_legitimacy_loss
+					multiply = scope:actor.primary_title.tier
+				}
+			}
+			else_if = {
+				limit = {
+					scope:recipient = { is_child_of = scope:actor }
+				}
+				add_legitimacy = {
+					value = miniscule_legitimacy_loss
+					multiply = scope:actor.primary_title.tier
+				}
+			}
 
 			trigger_event = holy_order.0001
 			show_as_tooltip = {
@@ -2274,6 +2568,15 @@ send_to_holy_order_interaction = {
 			scope:recipient = {
 				remove_variable = vows_piety_spent
 			}
+		}
+
+		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:actor
+			TARGET = scope:recipient
+			VALUE = minor_unity_gain
+			DESC = clan_unity_send_to_holy_order.desc
+			REVERSE_NON_HOUSE_TARGET = no
 		}
 	}
 
@@ -2317,6 +2620,15 @@ send_to_holy_order_interaction = {
 				}
  			}
  		}
+
+ 		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:actor
+			TARGET = scope:recipient
+			VALUE = minor_unity_loss
+			DESC = clan_unity_join_holy_order_refusal.desc
+			REVERSE_NON_HOUSE_TARGET = no
+		}
  	}
 
 	auto_accept = no
@@ -2841,7 +3153,10 @@ take_vows_interaction = {
 
 	is_shown = {
 		scope:recipient = {
-			is_courtier_of = scope:actor
+			OR = {
+				is_courtier_of = scope:actor
+				is_child_of = scope:actor
+			}
 			NOR = { 
 				has_trait = devoted 
 				has_trait = order_member
@@ -2924,6 +3239,26 @@ take_vows_interaction = {
 				use_hook = scope:recipient
 			}
 			
+			# Legitimacy loss if you're doing this to your children
+			if = {
+				limit = {
+					scope:recipient = { is_primary_heir_of = scope:actor }
+				}
+				add_legitimacy = {
+					value = minor_legitimacy_loss
+					multiply = scope:actor.primary_title.tier
+				}
+			}
+			else_if = {
+				limit = {
+					scope:recipient = { is_child_of = scope:actor }
+				}
+				add_legitimacy = {
+					value = miniscule_legitimacy_loss
+					multiply = scope:actor.primary_title.tier
+				}
+			}
+			
 			show_as_tooltip = {
 				send_child_to_clergy_effect = yes
 			}
@@ -3000,6 +3335,15 @@ take_vows_interaction = {
 				remove_variable = vows_piety_spent
 			}
 		}
+
+		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:actor
+			TARGET = scope:recipient
+			VALUE = minor_unity_gain
+			DESC = clan_unity_take_vows.desc
+			REVERSE_NON_HOUSE_TARGET = no
+		}
 	}
 
 	on_decline = {
@@ -3047,6 +3391,15 @@ take_vows_interaction = {
  				}
  			}
  		}
+
+ 		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:actor
+			TARGET = scope:recipient
+			VALUE = minor_unity_loss
+			DESC = clan_unity_refused_to_take_vows.desc
+			REVERSE_NON_HOUSE_TARGET = no
+		}
  	}
 
 	auto_accept = no
@@ -3541,6 +3894,17 @@ take_vows_interaction = {
 	ai_will_do = {
 		base = 0
 		
+		modifier = {
+			add = -50
+			scope:actor = {
+				OR = {
+					legitimacy_level = 0
+					legitimacy_level = 1
+				}
+			}
+			scope:recipient = { is_primary_heir_of = scope:actor }
+		}
+		
 		modifier = { # The AI will always use a Hook
 			scope:hook = yes
 			add = 1
@@ -3683,6 +4047,11 @@ take_vows_interaction = {
 				}
 			}
 		}
+		
+		modifier = {
+			factor = 0
+			scope:recipient.liege ?= { is_ai = no }
+		}
 	}
 }
 
@@ -3796,6 +4165,15 @@ temporal_condemnation_interaction = {
 				target = scope:actor
 				modifier = temporal_condemnation_condemned_me_opinion
 			}
+		}
+
+		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:actor
+			TARGET = scope:recipient
+			VALUE = medium_unity_gain
+			DESC = clan_unity_condemn_sins.desc
+			REVERSE_NON_HOUSE_TARGET = no
 		}
 	}
 }
@@ -4001,6 +4379,15 @@ host_honored_guest_interaction = {
 					}
 				}
 			}
+		}
+
+		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:actor
+			TARGET = scope:recipient
+			VALUE = miniscule_unity_gain
+			DESC = clan_unity_honored_guest.desc
+			REVERSE_NON_HOUSE_TARGET = no
 		}
 	}
 	
@@ -4706,7 +5093,7 @@ hof_ask_for_claim_interaction = {
 		base = 0 # Should be 0 for all interactions
 
 		modifier = {
-			scope:claim_hook = yes
+			scope:claim_hook ?= yes
 			add = 100
 			desc = SCHEME_WEAK_HOOK_USED
 		}
@@ -4757,12 +5144,15 @@ hof_ask_for_claim_interaction = {
 				}
 			}
 		}
-		
-		opinion_modifier = { # Unlikely if Recipient likes Secondary Recipient
-			who = scope:recipient
-			opinion_target = scope:secondary_recipient
-			multiplier = -1
-			desc = AI_OPINION_REASON
+		modifier = { # Unlikely if recipient likes Secondary Recipient
+			add = {
+				if = {
+					limit = {
+						NOT = { scope:recipient = scope:secondary_recipient }
+					}
+					subtract = "scope:recipient.opinion(scope:secondary_recipient)"
+				}
+			}
 		}
 		
 		modifier = { # Less likely the lower their tier is compared to you
@@ -5154,6 +5544,15 @@ hof_ask_for_claim_interaction = {
 		scope:actor = {
 			trigger_event = religious_interaction.4
 		}
+
+		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:actor
+			TARGET = scope:secondary_recipient
+			VALUE = minor_unity_loss
+			DESC = clan_unity_granted_claim.desc
+			REVERSE_NON_HOUSE_TARGET = no
+		}
 	}
 
 	on_decline = {
@@ -5199,6 +5598,7 @@ hof_redirect_great_holy_war_interaction = {
 	
 	on_accept = {
 	}
+
 	ai_will_do = {
 		base = 0
 	}
@@ -5387,6 +5787,15 @@ sun_trial_interaction = {
 				id = religious_interaction.2100
 			}
 		}
+
+		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:actor
+			TARGET = scope:recipient
+			VALUE = major_unity_loss
+			DESC = clan_unity_sun_trial.desc
+			REVERSE_NON_HOUSE_TARGET = no
+		}
 	}
 
 	auto_accept = yes
@@ -5481,6 +5890,15 @@ literalist_debate_interaction = {
 		}
 		scope:recipient = {
 			custom_tooltip = literalist_debate_interaction.tt_winnings_recipient
+		}
+
+		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:actor
+			TARGET = scope:recipient
+			VALUE = medium_unity_loss
+			DESC = clan_unity_literalist_debate.desc
+			REVERSE_NON_HOUSE_TARGET = no
 		}
 	}
 }

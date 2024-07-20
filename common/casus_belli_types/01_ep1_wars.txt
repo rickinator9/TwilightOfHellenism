@@ -2,6 +2,7 @@
 	icon = artifact_war
 	group = artifact
 	ai_only_against_neighbors = yes
+	allow_hostages = no
 
 	allowed_for_character = {
 		has_any_artifact_claim = yes
@@ -63,6 +64,9 @@
 		scope:attacker = {
 
 			show_pow_release_message_effect = yes
+			
+			# Legitimacy
+			add_legitimacy_attacker_victory_effect = yes
 
 			#EP2 accolade glory gain for winning against higher ranked enemy
 			accolade_attacker_war_end_glory_gain_med_effect = yes
@@ -184,6 +188,9 @@
 	}
 
 	on_defeat = {
+		# Legitimacy
+		add_legitimacy_attacker_defeat_effect = yes
+		
 		#EP2 accolade glory gain for winning against higher ranked enemy
 		scope:defender = { accolade_defender_war_end_glory_gain_med_effect = yes }
 
@@ -336,6 +343,7 @@ reclaim_relic_artifact_war = {
 	icon = reclaim_relic_artifact_war
 	group = artifact
 	ai_only_against_neighbors = yes
+	allow_hostages = no
 
 	allowed_for_character = {
 		OR = {
@@ -409,6 +417,9 @@ reclaim_relic_artifact_war = {
 
 	on_victory = {
 		scope:attacker = { show_pow_release_message_effect = yes }
+		
+		# Legitimacy
+		add_legitimacy_attacker_victory_effect = yes
 
 		#EP2 accolade glory gain for winning against higher ranked enemy
 		scope:attacker = { accolade_attacker_war_end_glory_gain_med_effect = yes }
@@ -542,6 +553,9 @@ reclaim_relic_artifact_war = {
 
 	on_defeat = {
 		scope:attacker = { show_pow_release_message_effect = yes }
+		
+		# Legitimacy
+		add_legitimacy_attacker_defeat_effect = yes
 
 		#EP2 accolade glory gain for winning against higher ranked enemy
 		scope:defender = { accolade_defender_war_end_glory_gain_med_effect = yes }

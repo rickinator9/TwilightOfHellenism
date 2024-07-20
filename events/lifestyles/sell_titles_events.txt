@@ -835,22 +835,7 @@ sell_titles.1002 = {
 			}
 			set_house = root.house
 			hidden_effect = {
-				# TODO_CD: Add back in when set_mother effect is done
-				#if = {
-				#	limit = {
-				#		scope:parent = flag:father			
-				#	}
-					set_father = root.father
-				#}
-				#else_if = {
-				#	limit = {
-				#		scope:parent = flag:mother			
-				#	}
-				#	set_mother = root.mother
-				#}
-				#else = {
-				#	debug_log = "Could not set father or mother for Merchant in sell_titles.1002"
-				#}
+				set_father = root.father
 			}
 		}
 		hidden_effect = {

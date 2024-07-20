@@ -756,8 +756,6 @@ trait_specific.5002 = {
 	option = { #Mmm, the most dangerous animal of them all...
 		name = trait_specific.5002.a
 		give_cannibal_secret_or_trait_effect = yes
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_devourer CHANGE = nickname_weight_medium_increase }
 	}
 
 	option = { #I will resist this!
@@ -801,8 +799,6 @@ trait_specific.5003 = {
 	option = { #I guess I'll do it
 		name = trait_specific.5003.a
 		give_cannibal_secret_or_trait_effect = yes
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_devourer CHANGE = nickname_weight_medium_increase }
 	}
 
 	option = { #I will not!
@@ -1117,17 +1113,6 @@ trait_specific.8001 = {
 					value = scope:duel_value
 					multiplier = 1
 				}
-
-				# ATHA - scholar/wise nickname modifiers.
-				modifier = {
-					has_character_modifier = nick_the_scholar_modifier
-					factor = 1.25
-				}
-				modifier = {
-					has_character_modifier = nick_the_wise_modifier
-					factor = 1.1
-				}
-
 				desc = trait_specific.8001.a.success
 				send_interface_toast = {
 					title = trait_specific.8001.a.success
@@ -1139,17 +1124,6 @@ trait_specific.8001 = {
 					value = scope:duel_value
 					multiplier = 2
 				}
-
-				# ATHA - scholar/wise nickname modifiers.
-				modifier = {
-					has_character_modifier = nick_the_scholar_modifier
-					factor = 1.25
-				}
-				modifier = {
-					has_character_modifier = nick_the_wise_modifier
-					factor = 1.1
-				}
-
 				desc = trait_specific.8001.a.small_success
 				send_interface_toast = {
 					title = trait_specific.8001.a.small_success
@@ -1276,8 +1250,6 @@ trait_specific.9001 = {
 				}
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_poet_good CHANGE = nickname_weight_small_increase }
 	}
 	
 	# Writing sounds fun, but I don't know about *rhyming*...
@@ -1309,9 +1281,6 @@ trait_specific.9001 = {
 				has_trait = ambitious
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_poet_good CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_poet_bad CHANGE = nickname_weight_small_decrease }
 	}
 	
 	# Nah, I'll have a bath instead.
@@ -1345,9 +1314,6 @@ trait_specific.9001 = {
 				has_trait = diligent
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_poet_good CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_poet_bad CHANGE = nickname_weight_small_decrease }
 	}
 
 	# Clean up assorted after-effects.

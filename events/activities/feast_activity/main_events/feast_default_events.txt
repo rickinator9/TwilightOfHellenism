@@ -84,6 +84,7 @@ namespace = feast_default
 #feast_default.5003 - Host is sadistic
 #feast_default.5004 - Host is a reveler
 #feast_default.5005 - Enjoy some good garum!
+#feast_default.5010 - Time to spread my legend!
 
 ############################
 ## Host unique events
@@ -628,9 +629,14 @@ feast_default.1004 = {
 			}
 			scope:activity.activity_host = {
 				add_prestige = minor_prestige_gain
-				add_opinion = {
-					target = root
-					modifier = feast_amazing_food_glutton_opinion
+				if = {
+					limit = {
+						NOT = { this = root }
+					}
+					add_opinion = {
+						target = root
+						modifier = feast_amazing_food_glutton_opinion
+					}
 				}
 				hidden_effect = {
 					random_spouse = {
@@ -2345,7 +2351,6 @@ scripted_effect feast_default_1016_duel_prowess_or_intrigue_effect = {
 		limit = { root.prowess > root.intrigue }
 		add_character_flag = higher_prowess_than_intrigue
 	}
-
 	if = {
 		limit = { has_character_flag = higher_prowess_than_intrigue }
 		theft_duel_feast_default_1016_effect = { SKILL = prowess }
@@ -2423,10 +2428,8 @@ feast_default.1016 = {
 	}
 	theme = feast_activity
 	cooldown = { years = 1 }
-
 	trigger = {
 		is_ai = no
-		NOT = { exists = local_var:had_1016 }
 		scope:activity = {
 			#Do we have a potential witness to the theft
 			any_attending_character = {
@@ -2440,9 +2443,10 @@ feast_default.1016 = {
 					}
 				}
 			}
+			#Don't steal from yourself
+			NOT = { activity_host = root }
 		}
 	}
-
 	weight_multiplier = {
 		base = 0.1
 		modifier = { 
@@ -2470,12 +2474,7 @@ feast_default.1016 = {
 			add = -0.5
 		}
 	}
-
 	immediate = {
-		set_local_variable = {
-			name = had_1016
-			value = yes
-		}
 		scope:activity = {
 			random_attending_character = {
 				limit = {
@@ -2513,7 +2512,6 @@ feast_default.1016 = {
 			}
 		}
 	}
-
 	#Let's steal
 	option = {
 		name = {
@@ -2541,7 +2539,6 @@ feast_default.1016 = {
 		#Let's run the dynamic duel effect (checking intrigue or prowess, whichever is higher)
 		feast_default_1016_duel_prowess_or_intrigue_effect = yes
 	}
-
 	#No I don't want to
 	option = {
 		name = feast_default.1016.b
@@ -2556,12 +2553,13 @@ feast_default.1016 = {
 			days = 100
 		}
 	}
-
 	after = {
 		hidden_effect = {
 			if = {
 				#If we stole, trigger the next event
-				limit = { has_character_flag = did_not_steal_during_feast  }
+				limit = { 
+					NOT = { has_character_flag = did_not_steal_during_feast }
+				}
 				trigger_event = feast_default.1017
 			}
 			#Clean up flags
@@ -2652,7 +2650,7 @@ feast_default.1017 = {
 		trigger = { has_character_flag = discovered_trinket_theft_during_feast }
 		trigger_event = {
 			id = feast_default.1018
-			days = 30
+			days = { 180 250 } #The feast should have ended and we should be back home
 		}
 	}
 	#Success!
@@ -2728,9 +2726,9 @@ scripted_trigger feast_default_1018_contemptful_personality_check_trigger = {
 	}
 }
 
-#Confronted by the witness in feast_default.1018
+#Confronted by a proxy of the witness in feast_default.1018
 feast_default.1018 = {
-	type = activity_event
+	type = character_event
 	title = feast_default.1018.t
 	desc = {
 		desc = feast_default.1018.desc_intro 
@@ -2765,7 +2763,7 @@ feast_default.1018 = {
 		animation = shame
 	}
 	right_portrait = {
-		character = scope:witness
+		character = scope:witness_proxy
 		#If we are a contemptful character, we perceive the confronting witness as smug
 		triggered_animation = {
 			trigger = {
@@ -2780,6 +2778,10 @@ feast_default.1018 = {
 	lower_center_portrait = {
 		character = scope:feast_host
 	}
+	#Show the witness
+	lower_right_portrait = {
+		character = scope:witness
+	}
 	#Show trinket
 	artifact = {
 		target = scope:trinket_to_steal
@@ -2787,14 +2789,29 @@ feast_default.1018 = {
 		trigger = { exists = scope:trinket_to_steal }
 	}
 	theme = unfriendly
-
+	trigger = {
+		is_available = yes
+		scope:witness = { 
+			OR = {
+				is_available = yes
+				is_available_travelling = yes 
+			}
+		}
+	}
 	immediate = {
+		create_character = {
+			template = servant_character
+			culture = scope:witness.culture
+			faith = scope:witness.faith
+			location = root.location
+			save_scope_as = witness_proxy
+		}
 		#We interpret the event based on if we're a contemptful character
 		if = {
 			limit = {
 				feast_default_1018_contemptful_personality_check_trigger = yes
 			}
-			scope:witness = {
+			scope:witness_proxy = {
 				add_character_flag = {
 					flag = feast_default_1018_perceived_with_contempt
 					days = 30
@@ -2802,7 +2819,6 @@ feast_default.1018 = {
 			}
 		}
 	}
-
 	#Pay them off
 	option = {
 		name = {
@@ -2828,7 +2844,6 @@ feast_default.1018 = {
 			greedy = medium_stress_impact_gain
 		}
 	}
-
 	#Intrigue duel them
 	option = {
 		name = {
@@ -2846,7 +2861,6 @@ feast_default.1018 = {
 				}
 			}
 		}
-
 		duel = {
 			skill = intrigue
 			target = scope:witness
@@ -2929,7 +2943,6 @@ feast_default.1018 = {
 			honest = minor_stress_impact_gain
 		}
 	}
-
 	#...kill them?
 	option = {
 		name = feast_default.1018.c
@@ -2942,10 +2955,9 @@ feast_default.1018 = {
 				has_trait = deceitful
 			}
 		}
-
 		duel = {
 			skill = prowess
-			target = scope:witness
+			target = scope:witness_proxy
 
 			50 = {
 				desc = feast_default.1011.b.success
@@ -2957,7 +2969,7 @@ feast_default.1018 = {
 					title = feast_default.1011.b.success
 					left_icon = root
 					unknown_murder_effect = {
-						VICTIM = scope:witness
+						VICTIM = scope:witness_proxy
 						MURDERER = root
 						REASON = death_defenestration
 					}
@@ -2969,7 +2981,7 @@ feast_default.1018 = {
 					title = feast_default.1011.b.failure
 					left_icon = root
 					known_murder_effect = {
-						VICTIM = scope:witness
+						VICTIM = scope:witness_proxy
 						MURDERER = root
 						EXPOSER = root
 					}
@@ -2977,93 +2989,99 @@ feast_default.1018 = {
 			}
 		}
 	}
-
-	#Diplomacy duel them
-	option = {
-		name = feast_default.1018.d
-		trigger = {
-			OR = {
-				has_trait = compassionate
-				has_trait = just
-				has_trait = honest
-				has_trait = humble
+	#Diplomacy duel them (OBSOLETE)
+	#option = {
+	#	name = feast_default.1018.d
+	#	trigger = {
+	#		OR = {
+	#			has_trait = compassionate
+	#			has_trait = just
+	#			has_trait = honest
+	#			has_trait = humble
+	#		}
+	#	}
+	#	flavor = feast_default.1018.d_tt
+	#	duel = {
+	#		skill = diplomacy
+	#		value = 10
+	#			
+	#		50 = {
+	#			compare_modifier = {
+	#				value = scope:duel_value
+	#				multiplier = 5			
+	#			}
+	#			min = 2
+	#			modifier = {
+	#				scope:witness = {
+	#					OR = {
+	#						has_trait = compassionate
+	#						has_trait = honest
+	#					}
+	#				}
+	#				factor = 2
+	#			}
+	#			#You manage to convince them
+	#			desc = feast_default_1018_success.desc
+	#			send_interface_toast = {
+	#				type = event_toast_effect_good
+	#				title = feast_default_1018_success.t
+	#				left_icon = root
+	#				right_icon = scope:witness
+	#				#Came clean
+	#				add_character_modifier = { 
+	#					modifier = feast_came_clean_modifier
+	#					years = 5
+	#				}
+	#				#They're sympathetic
+	#				reverse_add_opinion = { 
+	#					target = scope:witness
+	#					modifier = feast_compassionate_opinion
+	#					opinion = 10
+	#				}
+	#			}
+	#			#Flags for the follow-up
+	#			add_character_flag = { flag = redemption_feast_default.1018 }
+	#			scope:feast_host = {
+	#				add_character_flag = { flag = feast_host_redemption_feast_default.1018 }
+	#			}
+	#		}
+	#		50 = {
+	#			compare_modifier = {
+	#				value = scope:duel_value
+	#				multiplier = -5
+	#			}
+	#			min = 10
+	#			#You did not manage to convince them
+	#			desc = feast_default_1018_failure.desc	
+	#			send_interface_toast = {
+	#				type = event_toast_effect_bad
+	#				title = feast_default_1018_failure.t
+	#				left_icon = root
+	#				right_icon = scope:witness
+	#				#...is another word for admitting to theft
+	#				add_character_modifier = { 
+	#					modifier = feast_admitted_to_theft_modifier
+	#					years = 5
+	#				}
+	#				#They're condemning
+	#				reverse_add_opinion = { 
+	#					target = scope:witness
+	#					modifier = feast_condemning_opinion
+	#					opinion = -10
+	#				}
+	#			}
+	#		}
+	#	}
+	#	#Return-the-trinket-event (Needs to be rewritten)
+	#	trigger_event = {
+	#		id = feast_default.1019
+	#	}
+	#}
+	after = {
+		hidden_effect = {
+			scope:witness_proxy = {
+				move_to_pool_at = scope:witness.capital_province
 			}
-		}
-		flavor = feast_default.1018.d_tt
-		duel = {
-			skill = diplomacy
-			value = 10
-				
-			50 = {
-				compare_modifier = {
-					value = scope:duel_value
-					multiplier = 5			
-				}
-				min = 2
-				modifier = {
-					scope:witness = {
-						OR = {
-							has_trait = compassionate
-							has_trait = honest
-						}
-					}
-					factor = 2
-				}
-				#You manage to convince them
-				desc = feast_default_1018_success.desc
-				send_interface_toast = {
-					type = event_toast_effect_good
-					title = feast_default_1018_success.t
-					left_icon = root
-					right_icon = scope:witness
-					#Came clean
-					add_character_modifier = { 
-						modifier = feast_came_clean_modifier
-						years = 5
-					}
-					#They're sympathetic
-					reverse_add_opinion = { 
-						target = scope:witness
-						modifier = feast_compassionate_opinion
-						opinion = 10
-					}
-				}
-				#Flags for the follow-up
-				add_character_flag = { flag = redemption_feast_default.1018 }
-				scope:feast_host = {
-					add_character_flag = { flag = feast_host_redemption_feast_default.1018 }
-				}
-			}
-			50 = {
-				compare_modifier = {
-					value = scope:duel_value
-					multiplier = -5
-				}
-				min = 10
-				#You did not manage to convince them
-				desc = feast_default_1018_failure.desc	
-				send_interface_toast = {
-					type = event_toast_effect_bad
-					title = feast_default_1018_failure.t
-					left_icon = root
-					right_icon = scope:witness
-					#...is another word for admitting to theft
-					add_character_modifier = { 
-						modifier = feast_admitted_to_theft_modifier
-						years = 5
-					}
-					#They're condemning
-					reverse_add_opinion = { 
-						target = scope:witness
-						modifier = feast_condemning_opinion
-						opinion = -10
-					}
-				}
-			}
-		}
-		#Return-the-trinket-event
-		trigger_event = {
-			id = feast_default.1019
 		}
 	}
 }
@@ -3071,7 +3089,9 @@ feast_default.1018 = {
 scripted_effect feast_default_1019_redemption_or_condemnation_effect = {
 	#If we're redeemed
 	if = {
-		limit = { has_character_flag = redemption_feast_default.1018 }
+		limit = { 
+			#has_character_flag = redemption_feast_default.1018 
+		}
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = feast_default_1019_redeemed.t
@@ -3097,7 +3117,7 @@ scripted_effect feast_default_1019_redemption_or_condemnation_effect = {
 	#If we're condemned and contemptful
 	else_if = {
 		limit = {
-			NOT = { has_character_flag = redemption_feast_default.1018 }
+			#NOT = { has_character_flag = redemption_feast_default.1018 }
 			feast_default_1018_contemptful_personality_check_trigger = yes
 		}
 		send_interface_toast = {
@@ -3179,7 +3199,7 @@ scripted_effect feast_default_1019_cheeky_item_outcome_effect = {
 	if = {
 		limit = { 
 			has_hook = scope:feast_host
-			has_character_flag = redemption_feast_default.1018
+			#has_character_flag = redemption_feast_default.1018
 		}
 		remove_hook = { target = scope:feast_host }
 		send_interface_toast = {
@@ -3206,7 +3226,7 @@ scripted_effect feast_default_1019_cheeky_item_outcome_effect = {
 	else_if = {
 		limit = { 
 			has_hook = scope:feast_host
-			NOT = { has_character_flag = redemption_feast_default.1018 }
+			#NOT = { has_character_flag = redemption_feast_default.1018 }
 		}
 		remove_hook = { target = scope:feast_host }
 		send_interface_toast = {
@@ -3248,7 +3268,9 @@ scripted_effect feast_default_1019_cheeky_item_outcome_effect = {
 	}
 	#If we're good friends with the feast_host and are redeemed
 	else_if = {
-		limit = { has_character_flag = redemption_feast_default.1018 }
+		limit = { 
+			#has_character_flag = redemption_feast_default.1018 
+		}
 		duel = {
 			skill = intrigue
 			target = scope:feast_host
@@ -3341,11 +3363,7 @@ scripted_effect feast_default_1019_cheeky_item_outcome_effect = {
 				min = 10
 				#If they don't like us, a one-act modifier
 				modifier = {
-					scope:feast_host = {
-						OR = {
-							has_relation_potential_rival = root
-						}
-					}
+					scope:feast_host = { has_relation_potential_rival = root }
 					factor = 7
 				}
 				#You fail to convince them
@@ -3467,11 +3485,7 @@ scripted_effect feast_default_1019_cheeky_item_outcome_effect = {
 				min = 10
 				#If they don't like us, a one-act modifier
 				modifier = {
-					scope:feast_host = {
-						OR = {
-							has_relation_potential_rival = root
-						}
-					}
+					scope:feast_host = { has_relation_potential_rival = root }
 					factor = 7
 				}
 				#You fail to convince them
@@ -3504,14 +3518,15 @@ scripted_effect feast_default_1019_cheeky_item_outcome_effect = {
 
 #If you are redeemed or condemned - resolution with the feast_host
 feast_default.1019 = {
-	type = activity_event
+	orphan = yes
+	type = character_event
 	title = feast_default.1019.t
 	desc = {
 		first_valid = {
 			#Good relation
 			triggered_desc = {
 				trigger = {
-					has_character_flag = redemption_feast_default.1018
+					#has_character_flag = redemption_feast_default.1018
 				}
 				desc = feast_default.1019.desc_intro_redeemed
 			}
@@ -3559,12 +3574,10 @@ feast_default.1019 = {
 	}
 	right_portrait = {
 		character = scope:feast_host
-		triggered_animation = {
-			trigger = {
-				has_character_flag = feast_host_redemption_feast_default.1018
-			}
-  			animation = worry
-  		}
+		#triggered_animation = {
+		#	trigger = { has_character_flag = feast_host_redemption_feast_default.1018 }
+  		#	animation = worry
+  		#}
 		animation = disapproval
 	}
 	#Show the witness
@@ -3600,12 +3613,12 @@ feast_default.1019 = {
 		feast_default_1019_redemption_or_condemnation_effect = yes
 	}
 
-	after = {
-		remove_character_flag = redemption_feast_default.1018
-		scope:feast_host = {
-			remove_character_flag = feast_host_redemption_feast_default.1018
-		}
-	}
+	#after = {
+	#	remove_character_flag = redemption_feast_default.1018
+	#	scope:feast_host = {
+	#		remove_character_flag = feast_host_redemption_feast_default.1018
+	#	}
+	#}
 }
 
 #####################
@@ -3962,7 +3975,7 @@ feast_default.1020 = {
 				}
 				desc = feast_default.1020.a.tt_imprisoned
 				#Your sadistic feast host imprisons you
-				rightfully_imprison_character_effect = { 
+				rightfully_imprison_character_less_verbose_effect = { 
 					TARGET = root 
 					IMPRISONER = scope:feast_host 
 				}
@@ -4015,21 +4028,32 @@ feast_default.1020 = {
 					count > 0
 				}
 			}
-			#For localization
-			custom_description_no_bullet = { 
-				text = spiteful_guests_liked_defacing 
-				object = root
+			if = {
+				limit = {
+					any_in_list = {
+						list = guests_who_dislike_host
+						count >= 5
+					}
+				}
+				custom_tooltip = feast_default.1020.tt_guests
 			}
-			#To display all applicable guests
-			show_as_tooltip = {
-				every_in_list = {
-					list = guests_who_dislike_host
-					save_temporary_scope_as = current_guest
-					scope:current_guest = {
-						add_opinion = {
-							target = root
-							modifier = pleased_opinion
-							opinion = 20
+			else = {
+				#For localization
+				custom_description = { 
+					text = spiteful_guests_liked_defacing 
+					object = root
+				}
+				#To display all applicable guests
+				show_as_tooltip = {
+					every_in_list = {
+						list = guests_who_dislike_host
+						save_temporary_scope_as = current_guest
+						scope:current_guest = {
+							add_opinion = {
+								target = root
+								modifier = pleased_opinion
+								opinion = 20
+							}
 						}
 					}
 				}
@@ -5047,6 +5071,24 @@ feast_default.1030 = {
 		scope:accolade_1 = {
 			feast_default_1030_option_bonuses_effect = yes
 		}
+		if = {
+			limit = {
+				has_dlc_feature = legends
+			}
+			random = {
+				chance = 5
+				create_legend_seed = {
+					type = heroic
+					quality = famed
+					chronicle = accolade_chronicle
+					properties = {
+						founder = root
+						first_accolade = scope:accolade_1
+						first_accolade_knight = scope:knight_1
+					}
+				}
+			}
+		}
 		
 		ai_chance = {
 			base = 100
@@ -5080,6 +5122,25 @@ feast_default.1030 = {
 		scope:accolade_2 = {
 			feast_default_1030_option_bonuses_effect = yes
 		}
+		if = {
+			limit = {
+				has_dlc_feature = legends
+			}
+			random = {
+				chance = 5
+				create_legend_seed = {
+					type = heroic
+					quality = famed
+					chronicle = accolade_chronicle
+					properties = {
+						founder = root
+						first_accolade = scope:accolade_2
+						first_accolade_knight = scope:knight_2
+					}
+				}
+			}
+		}
+
 		ai_chance = {
 			base = 100
 			
@@ -5115,6 +5176,25 @@ feast_default.1030 = {
 		scope:accolade_3 = {
 			feast_default_1030_option_bonuses_effect = yes
 		}
+		if = {
+			limit = {
+				has_dlc_feature = legends
+			}
+			random = {
+				chance = 5
+				create_legend_seed = {
+					type = heroic
+					quality = famed
+					chronicle = accolade_chronicle
+					properties = {
+						founder = root
+						first_accolade = scope:accolade_3
+						first_accolade_knight = scope:knight_3
+					}
+				}
+			}
+		}
+
 		ai_chance = {
 			base = 100
 			
@@ -5151,6 +5231,25 @@ feast_default.1030 = {
 		scope:accolade_4 = {
 			feast_default_1030_option_bonuses_effect = yes
 		}
+		if = {
+			limit = {
+				has_dlc_feature = legends
+			}
+			random = {
+				chance = 5
+				create_legend_seed = {
+					type = heroic
+					quality = famed
+					chronicle = accolade_chronicle
+					properties = {
+						founder = root
+						first_accolade = scope:accolade_4
+						first_accolade_knight = scope:knight_4
+					}
+				}
+			}
+		}
+
 		ai_chance = {
 			base = 100
 			
@@ -9017,6 +9116,9 @@ feast_default.5002 = {
 		scope:activity = {
 			every_attending_character = {
 				custom = every_guest_scope_tt
+				limit = {
+					NOT = { this = root }
+				}
 				add_opinion = {
 					target = root
 					modifier = respect_opinion
@@ -9430,7 +9532,7 @@ feast_default.5005 = {
 	}
 	right_portrait = {
 		character = root
-		animation = ecstasy
+		animation = dancing
 	}
 	cooldown = { years = 1 }
 	
@@ -9486,6 +9588,7 @@ feast_default.5005 = {
 			OR = {
 				has_trait = scholar
 				has_trait = education_learning_4
+				has_trait = education_learning_5
 				has_trait = intellect_good_2
 				has_trait = intellect_good_3
 			}
@@ -9511,6 +9614,222 @@ feast_default.5005 = {
 		}
 
 		change_nickname_weight_effect = { NICKNAME = nick_the_fat CHANGE = nickname_weight_small_increase }
+	}
+}
+
+
+################################
+# Time to spread a legend!
+# by James Beaumont
+################################
+feast_default.5010 = {
+	type = activity_event
+	title = feast_default.5010.t
+	desc = feast_default.5010.desc
+	theme = feast_activity
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	right_portrait = {
+		character = scope:rando_guest
+		animation = admiration
+	}
+	cooldown = { years = 3 }
+	
+	trigger = {
+		has_activity_intent = spread_legend_intent
+		scope:activity = {
+			any_attending_character = {
+				is_adult = yes
+				is_ai = yes
+				is_landed = yes
+			}
+		}
+	}
+
+	immediate = {
+		scope:activity = {
+			random_attending_character = {
+				limit = {
+					is_adult = yes
+					is_ai = yes
+					is_landed = yes
+				}
+				save_scope_as = rando_guest
+			}
+		}
+	}
+
+	option = { # Did you ever hear the tale of Solomon the Wise? I thought not...
+		name = feast_default.5010.a
+		duel = {
+			skill = diplomacy
+			target = scope:rando_guest
+			50 = {
+				desc = feast_default.5010.a.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+				}
+				send_interface_toast = {
+					title = feast_default.5010.a.success
+					left_icon = root
+					right_icon = scope:rando_guest
+					add_prestige = medium_prestige_gain
+					scope:rando_guest = {
+						set_promoted_legend = root.promoted_legend
+					}
+				}
+			}
+			50 = {
+				desc = feast_default.5010.a.failure
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+				}
+				send_interface_toast = {
+					title = feast_default.5010.a.failure
+					left_icon = root
+					right_icon = scope:rando_guest
+					add_prestige = minor_prestige_loss
+				}
+			}
+		}
+	}
+
+	option = { # Everyone must hear the legend!
+		name = feast_default.5010.b
+		add_character_modifier = {
+			modifier = ce1_legendary_feaster
+			years = 15
+		}
+	}
+
+	option = { # I'll just enjoy the quiet for a moment
+		name = feast_default.5010.c
+		add_stress = medium_stress_loss
+	}
+}
+
+################################
+# Let's talk about how great of a king I am!
+# by James Beaumont
+################################
+feast_default.5020 = {
+	type = activity_event
+	title = feast_default.5020.t
+	desc = feast_default.5020.desc
+	theme = feast_activity
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	cooldown = { years = 3 }
+	
+	trigger = {
+		has_activity_intent = legitimacy_intent
+	}
+
+	option = { # I have the wit of TricksterGodName!
+		name = feast_default.5020.a
+		duel = {
+			skills = { diplomacy intrigue }
+			value = decent_skill_rating
+			50 = {
+				desc = feast_default.5020.a.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+				}
+				send_interface_toast = {
+					title = feast_default.5020.a.success
+					left_icon = root
+					add_legitimacy = medium_legitimacy_gain
+				}
+			}
+			50 = {
+				desc = feast_default.5020.a.failure
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+				}
+				send_interface_toast = {
+					title = feast_default.5020.a.failure
+					left_icon = root
+					add_legitimacy = minor_legitimacy_gain
+				}
+			}
+		}
+	}
+
+	option = { # I have the wisdom of KnowledgeGodName!
+		name = feast_default.5020.b
+		duel = {
+			skills = { learning stewardship }
+			value = decent_skill_rating
+			50 = {
+				desc = feast_default.5020.a.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+				}
+				send_interface_toast = {
+					title = feast_default.5020.a.success
+					left_icon = root
+					add_legitimacy = medium_legitimacy_gain
+				}
+			}
+			50 = {
+				desc = feast_default.5020.a.failure
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+				}
+				send_interface_toast = {
+					title = feast_default.5020.a.failure
+					left_icon = root
+					add_legitimacy = minor_legitimacy_gain
+				}
+			}
+		}
+	}
+
+	option = { # I have the heart and stomach of WarGodName!
+		name = feast_default.5020.c
+		duel = {
+			skills = { martial prowess }
+			value = decent_skill_rating
+			50 = {
+				desc = feast_default.5020.a.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+				}
+				send_interface_toast = {
+					title = feast_default.5020.a.success
+					left_icon = root
+					add_legitimacy = medium_legitimacy_gain
+				}
+			}
+			50 = {
+				desc = feast_default.5020.a.failure
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+				}
+				send_interface_toast = {
+					title = feast_default.5020.a.failure
+					left_icon = root
+					add_legitimacy = minor_legitimacy_gain
+				}
+			}
+		}
+	}
+
+	option = { # I'll just enjoy the quiet for a moment
+		name = feast_default.5020.d
+		add_stress = medium_stress_loss
 	}
 }
 
@@ -9626,7 +9945,7 @@ feast_default.6002 = {
 	}
 	right_portrait = {
 		character = scope:spouse
-		animation = personality_bold
+		animation = dancing
 	}
 	theme = feast_activity
 	cooldown = { years = 1 }
@@ -10249,7 +10568,7 @@ feast_default.6111 = {
 				limit = {
 					feast_default_6111_character_trigger = yes
 					#to prioritize characters that you want to get to know
-					OR = { #Either I am trying to befriend them, or them me.
+					OR = { #Either I am trying to befriend them, or them me, or I just wanna promote my legend to anyone who will listen
 						AND = {
 							has_activity_intent = befriend_attendee_intent
 							intent_target ?= {
@@ -10260,6 +10579,9 @@ feast_default.6111 = {
 						root = {
 							has_activity_intent = befriend_attendee_intent
 							intent_target ?= prev
+						}
+						root = {
+							has_activity_intent = spread_legend_intent
 						}
 					}
 				}
@@ -10411,6 +10733,76 @@ feast_default.6111 = {
 		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_increase }
 		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
 		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_decrease }
+	}
+
+	option = { #Let's change subjects to my legend!
+		name = feast_default.6111.d
+		trigger = {
+			has_activity_intent = spread_legend_intent
+		}
+		if = { # If they're a nobody I don't care about, give me a neat modifier
+			limit = {
+				scope:guest_to_talk_to = {
+					OR = {
+						highest_held_title_tier <= tier_county
+						exists = promoted_legend
+					}
+				}
+			}
+			add_character_modifier = {
+				modifier = ce1_legendary_feaster
+				years = 15
+			}
+		}
+		else = {
+			duel = {
+				skill = diplomacy
+				target = scope:guest_to_talk_to
+				50 = {
+					desc = feast_default.6111.d.success
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 3.5
+					}
+					send_interface_toast = {
+						title = feast_default.6111.d.success
+						left_icon = root
+						right_icon = scope:guest_to_talk_to
+						add_prestige = medium_prestige_gain
+						scope:guest_to_talk_to = {
+							set_promoted_legend = root.promoted_legend
+						}
+					}
+				}
+				50 = {
+					desc = feast_default.6111.d.failure
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -3.5
+					}
+					send_interface_toast = {
+						title = feast_default.6111.d.failure
+						left_icon = root
+						right_icon = scope:guest_to_talk_to
+						add_prestige = minor_prestige_loss
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 500
+		}
+	}
+
+	option = { #Let's talk about how great of a king I am!
+		name = feast_default.6111.e
+		trigger = {
+			has_activity_intent = legitimacy_intent
+		}
+		add_legitimacy = minor_legitimacy_gain
+		ai_chance = {
+			base = 500
+		}
 	}
 }
 
@@ -11041,12 +11433,18 @@ feast_default.6261 = {
 	}
 	theme = feast_activity
 	left_portrait = {
-		character = scope:concerned_guest
-		animation = worry
+		character = root
+		animation = happiness
 	}
 	right_portrait = {
-		character = scope:cannibal
-		animation = ecstasy
+		character = scope:guest_to_display
+		#Cannibals would chow down
+		triggered_animation = {
+			trigger = { exists = scope:cannibal_guest }
+			animation = ecstasy
+		}
+		#Not cannibals... not so much
+		animation = worry
 	}
 	cooldown = { years = 1 }
 
@@ -11089,6 +11487,7 @@ feast_default.6261 = {
 					NOT = { this = root }
 				}
 				save_scope_as = cannibal_guest
+				save_scope_as = guest_to_display
 			}
 			if = {
 				limit = {
@@ -11118,6 +11517,7 @@ feast_default.6261 = {
 						}
 					}
 					save_scope_as = concerned_guest
+					save_scope_as = guest_to_display
 				}
 			}
 		}

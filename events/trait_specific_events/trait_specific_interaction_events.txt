@@ -447,13 +447,6 @@ trait_specific_interactions.0152 = {
 				}
 			}
 
-			if = {
-				limit = {
-					scope:sc_loser = { is_vassal_or_below_of = scope:sc_victor }
-				}
-				change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
-			}
-
 			hard_imprison_character_effect = {
 				TARGET = scope:sc_loser
 				IMPRISONER = scope:sc_victor
@@ -489,13 +482,6 @@ trait_specific_interactions.0152 = {
 					}
 					consume_execute_reasons = scope:sc_victor
 				}
-			}
-
-			if = {
-				limit = {
-					scope:sc_loser = { is_vassal_or_below_of = scope:sc_victor }
-				}
-				change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 			}
 		}
 	}
@@ -550,13 +536,6 @@ trait_specific_interactions.0154 = {
 				}
 			}
 
-			if = {
-				limit = {
-					scope:sc_loser = { is_vassal_or_below_of = scope:sc_victor }
-				}
-				change_city_state_corruption = { AMOUNT_ARG = corruption_miniscule_increase }
-			}
-
 			scope:sc_loser = {
 				banish = yes
 			}
@@ -591,13 +570,6 @@ trait_specific_interactions.0154 = {
 					}
 					consume_execute_reasons = scope:sc_victor
 				}
-			}
-
-			if = {
-				limit = {
-					scope:sc_loser = { is_vassal_or_below_of = scope:sc_victor }
-				}
-				change_city_state_corruption = { AMOUNT_ARG = corruption_miniscule_decrease }
 			}
 		}
 	}
@@ -655,13 +627,6 @@ trait_specific_interactions.0156 = {
 				}
 			}
 
-			if = {
-				limit = {
-					scope:sc_loser = { is_vassal_or_below_of = scope:sc_victor }
-				}
-				change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
-			}
-
 			execute_prisoner_effect = {
 				VICTIM = scope:sc_loser
 				EXECUTIONER = scope:sc_victor
@@ -697,13 +662,6 @@ trait_specific_interactions.0156 = {
 
 					consume_execute_reasons = scope:sc_victor
 				}
-			}
-
-			if = {
-				limit = {
-					scope:sc_loser = { is_vassal_or_below_of = scope:sc_victor }
-				}
-				change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 			}
 		}
 	}

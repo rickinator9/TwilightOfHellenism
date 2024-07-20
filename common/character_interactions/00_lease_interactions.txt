@@ -37,6 +37,10 @@
 		scope:target = {
 			has_revokable_lease = yes
 			lessee = scope:recipient
+			OR = {
+				county.holder = { is_ai = yes }
+				county.holder = scope:actor
+			}
 		}
 		scope:recipient = { NOT = { has_strong_hook = scope:actor } }
 	}

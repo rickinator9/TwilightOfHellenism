@@ -5,6 +5,7 @@ independence_faction_war = {
 	group = civil_war
 	ai_only_against_liege = yes
 	target_titles = independence_domain
+	allow_hostages = no
 	allowed_for_character = {
 		scope:attacker = {
 			is_leading_faction_type = independence_faction
@@ -248,6 +249,7 @@ independence_faction_war = {
 				value = medium_prestige_value
 				multiply = -1
 			}
+			
 			if = {
 				limit = { has_realm_law = crown_authority_1 }
 				add_realm_law = crown_authority_0
@@ -277,9 +279,8 @@ independence_faction_war = {
 		}
 		resolve_title_and_vassal_change = scope:change
 
-		# Keep track of war wins / losses
-		scope:attacker = { register_offensive_war_win_effect = yes }
-		scope:defender = { register_defensive_war_loss_effect = yes }
+		# LEGITIMACY FROM LOSING FACTION WAR
+		faction_war_end_defeat_legitimacy_effect = yes
 	}
 
 	on_white_peace_desc = {
@@ -407,6 +408,9 @@ independence_faction_war = {
 			change_nickname_weight_effect = { NICKNAME = nick_the_autocrat CHANGE = nickname_weight_small_increase }
 		}
 
+			# LEGITIMACY FROM WINNING FACTION WAR
+			faction_war_end_victory_legitimacy_effect = yes
+		}
 		on_lost_faction_revolt_war = yes
 
 		# Keep track of war wins / losses
@@ -450,6 +454,7 @@ liberty_faction_war = {
 	icon = dissolution_war
 	group = civil_war
 	ai_only_against_liege = yes
+	allow_hostages = no
 	allowed_for_character = {
 		scope:attacker = {
 			is_leading_faction_type = liberty_faction
@@ -487,6 +492,9 @@ liberty_faction_war = {
 
 		#EP2 Accolade glory gain from winning against higher ranked enemy
 		scope:attacker = { accolade_attacker_war_end_glory_gain_med_effect = yes }
+
+		# LEGITIMACY FROM LOSING FACTION WAR
+		faction_war_end_defeat_legitimacy_effect = yes
 
 		scope:defender = {
 			if = {
@@ -670,7 +678,8 @@ liberty_faction_war = {
 			add_dread = medium_dread_gain
 			add_achievement_flag_effect = { FLAG = achievement_know_your_place_flag }
 
-			change_nickname_weight_effect = { NICKNAME = nick_the_autocrat CHANGE = nickname_weight_small_increase }
+			# LEGITIMACY FROM WINNING FACTION WAR
+			faction_war_end_victory_legitimacy_effect = yes
 		}
 		on_lost_faction_revolt_war = yes
 
@@ -713,6 +722,7 @@ populist_war = {
 	group = civil_war
 	ai_only_against_liege = yes
 	target_titles = claim
+	allow_hostages = no
 	allowed_for_character =	{
 		scope:attacker = {
 			is_leading_faction_type = populist_faction
@@ -752,6 +762,25 @@ populist_war = {
 
 		# Generate extra troops if the rebellion was financed
 		generate_troops_from_revolt_county_modifiers_effect = yes
+
+		# Struggle stuffs
+		scope:defender = {
+			if = {
+				limit = {
+					any_character_struggle = {
+						phase_has_catalyst = catalyst_populist_uprise
+						involvement = involved
+					}
+				}
+				every_character_struggle = {
+					involvement = involved
+					activate_struggle_catalyst = {
+						catalyst = catalyst_populist_uprise
+						character = this
+					}
+				}
+			}
+		}
 	}
 
 	on_victory_desc = {
@@ -762,6 +791,7 @@ populist_war = {
 	on_victory = {
 		scope:attacker = { show_pow_release_message_effect = yes }
 		scope:defender = {
+
 			add_prestige_level = -1
 
 			# Struggle Catalysts
@@ -795,6 +825,10 @@ populist_war = {
 
 			change_nickname_weight_effect = { NICKNAME = nick_the_autocrat CHANGE = nickname_weight_large_decrease }
 		}
+
+		# LEGITIMACY FROM LOSING FACTION WAR
+		faction_war_end_defeat_legitimacy_effect = yes
+
 		random_in_list = {
 			list = target_titles
 			save_scope_as = target_title
@@ -931,6 +965,9 @@ populist_war = {
 		scope:defender = {
 			add_dread = medium_dread_gain
 			add_achievement_flag_effect = { FLAG = achievement_know_your_place_flag }
+
+			# LEGITIMACY FROM WINNING FACTION WAR
+			faction_war_end_victory_legitimacy_effect = yes
 		}
 
 		# Keep track of war wins / losses
@@ -971,7 +1008,8 @@ claimant_faction_war = {
 	group = civil_war
 	ai_only_against_liege = no
 	target_titles = claim
-	allowed_for_character =	{
+	allow_hostages = no
+	allowed_for_character = {
 		scope:attacker = {
 			is_leading_faction_type = claimant_faction
 		}
@@ -1032,6 +1070,9 @@ claimant_faction_war = {
 				}
 			}
 		}
+
+		# LEGITIMACY FROM LOSING FACTION WAR
+		faction_war_end_defeat_legitimacy_effect = yes
 
 		on_claimant_faction_war_win_common = {
 			TARGET_TITLES = target_titles
@@ -1103,7 +1144,8 @@ claimant_faction_war = {
 			add_dread = medium_dread_gain
 			add_achievement_flag_effect = { FLAG = achievement_know_your_place_flag }
 
-			change_nickname_weight_effect = { NICKNAME = nick_the_autocrat CHANGE = nickname_weight_small_increase }
+			# LEGITIMACY FROM WINNING FACTION WAR
+			faction_war_end_victory_legitimacy_effect = yes
 		}
 
 		# Keep track of war wins / losses
@@ -1143,6 +1185,7 @@ depose_war = {
 	group = civil_war
 	ai_only_against_liege = yes
 	target_titles = none
+	allow_hostages = no
 	allowed_for_character = {
 	}
 
@@ -1224,6 +1267,7 @@ depose_war = {
 				LIEGE = scope:defender
 				CRIMINAL = scope:attacker
 			}
+
 			# Remove offending HumSac modifiers.
 			hidden_effect = { fp1_remove_humsac_offended_counties_effect = yes }
 			# Then our liege is deposed (but the imprisonment loss remains true for their heir).
@@ -1252,9 +1296,8 @@ depose_war = {
 			change_nickname_weight_effect = { NICKNAME = nick_the_autocrat CHANGE = nickname_weight_large_decrease }
 		}
 
-		# Keep track of war wins / losses
-		scope:attacker = { register_offensive_war_win_effect = yes }
-		scope:defender = { register_defensive_war_loss_effect = yes }
+		# LEGITIMACY FROM LOSING FACTION WAR
+		faction_war_end_defeat_legitimacy_effect = yes
 	}
 
 	on_white_peace_desc = {
@@ -1305,7 +1348,8 @@ depose_war = {
 		scope:defender = {
 			add_dread = medium_dread_gain
 
-			change_nickname_weight_effect = { NICKNAME = nick_the_autocrat CHANGE = nickname_weight_small_increase }
+			# LEGITIMACY FROM WINNING FACTION WAR
+			faction_war_end_victory_legitimacy_effect = yes
 		}
 
 		# Keep track of war wins / losses
@@ -1348,6 +1392,7 @@ refused_liege_demand_war = {
 	icon = dissolution_war
 	group = civil_war
 	ai_only_against_liege = yes
+	allow_hostages = no
 	allowed_for_character = {
 		scope:attacker = {
 			is_leading_faction_type = liberty_faction
@@ -1491,6 +1536,9 @@ refused_liege_demand_war = {
 			change_nickname_weight_effect = { NICKNAME = nick_the_autocrat CHANGE = nickname_weight_large_decrease }
 		}
 
+		# LEGITIMACY FROM LOSING FACTION WAR
+		faction_war_end_defeat_legitimacy_effect = yes
+
 		hidden_effect = {
 			scope:attacker = {
 				add_truce_both_ways = {
@@ -1569,7 +1617,26 @@ refused_liege_demand_war = {
 			}
 			add_dread = medium_dread_gain
 
-			change_nickname_weight_effect = { NICKNAME = nick_the_autocrat CHANGE = nickname_weight_small_increase }
+			# LEGITIMACY FROM WINNING FACTION WAR
+			faction_war_end_victory_legitimacy_effect = yes
+		}
+
+		# For revoking titles of character's imprisoned abroard who have lost a revocation war
+		hidden_effect = {
+			if = {
+				limit = {
+					scope:attacker = {
+						is_imprisoned = yes
+						NOT = { is_imprisoned_by = scope:defender }
+					}
+				}
+				scope:defender = {
+					add_opinion = {
+						target = scope:attacker
+						modifier = foreign_prison_revocation_opinion
+					}
+				}
+			}
 		}
 		on_lost_request_revolt_war = yes
 
@@ -1612,6 +1679,7 @@ independence_war = {
 	group = independence
 	ai = no # AI targeting is handled through game_rule events.
 
+	allow_hostages = no
 	allowed_against_character = {
 		scope:attacker = {
 			liege = scope:defender
@@ -1698,6 +1766,7 @@ independence_war = {
 		}
 
 		scope:defender = {
+
 			# Struggle Catalyst
 			hidden_effect = {
 				if = {
@@ -1730,6 +1799,9 @@ independence_war = {
 				}
 			}
 		}
+
+		# LEGITIMACY FROM LOSING FACTION WAR
+		faction_war_end_defeat_legitimacy_effect = yes
 
 		resolve_title_and_vassal_change = scope:change
 
@@ -1808,6 +1880,9 @@ independence_war = {
 			add_prestige_war_defender_effect = {
 				PRESTIGE_VALUE = medium_prestige_value
 			}
+
+			# LEGITIMACY FROM WINNING FACTION WAR
+			faction_war_end_victory_legitimacy_effect = yes
 		}
 
 		scope:attacker = {
@@ -1855,7 +1930,7 @@ independence_war = {
 nation_fracturing_faction_war = {
 	icon = dissolution_war
 	group = civil_war
-
+	allow_hostages = no
 	allowed_for_character = {
 		scope:attacker = {
 			is_ai = no
@@ -2004,9 +2079,8 @@ nation_fracturing_faction_war = {
 			}
 		}
 
-		# Keep track of war wins / losses
-		scope:attacker = { register_offensive_war_win_effect = yes }
-		scope:defender = { register_defensive_war_loss_effect = yes }
+		# LEGITIMACY FROM LOSING FACTION WAR
+		faction_war_end_defeat_legitimacy_effect = yes
 	}
 
 	on_white_peace_desc = {
@@ -2108,7 +2182,8 @@ nation_fracturing_faction_war = {
 			}
 			add_achievement_flag_effect = { FLAG = achievement_know_your_place_flag }
 
-			change_nickname_weight_effect = { NICKNAME = nick_the_autocrat CHANGE = nickname_weight_small_increase }
+			# LEGITIMACY FROM WINNING FACTION WAR
+			faction_war_end_victory_legitimacy_effect = yes
 		}
 
 		on_lost_faction_revolt_war = yes

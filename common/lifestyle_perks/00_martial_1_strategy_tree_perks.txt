@@ -127,7 +127,7 @@ engineered_for_destruction_perk = {
 }
 
 
-defensive_maneuvering_perk = {
+living_off_the_land_perk = {
 	lifestyle = martial_lifestyle
 	tree = strategy
 	position = { 4 2.5 }
@@ -136,10 +136,9 @@ defensive_maneuvering_perk = {
 	parent = engineered_for_destruction_perk
 	
 	character_modifier = {
-		defender_advantage = 5
-		hills_advantage = 2
-		mountains_advantage = 2
-		min_combat_roll = 1
+		supply_capacity_mult = 2
+		raid_speed = 0.25
+		character_travel_safety_mult = 0.25
 	}
 }
 
@@ -152,7 +151,7 @@ sappers_perk = {
 	
 	parent = envelopment_perk
 	parent = hit_and_run_perk
-	parent = defensive_maneuvering_perk
+	parent = living_off_the_land_perk
 	
 	character_modifier = {
 		heavy_infantry_siege_value_add = 0.1

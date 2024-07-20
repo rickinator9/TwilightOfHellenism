@@ -1,6 +1,4 @@
-﻿
-
-###########
+﻿###########
 ## Generic Holy Site Buildings
 ###########
 
@@ -49,7 +47,7 @@ holy_site_cathedral_01 = {
 		monthly_dynasty_prestige_mult = 0.05
 		holy_order_hire_cost_mult = -0.15
 		clergy_opinion = 5
-		monthly_county_control_change_factor = 0.05
+		monthly_county_control_growth_factor = 0.05
 	}
 	
 	county_modifier = {
@@ -114,7 +112,7 @@ holy_site_mosque_01 = {
 		monthly_dynasty_prestige_mult = 0.05
 		domain_tax_different_faith_mult = 0.15
 		levy_reinforcement_rate_same_faith = 0.15
-		monthly_county_control_change_factor = 0.05
+		monthly_county_control_growth_factor = 0.05
 	}
 	
 	county_modifier = {
@@ -185,7 +183,7 @@ holy_site_pagan_grand_temple_01 = {
 		monthly_dynasty_prestige_mult = 0.05
 		knight_effectiveness_mult = 0.15
 		levy_reinforcement_rate = 0.1
-		monthly_county_control_change_factor = 0.05
+		monthly_county_control_growth_factor = 0.05
 	}
 	
 	county_modifier = {
@@ -258,7 +256,7 @@ holy_site_indian_grand_temple_01 = {
 		monthly_dynasty_prestige_mult = 0.05
 		different_faith_opinion = 5
 		different_faith_county_opinion_mult = -0.15
-		monthly_county_control_change_factor = 0.05
+		monthly_county_control_growth_factor = 0.05
 	}
 	
 	county_modifier = {
@@ -328,7 +326,7 @@ holy_site_other_grand_temple_01 = {
 		monthly_dynasty_prestige_mult = 0.05
 		men_at_arms_maintenance = -0.025
 		short_reign_duration_mult = -0.1
-		monthly_county_control_change_factor = 0.05
+		monthly_county_control_growth_factor = 0.05
 	}
 	
 	county_modifier = {
@@ -385,7 +383,7 @@ holy_site_mahabodhi_temple_01 = {
 	character_modifier = {
 		monthly_piety = 1
 		monthly_dynasty_prestige_mult = 0.05
-		learning_per_piety_level = 2
+		learning_per_piety_level = 1
 		different_faith_opinion = 5
 		religious_vassal_opinion = 10
 		different_faith_county_opinion_mult = -0.2
@@ -591,9 +589,9 @@ temple_in_jerusalem_01 = {
 	character_modifier = {
 		monthly_piety_gain_per_knight_mult = 0.03
 		monthly_dynasty_prestige_mult = 0.05
-		monthly_county_control_change_factor = 0.1
+		monthly_county_control_growth_factor = 0.1
 		martial_per_piety_level = 1
-		learning_per_prestige_level = 2
+		learning_per_prestige_level = 1
 		knight_effectiveness_mult = 0.2
 		same_faith_opinion = 5
 	}

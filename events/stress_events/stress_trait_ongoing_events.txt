@@ -377,8 +377,6 @@ stress_trait_ongoing.0506 = {
 				has_trait = gregarious
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_decrease }
 	}
 	
 	#Invite a likely friend.
@@ -570,8 +568,6 @@ stress_trait_ongoing.0511 = {
 				has_trait = arrogant
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_fat CHANGE = nickname_weight_small_decrease }
 	}
 	
 	#[deep breath] Agreed, elder. (/continue eating cakes)
@@ -1255,8 +1251,6 @@ stress_trait_ongoing.4501 = {
 				ai_greed = tiny_chance_impact_negative_ai_value
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_fat CHANGE = nickname_weight_small_increase }
 	}
 
 	option = {
@@ -1294,9 +1288,7 @@ stress_trait_ongoing.4501 = {
 					stress_impact = {
 						base = massive_stress_impact_loss
 					}
-				}	
-
-				change_nickname_weight_effect = { NICKNAME = nick_the_devourer CHANGE = nickname_weight_medium_increase }
+				} 	
 			}
 			40 = {
 				desc = stress_trait_ongoing.4501.b.failure
@@ -1320,7 +1312,6 @@ stress_trait_ongoing.4501 = {
 			}
 		}
 		
-		change_nickname_weight_effect = { NICKNAME = nick_the_fat CHANGE = nickname_weight_small_increase }
 	}
 	
 	option = {
@@ -1328,8 +1319,6 @@ stress_trait_ongoing.4501 = {
 		stress_impact = {
 			base = minor_stress_impact_gain
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_fat CHANGE = nickname_weight_small_decrease }
 
 		ai_chance = {
 			base = 50
@@ -1520,8 +1509,6 @@ stress_trait_ongoing.4502 = {
 				ai_compassion = low_chance_impact_positive_ai_value
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_fat CHANGE = nickname_weight_small_increase }
 	}
 
 	option = {
@@ -1551,8 +1538,6 @@ stress_trait_ongoing.4502 = {
 				ai_compassion = low_chance_impact_negative_ai_value
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_fat CHANGE = nickname_weight_small_increase }
 	}
 	
 	option = {
@@ -1575,8 +1560,6 @@ stress_trait_ongoing.4502 = {
 				ai_boldness = low_chance_impact_positive_ai_value
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_fat CHANGE = nickname_weight_small_increase }
 	}
 }
 
@@ -1727,7 +1710,6 @@ stress_trait_ongoing.5001 = {
 			VALUE = -2
  		}
 
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
 	}
 	
 	option = {

@@ -318,8 +318,6 @@ peasant_affair.1001 = {
 				}
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { #Add them to court and reveal your secret child secret
@@ -663,8 +661,6 @@ peasant_affair.2001 = {
 				has_trait = chaste
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { #End the search
@@ -728,8 +724,6 @@ peasant_affair.2001 = {
 				has_trait = chaste
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_increase }
 	}
 }
 
@@ -1154,9 +1148,6 @@ peasant_affair.2003 = {
 		ai_chance = {
 			base = 100
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { #Add them to court and reveal your child
@@ -1188,7 +1179,6 @@ peasant_affair.2003 = {
 				opinion = 40
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 		if = {
 			limit = {
 				any_secret = {
@@ -1209,8 +1199,6 @@ peasant_affair.2003 = {
 				expose_secret = root
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_decrease }
 	}
 
 	option = { #Imprison them!
@@ -1232,7 +1220,6 @@ peasant_affair.2003 = {
 				end_story = yes
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 		stress_impact = {
 			base = minor_stress_impact_loss
 			compassionate = medium_stress_impact_gain
@@ -1250,9 +1237,6 @@ peasant_affair.2003 = {
 				}
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
 	}
 
 	option = { #Send the child away
@@ -1283,8 +1267,6 @@ peasant_affair.2003 = {
 				}
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
 	}
 
 	option = { #Lament their fate
@@ -1308,9 +1290,6 @@ peasant_affair.2003 = {
 		ai_chance = {
 			base = 50
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { #Take the child away from them
@@ -1347,7 +1326,6 @@ peasant_affair.2003 = {
 				end_story = yes
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 		stress_impact = {
 			base = medium_stress_impact_gain
 			compassionate = minor_stress_impact_gain
@@ -1376,9 +1354,6 @@ peasant_affair.2003 = {
 				}
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
 	}
 
 	option = { #Let them go
@@ -1414,9 +1389,6 @@ peasant_affair.2003 = {
 		ai_chance = {
 			base = 100
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_increase }
 	}
 }
 
@@ -1563,7 +1535,6 @@ peasant_affair.3001 = {
 			scope:child_secret = {
 				expose_secret = root
 			}
-			change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 		}
 		show_as_tooltip = { #All the opinions
 			scope:peasant_child = {
@@ -1697,7 +1668,6 @@ peasant_affair.3001 = {
 		scope:child_secret = {
 			expose_secret = root
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 		scope:story = {
 			set_variable = {
 				name = acknowledged_child
@@ -1872,7 +1842,6 @@ peasant_affair.3002 = {
 		scope:child_secret = {
 			expose_secret = root
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 		scope:story = {
 			set_variable = {
 				name = acknowledged_child

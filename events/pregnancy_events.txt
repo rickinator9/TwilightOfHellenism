@@ -1261,7 +1261,7 @@ pregnancy.3004 = {
 	desc = pregnancy.3004.desc
 	theme = pregnancy
 	left_portrait = scope:mother
-	right_portrait = scope:spouse
+	lower_right_portrait = scope:spouse
 
 	trigger = {
 		scope:mother = {
@@ -1281,6 +1281,9 @@ pregnancy.3004 = {
 		#For portrait and desc purposes
 		primary_spouse = {
 			save_scope_as = spouse
+		}
+		show_as_tooltip = {
+			scope:mother = { add_trait_force_tooltip = pregnant }
 		}
 	}
 
@@ -1646,7 +1649,7 @@ pregnancy.6006 = {
 	theme = pregnancy
 	left_portrait = scope:mother
 	lower_left_portrait = scope:real_father
-	right_portrait = scope:spouse
+	lower_center_portrait = scope:spouse
 
 	immediate = {
 		play_music_cue = "mx_cue_prison"

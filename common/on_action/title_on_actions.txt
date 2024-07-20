@@ -27,14 +27,12 @@
 # Does *not* provide scope:transfer_type
 on_title_destroyed = {
 	events = {
+		british_isles.1031	# Danelaw-England partition calc.
 	}
 
-	# remove existing claims
 	effect = {
 		scope:landed_title = {
-			every_claimant = {
-				remove_claim = prev
-			}
+			every_claimant = { remove_claim = prev } # remove existing claims
 		}
 	}
 }
@@ -45,6 +43,7 @@ on_title_destroyed = {
 # scope:previous_holder = previous holder. Might be dead
 on_title_gain = {
 	effect = {
+
 		scope:title = { update_dynamic_coa = yes }
 		
 		if = {
@@ -172,6 +171,110 @@ on_title_gain = {
 			id = coalition.00011 # Alternate ping event for coalition.0002 (Succession)
 			days =  1 
 		}
+
+		# FP3 Struggle special cases
+		## Convert detractors to supporters if they inherit either of the titles they're detracting against.
+		if = {
+			limit = {
+				exists = struggle:persian_struggle
+				NOT = { has_trait = fp3_struggle_supporter }
+				OR = {
+					scope:title = title:d_sunni
+					scope:title = title:e_arabia
+				}
+			}
+			if = {
+				limit = { has_trait = fp3_struggle_detractor }
+				remove_trait = fp3_struggle_detractor
+			}
+			add_trait = fp3_struggle_supporter
+		}
+		
+		# Special Legitimacy gain for being elected
+		if = {
+			limit = {
+				scope:title = {
+					has_order_of_succession = election
+				}
+			}
+			save_scope_value_as = {
+				name = title_tier_minus_2
+				value = {
+					value = scope:title.tier
+					subtract = 2
+				}
+			}
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = legitimacy_gain_toast
+				left_icon = root
+				right_icon = scope:title
+				add_legitimacy = {
+					value = {
+						value = major_legitimacy_gain
+						multiply = scope:title_tier_minus_2
+					}
+				}
+			}
+		}
+		
+		### CE1 LEGITIMACY SETUP ###
+		if = {
+			limit = { # Catch new landed rulers
+				exists = dynasty
+				# Exclude unplayable for now
+				NOR = {
+					government_has_flag = government_is_republic
+					government_has_flag = government_is_theocracy
+				}
+				legitimacy = 0
+				days_as_ruler < 1
+				OR = {
+					scope:title.tier = tier_county
+					any_held_title = { tier = tier_county }
+				}
+			}
+			add_legitimacy = succession_legitimacy_value
+		}
+
+		# Did I conquer a place with holy order leases not of my faith?
+		if = {
+			limit = {
+				scope:title = {
+					any_in_de_jure_hierarchy = {
+						tier = tier_barony
+						is_under_holy_order_lease = yes
+						county.holder = {
+							any_liege_or_above = { this = root }
+						}
+						lessee = {
+							NAND = { # Only for leases of people who are not of your faith or the holder's faith
+								faith = root.faith
+								faith = prev.county.holder.faith
+							}
+						}
+					}
+				}
+			}
+			scope:title = {
+				every_in_de_jure_hierarchy = {
+					limit = {
+						tier = tier_barony
+						is_under_holy_order_lease = yes
+						county.holder = {
+							any_liege_or_above = { this = root }
+						}
+						lessee = {
+							NAND = { # Only for leases of people who are not of your faith or the holder's faith
+								faith = root.faith
+								faith = prev.county.holder.faith
+							}
+						}
+					}
+					revoke_lease = yes
+				}
+			}
+		}
 	}
 	events = {
 		religious_decision.0312		# Base game: new holder of a county with a runestone
@@ -233,7 +336,79 @@ on_title_gain_inheritance = {
 # scope:title = the title that changes hands
 # scope:previous_holder = previous holder. Shouldn't be dead
 on_title_gain_usurpation = {
-	events = {
+	events = {}
+	effect = {
+		# Struggle Catalysts
+		if = {
+			limit = { # FP2
+				# We are only interested in the title within the Struggle Region
+				title:e_spain = {
+					any_in_de_jure_hierarchy = {
+						this = 	scope:title
+					}
+				}
+				# Only for usurpation
+				scope:transfer_type = flag:usurped
+
+				root = {
+					any_character_struggle = {
+						involvement = involved
+						activate_struggle_catalyst_secondary_character_involvement_involved_trigger = {
+							CATALYST = catalyst_usurp_title_fp2
+							CHAR = root
+						}
+					}
+				}
+			}
+			root = {
+				every_character_struggle = {
+					involvement = involved
+					limit = {
+						activate_struggle_catalyst_secondary_character_involvement_involved_trigger = {
+							CATALYST = catalyst_usurp_title_fp2
+							CHAR = root
+						}
+					}
+					activate_struggle_catalyst = {
+						catalyst = catalyst_usurp_title_fp2
+						character = root
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = { # FP3
+				title:e_persia = { any_in_de_jure_hierarchy = { this = scope:title } }
+				scope:transfer_type = flag:usurped
+
+				root = {
+					any_character_struggle = {
+						involvement = involved
+						activate_struggle_catalyst_secondary_character_involvement_involved_trigger = {
+							CATALYST = catalyst_usurp_title_fp3
+							CHAR = root
+						}
+					}
+				}
+			}
+			root = {
+				every_character_struggle = {
+					involvement = involved
+					limit = {
+						activate_struggle_catalyst_secondary_character_involvement_involved_trigger = {
+							CATALYST = catalyst_usurp_title_fp3
+							CHAR = root
+						}
+					}
+					activate_struggle_catalyst = {
+						catalyst = catalyst_usurp_title_fp3
+						character = root
+					}
+					log_debug_variable_for_persian_struggle_effect = { VAR = unrest_catalyst_usurp_title_fp3 }
+				}
+			}
+		}
 	}
 }
 
@@ -310,6 +485,26 @@ on_title_lost = {
 				}
 			}
 		}
+
+		# Struggle catalyst
+		if = {
+			limit = {
+				any_character_struggle = {
+					involvement = involved
+					phase_has_catalyst = catalyst_revoke_title
+				}
+				OR = {
+					scope:transfer_type = flag:revoked
+					scope:transfer_type = flag:lease_revoked
+				}
+			}
+			every_character_struggle = {
+				activate_struggle_catalyst = {
+					catalyst = catalyst_revoke_title
+					character = scope:new_holder
+				}
+			}
+		}
 		
 		# Memories
 		# Lost a significant title
@@ -333,6 +528,32 @@ on_title_lost = {
 					set_variable = {
 						name = landed_title
 						value = scope:title
+					}
+				}
+			}
+		}
+
+		# LEGITIMACY LOSS FROM USURPATION
+		if = {
+			limit = { scope:transfer_type ?= flag:usurped }
+			# Minus 2, since we want Duchy to be 1, and it's normally 3
+			save_scope_value_as = {
+				name = title_tier_minus_2
+				value = {
+					value = scope:title.tier
+					subtract = 2
+				}
+			}
+			send_interface_toast = {
+				type = event_toast_effect_bad
+				title = legitimacy_loss_toast
+				left_icon = root
+				right_icon = scope:title
+				custom_tooltip = legitimacy_loss_usurpation_tt
+				add_legitimacy = {
+					value = {
+						value = miniscule_legitimacy_loss
+						multiply = scope:title_tier_minus_2
 					}
 				}
 			}
@@ -430,9 +651,20 @@ on_rank_down = { # Will not fire during history execution or for dying character
 		every_ally = {
 			update_embassies_effect = yes
 		}
-
-		save_scope_as = old_holder
-		trigger_event = { on_action = on_significant_title_loss }
+		# Inform hostage havers
+		if = {
+			limit = {
+				any_home_court_hostage = { count >= 1 }
+			}
+			save_scope_as = home_court
+			every_home_court_hostage = {
+				save_scope_as = hostage
+				warden = {
+					save_scope_as = warden
+					trigger_event = { id = bp2_hostage_system.0410 days = 5 }
+				}
+			}
+		}
 	}
 }
 
@@ -489,6 +721,153 @@ on_baron_found_or_created_for_title = {
 		add_opinion = {
 			target = scope:liege
 			modifier = received_title_barony
+		}
+	}
+}
+
+# Called when realm capital changes. It can be manual move, loss in conquest, move after inheritance,
+# move when granted a better title, becoming landed for the first time
+# root: New realm capital barony
+# scope:old_capital - previous capital barony. Can be empty, can be owned by someone else
+on_realm_capital_change = {
+	effect = {
+		holder = {
+			# Do we need to refresh their vizier's modifiers?
+			if = {
+				limit = { has_diarchy_parameter = diarchy_is_vizierate }
+				diarch = {
+					# What we're doing here is regenerating loc on the diarchs that might refer to a specific place which they no longer have access to.
+					## This is gonna get real gross, folks, so my apologies.
+					if = {
+						limit = { has_character_modifier = vizier_extravagance_t1_treasure_modifier }
+						remove_character_modifier = vizier_extravagance_t1_treasure_modifier
+						add_character_modifier = {
+							modifier = vizier_extravagance_t1_treasure_modifier
+							desc = vizier_extravagance_t1_treasure_modifier_custom_desc.on_action
+						}
+					}
+					if = {
+						limit = { has_character_modifier = vizier_extravagance_t1_activities_modifier }
+						remove_character_modifier = vizier_extravagance_t1_activities_modifier
+						add_character_modifier = {
+							modifier = vizier_extravagance_t1_activities_modifier
+							desc = vizier_extravagance_t1_activities_modifier_custom_desc.on_action
+						}
+					}
+					if = {
+						limit = { has_character_modifier = vizier_extravagance_t1_property_modifier }
+						remove_character_modifier = vizier_extravagance_t1_property_modifier
+						add_character_modifier = {
+							modifier = vizier_extravagance_t1_property_modifier
+							desc = vizier_extravagance_t1_property_modifier_custom_desc.on_action
+						}
+					}
+					if = {
+						limit = { has_character_modifier = vizier_extravagance_t1_charity_modifier }
+						remove_character_modifier = vizier_extravagance_t1_charity_modifier
+						add_character_modifier = {
+							modifier = vizier_extravagance_t1_charity_modifier
+							desc = vizier_extravagance_t1_charity_modifier_custom_desc.on_action
+						}
+					}
+					if = {
+						limit = { has_character_modifier = vizier_extravagance_t2_treasure_modifier }
+						remove_character_modifier = vizier_extravagance_t2_treasure_modifier
+						add_character_modifier = {
+							modifier = vizier_extravagance_t2_treasure_modifier
+							desc = vizier_extravagance_t2_treasure_modifier_custom_desc.on_action
+						}
+					}
+					if = {
+						limit = { has_character_modifier = vizier_extravagance_t2_activities_modifier }
+						remove_character_modifier = vizier_extravagance_t2_activities_modifier
+						add_character_modifier = {
+							modifier = vizier_extravagance_t2_activities_modifier
+							desc = vizier_extravagance_t2_activities_modifier_custom_desc.on_action
+						}
+					}
+					if = {
+						limit = { has_character_modifier = vizier_extravagance_t2_property_modifier }
+						remove_character_modifier = vizier_extravagance_t2_property_modifier
+						add_character_modifier = {
+							modifier = vizier_extravagance_t2_property_modifier
+							desc = vizier_extravagance_t2_property_modifier_custom_desc.on_action
+						}
+					}
+					if = {
+						limit = { has_character_modifier = vizier_extravagance_t2_charity_modifier }
+						remove_character_modifier = vizier_extravagance_t2_charity_modifier
+						add_character_modifier = {
+							modifier = vizier_extravagance_t2_charity_modifier
+							desc = vizier_extravagance_t2_charity_modifier_custom_desc.on_action
+						}
+					}
+					if = {
+						limit = { has_character_modifier = vizier_extravagance_t3_treasure_modifier }
+						remove_character_modifier = vizier_extravagance_t3_treasure_modifier
+						add_character_modifier = {
+							modifier = vizier_extravagance_t3_treasure_modifier
+							desc = vizier_extravagance_t3_treasure_modifier_custom_desc.on_action
+						}
+					}
+					if = {
+						limit = { has_character_modifier = vizier_extravagance_t3_activities_modifier }
+						remove_character_modifier = vizier_extravagance_t3_activities_modifier
+						add_character_modifier = {
+							modifier = vizier_extravagance_t3_activities_modifier
+							desc = vizier_extravagance_t3_activities_modifier_custom_desc.on_action
+						}
+					}
+					if = {
+						limit = { has_character_modifier = vizier_extravagance_t3_property_modifier }
+						remove_character_modifier = vizier_extravagance_t3_property_modifier
+						add_character_modifier = {
+							modifier = vizier_extravagance_t3_property_modifier
+							desc = vizier_extravagance_t3_property_modifier_custom_desc.on_action
+						}
+					}
+					if = {
+						limit = { has_character_modifier = vizier_extravagance_t3_charity_modifier }
+						remove_character_modifier = vizier_extravagance_t3_charity_modifier
+						add_character_modifier = {
+							modifier = vizier_extravagance_t3_charity_modifier
+							desc = vizier_extravagance_t3_charity_modifier_custom_desc.on_action
+						}
+					}
+					if = {
+						limit = { has_character_modifier = vizier_extravagance_t4_treasure_modifier }
+						remove_character_modifier = vizier_extravagance_t4_treasure_modifier
+						add_character_modifier = {
+							modifier = vizier_extravagance_t4_treasure_modifier
+							desc = vizier_extravagance_t4_treasure_modifier_custom_desc.on_action
+						}
+					}
+					if = {
+						limit = { has_character_modifier = vizier_extravagance_t4_activities_modifier }
+						remove_character_modifier = vizier_extravagance_t4_activities_modifier
+						add_character_modifier = {
+							modifier = vizier_extravagance_t4_activities_modifier
+							desc = vizier_extravagance_t4_activities_modifier_custom_desc.on_action
+						}
+					}
+					if = {
+						limit = { has_character_modifier = vizier_extravagance_t4_property_modifier }
+						remove_character_modifier = vizier_extravagance_t4_property_modifier
+						add_character_modifier = {
+							modifier = vizier_extravagance_t4_property_modifier
+							desc = vizier_extravagance_t4_property_modifier_custom_desc.on_action
+						}
+					}
+					if = {
+						limit = { has_character_modifier = vizier_extravagance_t4_charity_modifier }
+						remove_character_modifier = vizier_extravagance_t4_charity_modifier
+						add_character_modifier = {
+							modifier = vizier_extravagance_t4_charity_modifier
+							desc = vizier_extravagance_t4_charity_modifier_custom_desc.on_action
+						}
+					}
+				}
+			}
 		}
 	}
 }

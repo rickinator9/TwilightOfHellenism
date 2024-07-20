@@ -391,8 +391,6 @@ yearly.3001 = {
 		stress_impact = {
 			shy = medium_stress_impact_gain
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
 	}
 	
 	#Denounce the foreign neighbor
@@ -500,8 +498,6 @@ yearly.3001 = {
 				}
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_increase }
 	}
 
 	#Kill the vassal right away
@@ -583,8 +579,6 @@ yearly.3001 = {
 				ai_boldness = 1
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_medium_decrease }
 	}
 }
 
@@ -623,7 +617,6 @@ yearly.3002 = {
 					type = threat_hook
 				}
 			}
-			change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 			add_hook = {
 				target = scope:vassal
 				type = threat_hook
@@ -653,7 +646,6 @@ yearly.3002 = {
 			modifier = yearly_benevolent_forgiveness_modifier
 			years = 10
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_miniscule_decrease }
 		if = {
 			limit = {
 				tyranny > 0		
@@ -681,8 +673,6 @@ yearly.3002 = {
 				ai_honor = 1
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_medium_increase }
 	}
 }
 
@@ -721,8 +711,6 @@ yearly.3003 = {
 				}
 			}
 			scope:vassal = { vassal_contract_decrease_obligation_level = feudal_government_taxes }
-
-			change_nickname_weight_effect = { NICKNAME = nick_the_autocrat CHANGE = nickname_weight_small_decrease }
 		}
 		else = {
 			pay_short_term_gold = {
@@ -730,7 +718,6 @@ yearly.3003 = {
 				gold = root.major_gold_value
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_decrease }
 		stress_impact = {
 			greedy = medium_stress_impact_gain
 		}
@@ -742,8 +729,6 @@ yearly.3003 = {
 				ai_honor = 1
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_wealthy CHANGE = nickname_weight_small_increase }
 	}
 
 	option = {
@@ -792,8 +777,6 @@ yearly.3003 = {
 				ai_greed = 1
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_wealthy CHANGE = nickname_weight_small_decrease }
 	}
 
 	option = {
@@ -864,11 +847,6 @@ yearly.3004 = {
 			}
 		}
 
-		change_nickname_weight_effect = { NICKNAME = nick_the_autocrat CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_flayer CHANGE = nickname_weight_small_decrease }
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
-
 		reverse_add_opinion = {
 			target = scope:vassal
 			modifier = grateful_opinion
@@ -908,7 +886,6 @@ yearly.3004 = {
 		stress_impact = {
 			forgiving = medium_stress_impact_gain
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_miniscule_increase }
 
 		ai_chance = {
 			base = 100
@@ -917,8 +894,6 @@ yearly.3004 = {
 				ai_rationality = 0.5
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
 	}
 
 	#Execute them
@@ -933,7 +908,6 @@ yearly.3004 = {
 			compassionate = major_stress_impact_gain
 			forgiving = major_stress_impact_gain
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_miniscule_increase }
 
 		ai_chance = {
 			base = 50
@@ -945,8 +919,6 @@ yearly.3004 = {
 				has_trait = paranoid
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
 	}
 }
 
@@ -1002,7 +974,6 @@ yearly.3005 = {
 						opinion = -20
 					}
 				}
-				change_city_state_corruption = { AMOUNT_ARG = corruption_miniscule_decrease }
 			}
 		}
 
@@ -1030,8 +1001,6 @@ yearly.3005 = {
 			just = major_stress_impact_gain
 		}
 
-		change_city_state_corruption = { AMOUNT_ARG = corruption_miniscule_increase }
-
 		ai_chance = {
 			base = 50
 			ai_value_modifier = {
@@ -1043,9 +1012,6 @@ yearly.3005 = {
 				has_trait = paranoid
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_just CHANGE = nickname_weight_small_decrease }
 	}
 }
 
@@ -1237,8 +1203,6 @@ yearly.3011 = {
 				ai_greed = -1
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_increase }
 	}
 
 	#I will find the entertainment
@@ -1328,8 +1292,6 @@ yearly.3011 = {
 		ai_chance = {
 			base = 25
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_decrease }
 	}
 	
 	#We don't need much
@@ -1408,8 +1370,6 @@ yearly.3011 = {
 		ai_chance = {
 			base = 500
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_increase }
 	}
 }
 
@@ -2028,7 +1988,6 @@ yearly.3031 = {
 							type = favor_hook
 							target = liege
 						}
-						change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 					}
 
 					add_prestige = medium_prestige_gain
@@ -2057,7 +2016,6 @@ yearly.3031 = {
 								type = favor_hook
 								target = liege
 							}
-							change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 						}
 
 						add_prestige = medium_prestige_gain
@@ -2100,7 +2058,6 @@ yearly.3031 = {
 							type = favor_hook
 							target = liege
 						}
-						change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 					}
 
 					add_prestige = medium_prestige_gain
@@ -2137,7 +2094,6 @@ yearly.3031 = {
 								type = favor_hook
 								target = liege
 							}
-							change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 						}
 
 						add_prestige = medium_prestige_gain
@@ -2387,16 +2343,6 @@ yearly.3031 = {
 					multiplier = 0.25
 				}
 
-				# ATHA - scholar/wise nickname modifiers.
-				modifier = {
-					has_character_modifier = nick_the_scholar_modifier
-					factor = 1.25
-				}
-				modifier = {
-					has_character_modifier = nick_the_wise_modifier
-					factor = 1.1
-				}
-
 				show_as_tooltip = {
 					reverse_add_opinion = {
 						target = liege
@@ -2415,7 +2361,6 @@ yearly.3031 = {
 							type = favor_hook
 							target = liege
 						}
-						change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 					}
 
 					add_piety = medium_piety_gain
@@ -2444,7 +2389,6 @@ yearly.3031 = {
 								type = favor_hook
 								target = liege
 							}
-							change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 						}
 
 						add_piety = medium_piety_gain
@@ -2469,16 +2413,6 @@ yearly.3031 = {
 					value = scope:duel_value
 				}
 
-				# ATHA - scholar/wise nickname modifiers.
-				modifier = {
-					has_character_modifier = nick_the_scholar_modifier
-					factor = 1.25
-				}
-				modifier = {
-					has_character_modifier = nick_the_wise_modifier
-					factor = 1.1
-				}
-
 				show_as_tooltip = {
 					reverse_add_opinion = {
 						target = liege
@@ -2497,7 +2431,6 @@ yearly.3031 = {
 							type = favor_hook
 							target = liege
 						}
-						change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 					}
 
 					add_piety = medium_piety_gain
@@ -2534,7 +2467,6 @@ yearly.3031 = {
 								type = favor_hook
 								target = liege
 							}
-							change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 						}
 
 						add_piety = medium_piety_gain
@@ -2580,17 +2512,6 @@ yearly.3031 = {
 			}
 			10 = {
 				desc = yearly.3031.b.failure
-
-				# ATHA - scholar/wise nickname modifiers.
-				modifier = {
-					scope:fellow_vassal = { has_character_modifier = nick_the_scholar_modifier }
-					factor = 1.25
-				}
-				modifier = {
-					scope:fellow_vassal = { has_character_modifier = nick_the_wise_modifier }
-					factor = 1.1
-				}
-
 				show_as_tooltip = {
 					reverse_add_opinion = {
 						target = liege
@@ -2688,16 +2609,6 @@ yearly.3031 = {
 					target = scope:nemesis
 					value = learning
 					multiplier = 0.25
-				}
-
-				# ATHA - scholar/wise nickname modifiers.
-				modifier = {
-					scope:fellow_vassal = { has_character_modifier = nick_the_scholar_modifier }
-					factor = 1.25
-				}
-				modifier = {
-					scope:fellow_vassal = { has_character_modifier = nick_the_wise_modifier }
-					factor = 1.1
 				}
 
 				show_as_tooltip = {
@@ -2819,7 +2730,6 @@ yearly.3031 = {
 					type = favor_hook
 					target = liege
 				}
-				change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 			}
 
 			reverse_add_opinion = {
@@ -2856,7 +2766,6 @@ yearly.3031 = {
 						type = favor_hook
 						target = liege
 					}
-					change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 				}
 
 				reverse_add_opinion = {
@@ -3106,8 +3015,6 @@ yearly.3041 = {
 				ai_greed = -1
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_increase }
 	}
 
 	#Reduce levies
@@ -3136,8 +3043,6 @@ yearly.3041 = {
 				ai_greed = -0.5
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_increase }
 	}
 	
 	option = {
@@ -3171,8 +3076,6 @@ yearly.3041 = {
 				ai_rationality = 0.5
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_decrease }
 	}
 }
 
@@ -3325,8 +3228,6 @@ yearly.3051 = {
 			modifier = angry_opinion
 			opinion = -30
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
-		
 		if = {
 			limit = {
 				OR = {
@@ -3369,8 +3270,6 @@ yearly.3051 = {
 				ai_boldness = 0.5
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_hawk CHANGE = nickname_weight_small_increase }
 	}
 
 	option = {
@@ -3380,7 +3279,6 @@ yearly.3051 = {
 			modifier = grateful_opinion
 			opinion = 30
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 
 		stress_impact = {
 			greedy = medium_stress_impact_gain
@@ -3394,6 +3292,8 @@ yearly.3051 = {
 				ai_compassion = 0.5
 			}
 		}
+	}
+}
 
 		change_nickname_weight_effect = { NICKNAME = nick_the_hawk CHANGE = nickname_weight_small_decrease }
 	}
@@ -3444,7 +3344,5 @@ yearly.3071 = {
 	option = { # The flesh seemed delicious
 		name = yearly.3071.b
 		give_cannibal_secret_or_trait_effect = yes
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_devourer CHANGE = nickname_weight_medium_increase }
 	}
 }

@@ -520,10 +520,6 @@ relation_upgrade.0001 = {
 			compassionate = major_stress_gain
 			just = medium_stress_gain
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_decrease }
 	}
 
 	# Option 2: Spend some time socializing with your (potential) friend.
@@ -580,8 +576,6 @@ relation_upgrade.0001 = {
 			shy = minor_stress_gain
 			gregarious = minor_stress_loss
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_increase }
 	}
 
 	# Option 3: Sneak off with your (potential) lover.
@@ -646,8 +640,6 @@ relation_upgrade.0001 = {
 				}
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_decrease }		
 	}
 	
 	# Option 4: Indulge in drink
@@ -681,8 +673,6 @@ relation_upgrade.0001 = {
 			comfort_eater = minor_stress_impact_loss
 			greedy = minor_stress_impact_loss
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_fat CHANGE = nickname_weight_small_increase }
 	}
 
 	# Option 6: Show off to win admiration and respect
@@ -692,8 +682,6 @@ relation_upgrade.0001 = {
 
 		skill = prowess
 		add_prestige = medium_prestige_gain
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_increase }
 	}
 
 	# Option 7: Listen for gossip
@@ -769,8 +757,6 @@ relation_upgrade.0001 = {
 				}
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_decrease }
 	}
 
 	# Option 8: Read your holy book in peace and quiet.
@@ -785,9 +771,6 @@ relation_upgrade.0001 = {
 			gregarious = minor_stress_gain
 			cynical = minor_stress_gain
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_increase }
 	}
 
 	## Opt-Out.
@@ -1843,8 +1826,6 @@ relation_upgrade.1001 = {
 				has_trait = shy
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_increase }
 	}
 
 	#Sadist/Lunatic: set fire to the building.
@@ -1871,6 +1852,7 @@ relation_upgrade.1001 = {
 
 		#Do you have this because of a trait?
 		trait = lunatic_1
+		trait = eccentric
 		trait = sadistic
 		trait = vengeful
 		trait = callous
@@ -1976,6 +1958,7 @@ relation_upgrade.1001 = {
 			patient = medium_stress_impact_gain
 			calm = medium_stress_impact_gain
 
+			eccentric = medium_stress_impact_loss
 			impatient = medium_stress_impact_loss
 			callous = medium_stress_impact_loss
 			sadistic = medium_stress_impact_loss
@@ -2008,10 +1991,6 @@ relation_upgrade.1001 = {
 				has_trait = calm
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_decrease }
 	}
 
 	#Alternate: make the best of it.
@@ -2106,8 +2085,6 @@ relation_upgrade.1001 = {
 				has_trait = shy
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_increase }
 	}
 
 	#Alternate: denounce the host and leave.
@@ -2156,9 +2133,6 @@ relation_upgrade.1001 = {
 				has_trait = humble
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_decrease }
 	}
 
 	#Opt out: quietly exit the party.
@@ -2180,8 +2154,6 @@ relation_upgrade.1001 = {
 				has_trait = gregarious
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_decrease }
 	}
 
 	after = {
@@ -2244,8 +2216,6 @@ relation_upgrade.1002 = {
 
 		stress_impact = { shy = minor_stress_impact_gain }
 		ai_chance = { base = 100 }	#The AI should always pick this.
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_increase }
 	}
 	
 	#Reject: politely but firmly.
@@ -2282,8 +2252,6 @@ relation_upgrade.1002 = {
 
 		stress_impact = { gregarious = minor_stress_impact_gain }
 		ai_chance = { base = 0 }	#AI should never pick this option.
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_decrease }
 	}
 	
 	#Reject: blame them for the terrible party atmosphere.
@@ -2321,8 +2289,6 @@ relation_upgrade.1002 = {
 
 		stress_impact = { forgiving = minor_stress_impact_gain }
 		ai_chance = { base = 0 }	#AI should never pick this option.
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_decrease }
 	}
 }
 
@@ -2561,9 +2527,6 @@ relation_upgrade.1004 = {
 			vengeful = major_stress_impact_gain
 		}
 		ai_chance = { base = 0 }	#AI should never pick this option.
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_increase }
 	}
 }
 
@@ -3494,6 +3457,8 @@ relation_upgrade.2004 = { #by Mathilda Bjarnehed
 # by Linnéa Thimrén									#
 #####################################################
 
+#TODO_CE1 update and redo
+
 scripted_trigger relation_upgrade_2101_rival_trigger = {
 	upgrade_ready_potential_rival_to_rival_trigger = { CHARACTER = root }
 	OR = {
@@ -3592,15 +3557,6 @@ relation_upgrade.2101 = {
 			add = -0.3
 			exists = var:had_relation_upgrade_2101
 		}
-		modifier = {
-			add = 0.75
-			liege = {
-				any_owned_story = {
-					story_type = story_contagious_disease_outbreak
-					var:disease = flag:bubonic_plague
-				}
-			}
-		}
 	}
 
 	immediate = {
@@ -3668,19 +3624,16 @@ relation_upgrade.2101 = {
 			if = {
 				limit = {
 					liege = {
-						any_owned_story = {
-							story_type = story_contagious_disease_outbreak
-							var:disease = flag:bubonic_plague
+						any_realm_county = {
+							any_county_province = {
+								any_province_epidemic = {
+									epidemic_type.epidemic_trait = trait:bubonic_plague
+								}
+							}
 						}
 					}
 				}
 				liege = {
-					random_owned_story = {
-						limit = {
-							story_type = story_contagious_disease_outbreak
-							var:disease = flag:bubonic_plague
-						}
-					}
 					create_character = {
 						template = servant_character
 						dynasty = none
@@ -3722,6 +3675,7 @@ relation_upgrade.2101 = {
 						NOR = {
 							has_trait = bubonic_plague
 							has_trait = smallpox
+							#TODO_CE1 include new epidemics
 						}
 					}
 				}
@@ -3730,6 +3684,7 @@ relation_upgrade.2101 = {
 						NOR = {
 							has_trait = bubonic_plague
 							has_trait = smallpox
+							#TODO_CE1 include new epidemics
 						}
 					}
 					save_scope_as = your_courtier_to_infect
@@ -3816,9 +3771,6 @@ relation_upgrade.2101 = {
 			sadistic = major_stress_impact_loss
 			vengeful = major_stress_impact_loss
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_flayer CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
 	}
 
 	option = { #I'll study the corpse instead
@@ -3885,9 +3837,6 @@ relation_upgrade.2101 = {
 			wrathful = minor_stress_impact_gain
 			sadistic = minor_stress_impact_gain
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_flayer CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_increase }
 	}
 }
 
@@ -4133,8 +4082,6 @@ relation_upgrade.2102 = {
 			wrathful = major_stress_impact_gain
 			sadistic = medium_stress_impact_gain
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { #Bury them
@@ -4164,9 +4111,6 @@ relation_upgrade.2102 = {
 			wrathful = major_stress_impact_gain
 			sadistic = medium_stress_impact_gain
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_increase }
 	}
 }
 

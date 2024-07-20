@@ -9,6 +9,440 @@
 namespace = combat_event
 
 #####################
+# The Undefeatable 	#
+# by Sean Hughes 	#
+# 0001-0005			#
+#####################
+
+#Event for Winning Side: Keeps track of total number of victories the side's commander has (if they have never lost a battle). At 100 victories, they earn the nickname 'the Undefeatable'.
+combat_event.0001 = {
+	hidden = yes
+	scope = combat_side
+
+	trigger = {
+		exists = side_commander
+		side_commander = { is_alive = yes }
+		side_commander = { is_ai = no } # Too expensive performance-wise to track for all commanders in the game. Substantial savings on cycles to only track for players.
+		OR = {
+			side_commander = {
+				# Event will only occur if this character has never lost a battle.
+				OR = {
+					NOT = { has_variable = combat_event_0001_tracker }
+					trigger_if = {
+						limit = {
+							has_variable = combat_event_0001_tracker
+						}
+						var:combat_event_0001_tracker > 0
+					}
+				}
+			}
+			AND = {
+				# However, as a special case we will fire this event if we defeat 'the Undefeatable'...
+				exists = enemy_side.side_commander
+				enemy_side.side_commander = {
+					has_character_flag = combat_event_undefeatable_flag
+				}
+				# ...But only if we haven't already defeated 'the Undefeatable' before!
+				side_commander = {
+					NOT = { has_character_flag = combat_event_triumphant_flag }
+				}
+			}
+		}
+	}
+
+	immediate = {
+		if = {
+			#If we have defeated 'the Undefeatable', execute a special use case (skipping the rest of this event's effects).
+			limit = {
+				exists = enemy_side.side_commander
+				enemy_side.side_commander = {
+					has_character_flag = combat_event_undefeatable_flag
+				}
+			}
+
+			# Save the enemy commander's scope for localization.
+			enemy_side.side_commander = {
+				save_scope_as = enemy_commander
+			}
+
+			# Gain special recognition for defeating 'the Undefeatable.'
+			side_commander = {
+				# Save this scope for localization.
+				save_scope_as = friendly_commander
+
+				# So we don't get this outcome more than once per character.
+				add_character_flag = combat_event_triumphant_flag
+
+				# Trigger the event.
+				trigger_event = {
+					id = combat_event.0004
+					days = 1
+				}
+			}
+		}
+		else = {
+			# In almost all situations, add to our victory tracker. Once we reach 100, fire the special Undefeatable event.
+			side_commander = {
+				if = {
+					limit = {
+						is_alive = yes # Can be killed in combat
+					}
+					# If the victory tracking variable does not yet exist, create it.
+					if = {
+						limit = {
+							NOT = {
+								has_variable = combat_event_0001_tracker
+							}
+						}
+						set_variable = {
+							name = combat_event_0001_tracker
+							value = 1
+						}
+					}
+					# Otherwise, increment it.
+					else_if = {
+						change_variable = {
+							name = combat_event_0001_tracker
+							add = 1
+						}
+					}
+
+					#If the commander has accumulateed 100 victories, fire the event which gives them the nickname 'the Undefeatable'.
+					if = {
+						limit = {
+							var:combat_event_0001_tracker = 100
+						}
+
+						# If there is an enemy commander, save their scope for portraits/localization in the following event.
+						if = {
+							limit = {
+								exists = root.enemy_side.side_commander
+							}
+							root.enemy_side.side_commander = {
+								save_scope_as = enemy_commander
+							}
+						}
+
+						# Fire the event which gives the victorious commander the nickname 'the Undefeatable'.
+						trigger_event = {
+							id = combat_event.0003
+							days = 1
+						}
+					}	
+				}
+			}
+		}
+	}
+}
+
+# Event for Losing Side: Disqualifies the side's commander from ever earning the nickname 'the Undefeatable'.
+combat_event.0002 = {
+	hidden = yes
+	scope = combat_side
+
+	trigger = {
+		exists = side_commander
+		side_commander = {
+			is_alive = yes
+		}
+	}
+
+	immediate = {
+		side_commander = {
+			#If we ever lose a battle, we are disqualified from achieving 'the Undefeatable' nickname.
+			set_variable = {
+				name = combat_event_0001_tracker
+				value = 0
+			}
+		}
+	}
+}
+
+#Once a commander wins 100 battles with 0 defeats, they get a special 'the Undefeatable' nickname.
+combat_event.0003 = {
+	type = character_event
+	title = combat_event.0003.t
+	desc = {
+		desc = combat_event.0003.desc.opening
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					exists = scope:enemy_commander
+				}
+				desc = combat_event.0003.desc.commander
+			}
+			desc = combat_event.0003.desc.no_commander
+		}
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOR = {
+						has_trait = shy
+						has_trait = humble
+						has_trait = craven
+						has_trait = content
+						has_trait = paranoid
+						has_trait = cautious_leader
+					}
+				}
+				desc = combat_event.0003.desc.alt_ending
+			}
+			desc = combat_event.0003.desc.ending
+		}
+	}
+	theme = battle
+	left_portrait = {
+		character = root
+		animation = war_over_win
+	}
+	right_portrait = {
+		character = scope:enemy_commander
+		animation = war_over_loss
+	}
+
+	immediate = {
+		add_character_flag = combat_event_undefeatable_flag
+		set_signature_weapon_effect = yes
+	}
+
+	#Option A: Accept the title "the Undefeatable", gain prestige.
+	option = {
+		name = combat_event.0003.a
+		give_nickname = nick_the_undefeated # We don't use 'set_nick_effect' here because this is important enough we want it to override event 'good' nicknames. Plus it's an opt-in.
+		add_prestige = massive_prestige_gain
+
+		add_martial_skill = 3	
+
+		#AI will always pick this unless Humble.
+		stress_impact = {
+			humble = medium_stress_gain
+		}
+		ai_chance = {
+			base = 100
+			
+			modifier = {
+				has_trait = humble
+				add = -100
+			}
+		}
+	}
+
+	#Option B: Reject the title "the Undefeatable", gain piety.
+	option = {
+		name = {
+			trigger = { has_trait = zealous }
+			text = combat_event.0003.b.zealous
+		}
+		name = {
+			trigger = { NOT = { has_trait = zealous }}
+			text = combat_event.0003.b
+		}
+
+		if = {
+			limit = {
+				has_trait = zealous
+			}
+			add_piety = massive_piety_gain
+		}
+		else = {
+			add_prestige = medium_prestige_gain
+			add_piety = medium_piety_gain
+		}
+
+		add_martial_skill = 3
+
+		#AI will only pick this if Humble.
+		stress_impact = {
+			arrogant = medium_stress_gain
+		}
+		ai_chance = {
+			base = 0
+			
+			modifier = {
+				has_trait = humble
+				add = 100
+			}
+		}
+	}
+}
+
+#If 'the Undefeatable' is ever defeated, the commander who defeated them gets a special title.
+combat_event.0004 = {
+	type = character_event
+	title = combat_event.0004.t
+	desc = combat_event.0004.desc
+	theme = battle
+	left_portrait = {
+		character = root
+		animation = war_over_win
+	}
+	right_portrait = {
+		character = scope:enemy_commander
+		animation = war_over_loss
+	}
+
+	immediate = {
+		set_signature_weapon_effect = yes
+	}
+
+	#Option A: Accept the title "the Triumphant", gain prestige.
+	option = {
+		name = combat_event.0004.a
+		give_nickname = nick_the_triumphant
+		add_prestige = massive_prestige_gain
+
+		add_martial_skill = 3
+
+		#AI will always pick this unless Humble
+		stress_impact = {
+			humble = medium_stress_gain
+		}
+		ai_chance = {
+			base = 100
+			
+			modifier = {
+				has_trait = humble
+				add = -100
+			}
+		}
+	}
+
+	#Option B: Reject the title "the Triumphant", gain piety.
+	option = {
+		name = {
+			trigger = { has_trait = zealous }
+			text = combat_event.0004.b.zealous
+		}
+		name = {
+			trigger = { NOT = { has_trait = zealous }}
+			text = combat_event.0004.b
+		}
+
+		if = {
+			limit = {
+				has_trait = zealous
+			}
+			add_piety = massive_piety_gain
+		}
+		else = {
+			add_prestige = medium_prestige_gain
+			add_piety = medium_piety_gain
+		}
+
+		add_martial_skill = 3
+
+		#AI will never pick this unless Humble
+		stress_impact = {
+			arrogant = medium_stress_gain
+		}
+		ai_chance = {
+			base = 0
+			
+			modifier = {
+				has_trait = humble
+				add = 100
+			}
+		}
+	}
+
+	after = {
+		#Inform 'the Undefeatable' that they have, in fact, been defeated.
+		scope:enemy_commander = {
+			remove_character_flag = combat_event_undefeatable_flag
+			trigger_event = {
+				id = combat_event.0005
+				days = 1
+			}
+			show_as_tooltip = {
+				add_prestige_level = -1
+			}
+		}
+	}
+}
+
+#'The Undefeatable' is informed that they have, in fact, been defeated.
+combat_event.0005 = {
+	type = character_event
+	title = combat_event.0005.t
+	desc = combat_event.0005.desc
+	theme = battle
+	left_portrait = {
+		character = scope:friendly_commander
+		animation = war_over_win
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				scope:friendly_commander = {
+					has_nickname = nick_the_triumphant
+				}
+			}
+			show_as_tooltip = {
+				scope:friendly_commander = {
+					give_nickname = nick_the_triumphant
+				}
+			}
+		}
+	}
+
+	#Option A: Accept that they have defeated you.
+	option = {
+		name = combat_event.0005.a
+
+		add_prestige_level = -1
+
+		stress_impact = {
+			vengeful = medium_stress_gain
+			arrogant = medium_stress_gain
+			wrathful = minor_stress_gain
+		}
+		ai_chance = {
+			base = 50
+			
+			ai_value_modifier = {
+				ai_vengefulness = -5
+			}
+		}
+	}
+
+	#Option B: Declare them your rival!
+	option = {
+		name = combat_event.0005.b
+
+		add_prestige_level = -1
+
+		if = {
+			limit = {
+				NOT = { has_relation_rival = scope:friendly_commander }
+			}
+			scope:friendly_commander = {
+				send_interface_toast = {
+					title = combat_event.0005.message
+					set_relation_rival = {
+						target = root
+						reason = rival_undefeated_defeated
+					}
+				}
+			}
+		}
+
+		stress_impact = {
+			forgiving = medium_stress_gain
+			humble = medium_stress_gain
+			calm = minor_stress_gain
+		}
+		ai_chance = {
+			base = 5000
+			
+			ai_value_modifier = {
+				ai_vengefulness = 5
+			}
+		}
+	}
+}
+
+#####################
 # Battle Aftermath 	#
 # by Sean Hughes 	#
 # 1001-1014			#
@@ -793,7 +1227,7 @@ combat_event.1002 = {
 
 							combat_event_1001_character_is_important_combatant = yes
 						}
-						save_scope_as = important_hostage
+						save_scope_as = valuable_prisoner
 
 						# The imprisoner must be informed that they captured an important hostage.
 						scope:combat_winner = {
@@ -804,7 +1238,7 @@ combat_event.1002 = {
 						if = {
 							limit = {
 								# But not if they themselves are the prisoner! (they will get an event already upon being imprisoned).
-								NOT = { scope:important_hostage = scope:primary_combat_loser }
+								NOT = { scope:valuable_prisoner = scope:primary_combat_loser }
 							}
 							scope:primary_combat_loser = {
 								trigger_event = combat_event.1006
@@ -1076,14 +1510,14 @@ combat_event.1005 = {
 	immediate = {
 		if = {
 			limit = {
-				scope:important_hostage = scope:primary_combat_loser
+				scope:valuable_prisoner = scope:primary_combat_loser
 			}
 			send_interface_toast = {
 				type = msg_character_captured_by_me
 				title = combat_event.1005.pow_toast.t
 				desc = combat_event.1005.pow_toast.desc.primary
 				left_icon = scope:combat_winner
-				right_icon = scope:important_hostage
+				right_icon = scope:valuable_prisoner
 			}
 		}
 		else = {
@@ -1092,7 +1526,7 @@ combat_event.1005 = {
 				title = combat_event.1005.pow_toast.t
 				desc = combat_event.1005.pow_toast.desc
 				left_icon = scope:combat_winner
-				right_icon = scope:important_hostage
+				right_icon = scope:valuable_prisoner
 			}
 		}
 	}
@@ -1109,7 +1543,7 @@ combat_event.1006 = {
 			title = combat_event.1006.pow_toast.t
 			desc = combat_event.1006.pow_toast.desc
 			left_icon = scope:combat_winner
-			right_icon = scope:important_hostage
+			right_icon = scope:valuable_prisoner
 		}
 	}
 }
@@ -1122,14 +1556,14 @@ combat_event.1007 = {
 	immediate = {
 		if = {
 			limit = {
-				scope:important_hostage = scope:primary_combat_loser
+				scope:valuable_prisoner = scope:primary_combat_loser
 			}
 			send_interface_toast = {
 				type = msg_character_captured_by_me
 				title = combat_event.1007.pow_toast_primary.t
 				desc = combat_event.1007.pow_toast.desc.primary
 				left_icon = scope:combat_winner
-				right_icon = scope:important_hostage
+				right_icon = scope:valuable_prisoner
 			}
 		}
 		else = {
@@ -1138,7 +1572,7 @@ combat_event.1007 = {
 				title = combat_event.1007.pow_toast.t
 				desc = combat_event.1007.pow_toast.desc
 				left_icon = scope:combat_winner
-				right_icon = scope:important_hostage
+				right_icon = scope:valuable_prisoner
 			}
 		}
 	}

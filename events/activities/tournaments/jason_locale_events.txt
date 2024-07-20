@@ -5352,12 +5352,19 @@ jason_locale_events.0220 = {
 				custom_tooltip = senior_knight_gains_nickname_tt
 				hidden_effect = {
 					random_list = {
-						10 = { set_permanent_nickname_effect = { NICKNAME = nick_the_bold } }
-						10 = { set_permanent_nickname_effect = { NICKNAME = nick_the_invincible } }
-						10 = { set_permanent_nickname_effect = { NICKNAME = nick_the_victor } }
-						10 = { set_permanent_nickname_effect = { NICKNAME = nick_the_victorious } }
-						10 = { set_permanent_nickname_effect = { NICKNAME = nick_the_beautifully_triumphant } }
-						10 = { set_permanent_nickname_effect = { NICKNAME = nick_the_godlike } }
+						10 = { give_nickname = nick_the_vanquisher }
+						10 = { give_nickname = nick_the_valiant }
+						10 = { give_nickname = nick_the_courageous }
+						10 = { give_nickname = nick_the_worthy }
+						10 = { give_nickname = nick_the_thunderbolt }
+						10 = { give_nickname = nick_the_whirlwind }
+						10 = { give_nickname = nick_the_fury }
+						10 = { give_nickname = nick_the_unrelenting }
+						10 = { give_nickname = nick_the_glorious }
+						10 = { give_nickname = nick_the_able }
+						10 = { give_nickname = nick_the_victorious }
+						10 = { give_nickname = nick_the_fearless }
+						10 = { give_nickname = nick_the_brave }
 						100 = { }
 					}
 				}

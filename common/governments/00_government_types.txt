@@ -3,6 +3,7 @@
 	rulers_should_have_dynasty = yes
 	dynasty_named_realms = yes
 	royal_court = yes
+	legitimacy = yes
 
 	fallback = 2
 
@@ -173,7 +174,11 @@
 			}
 		}
 	}
-	
+
+	ai = {
+		use_legends = yes
+	}
+
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
 	flag = government_is_feudal
 	
@@ -204,6 +209,7 @@ republic_government = {
 		use_goals = no
 		use_scripted_guis = no
 		perform_religious_reformation = no
+		use_legends = no
 	}
 
 	vassal_contract = { republic_government_obligations }
@@ -218,6 +224,10 @@ theocracy_government = {
 	primary_holding = church_holding
 	valid_holdings = { castle_holding }
 	religious = yes
+
+	ai = {
+		use_legends = no
+	}
 
 	can_get_government = {
 		OR = {
@@ -241,6 +251,12 @@ theocracy_government = {
 clan_government = {
 	create_cadet_branches = yes
 	rulers_should_have_dynasty = yes
+	royal_court = yes
+	legitimacy = yes
+
+	valid_holdings = { castle_holding }
+	required_county_holdings = { castle_holding city_holding church_holding }
+	always_use_patronym = yes
 	dynasty_named_realms = yes
 	always_use_patronym = yes
 	regiments_prestige_as_gold = yes
@@ -252,16 +268,24 @@ clan_government = {
 	valid_holdings = { castle_holding church_holding }
 	#required_county_holdings = { castle_holding city_holding church_holding }
 
+	house_unity = clan_house_unity
+	tax_slot_type = clan_tax_slot
+
 	vassal_contract = {
-		clan_government_obligations
+		clan_tax_collector_obligations
 		coinage_rights
 		religious_rights
 		title_revocation_rights
 		war_declaration_rights
 		council_rights
+		marriage_favor_rights
 		gift_estate_rights
 	}
-	
+
+	ai = {
+		use_legends = yes
+	}
+
 	opinion_of_liege = {
 		if = {
 			limit = {
@@ -274,47 +298,14 @@ clan_government = {
 				limit = {
 					scope:liege = { total_battles_fought <= 10 }
 				}
-
-				value = -20
-			} else_if = {
-				limit = {
-					scope:liege = { total_battles_fought <= 20 }
+				if = {
+					limit = {
+						is_powerful_vassal = yes
+					}
+					value = clan_powerful_vassal_no_alliance_opinion_penalty_value
 				}
-
-				value = -10
-			} else_if = {
-				limit = {
-					scope:liege = { net_battle_wins <= -5 }
-				}
-
-				value = -15
-			} else_if = {
-				limit = {
-					scope:liege = { net_battle_wins <= -10 }
-				}
-
-				value = -20
-			} else_if = {
-				limit = {
-					scope:liege = { net_battle_wins <= -30 }
-				}
-
-				value = -40
-			} else_if = {
-				limit = {
-					scope:liege = { net_battle_wins >= 10 }
-				}
-
-				value = 10
-			} else_if = {
-				limit = {
-					scope:liege = { net_battle_wins >= 20 }
-				}
-
-				value = 20
-			} else_if = {
-				limit = {
-					scope:liege = { net_battle_wins >= 35 }
+				else = {
+					value = clan_vassal_no_alliance_opinion_penalty_value
 				}
 
 				value = 25
@@ -436,6 +427,7 @@ tribal_government = {
 	regiments_prestige_as_gold = yes
 	supply_limit_mult_for_others = -0.5
 	royal_court = yes
+	legitimacy = yes
 
 	primary_holding = tribal_holding
 	valid_holdings = { castle_holding church_holding }
@@ -444,159 +436,11 @@ tribal_government = {
 	always_use_patronym = yes	
 
 	vassal_contract = { tribal_government_obligations }
-	
-	opinion_of_liege = {
-		if = {
-			limit = {
-				scope:vassal = {
-					culture = { has_cultural_parameter = military_experience_replaces_short_long_reign_opinion_modifier }
-				}
-			}
 
-			if = {
-				limit = {
-					scope:liege = { total_battles_fought <= 10 }
-				}
-
-				value = -20
-			} else_if = {
-				limit = {
-					scope:liege = { total_battles_fought <= 20 }
-				}
-
-				value = -10
-			} else_if = {
-				limit = {
-					scope:liege = { net_battle_wins <= -5 }
-				}
-
-				value = -15
-			} else_if = {
-				limit = {
-					scope:liege = { net_battle_wins <= -10 }
-				}
-
-				value = -20
-			} else_if = {
-				limit = {
-					scope:liege = { net_battle_wins <= -30 }
-				}
-
-				value = -40
-			} else_if = {
-				limit = {
-					scope:liege = { net_battle_wins >= 10 }
-				}
-
-				value = 10
-			} else_if = {
-				limit = {
-					scope:liege = { net_battle_wins >= 20 }
-				}
-
-				value = 20
-			} else_if = {
-				limit = {
-					scope:liege = { net_battle_wins >= 35 }
-				}
-
-				value = 25
-			}
-		}
+	ai = {
+		use_legends = yes
 	}
-	opinion_of_liege_desc = {
-		first_valid = {
-			triggered_desc = {
-				trigger = {
-					scope:vassal = {
-						scope:vassal = {
-							culture = { has_cultural_parameter = military_experience_replaces_short_long_reign_opinion_modifier }
-						}
-						scope:liege = { total_battles_fought <= 10 }
-					}
-				}
-				desc = "GOVERNMENT_MILITARY_EXPERIENCE_GREEN_LIEGE"
-			}
-			triggered_desc = {
-				trigger = {
-					scope:vassal = {
-						scope:vassal = {
-							culture = { has_cultural_parameter = military_experience_replaces_short_long_reign_opinion_modifier }
-						}
-						scope:liege = { total_battles_fought <= 20 }
-					}
-				}
-				desc = "GOVERNMENT_MILITARY_EXPERIENCE_INEXPERIENCED_LIEGE"
-			}
-			triggered_desc = {
-				trigger = {
-					scope:vassal = {
-						scope:vassal = {
-							culture = { has_cultural_parameter = military_experience_replaces_short_long_reign_opinion_modifier }
-						}
-						scope:liege = { net_battle_wins <= -5 }
-					}
-				}
-				desc = "GOVERNMENT_MILITARY_EXPERIENCE_INEPT_LIEGE"
-			}
-			triggered_desc = {
-				trigger = {
-					scope:vassal = {
-						scope:vassal = {
-							culture = { has_cultural_parameter = military_experience_replaces_short_long_reign_opinion_modifier }
-						}
-						scope:liege = { net_battle_wins <= -10 }
-					}
-				}
-				desc = "GOVERNMENT_MILITARY_EXPERIENCE_INCOMPETENT_LIEGE"
-			}
-			triggered_desc = {
-				trigger = {
-					scope:vassal = {
-						scope:vassal = {
-							culture = { has_cultural_parameter = military_experience_replaces_short_long_reign_opinion_modifier }
-						}
-						scope:liege = { net_battle_wins <= -30 }
-					}
-				}
-				desc = "GOVERNMENT_MILITARY_EXPERIENCE_DISASTROUS_LIEGE"
-			}
-			triggered_desc = {
-				trigger = {
-					scope:vassal = {
-						scope:vassal = {
-							culture = { has_cultural_parameter = military_experience_replaces_short_long_reign_opinion_modifier }
-						}
-						scope:liege = { net_battle_wins >= 10 }
-					}
-				}
-				desc = "GOVERNMENT_MILITARY_EXPERIENCE_SUCCESSFUL_LIEGE"
-			}
-			triggered_desc = {
-				trigger = {
-					scope:vassal = {
-						scope:vassal = {
-							culture = { has_cultural_parameter = military_experience_replaces_short_long_reign_opinion_modifier }
-						}
-						scope:liege = { net_battle_wins >= 20 }
-					}
-				}
-				desc = "GOVERNMENT_MILITARY_EXPERIENCE_VICTORIOUS_LIEGE"
-			}
-			triggered_desc = {
-				trigger = {
-					scope:vassal = {
-						scope:vassal = {
-							culture = { has_cultural_parameter = military_experience_replaces_short_long_reign_opinion_modifier }
-						}
-						scope:liege = { net_battle_wins >= 35 }
-					}
-				}
-				desc = "GOVERNMENT_MILITARY_EXPERIENCE_INVINCIBLE_LIEGE"
-			}
-		}
-	}
-	
+
 	character_modifier = {
 		title_creation_cost_mult = -0.5
 		army_maintenance_mult = -0.5
@@ -628,6 +472,7 @@ mercenary_government = {
 		use_goals = no
 		use_scripted_guis = no
 		perform_religious_reformation = no
+		use_legends = no
 	}
 
 	flag = can_not_be_vassal_or_liege
@@ -647,6 +492,7 @@ holy_order_government = {
 		use_goals = no
 		use_scripted_guis = no
 		perform_religious_reformation = no
+		use_legends = no
 	}
 
 	valid_holdings = { castle_holding city_holding }

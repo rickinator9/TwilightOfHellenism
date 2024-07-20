@@ -390,8 +390,6 @@ house_arrest_ongoing.0003 = {
 		stress_impact = {
 			base = medium_stress_loss
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_mad CHANGE = nickname_weight_small_increase }
 	}
 
 	after = {

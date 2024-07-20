@@ -64,6 +64,7 @@ stress_trait_coping_decisions.1002 = {
 
 	trigger = {
 		is_adult = yes
+		has_trait = drunkard
 		OR = {
 			any_vassal = {
 				NOT = { has_relation_rival = root }
@@ -750,8 +751,6 @@ stress_trait_coping_decisions.4501 = {
 		trait = improvident
 		remove_short_term_gold = medium_gold_value
 		add_stress = medium_stress_loss
-
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 	}
 }
 
@@ -828,8 +827,6 @@ stress_trait_coping_decisions.5001 = {
 			}
 		}
 		add_stress = medium_stress_loss
-
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 	}
 }
 
@@ -992,8 +989,6 @@ stress_trait_coping_decisions.5501 = {
 		trait = comfort_eater
 		remove_short_term_gold = medium_gold_value
 		add_stress = medium_stress_loss
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_fat CHANGE = nickname_weight_small_increase }
 	}
 }
 
@@ -1041,8 +1036,6 @@ stress_trait_coping_decisions.5502 = {
 		trait = cannibal
 		remove_short_term_gold = medium_gold_value
 		add_stress = medium_stress_loss
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_devourer CHANGE = nickname_weight_medium_increase }
 	}
 }
 

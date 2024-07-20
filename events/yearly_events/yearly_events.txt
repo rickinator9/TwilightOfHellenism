@@ -384,10 +384,6 @@ yearly.0001 = {
 					target = root
 					type = favor_hook
 				}
-
-				root = {
-					change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
-				}
 			}
 		}
 	}
@@ -417,8 +413,6 @@ yearly.0001 = {
 				target = scope:mentor
 				type = favor_hook
 			}
-
-			change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 		}
 	}
 
@@ -939,8 +933,6 @@ yearly.0003 = {
 			zealous = minor_stress_gain
 			vengeful = minor_stress_gain
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_decrease }
 	}
 	
 	# Expose them!
@@ -956,8 +948,6 @@ yearly.0003 = {
 			cynical = minor_stress_gain
 			lustful = minor_stress_gain
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_increase }
 	}
 
 	# Imprison them!
@@ -1004,10 +994,6 @@ yearly.0003 = {
 			forgiving = minor_stress_gain
 			compassionate = minor_stress_gain
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_just CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_increase }
 	}
 
 	# Join in on the fun
@@ -1056,8 +1042,6 @@ yearly.0003 = {
 			chaste = major_stress_gain
 			zealous = medium_stress_gain
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_medium_decrease }
 	}
 }
 
@@ -1343,7 +1327,10 @@ scripted_effect comet_reaction_standard_effect = {
 		limit = {
 			has_royal_court = yes
 		}
-		create_artifact_pedestal_rock_effect = { OWNER = root }
+		hidden_effect = {
+			create_artifact_pedestal_rock_effect = { OWNER = root }
+		}
+		custom_tooltip = gain_rock_artifact_tt
 	}
 }
 
@@ -1838,8 +1825,6 @@ yearly.0011 = {
 			#Not for the AI.
 			base = 100
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_just CHANGE = nickname_weight_small_increase }
 	}
 	
 	#Cynical response

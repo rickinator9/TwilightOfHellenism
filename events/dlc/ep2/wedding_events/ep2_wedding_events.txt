@@ -85,6 +85,7 @@ ep2_wedding.0001 = {
 	lower_center_portrait = scope:spouse_2
 
 	trigger = {
+		exists = var:promised_grand_wedding_marriage_countdown
 		has_variable = promised_grand_wedding_marriage_countdown
 		var:promised_grand_wedding_marriage_countdown = { is_alive = yes }
 		exists = var:promised_grand_wedding_marriage_countdown.betrothed
@@ -421,6 +422,7 @@ ep2_wedding.0150 = {
 				save_scope_as = spouse_2_portrait
 			}
 		}
+		base_legitimacy_intent_reward = yes
 	}
 
 	option = {
@@ -452,8 +454,10 @@ ep2_wedding.0151 = {
 						OR = {
 							has_trait = education_diplomacy_3
 							has_trait = education_diplomacy_4
+							has_trait = education_diplomacy_5
 							has_trait = education_stewardship_3
 							has_trait = education_stewardship_4
+							has_trait = education_stewardship_5
 							has_trait = diplomat
 							has_trait = administrator
 							has_trait = ambitious
@@ -466,6 +470,7 @@ ep2_wedding.0151 = {
 						OR = {
 							has_trait = education_learning_3
 							has_trait = education_learning_4
+							has_trait = education_learning_5
 							has_trait = scholar
 							has_trait = theologian
 							has_trait = zealous
@@ -718,47 +723,6 @@ ep2_wedding.0151 = {
 				add_character_modifier = { modifier = wedding_fertility_delay_modifier }
 			}
 		}
-		# The spouse should not head back home where they came from if they are unlanded!
-		hidden_effect = {
-			if = {
-				limit = {
-					scope:spouse_2.court_owner = scope:spouse_1
-				}
-				if = {
-					limit = {
-						exists = scope:spouse_2.current_travel_plan
-					}
-					if = {
-						limit = {
-							NOT = { scope:spouse_2.current_travel_plan.travel_plan_owner = scope:spouse_2 }
-						}
-						scope:spouse_2.current_travel_plan = { remove_character = scope:spouse_2 }
-						scope:spouse_1.current_travel_plan ?= {
-							add_companion = scope:spouse_2
-						}
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					scope:spouse_1.court_owner = scope:spouse_2
-				}
-				if = {
-					limit = {
-						exists = scope:spouse_1.current_travel_plan
-					}
-					if = {
-						limit = {
-							NOT = { scope:spouse_2.current_travel_plan.travel_plan_owner = scope:spouse_1 }
-						}
-						scope:spouse_1.current_travel_plan = { remove_character = scope:spouse_1 }
-						scope:spouse_2.current_travel_plan ?= {
-							add_companion = scope:spouse_1
-						}
-					}
-				}
-			}
-		}
 		# Progress to next phase
 		hidden_effect = {
 			scope:activity = { progress_activity_phase_after = { days = 1 } }
@@ -778,6 +742,21 @@ ep2_wedding.0151 = {
 		ai_chance = {
 			base = 0
 		}
+	}
+}
+
+scripted_effect ep2_wedding_cleanup_jitter_modifier_effect = {
+	if = {
+		limit = { has_character_modifier = wedding_confident_groom }
+		remove_character_modifier = wedding_confident_groom
+	}
+	if = {
+		limit = { has_character_modifier = wedding_confident_bride }
+		remove_character_modifier = wedding_confident_bride
+	}
+	if = {
+		limit = { has_character_modifier = wedding_jitters }
+		remove_character_modifier = wedding_jitters
 	}
 }
 
@@ -822,6 +801,10 @@ ep2_wedding.0152 = {
 			participants = {
 				spouse = scope:spouse_2
 			}
+		}
+		ep2_wedding_cleanup_jitter_modifier_effect = yes
+		scope:spouse_2 = {
+			ep2_wedding_cleanup_jitter_modifier_effect = yes
 		}
 	}
 
@@ -3672,6 +3655,11 @@ ep2_wedding.1030 = {
 		}
 
 		add_character_flag = busy_in_ceremony_event
+		
+		random = {
+			chance = legend_seed_chance_low
+			add_character_flag = wedding_legend_seed
+		}
 	}
 
 	#Option A: good omen - excellent!
@@ -3773,6 +3761,40 @@ ep2_wedding.1030 = {
 		}
 		ai_chance = {
 			base = 100
+		}
+	}
+
+	#Option D: good omen - you get a legend seed!
+	option = {
+		name = ep2_wedding.1030.d
+		trigger = {
+			has_character_flag = good_thing_flag
+			NOR = {
+				has_personal_legend_seed = heroic
+				has_personal_legend_seed = holy
+				has_personal_legend_seed = legitimizing
+			}
+			has_character_flag = wedding_legend_seed
+			OR = {
+				scope:spouse_2.dynasty = root.dynasty
+				scope:spouse_1.dynasty = root.dynasty
+			} 
+		}
+
+		scope:activity = {
+			add_activity_log_entry = {
+				key = wedding_omen_good_log
+				tags = { good }
+				score = 50
+				character = root
+				target = scope:spouse_2
+			}
+		}
+
+		legend_seed_great_deed_dynasty_effect = yes
+
+		ai_chance = { #AI can into legend seeds
+			base = 200
 		}
 	}
 
@@ -8091,7 +8113,7 @@ ep2_wedding.1210 = {
 				trigger = {
 					scope:talk_to = {
 						any_sub_realm_county = {
-							any_province = {
+							any_county_province = {
 								has_province_modifier = recently_looted_modifier
 							}
 						}
@@ -12260,7 +12282,11 @@ ep2_wedding.1111 = {
 		}
 		trigger_if = {
 			limit = {
-				this = scope:host
+				OR = {
+					this = scope:host
+					scope:host = scope:activity.special_guest:spouse_1
+					scope:host = scope:activity.special_guest:spouse_2
+				}
 			}
 			scope:activity = {
 				any_attending_character = {
@@ -18264,7 +18290,7 @@ ep2_wedding.3040 = {
 					set_variable = just_widowed_var
 					complete_activity_intent = yes
 				}
-				change_nickname_weight_effect = { NICKNAME = nick_the_flayer CHANGE = nickname_weight_medium_increase }
+				give_nickname = nick_the_just_widowed
 			}
 		}
 	}

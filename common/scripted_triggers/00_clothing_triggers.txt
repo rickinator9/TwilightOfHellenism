@@ -35,6 +35,7 @@ should_be_fully_naked_portrait_trigger = {
 should_be_topless_portrait_trigger = {
 	exists = this
 	OR = {
+		has_character_flag = should_be_topless
 		has_character_flag = single_combat_stripped_to_waist
 		activity_tournament_shirtless_trigger = yes
 	}
@@ -318,14 +319,20 @@ is_dwarf_height = {
 }
 
 portrait_byzantine_clothing_trigger = {
-	scope:culture = {
-		portrait_byzantine_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_byzantine = yes
+		scope:culture = {
+			portrait_byzantine_clothing_contents_trigger = yes
+		}
 	}
 }
 
 portrait_byzantine_clothing_spouse_trigger = {
-	culture = {
-		portrait_byzantine_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_byzantine = yes
+		culture = {
+			portrait_byzantine_clothing_contents_trigger = yes
+		}
 	}
 }
 
@@ -334,14 +341,20 @@ portrait_byzantine_clothing_contents_trigger = {
 }
 
 portrait_indian_clothing_trigger = {
-	scope:culture = {
-		portrait_indian_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_indian = yes
+		scope:culture = {
+			portrait_indian_clothing_contents_trigger = yes
+		}
 	}
 }
 
 portrait_indian_clothing_spouse_trigger = {
-	culture = {
-		portrait_indian_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_indian = yes
+		culture = {
+			portrait_indian_clothing_contents_trigger = yes
+		}
 	}
 }
 
@@ -350,14 +363,20 @@ portrait_indian_clothing_contents_trigger = {
 }
 
 portrait_mena_clothing_trigger = {
-	scope:culture = {
-		portrait_mena_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_mena = yes
+		scope:culture = {
+			portrait_mena_clothing_contents_trigger = yes
+		}
 	}
 }
 
 portrait_mena_clothing_spouse_trigger = {
-	culture = {
-		portrait_mena_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_mena = yes
+		culture = {
+			portrait_mena_clothing_contents_trigger = yes
+		}
 	}
 }
 
@@ -366,14 +385,20 @@ portrait_mena_clothing_contents_trigger = {
 }
 
 portrait_african_clothing_trigger = {
-	scope:culture = {
-		portrait_african_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_african = yes
+		scope:culture = {
+			portrait_african_clothing_contents_trigger = yes
+		}
 	}
 }
 
 portrait_african_clothing_spouse_trigger = {
-	culture = {
-		portrait_african_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_african = yes
+		culture = {
+			portrait_african_clothing_contents_trigger = yes
+		}
 	}
 }
 
@@ -382,20 +407,27 @@ portrait_african_clothing_contents_trigger = {
 }
 
 portrait_northern_clothing_trigger = {
-	scope:culture = {
-		portrait_northern_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_northern = yes
+		scope:culture = {
+			portrait_northern_clothing_contents_trigger = yes
+		}
 	}
 }
 
 portrait_northern_clothing_spouse_trigger = {
-	culture = {
-		portrait_northern_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_northern = yes
+		culture = {
+			portrait_northern_clothing_contents_trigger = yes
+		}
 	}
 }
 
 portrait_northern_clothing_contents_trigger = {
 	has_clothing_gfx = northern_clothing_gfx
 }
+
 
 ### FP2 - Fate of Iberia ###
 
@@ -427,13 +459,20 @@ portrait_fp2_iberian_christian_clothing_contents_trigger = {
 
 portrait_fp1_norse_clothing_trigger = {
 	has_fp1_dlc_trigger = yes
-	scope:culture = { portrait_fp1_norse_clothing_contents_trigger = yes }
+	OR = {
+		style_changing_reformer_fp1_norse = yes
+		scope:culture = { portrait_fp1_norse_clothing_contents_trigger = yes }
+	}
+	
 }
 
 portrait_fp1_norse_clothing_spouse_trigger = {
 	has_fp1_dlc_trigger = yes
-	culture = {
-		portrait_fp1_norse_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_fp1_norse = yes
+		culture = {
+			portrait_fp1_norse_clothing_contents_trigger = yes
+		}
 	}
 }
 
@@ -442,14 +481,20 @@ portrait_fp1_norse_clothing_contents_trigger = {
 }
 
 portrait_steppe_clothing_trigger = {
-	scope:culture = {
-		portrait_steppe_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_mongol = yes
+		scope:culture = {
+			portrait_steppe_clothing_contents_trigger = yes
+		}
 	}
 }
 
 portrait_steppe_clothing_spouse_trigger = {
-	culture = {
-		portrait_steppe_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_mongol = yes
+		culture = {
+			portrait_steppe_clothing_contents_trigger = yes
+		}
 	}
 }
 
@@ -478,15 +523,21 @@ portrait_western_clothing_contents_trigger = {
 }
 
 portrait_dde_hre_clothing_trigger = {
-	scope:culture = {
-		portrait_dde_hre_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_dde_hre = yes
+		scope:culture = {
+			portrait_dde_hre_clothing_contents_trigger = yes
+		}
 	}
 	has_dlc = "Garments of the Holy Roman Empire"
 }
 
 portrait_dde_hre_clothing_spouse_trigger = {
-	culture = {
-		portrait_dde_hre_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_dde_hre = yes
+		culture = {
+			portrait_dde_hre_clothing_contents_trigger = yes
+		}
 	}
 	has_dlc = "Garments of the Holy Roman Empire"
 }
@@ -496,16 +547,21 @@ portrait_dde_hre_clothing_contents_trigger = {
 }
 
 portrait_dde_abbasid_clothing_trigger = {
-	scope:culture = {
-		portrait_dde_abbasid_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_dde_abbasid = yes
+		scope:culture = {
+			portrait_dde_abbasid_clothing_contents_trigger = yes
+		}
 	}
 	has_dlc = "Fashion of the Abbasid Court"
 }
 
 portrait_dde_abbasid_clothing_spouse_trigger = {
-	culture = {
-		portrait_dde_abbasid_clothing_contents_trigger = yes
-	}
+	OR = {
+		style_changing_reformer_dde_abbasid = yes
+		culture = {
+			portrait_dde_abbasid_clothing_contents_trigger = yes
+		}	}
 	has_dlc = "Fashion of the Abbasid Court"
 }
 
@@ -585,9 +641,12 @@ portrait_era4_armor_trigger = {
 court_fashion_level_4_trigger = {
 	scope:highest_held_title_tier < tier_duchy
 	NOT = {
-        portrait_high_nobles_trigger = { 
-            CULTURE_INPUT = $CULTURE_INPUT$
-        }
+		AND = {
+			exists = primary_spouse
+			primary_spouse = {
+				highest_held_title_tier >= tier_county
+			}
+		}
 	}
     exists = court_owner
     court_owner = {
@@ -600,9 +659,12 @@ court_fashion_level_4_trigger = {
 court_fashion_level_4_headgear_trigger = {
 	scope:highest_held_title_tier < tier_duchy
 	NOT = {
-        portrait_high_nobles_trigger = { 
-            CULTURE_INPUT = $CULTURE_INPUT$
-        }
+		AND = {
+			exists = primary_spouse
+			primary_spouse = {
+				highest_held_title_tier >= tier_duchy
+			}
+		}
 	}
     exists = court_owner
     court_owner = {
@@ -615,9 +677,12 @@ court_fashion_level_4_headgear_trigger = {
 court_fashion_level_5_trigger = {
 	scope:highest_held_title_tier < tier_duchy
 	NOT = {
-        portrait_high_nobles_trigger = { 
-            CULTURE_INPUT = $CULTURE_INPUT$
-        }
+		AND = {
+			exists = primary_spouse
+			primary_spouse = {
+				highest_held_title_tier >= tier_duchy
+			}
+		}
 	}
 	exists = court_owner
     court_owner = {
@@ -764,6 +829,19 @@ portrait_low_nobles_trigger = {
 					portrait_$CULTURE_INPUT$_clothing_spouse_trigger = yes
 				}
 			}
+			AND = { # Viziers of rulers
+				OR = {
+					is_ruler = no
+					highest_held_title_tier = tier_barony
+				}
+				exists = liege
+				is_diarch = yes
+				liege = {
+					has_diarchy_active_parameter = diarchy_is_vizierate
+					highest_held_title_tier = tier_county
+					portrait_$CULTURE_INPUT$_clothing_trigger = yes
+				}
+			}
 		}		
 	}
 	trigger_else = { 
@@ -784,7 +862,7 @@ portrait_high_nobles_trigger = {
 	trigger_if = {
 		limit = { exists = this } # To check if this is an actual character
 		OR = {
-			AND = {
+			AND = { # Rulers
 				OR = {
 					highest_held_title_tier >= tier_duchy # Most cultures do not have specific clothes for royalty and imperial tier, so we use the high nobility for anything from duke/duchess and up
 					AND = {
@@ -802,7 +880,7 @@ portrait_high_nobles_trigger = {
 				} 
 				portrait_$CULTURE_INPUT$_clothing_trigger = yes
 			}
-			AND = {
+			AND = { # Spouses of rulers
 				exists = primary_spouse
 				OR = {
 					is_ruler = no
@@ -823,9 +901,22 @@ portrait_high_nobles_trigger = {
 					portrait_$CULTURE_INPUT$_clothing_spouse_trigger = yes
 				}
 			}
+			AND = { # Viziers of rulers
+				exists = liege
+				is_diarch = yes
+				OR = {
+					is_ruler = no
+					highest_held_title_tier = tier_barony
+				}
+				liege = {
+					has_diarchy_active_parameter = diarchy_is_vizierate
+					highest_held_title_tier >= tier_duchy
+					portrait_$CULTURE_INPUT$_clothing_trigger = yes
+				}
+			}
 		}
 	}
-	trigger_else = { 
+	trigger_else = { # Fallback
 		scope:highest_held_title_tier >= tier_duchy # We use scope in case this is not an actual character (for the Hybrid Culture preview window)
 		portrait_$CULTURE_INPUT$_clothing_trigger = yes
 	}
@@ -842,7 +933,7 @@ portrait_high_nobles_headgear_trigger = {
 	exists = this
 	portrait_can_use_noble_headgear_trigger = yes
 	OR = {
-		AND = {
+		AND = { # Rulers
 			OR = {
 				highest_held_title_tier = tier_duchy
 				AND = {
@@ -860,7 +951,7 @@ portrait_high_nobles_headgear_trigger = {
 			} 
 			portrait_$CULTURE_INPUT$_clothing_trigger = yes
 		}
-		AND = {
+		AND = { # Spouses of rulers
 			exists = primary_spouse
 			OR = {
 				is_ruler = no
@@ -876,6 +967,19 @@ portrait_high_nobles_headgear_trigger = {
 					AND = { is_ruler = yes government_has_flag = government_is_theocracy }
 				}
 				portrait_$CULTURE_INPUT$_clothing_spouse_trigger = yes
+			}
+		}
+		AND = { # Viziers of rulers
+			exists = liege
+			is_diarch = yes
+			OR = {
+				is_ruler = no
+				highest_held_title_tier = tier_barony
+			}
+			liege = {
+				has_diarchy_active_parameter = diarchy_is_vizierate
+				highest_held_title_tier >= tier_duchy
+				portrait_$CULTURE_INPUT$_clothing_trigger = yes
 			}
 		}
 	}	
@@ -1276,6 +1380,7 @@ portrait_sickness_trigger = {
 		has_short_disease_trigger = yes #affliction that would plausibly leave them bedridden for treatment
 		has_character_flag = use_sickness_clothes
 	}
+	NOT = { has_dead_character_flag = ignore_sickness_clothes }
 	portrait_ep2_wedding_clothes_trigger = no
 }
 

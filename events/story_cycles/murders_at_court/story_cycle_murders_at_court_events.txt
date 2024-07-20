@@ -2543,9 +2543,6 @@ murders_at_court.9099 = {
 				ai_honor = 0.75
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_just CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { #Expose secrets and kill them
@@ -2580,9 +2577,6 @@ murders_at_court.9099 = {
 				ai_compassion = 0.5
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_just CHANGE = nickname_weight_small_decrease }
 	}
 
 	option = { #Join them
@@ -2636,8 +2630,6 @@ murders_at_court.9099 = {
 				has_trait = sadistic
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_medium_decrease }
 	}
 
 	option = { #Accused the wrong person...
@@ -2658,8 +2650,6 @@ murders_at_court.9099 = {
 				days = { 20 40 }
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
 	}
 
 	after = {

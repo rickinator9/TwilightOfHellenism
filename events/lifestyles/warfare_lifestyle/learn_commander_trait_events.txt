@@ -96,8 +96,6 @@ learn_commander_trait.0002 = {
 				ai_compassion = -0.5
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_bold CHANGE = nickname_weight_small_increase }
 	}
 
 	option = {
@@ -186,6 +184,7 @@ learn_commander_trait.0003 = {
 			arrogant = minor_stress_impact_gain
 			stubborn = minor_stress_impact_gain
 			lazy = minor_stress_impact_gain
+			eccentric = minor_stress_impact_gain
 		}
 		ai_chance = {
 			base = 100
@@ -219,6 +218,7 @@ learn_commander_trait.0003 = {
 		trigger = { NOT = { has_trait = forder } }
 		add_trait = forder
 		stress_impact = {
+			eccentric = minor_stress_impact_loss
 			patient = minor_stress_impact_gain
 			content = minor_stress_impact_gain
 		}
@@ -276,6 +276,7 @@ learn_commander_trait.0004 = {
 		trigger = { NOT = { has_trait = reckless } }
 		add_trait = reckless
 		stress_impact = {
+			eccentric = minor_stress_impact_loss
 			calm = minor_stress_impact_gain
 			paranoid = medium_stress_impact_gain
 			diligent = medium_stress_impact_gain
@@ -289,8 +290,6 @@ learn_commander_trait.0004 = {
 				ai_vengefulness = 0.5
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_bold CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { #Reaver
@@ -300,6 +299,7 @@ learn_commander_trait.0004 = {
 		stress_impact = {
 			generous = medium_stress_impact_gain
 			forgiving = minor_stress_impact_gain
+			eccentric = minor_stress_impact_gain
 		}
 		ai_chance = {
 			base = 100
@@ -353,8 +353,6 @@ learn_commander_trait.0006 = {
 	option = {
 		name = learn_commander_trait.0006.a
 		add_trait = holy_warrior
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_medium_increase }
 	}
 }
 

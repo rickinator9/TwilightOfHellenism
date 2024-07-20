@@ -209,8 +209,6 @@ seduce_outcome.0003 = { #by Mathilda Bjarnehed & Petter Vilberg
 				chaste = medium_stress_impact_gain
 				zealous = medium_stress_impact_gain
 			}
-
-			change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_decrease }
 		}
 		else = { #Regular stress
 			stress_impact = {
@@ -264,8 +262,6 @@ seduce_outcome.0003 = { #by Mathilda Bjarnehed & Petter Vilberg
 				compassionate = minor_stress_impact_gain
 				zealous = medium_stress_impact_gain
 			}
-
-			change_nickname_weight_effect = { NICKNAME = nick_the_pious CHANGE = nickname_weight_small_decrease }
 		}
 		else = { #Regular stress
 			stress_impact = {
@@ -343,9 +339,6 @@ seduce_outcome.0003 = { #by Mathilda Bjarnehed & Petter Vilberg
 			lustful = medium_stress_impact_gain
 			compassionate = medium_stress_gain
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_increase }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
 	}
 
 	#Failure: no lovers at all please!
@@ -453,7 +446,8 @@ seduce_outcome.2000 = {
 
 
 	trigger = {
-		always = no
+		scope:target.faith = root.faith
+		scope:target = { has_title = title:k_papal_state }
 	}
 
 	immediate = {

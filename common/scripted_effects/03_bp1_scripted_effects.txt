@@ -418,7 +418,9 @@ house_feud_end_modifier_effect = {
 						}
 					}
 				}
-				custom_tooltip = house_reward_modifier_tt
+				story_owner.house = {
+					custom_tooltip = house_reward_modifier_tt
+				}
 			}
 			# Give good modifier as fallback or if Feud targets were wiped out
 			else = {
@@ -522,7 +524,7 @@ transfer_house_feud_story_cycle_to_effect = {
 		# Fire immediately if at least 9 and no pre-existing rivalry exists
 		else_if = {
 			limit = {
-				NOT = { scope:old_house_head.killer.house = scope:house_feud_rival.house } #TODO_CD JP BP1; is this needed?
+				NOT = { scope:old_house_head.killer.house = scope:house_feud_rival.house }
 				NOT = {
 					has_any_bad_relationship_with_character_trigger = { CHARACTER = scope:house_feud_rival }
 				}
@@ -943,19 +945,21 @@ house_feud_torture_event_effect = {
 						house.house_head = { has_trait = forgiving }
 					}
 					scope:actor = { house_feud_save_head_and_attacker_effect = yes }
-					save_scope_as = house_feud_victim
-					scope:recipient.house.house_head = {
-						if = {
-							limit = { this = scope:recipient }
-							trigger_event = {
-								id = bp1_house_feud.0010 # Version for tortured House Heads
-								days = { 5 15 }
+					scope:recipient = {
+						save_scope_as = house_feud_victim
+						house.house_head = {
+							if = {
+								limit = { this = scope:house_feud_victim }
+								trigger_event = {
+									id = bp1_house_feud.0010 # Version for tortured House Heads
+									days = { 5 15 }
+								}
 							}
-						}
-						else = {
-							trigger_event = {
-								id = bp1_house_feud.0011 # Version for tortured close family
-								days = { 5 15 }
+							else = {
+								trigger_event = {
+									id = bp1_house_feud.0011 # Version for tortured close family
+									days = { 5 15 }
+								}
 							}
 						}
 					}
@@ -1023,6 +1027,7 @@ set_war_memory_casus_belli_effect = {
 					using_cb = county_conquest_cb
 					using_cb = duchy_conquest_cb
 					using_cb = county_struggle_cb
+					using_cb = fp2_mediterranean_conquest_cb
 				}
 			}
 			scope:memory = {
@@ -1071,10 +1076,25 @@ set_war_memory_casus_belli_effect = {
 				OR = {
 					using_cb = invasion_war
 					using_cb = clan_invasion_war
+					using_cb = mongol_invasion_war
+					using_cb = mongol_realm_invasion_war
 				}
 			}
 			scope:memory = {
 				set_variable = { name = war_cb value = flag:war_memory_cb_invasion }
+			}
+		}
+		else_if = { # ghw
+			limit = {
+				OR = {
+					using_cb = undirected_great_holy_war
+					using_cb = directed_great_holy_war
+				}
+			}
+			scope:memory = {
+				set_variable = { name = war_cb value = flag:war_memory_cb_ghw }
+				set_variable = { name = war_faith value = scope:war.primary_defender.faith }
+				set_variable = { name = war_faith_attacker value = scope:war.primary_attacker.faith }
 			}
 		}
 		else_if = { # independence
@@ -1097,6 +1117,14 @@ set_war_memory_casus_belli_effect = {
 			}
 			scope:memory = {
 				set_variable = { name = war_cb value = flag:war_memory_cb_artifact }
+			}
+		}
+		else_if = {
+			limit = { using_cb = populist_war }
+			scope:memory = {
+				set_variable = { name = war_cb value = flag:war_memory_cb_populist }
+				set_variable = { name = war_faith value = scope:war.primary_defender.faith }
+				set_variable = { name = war_culture value = scope:war.primary_defender.culture }
 			}
 		}
 		else = {
@@ -1127,9 +1155,29 @@ set_war_memory_casus_belli_effect = {
 						set_variable = { name = war_cb value = flag:war_memory_cb_ducal_conquest }
 					}
 				}
+				imperial_reconquest_cb = { # imperial reconquest
+					scope:memory = {
+						set_variable = { name = war_cb value = flag:war_memory_cb_imperial_reconquest }
+					}
+				}
+				dismantle_holy_pretender_cb = { # holy pretender
+					scope:memory = {
+						set_variable = { name = war_cb value = flag:war_memory_cb_holy_pretender }
+					}
+				}
+				dismantle_byz_pretender_cb = { # byz pretender
+					scope:memory = {
+						set_variable = { name = war_cb value = flag:war_memory_cb_byz_pretender }
+					}
+				}
 				excommunication_war = { # excommunicate
 					scope:memory = {
 						set_variable = { name = war_cb value = flag:war_memory_cb_excommunicate }
+					}
+				}
+				flowery_war_cb = { # flower
+					scope:memory = {
+						set_variable = { name = war_cb value = flag:war_memory_cb_flower }
 					}
 				}
 				tribal_subjugation_cb = {
@@ -1140,6 +1188,16 @@ set_war_memory_casus_belli_effect = {
 				vassalization_cb = {
 					scope:memory = {
 						set_variable = { name = war_cb value = flag:war_memory_cb_vassalization }
+					}
+				}				
+				fp1_varangian_adventurer_conquest = {
+					scope:memory = {
+						set_variable = { name = war_cb value = flag:war_memory_cb_varangian }
+					}
+				}
+				fp1_scandi_adventurer_conquest = {
+					scope:memory = {
+						set_variable = { name = war_cb value = flag:war_memory_cb_varangian }
 					}
 				}
 				fp2_border_raid = {
@@ -1160,6 +1218,31 @@ set_war_memory_casus_belli_effect = {
 				remove_regent_cb = {
 					scope:memory = {
 						set_variable = { name = war_cb value = flag:war_memory_cb_regent }
+					}
+				}
+				norman_conquest_cb = {
+					scope:memory = {
+						set_variable = { name = war_cb value = flag:war_memory_cb_claim }
+					}
+				}
+				norwegian_invasion_cb = {
+					scope:memory = {
+						set_variable = { name = war_cb value = flag:war_memory_cb_claim }
+					}
+				}
+				hungarian_migration_cb = {
+					scope:memory = {
+						set_variable = { name = war_cb value = flag:war_memory_cb_invasion }
+					}
+				}
+				sons_of_lothbrok_invasion_cb = {
+					scope:memory = {
+						set_variable = { name = war_cb value = flag:war_memory_cb_invasion }
+					}
+				}
+				peasant_war = {
+					scope:memory = {
+						set_variable = { name = war_cb value = flag:war_memory_cb_peasant }
 					}
 				}
 				fallback = {
@@ -1237,6 +1320,13 @@ copy_war_memory_casus_belli_effect = {
 			set_variable = {
 				name = war_faith
 				value = $MEMORY$.var:war_faith
+			}
+		}
+		if = {
+			limit = { exists = $MEMORY$.var:war_culture }
+			set_variable = {
+				name = war_culture
+				value = $MEMORY$.var:war_culture
 			}
 		}
 		if = {

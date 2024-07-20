@@ -89,7 +89,6 @@ sibling.0001 = {
 			id = sibling.0002
 			years = 2
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 
 	option = { #Promise anything they ask for
@@ -108,7 +107,6 @@ sibling.0001 = {
 				target = root
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 
 	option = {
@@ -120,7 +118,6 @@ sibling.0001 = {
 				years = 15
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_decrease }
 	}
 
 	after = {
@@ -172,8 +169,6 @@ sibling.0002 = {
 			save_scope_as = sibling
 		}
 		remove_variable = sibling_waiting_for_land
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_overpromiser CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { #Give them some gold
@@ -188,7 +183,6 @@ sibling.0002 = {
 		stress_impact = {
 			greedy = minor_stress_impact_gain
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_increase }
 	}
 
 	option = { #No!
@@ -202,9 +196,6 @@ sibling.0002 = {
 				modifier = sibling_goes_back_on_promise_opinion
 			}
 		}
-
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_medium_decrease }
 	}
 }
 
@@ -237,8 +228,6 @@ sibling.0003 = {
 			remove_character_flag = got_title_from_sibling
 		}
 		remove_variable = sibling_waiting_for_land
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_overpromiser CHANGE = nickname_weight_small_decrease }
 	}
 
 	option = {
@@ -1132,10 +1121,7 @@ sibling.8002 = {
 		}
 		scope:sibling = {
 			increase_helped_landed_sibling_value_effect = yes
-			change_nickname_weight_effect = { NICKNAME = nick_the_benefactor CHANGE = nickname_weight_small_increase }
-			change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_increase }
 		}
-		change_nickname_weight_effect = { NICKNAME = nick_the_benefactor CHANGE = nickname_weight_small_increase }
 	}
 
 	option = {
@@ -1149,10 +1135,7 @@ sibling.8002 = {
 				modifier = sibling_dislikes_charity_opinion
 			}
 			increase_sibling_causing_trouble_value_effect = yes
-			change_nickname_weight_effect = { NICKNAME = nick_the_benefactor CHANGE = nickname_weight_small_increase }
-			change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_increase }
 		}
-		change_nickname_weight_effect = { NICKNAME = nick_the_benefactor CHANGE = nickname_weight_small_decrease }
 	}
 }
 

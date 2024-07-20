@@ -45,18 +45,6 @@ learn_language_ongoing.1000 = {
 	}
 
 	immediate = {
-		## TODO this is just for testing; remove!
-		## REMOVE BELOW
-		#random_scheme = {
-		#	limit = {
-		#		scheme_type = learn_language
-		#	}
-		#	save_scope_as = scheme
-		#	scheme_target = {
-		#		save_scope_as = target
-		#	}
-		#}
-		## REMOVE ABOVE
 		set_variable = {	
 			name = had_event_learn_language_ongoing_1000
 			value = yes
@@ -164,19 +152,6 @@ learn_language_ongoing.1010 = {
 	}
 
 	immediate = {
-		## TODO this is just for testing; remove!
-		## REMOVE BELOW
-		#random_scheme = {
-		#	limit = {
-		#		scheme_type = learn_language
-		#	}
-		#	save_scope_as = scheme
-		#	scheme_target = {
-		#		save_scope_as = target
-		#	}
-		#}
-		## REMOVE ABOVE
-		
 		random_courtier_or_guest = {
 			limit = {
 				appropriate_lover_target = yes
@@ -357,7 +332,7 @@ learn_language_ongoing.1020 = {
 	}
 	
 	trigger = {
-		scope:scheme = {
+		scope:scheme ?= {
 			NOT = { has_variable = had_event_learn_language_ongoing_1020 }
 		}
 		is_available = yes
@@ -391,18 +366,6 @@ learn_language_ongoing.1020 = {
 	}
 
 	immediate = {
-		## TODO this is just for testing; remove!
-		## REMOVE BELOW
-		#random_scheme = {
-		#	limit = {
-		#		scheme_type = learn_language
-		#	}
-		#	save_scope_as = scheme
-		#	scheme_target = {
-		#		save_scope_as = target
-		#	}
-		#}
-		## REMOVE ABOVE
 		scope:scheme = {
 			set_variable = {	
 				name = had_event_learn_language_ongoing_1020
@@ -711,7 +674,7 @@ learn_language_ongoing.1030 = {
 	
 	trigger = {
 		is_travelling = no
-		scope:scheme = {
+		scope:scheme ?= {
 			NOT = { has_variable = had_event_learn_language_ongoing_1030 }
 		}
 		NOT = {
@@ -735,18 +698,6 @@ learn_language_ongoing.1030 = {
 	}
 
 	immediate = {
-		## TODO this is just for testing; remove!
-		## REMOVE BELOW
-		#random_scheme = {
-		#	limit = {
-		#		scheme_type = learn_language
-		#	}
-		#	save_scope_as = scheme
-		#	scheme_target = {
-		#		save_scope_as = target
-		#	}
-		#}
-		## REMOVE ABOVE
 		scope:scheme = {
 			set_variable = {	
 				name = had_event_learn_language_ongoing_1030
@@ -1048,7 +999,7 @@ learn_language_ongoing.1040 = {
 	
 	trigger = {
 		is_travelling = no
-		scope:scheme = {
+		scope:scheme ?= {
 			NOT = { has_variable = had_event_learn_language_ongoing_1040 }
 			scheme_target = {
 				ai_compassion >= 0
@@ -1061,18 +1012,6 @@ learn_language_ongoing.1040 = {
 	}
 
 	immediate = {
-		## TODO this is just for testing; remove!
-		## REMOVE BELOW
-		#random_scheme = {
-		#	limit = {
-		#		scheme_type = learn_language
-		#	}
-		#	save_scope_as = scheme
-		#	scheme_target = {
-		#		save_scope_as = target
-		#	}
-		#}
-		## REMOVE ABOVE
 		scope:scheme = {
 			set_variable = {	
 				name = had_event_learn_language_ongoing_1040
@@ -1215,7 +1154,7 @@ learn_language_ongoing.1050 = {
 	
 	trigger = {
 		is_travelling = no
-		scope:scheme = {
+		scope:scheme ?= {
 			scheme_progress > 1
 			NOT = { has_variable = had_event_learn_language_ongoing_1050 }
 		}
@@ -1441,7 +1380,7 @@ learn_language_ongoing.1060 = {
 	
 	trigger = {
 		is_travelling = no
-		scope:scheme = {
+		scope:scheme ?= {
 			NOT = { has_variable = had_event_learn_language_ongoing_1060 }
 		}
 		OR = {
@@ -1831,7 +1770,7 @@ learn_language_ongoing.1070 = {
 	
 	trigger = {
 		is_travelling = no
-		scope:scheme = {
+		scope:scheme ?= {
 			NOT = { has_variable = had_event_learn_language_ongoing_1070 }
 			scheme_target = {
 				is_available_ai_adult = yes
@@ -1999,7 +1938,7 @@ learn_language_ongoing.1080 = {
 	
 	trigger = {
 		is_travelling = no
-		scope:scheme = {
+		scope:scheme ?= {
 			NOT = { has_variable = had_event_learn_language_ongoing_1080 }
 		}
 		any_courtier = {
@@ -2138,7 +2077,7 @@ learn_language_ongoing.1090 = {
 	
 	trigger = {
 		is_travelling = no
-		scope:scheme = {
+		scope:scheme ?= {
 			scheme_progress > 1
 			NOT = { has_variable = had_event_learn_language_ongoing_1090 }
 		}
@@ -2282,7 +2221,7 @@ learn_language_ongoing.1100 = {
 	
 	trigger = {
 		is_travelling = no
-		scope:scheme = {
+		scope:scheme ?= {
 			scheme_progress >= 5
 			NOT = { has_variable = had_event_learn_language_ongoing_1100 }
 		}
@@ -2338,7 +2277,7 @@ learn_language_ongoing.1100 = {
 						}
 					}
 					add_prestige = medium_prestige_gain
-					change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_large_increase }
+					set_nickname_effect = { NICKNAME = nick_the_kind }
 				}
 			}
 			50 = {
@@ -2461,7 +2400,7 @@ learn_language_ongoing.1110 = {
 	
 	trigger = {
 		is_travelling = no
-		scope:scheme = {
+		scope:scheme ?= {
 			scheme_progress >= 3
 			NOT = { has_variable = had_event_learn_language_ongoing_1110 }
 		}
@@ -2724,7 +2663,7 @@ learn_language_ongoing.1120 = {
 	
 	trigger = {
 		is_travelling = no
-		scope:scheme = {
+		scope:scheme ?= {
 			scheme_progress > 1
 			scheme_progress < 7
 			NOT = { has_variable = had_event_learn_language_ongoing_1120 }
@@ -3210,7 +3149,7 @@ learn_language_ongoing.1130 = {
 	
 	trigger = {
 		is_travelling = no
-		scope:scheme = {
+		scope:scheme ?= {
 			NOT = { has_variable = had_event_learn_language_ongoing_1130 }
 		}
 		is_adult = yes
@@ -3487,7 +3426,7 @@ learn_language_ongoing.1140 = {
 	
 	trigger = {
 		is_travelling = no
-		scope:scheme = {
+		scope:scheme ?= {
 			NOT = { has_variable = had_event_learn_language_ongoing_1140 }
 		}
 		is_adult = yes
@@ -3616,7 +3555,7 @@ learn_language_ongoing.1200 = {
 	
 	trigger = {
 		is_travelling = no
-		scope:scheme = {
+		scope:scheme ?= {
 			scheme_progress > 1
 			NOT = { has_variable = had_event_learn_language_ongoing_1200 }
 		}
@@ -3731,7 +3670,7 @@ learn_language_ongoing.1300 = {
 	cooldown = { years = 1 }
 	
 	trigger = {
-		scope:scheme = {
+		scope:scheme ?= {
 			scheme_progress > 1
 		}
 		is_travelling = yes 

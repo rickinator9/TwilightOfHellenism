@@ -103,6 +103,8 @@ castle_01 = {
 
 	flag = castle
 
+	type_icon = "icon_building_ramparts.dds"
+
 	on_complete = {
 		hidden_effect = { add_province_modifier = extra_building_slot }
 		county.holder = {
@@ -517,8 +519,6 @@ castle_04 = {
 	}
 
 	flag = castle
-
-	type_icon = "icon_building_ramparts.dds"
 
 	on_complete = {
 		barony.holder = {

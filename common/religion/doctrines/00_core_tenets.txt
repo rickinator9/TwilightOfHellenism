@@ -77,6 +77,11 @@
 
 		character_modifier = {
 			monthly_learning_lifestyle_xp_gain_mult = 0.2
+			learning_per_stress_level = 2
+		}
+
+		traits = {
+			virtues = { scholar }
 		}
 	}
 
@@ -307,6 +312,12 @@
 					doctrine:doctrine_no_head = { is_in_list = selected_doctrines }
 				}
 			}
+			custom_description = {
+				text = incompatible_tenet_sacred_shadows_trigger
+				NOT = {
+					has_doctrine = tenet_sacred_shadows
+				}
+			}
 		}
 
 		parameters = {
@@ -394,6 +405,17 @@
 
 	tenet_divine_marriage = {
 		icon = core_tenet_divine_marriage
+		name = {
+			first_valid = {
+				triggered_desc = {
+					trigger = {
+						religion_tag = zoroastrianism_religion
+					}
+					desc = tenet_divine_marriage_xwedodah 
+				}
+				desc = tenet_divine_marriage_name
+			}
+		}
 		piety_cost = {
 			if = {
 				limit = {
@@ -428,6 +450,10 @@
 		parameters = {
 			divine_marriage_opinion = 10
 			divine_marriage_piety_gain_active = yes
+		}
+
+		traits = {
+			virtues = { pure_blooded = 2 }
 		}
 	}
 
@@ -795,6 +821,36 @@
 		parameters = {
 			clergy_can_fight = yes
 		}
+
+		name = {
+			first_valid = {
+				triggered_desc = {
+					trigger = {
+						OR = { 
+							has_doctrine = doctrine_heretic_branch_zandik
+							has_doctrine = tenet_pastoral_isolation
+						}
+					}
+					desc = tenet_unrelenting_faith_zandik_name
+				}
+				desc = tenet_unrelenting_faith_name
+			}
+		}
+
+		desc = {
+			first_valid = {
+				triggered_desc = {
+					trigger = {
+						OR = { 
+							has_doctrine = doctrine_heretic_branch_zandik
+							has_doctrine = tenet_pastoral_isolation
+						}
+					}
+					desc = tenet_unrelenting_faith_zandik_desc
+				}
+				desc = tenet_unrelenting_faith_desc
+			}
+		}
 	}
 
 	tenet_vows_of_poverty = {
@@ -1151,7 +1207,7 @@
 
 		traits = {
 			virtues = {
-				lifestyle_mystic
+				lifestyle_mystic = { weight = 1 }
 			}
 		}
 
@@ -1264,6 +1320,7 @@
 			virtues = {
 				education_learning_3
 				education_learning_4
+				education_learning_5
 				scholar
 			}
 		}
@@ -1310,6 +1367,30 @@
 		parameters = {
 			reincarnation_resistance_to_conversion = yes
 			reincarnation_events_active = yes
+		}
+
+		name = {
+			first_valid = {
+				triggered_desc = {
+					trigger = {
+						religion_tag = zoroastrianism_religion
+					}
+					desc = tenet_reincarnation_zoroastrian_name
+				}
+				desc = tenet_reincarnation_name
+			}
+		}
+
+		desc = {
+			first_valid = {
+				triggered_desc = {
+					trigger = {
+						religion_tag = zoroastrianism_religion
+					}
+					desc = tenet_reincarnation_zoroastrian_desc
+				}
+				desc = tenet_reincarnation_desc
+			}
 		}
 	}
 
@@ -1538,29 +1619,29 @@
 			meditation_mechanics_active = yes
 		}
 
-		name = {
-			first_valid = {
-				triggered_desc = {
-					trigger = {
-						religion_tag = zoroastrianism_religion
-					}
-					desc = tenet_zurvanism_name
-				}
-				desc = tenet_asceticism_name
-			}
-		}
+		#name = { #FP3 - Removed and saved for posterity. Zurvanism would fit a future hypotetical "Fatalism" tenet, but Asceticism isn't a good fit, per beta input. Ola's note. 
+		#	first_valid = {
+		#		triggered_desc = {
+		#			trigger = {
+		#				religion_tag = zoroastrianism_religion
+		#			}
+		#			desc = tenet_zurvanism_name
+		#		}
+		#		desc = tenet_asceticism_name
+		#	}
+		#}
 
-		desc = {
-			first_valid = {
-				triggered_desc = {
-					trigger = {
-						religion_tag = zoroastrianism_religion
-					}
-					desc = tenet_zurvanism_desc
-				}
-				desc = tenet_asceticism_desc
-			}
-		}
+		#desc = {
+		#	first_valid = {
+		#		triggered_desc = {
+		#			trigger = {
+		#				religion_tag = zoroastrianism_religion
+		#			}
+		#			desc = tenet_zurvanism_desc
+		#		}
+		#		desc = tenet_asceticism_desc
+		#	}
+		#}
 
 		traits = {
 			virtues = {
@@ -2715,9 +2796,7 @@
 	tenet_exaltation_of_pain = {
 		icon = core_tenet_human_sacrifice
 
-		is_shown = {
-			always = no
-		}
+		is_shown = {}
 
 		piety_cost = {
 			if = {

@@ -2257,7 +2257,6 @@ seduce_ongoing.3001 = {
 				ai_greed > 0
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 	}
 
 	#Let them off hook
@@ -2298,7 +2297,6 @@ seduce_ongoing.3001 = {
 				ai_greed > 0
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 	}
 
 	#Give them money
@@ -2359,7 +2357,6 @@ seduce_ongoing.3001 = {
 				ai_greed > 0
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 	}
 
 	option = {
@@ -2374,7 +2371,6 @@ seduce_ongoing.3001 = {
 		ai_chance = {
 			base = 50
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_medium_decrease }
 	}
 
 	after = { remove_variable = scheme_event_active_flag }
@@ -4704,8 +4700,6 @@ seduce_ongoing.1001 = {
 				ai_rationality = 0.25
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { #Take a walk
@@ -4757,9 +4751,6 @@ seduce_ongoing.1001 = {
 				ai_vengefulness = 0.25
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_decrease }
 	}
 
 	after = {
@@ -5918,9 +5909,6 @@ seduce_ongoing.1701 = {
 				ai_vengefulness = 0.25
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_decrease }
 	}
 
 	after = {
@@ -6510,17 +6498,6 @@ seduce_ongoing.2001 = {
 					multiplier = 1
 					min = -19
 				}
-
-				# ATHA - scholar/wise nickname modifiers.
-				modifier = {
-					has_character_modifier = nick_the_scholar_modifier
-					factor = 1.25
-				}
-				modifier = {
-					has_character_modifier = nick_the_wise_modifier
-					factor = 1.1
-				}
-
 				#Success
 				scope:target = {
 					trigger_event = {
@@ -7516,8 +7493,6 @@ seduce_ongoing.4101 = {
 				ai_boldness = 0.5
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_bold CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { #leave a gift
@@ -7544,8 +7519,6 @@ seduce_ongoing.4101 = {
 				ai_rationality = 0.5
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_illustrious CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { #I should keep my feelings to myself for now
@@ -7989,7 +7962,6 @@ seduce_ongoing.4108 = {
 				has_trait = shy
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 	}
 
 	option = { #I don't want this
@@ -8009,7 +7981,6 @@ seduce_ongoing.4108 = {
 				has_personality_dominant_trigger = yes
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 	}
 }
 
@@ -8882,8 +8853,6 @@ seduce_ongoing.5011 = {
 				has_trait = brave
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_bold CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { #Ask if they need any help
@@ -8913,9 +8882,6 @@ seduce_ongoing.5011 = {
 				has_trait = compassionate
 			}
 		}
-
-		change_nickname_weight_effect = { NICKNAME = nick_the_cruel CHANGE = nickname_weight_small_decrease }
-		change_nickname_weight_effect = { NICKNAME = nick_the_good CHANGE = nickname_weight_small_increase }
 	}
 
 	option = { #Allow them to win
@@ -9452,7 +9418,6 @@ seduce_ongoing.5101 = {
 				ai_rationality = 0.5
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 	}
 
 	option = { #Please, serve me in this way, too
@@ -9476,7 +9441,6 @@ seduce_ongoing.5101 = {
 				ai_boldness = 0.5
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 	}
 
 	option = { #I should keep my feelings to myself for now
@@ -9585,7 +9549,6 @@ seduce_ongoing.5102 = {
 				ai_greed = 0.5
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_increase }
 	}
 
 	option = { #I don't want this
@@ -9608,7 +9571,6 @@ seduce_ongoing.5102 = {
 				has_personality_submissive_trigger = yes
 			}
 		}
-		change_city_state_corruption = { AMOUNT_ARG = corruption_minor_decrease }
 	}
 }
 

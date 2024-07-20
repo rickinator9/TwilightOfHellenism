@@ -6,6 +6,7 @@
 			limit = {
 				is_ai = yes
 			}
+			years_from_game_start >= 3
 			is_at_war = no
 			short_term_gold >= pilgrimage_base_cost
 		}
@@ -228,6 +229,18 @@
 
 	province_description = {
 		desc = activity_pilgrimage_province_desc
+		# Are you going to honor your imaginary friend guardian angel?
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					any_owned_story = {
+						story_type = story_cycle_imaginary_friend
+						var:pilgrimage_destination ?= root
+					}
+				}
+			}
+			desc = activity_pilgrimage_imaginary_friend_location_desc
+		}
 		#Is it an unvisited holy site?
 		triggered_desc = {
 			trigger = {
@@ -463,6 +476,76 @@
 				desc = "Has maxed out Pilgrim"
 			}
 		}
+		# Plague
+		if = {
+        	limit = {
+        	    any_held_title = {
+					tier = tier_county
+        	        any_county_province = {
+        	            any_province_epidemic = {
+        	                count >= 1
+        	                outbreak_intensity < apocalyptic
+        	            }
+        	        }
+        	    }
+        	    would_follow_social_distancing_value >= -1
+        	}
+        	add = {
+        	    value = -60
+        	    desc = "Plague in Domain"
+        	}
+    	}
+    	else_if = {
+    	    limit = {
+    	        any_realm_county = {
+    	            any_county_province = {
+    	                any_province_epidemic = {
+    	                    count >= 1
+    	                    outbreak_intensity < apocalyptic
+    	                }
+    	            }
+    	        }
+    	        would_follow_social_distancing_value >= -1
+    	    }
+    	    add = {
+    	        value = -20
+    	        desc = "Plague in Top Realm"
+    	    }
+    	}
+    	if = {
+    	    limit = {
+    	        any_held_title = {
+					tier = tier_county
+    	            any_county_province = {
+    	                any_province_epidemic = {
+    	                    count >= 1
+    	                    outbreak_intensity = apocalyptic
+    	                }
+    	            }
+    	        }
+    	    }
+    	    add = {
+    	        value = -200
+    	        desc = "Apocalyptic Plague in Domain"
+    	    }
+    	}
+    	else_if = {
+    	    limit = {
+    	        any_held_title = {
+					tier = tier_county
+    	            any_county_province = {
+    	                any_province_epidemic = {
+    	                    count >= 1
+    	                    outbreak_intensity = apocalyptic
+    	                }
+    	            }
+    	        }
+    	    }
+    	    add = {
+    	        value = -40
+    	        desc = "Apocalyptic Plague in Top Realm"
+    	    }
+    	}
 	}
 
 	ai_check_interval = 60
@@ -563,6 +646,18 @@
 				desc = "Holy site is super far away 1"
 			}
 		}
+		# Plague
+    	if = {
+    	    limit = {
+    	       any_province_epidemic = {
+    	            count >= 1
+    	        }
+    	    }
+    	    add = {
+    	        value = -200
+    	        desc = "Plague in Destination"
+    	    }
+    	}
 	}
 
 	###################
@@ -613,6 +708,21 @@
 						value = root.pilgrimage_base_cost
 						multiply = ep2_activities_legacy_1_pilgrimages_discount_value
 						desc = ep2_activities_legacy_track
+					}
+				}
+				# bp2_yearly.2030
+				if = {
+					limit = {
+						exists = scope:province 
+						has_character_flag = imaginary_friend_pilgrimage_discount
+						any_owned_story = {
+							story_type = story_cycle_imaginary_friend
+							var:pilgrimage_destination ?= scope:province
+						}
+					}
+					multiply = {
+						value = 0.5
+						desc = imaginary_friend_pilgrimage_discount
 					}
 				}
 				min = minor_gold_value
@@ -1249,6 +1359,20 @@
 							}
 						}
 						multiply = activity_cost_scale_by_era
+						if = {
+							limit = {
+								exists = scope:province 
+								has_character_flag = imaginary_friend_pilgrimage_discount
+								any_owned_story = {
+									story_type = story_cycle_imaginary_friend
+									var:pilgrimage_destination ?= scope:province
+								}
+							}
+							multiply = {
+								value = 0.5
+								desc = imaginary_friend_pilgrimage_discount
+							}
+						}
 					}
 				}
 			}
@@ -1304,6 +1428,18 @@
 					#Standard pilgrimage arrival events
 					else = {
 						trigger_event = { on_action = pilgrimage_arrival_events }
+					}
+				}
+				if = {
+					limit = {
+						any_owned_story = {
+							story_type = story_cycle_imaginary_friend
+							var:pilgrimage_destination ?= scope:activity.activity_location
+						}
+					}
+					trigger_event = {
+						id = bp2_yearly.2031
+						days = 2 # Fire the event slightly after arrival
 					}
 				}
 				# Achievements.
@@ -2016,6 +2152,12 @@
 	}
 	#Generic holy sites
 	background = {
+		trigger = { scope:host.religion = religion:zoroastrianism_religion }
+		texture = "gfx/interface/illustrations/event_scenes/fp3_temple.dds"
+		environment = "environment_event_fp3_temple"
+		ambience = "event:/DLC/FP1/SFX/Events/event_temple"
+	}
+	background = {
 		trigger = {
 			activity_location.culture = { has_graphical_mena_culture_group_trigger = yes }
 		}
@@ -2101,7 +2243,7 @@
 	window_characters = {
 
 		pilgrim = {
-			camera = camera_body
+			camera = camera_event_center
 			
 			effect = {
 				if = {
@@ -2139,7 +2281,7 @@
 		}
 
 		pilgrim = {
-			camera = camera_body
+			camera = camera_event_center
 			
 			effect = {
 				every_attending_character = {
@@ -2169,7 +2311,7 @@
 		}
 
 		pilgrim = {
-			camera = camera_body
+			camera = camera_event_center
 			
 			effect = {
 				if = {
@@ -2202,7 +2344,7 @@
 		}
 
 		pilgrim = {
-			camera = camera_body
+			camera = camera_event_center
 			
 			effect = {
 				every_attending_character = {
@@ -2227,7 +2369,7 @@
 		}
 		
 		host = {
-			camera = camera_body
+			camera = camera_event_center
 			
 			effect = {
 				if = {
@@ -2261,7 +2403,7 @@
 		}
 		
 		travel_host = {
-			camera = camera_body
+			camera = camera_event_center
 			
 			effect = {
 				if = {
@@ -2288,7 +2430,7 @@
 		}
 
 		pilgrim = {
-			camera = camera_body
+			camera = camera_event_center
 			
 			effect = {
 				every_attending_character = {
@@ -2318,7 +2460,7 @@
 		}
 
 		pilgrim = {
-			camera = camera_body
+			camera = camera_event_center
 			
 			effect = {
 				if = {
@@ -2356,7 +2498,7 @@
 		}
 
 		pilgrim = {
-			camera = camera_body
+			camera = camera_event_center
 			
 			effect = {
 				every_attending_character = {
@@ -2381,7 +2523,7 @@
 		}
 
 		pilgrim = {
-			camera = camera_body
+			camera = camera_event_center
 			
 			effect = {
 				if = {
