@@ -15,7 +15,6 @@
 
 # Major Decisions
  nick_pelopidas:0 "[nick_pelopidas|L]"
- nick_the_reformer:0 "[nick_the_reformer|Ll]"
 
  nick_macedonicus:0 "[CHARACTER.Custom('NicknameMacedonicus')]"
  NICKNAME_MACEDONICUS_DEFAULT:0 "[nick_macedonicus|L]"

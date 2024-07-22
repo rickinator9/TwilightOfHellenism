@@ -4,7 +4,6 @@
  unlock_enforced_federalism_contract:0 "Unlocks the #high $enforced_federalism$#! [contract|E]"
  
  unlock_colony_rights_contract:0 "Unlocks the #high $colony_rights$#! [contract|E]"
- unlock_coinage_rights_contract:0 "Unlocks the #high $coinage_rights$#! [contract|E]"
  unlock_ritual_coronations_contract:0 "Unlocks the #high $ritual_coronations_rights$#! [contract|E]"
  unlock_gift_estate_contract:0 "Unlocks the #high $gift_estate_rights$#! [contract|E]"
 
