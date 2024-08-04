@@ -1,0 +1,7 @@
+﻿egypt_hut = {}
+greece_delphi = {}
+greece_farmlands = {}
+greece_mural = {}
+greece_offerings = {}
+greece_ruins = {}
+rome_temple = {}
