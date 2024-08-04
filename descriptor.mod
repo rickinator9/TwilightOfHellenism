@@ -41,6 +41,5 @@ replace_path = "dlc/dlc003_fp1/music"
 replace_path = "dlc/dlc004_ep1/music"
 replace_path = "dlc/dlc005_fp2/music"
 
-replace_path = "gfx/interface/illustrations/loading_screens"
 
 replace_path = "tests"
