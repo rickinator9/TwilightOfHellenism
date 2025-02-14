@@ -1,9 +1,0 @@
-﻿armour_great_sell_value = 100
-armour_good_sell_value = 50
-armour_pawn_sell_value = 30
-armour_bad_sell_value = 20
-armour_embezzle_councillor_factor = 0.4
-armour_embezzle_liege_factor = {
-	value = 1
-	subtract = armour_embezzle_councillor_factor
-}

@@ -1,2 +1,0 @@
-﻿# Modifiers affecting marriage attractiveness for those who hold the Samothrake holy site.
-samothrake_modifier_value = 20

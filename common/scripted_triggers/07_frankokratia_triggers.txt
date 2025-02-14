@@ -1,0 +1,67 @@
+﻿##################################################
+### FRANKOKRATIA TRIGGERS
+##################################################
+ep3_frankokratia_ghw_trigger = {
+	always = no
+}
+
+ep3_frankokratia_transiting_relative_trigger = {
+	always = no
+}
+
+ep3_frankokratia_story_owner_trigger = {
+	always = no
+}
+
+ep3_frankokratia_claimant_trigger = {
+	always = no
+}
+
+ep3_frankokratia_will_start_trigger = {
+	always = no
+	
+}
+
+ep3_frankokratia_financier_trigger = {
+	always = no
+}
+
+ep3_frankokratia_financier_sub_trigger = {
+	always = no
+}
+
+ep3_frankokratia_financier_exists_trigger = {
+	always = no
+}
+
+ep3_frankokratia_valid_joiner_trigger = {
+	always = no
+}
+
+ep3_frankokratia_latin_kingdom_available_trigger = {
+	always = no
+}
+
+ep3_frankokratia_discard_old_lands_trigger = {
+	always = no
+}
+
+ep3_frankokratia_beneficiary_trigger = {
+	always = no
+}
+
+ep3_frankokratia_beneficiary_gender_trigger = {
+	always = no
+}
+
+ep3_frankokratia_beneficiary_gender_soft_trigger = {
+	always = no
+}
+
+ep3_frankokratia_notification_recipient_trigger = {
+	always = no
+}
+
+ep3_orthodox_faith_trigger = {
+	always = no
+}

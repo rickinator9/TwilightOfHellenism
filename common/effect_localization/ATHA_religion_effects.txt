@@ -1,4 +1,0 @@
-﻿mountain_sanctuary_temple_built_effect = {
-	first = because_i_have_tenet_mountain_sanctuaries
-	global = because_they_have_tenet_mountain_sanctuaries
-}

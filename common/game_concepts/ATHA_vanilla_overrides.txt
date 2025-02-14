@@ -1,4 +1,0 @@
-﻿dynasty = {
-	texture = "gfx/interface/icons/message_feed/dynasty.dds"
-	alias = { dynasties dynasty_members lineage lineages }
-}

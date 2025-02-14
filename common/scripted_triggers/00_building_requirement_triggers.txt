@@ -128,6 +128,11 @@ building_orchards_requirement_terrain = {
 		terrain = floodplains
 		terrain = oasis
 		has_building_or_higher = qanats_05
+		AND = {
+			culture = {
+				has_cultural_parameter = vegetarian_fruit_orchard_allowed
+			}
+		}
 	}
 }
 
@@ -306,11 +311,16 @@ building_quarries_requirement_terrain = {
 
 building_warrior_lodges_requirement_terrain = {
 	OR = {
-		terrain = mountains
-		terrain = desert_mountains
-		terrain = hills
+		AND = {
+			OR = {
+				terrain = mountains
+				terrain = desert_mountains
+				terrain = hills
+			}
+			NOT = { geographical_region = world_horse_buildings_in_hills_and_mountains }
+		}
+		culture = { has_cultural_parameter = warrior_lodges_lift_restrictions }
 	}
-	NOT = { geographical_region = world_horse_buildings_in_hills_and_mountains }
 }
 
 building_hillside_grazing_requirement_terrain = {
@@ -387,8 +397,8 @@ building_caravanserai_requirement_terrain = {
 	}
 }
 
-building_qanat_requirement_terrain = {
-	county ?= {
+building_qanats_requirement_terrain = {
+ 	county ?= {
 		any_county_province = {
 			OR = {
 				terrain = hills
@@ -397,8 +407,13 @@ building_qanat_requirement_terrain = {
 				terrain = desert
 				terrain = drylands
 			}
+			culture = { has_cultural_parameter = unlocks_qanat_building }
 		}
 	}
+}
+
+building_hospices_requirement_terrain = {
+	
 }
 
 has_any_special_mine_trigger = {

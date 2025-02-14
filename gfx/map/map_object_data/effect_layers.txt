@@ -9,10 +9,10 @@
 layer={
 	name="env_effect_layer"
 	fade_in=0
-	fade_out=14
+	fade_out=8
 	category=""
-	masks="medium|high"
-	visibility_tags=""
+	masks="high"
+	visibility_tags="realms"
 }
 layer={
 	name="env_effect_mountains_layer"

@@ -1,6 +1,0 @@
-﻿set_court_language = {
-	first = SET_COURT_LANGUAGE_FIRST
-	first_past = SET_COURT_LANGUAGE_FIRST_PAST
-	global = SET_COURT_LANGUAGE_GLOBAL
-	global_past = SET_COURT_LANGUAGE_GLOBAL_PAST
-}

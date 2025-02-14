@@ -1,9 +1,0 @@
-﻿
-################################
-# Almohads
-################################
-almohad_appearance_base_chance = 1
-
-titles_held_in_k_maghreb = {
-	value = 0
-}

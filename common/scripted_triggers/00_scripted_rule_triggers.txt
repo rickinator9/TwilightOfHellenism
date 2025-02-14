@@ -3,6 +3,8 @@ can_raid_trigger = {
 	OR = {
 		# Government logic.
 		government_has_flag = government_can_raid_rule
+		## Admin - Frontier themes
+		vassal_contract_has_flag = admin_theme_can_raid
 		# Faith Logic.
 		faith = { has_doctrine_parameter = faith_can_raid }
 		# Dynasty logic.
@@ -48,8 +50,9 @@ can_raid_trigger = {
 		has_perk = living_off_the_land_perk # ATHA Addition
 	}
 	# Some faiths prohibit this.
-	NOT = {
+	NOR = {
 		faith = { has_doctrine_parameter = holy_wars_forbidden }
+		government_has_flag = government_is_landless_adventurer
 	}
 }
 

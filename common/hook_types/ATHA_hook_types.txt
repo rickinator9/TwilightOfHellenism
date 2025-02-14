@@ -1,8 +1,0 @@
-﻿
-vassal_contract_weak_hook = {
-	expiration_days = -1
-}
-
-vassal_contract_strong_hook = {
-	strong = yes
-}

@@ -1,6 +1,0 @@
-﻿on_obesity_changed = {
-	events = {
-		city_state_emergency.0018 # The priest loses weight and can wear the armour.
-		city_state_emergency.0019 # The priest gains weight and can no longer wear the armour.
-	}
-}
