@@ -1,8 +1,8 @@
 version="1.7"
 tags={
-	"ApotheosisRemake"
+	"ApotheosisTheHellenisticAge"
 }
-name="ApotheosisRemake"
+name="ApotheosisTheHellenisticAge"
 replace_path = "common/culture/aesthetics_bundles"
 replace_path = "common/culture/creation_names"
 replace_path = "common/culture/cultures"
