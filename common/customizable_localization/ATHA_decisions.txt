@@ -1,0 +1,45 @@
+﻿PhorosName = {
+	type = landed_title
+
+	text = {
+		localization_key = insular_phoros
+		trigger = {
+			this = title:k_insular_phoros
+		}
+	}
+	text = {
+		localization_key = ionian_phoros
+		trigger = {
+			this = title:k_ionian_phoros
+		}
+	}
+	text = {
+		localization_key = thracian_phoros
+		trigger = {
+			this = title:k_thracian_phoros
+		}
+	}
+	text = {
+		localization_key = hellespontine_phoros
+		trigger = {
+			this = title:k_hellespontine_phoros
+		}
+	}
+}
+
+OdrysianStrengthBirthright = {
+	type = character
+
+	text = {
+		localization_key = odrysian_strength
+		trigger = {
+			NOT = { dynasty = dynasty:odrysiandyn001 }
+		}
+	}
+	text = {
+		localization_key = odrysian_birthright
+		trigger = {
+			dynasty = dynasty:odrysiandyn001
+		}
+	}
+}

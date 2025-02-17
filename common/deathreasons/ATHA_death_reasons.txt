@@ -1,0 +1,14 @@
+﻿death_sold_into_slavery = {
+	icon = "death_unknown.dds"
+	public_knowledge = yes
+}
+
+death_forced_suicide = {
+	icon = "death_murder.dds"
+	public_knowledge = yes
+}
+
+death_chariot_accident = {
+	icon = "death_natural.dds"
+}
+

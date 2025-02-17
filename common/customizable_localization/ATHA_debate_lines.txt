@@ -1,0 +1,142 @@
+﻿GetNextDebateArgument = {
+	type = character
+
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_deceit_1
+		}
+		localization_key = debate_scheme_argument.foreign_threat_deceit_1.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_deceit_2
+		}
+		localization_key = debate_scheme_argument.foreign_threat_deceit_2.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_deceit_3
+		}
+		localization_key = debate_scheme_argument.foreign_threat_deceit_3.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_aristocratic_1
+		}
+		localization_key = debate_scheme_argument.foreign_threat_aristocratic_1.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_subjects_1
+		}
+		localization_key = debate_scheme_argument.foreign_threat_subjects_1.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_subjects_2
+		}
+		localization_key = debate_scheme_argument.foreign_threat_subjects_2.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_subjects_3
+		}
+		localization_key = debate_scheme_argument.foreign_threat_subjects_3.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_ruler_conclusion_1
+		}
+		localization_key = debate_scheme_argument.foreign_threat_ruler_conclusion_1.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_ruler_conclusion_2
+		}
+		localization_key = debate_scheme_argument.foreign_threat_ruler_conclusion_2.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_ruler_conclusion_3
+		}
+		localization_key = debate_scheme_argument.foreign_threat_ruler_conclusion_3.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_allies_intro_1
+		}
+		localization_key = debate_scheme_argument.foreign_threat_allies_intro_1.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_allies_intro_2
+		}
+		localization_key = debate_scheme_argument.foreign_threat_allies_intro_2.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_allies_intro_3
+		}
+		localization_key = debate_scheme_argument.foreign_threat_allies_intro_3.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_allies_werenext_1
+		}
+		localization_key = debate_scheme_argument.foreign_threat_allies_werenext_1.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_allies_werenext_2
+		}
+		localization_key = debate_scheme_argument.foreign_threat_allies_werenext_2.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_allies_wastedopportunity_1
+		}
+		localization_key = debate_scheme_argument.foreign_threat_allies_wastedopportunity_1.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_allies_expedition_1
+		}
+		localization_key = debate_scheme_argument.foreign_threat_allies_expedition_1.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_tough_love_strongerinpast_1
+		}
+		localization_key = debate_scheme_argument.foreign_threat_tough_love_strongerinpast_1.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_tough_love_strongerinpast_2
+		}
+		localization_key = debate_scheme_argument.foreign_threat_tough_love_strongerinpast_2.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_tough_love_duty_1
+		}
+		localization_key = debate_scheme_argument.foreign_threat_tough_love_duty_1.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_tough_love_kickdown_1
+		}
+		localization_key = debate_scheme_argument.foreign_threat_tough_love_kickdown_1.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_tough_love_kickdown_2
+		}
+		localization_key = debate_scheme_argument.foreign_threat_tough_love_kickdown_2.desc
+	}
+	text = {
+		trigger = {
+			var:next_debate_argument = flag:argument_foreign_threat_tough_love_kickdown_3
+		}
+		localization_key = debate_scheme_argument.foreign_threat_tough_love_kickdown_3.desc
+	}
+}

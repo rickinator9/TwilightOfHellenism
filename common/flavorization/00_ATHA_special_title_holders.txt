@@ -1,0 +1,69 @@
+﻿# SPECIAL
+
+# Pontarch (k_euonymos_pontos)
+pontarches = { # Pontárchēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 60
+	titles = { k_euonymos_pontos }
+	#heritages = { greek_heritage }
+}
+pontarchas = { # Pontárchas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 61
+	titles = { k_euonymos_pontos }
+	name_lists = { 
+	# DORIC
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+pontarches_female = { # Pontárchēs
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 60
+	titles = { k_euonymos_pontos }
+	#heritages = { greek_heritage }
+}
+pontarchas_female = { # Pontárchas
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 61
+	titles = { k_euonymos_pontos }
+	name_lists = { 
+	# DORIC
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}

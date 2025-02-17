@@ -1,0 +1,63 @@
+﻿[img]https://i.imgur.com/qXyJn52.png[/img]
+
+[h1]Introducing Apotheosis: The Hellenistic Age[/h1]
+
+It is the year 275 BC. The calm before the storm. In the lands of Greece and Macedonia, the people are able to enjoy a brief respite after pushing back the tide of Galatians who invaded and plundered their lands four years ago. However, this peace is not to last long - the ever-ambitious Pyrrhus of Epirus, now returned from his Italian campaigns, eyes up the kingdom of Macedonia and the whole of Greece for himself. The once-dominant city-states of Athens and Sparta are now in their twilight, but perhaps there is still a chance for them to liberate the Greek lands from northern rule and restore themselves to their former glory.
+
+Meanwhile, in the east, the Hellenistic behemoths of the Ptolemaic and Seleucid Kingdoms are about to face off in a contest for the rich cities of the Anatolian coast. On their fringes, a number of smaller realms seek to assert their independence, and perhaps one day carve up great empires for themselves.
+
+Do you have what it takes to navigate the intrigues and shifting tides of the Hellenistic Period? [b]Will you achieve a legacy that sees your descendants honour you as a hero, or perhaps even a God?[/b]
+
+[img]https://i.imgur.com/O72Xcfl.png[/img]
+
+[list]
+[*] A detailed custom-made map that reflects the subtleties of politics, culture and religion in 275 BC. Playable rulers range from kings to tyrants to philosophers, and we have scoured inscriptions and literary sources to ensure that most of our rulers, all the way down to the county level, are historically attested individuals.
+[*] A number of new governments, belonging to three broad categories: City-State, Coalition and Bureaucratic. Vassal contracts have been expanded with additional privileges and obligations, including the ability for rulers to impose certain governments on their vassals.
+[*] Unique corruption mechanics for City-States - nepotism, bribery and other questionable acts will now impact the city’s level of corruption modifier, and corrupt rulers may scheme to entice others.
+[*] Decisions for enterprising rulers to restore Sparta’s glory days and form the kingdom of Bithynia.
+[*] Heaps of new art assets - no more medieval crowns or shields, and plenty of period-appropriate emblems for our titles and dynasties!
+[/list]
+
+[img]https://i.imgur.com/ZpZZkES.png[/img]
+
+We have ambitious plans to continue developing Apotheosis as Crusader Kings 3 matures:
+
+[list]
+[*] The mod currently takes place in a rather small part of the world, namely the Aegean and its surroundings. In time, we plan to gradually cover not only the former empire of Alexander the Great, but also western Europe, northern Africa and India.
+[*] As the mod progresses, we want our cultures and faiths to feel more unique in order to better represent the diversity of the Hellenistic world. Part of this will involve adding more flavor events, for example the Olympic Games, as well as decisions, faith tenets and doctrines.
+[*] The mod adds many new governments to represent the political institutions of the Hellenistic world. In due course, we want to create new mechanics for our governments to make each a distinct experience.
+[/list]
+
+[img]https://i.imgur.com/Ly9vRxy.png[/img]
+
+The Apotheosis soundtrack uses songs composed and performed by Michael Levy with authentically recreated instruments. Make sure to check out his [url=http://sptfy.com/michael-levy]Spotify[/url] and [url=https://ancientlyre.com/]website[/url]!
+
+[img]https://i.imgur.com/Ii8XKbD.png[/img]
+
+[b]Lead Developers[/b]
+rickinator9
+super7700
+
+[b]Developers[/b]
+timewaster
+ANNOnymous
+Grathalas
+Hart
+Idemar
+jasmijn
+Mayhalke
+SlavicElmo
+Samitte
+Viridianus
+wolfski
+WorldWideStalinism
+ALU
+
+[img]https://i.imgur.com/c6HAIf4.png[/img]
+
+The Apotheosis team is looking for enthusiastic individuals to join our team and help us deliver our goal of providing an immersive experience of the Hellenistic world. We’re especially keen to bring on 2D and 3D artists to make our mod more visually authentic, as well as coders and writers who can craft flavourful events and mechanics.	
+
+We also have a [url=https://discord.gg/nJFRbp2qnu]Discord[/url], which is the place to go if you have any suggestions or feedback for us! It’s also where we post all our latest teasers and development diaries.
+
+[b]Thank you for your support![/b]
+

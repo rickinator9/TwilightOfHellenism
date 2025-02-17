@@ -1,0 +1,227 @@
+﻿KnightCulture = {
+	type = character
+
+	text = {
+		trigger = {
+			culture = { has_name_list = name_list_laconian }
+		}
+		localization_key = knight_hippagretes
+	}
+	text = {
+		trigger = {
+			culture = { has_cultural_pillar = language_greek }
+		}
+		localization_key = knight_somatophylax
+	}
+	text = {
+		trigger = {
+			culture = { has_cultural_pillar = language_thracian }
+		}
+		localization_key = knight_zibythides
+	}
+	text = {
+		trigger = {
+			culture = { has_cultural_pillar = language_celtic }
+		}
+		localization_key = knight_champion_no_tooltip
+	}
+	text = {
+		localization_key = knight_default
+		fallback = yes
+	}
+}
+
+KnightCulturePlural = {
+	type = character
+
+	text = {
+		trigger = {
+			culture = { has_name_list = name_list_laconian }
+		}
+		localization_key = knight_hippagretes_plural
+	}
+	text = {
+		trigger = {
+			culture = { has_cultural_pillar = language_greek }
+		}
+		localization_key = knight_somatophylax_plural
+	}
+	text = {
+		trigger = {
+			culture = { has_cultural_pillar = language_thracian }
+		}
+		localization_key = knight_zibythides_plural
+	}
+	text = {
+		trigger = {
+			culture = { has_cultural_pillar = language_celtic }
+		}
+		localization_key = knight_champion_no_tooltip_plural
+	}
+	text = {
+		localization_key = knight_default_plural
+		fallback = yes
+	}
+}
+
+KnightCultureNoTooltip = {
+	type = character
+
+	text = {
+		trigger = {
+			culture = { has_name_list = name_list_laconian }
+		}
+		localization_key = knight_hippagretes_no_tooltip
+	}
+	text = {
+		trigger = {
+			culture = { has_cultural_pillar = language_thracian }
+		}
+		localization_key = knight_zibythides_no_tooltip
+	}
+	text = {
+		trigger = {
+			culture = { has_cultural_pillar = language_greek }
+		}
+		localization_key = knight_somatophylax_no_tooltip
+	}
+	text = {
+		localization_key = knight_default_no_tooltip
+		fallback = yes
+	}
+}
+
+KnightCulturePluralNoTooltip = {
+	type = character
+
+	text = {
+		trigger = {
+			culture = { has_name_list = name_list_laconian }
+		}
+		localization_key = knight_hippagretes_no_tooltip_plural
+	}
+	text = {
+		trigger = {
+			culture = { has_cultural_pillar = language_greek }
+		}
+		localization_key = knight_somatophylax_no_tooltip_plural
+	}
+	text = {
+		trigger = {
+			culture = { has_cultural_pillar = language_thracian }
+		}
+		localization_key = knight_zibythides_no_tooltip_plural
+	}
+	text = {
+		localization_key = knight_default_no_tooltip_plural
+		fallback = yes
+	}
+}
+
+KnightCultureNoTooltipLowercase = {
+	type = character
+
+	text = {
+		trigger = {
+			culture = { has_name_list = name_list_laconian }
+		}
+		localization_key = knight_hippagretes_no_tooltip_lowercase
+	}
+	text = {
+		trigger = {
+			culture = { has_cultural_pillar = language_greek }
+		}
+		localization_key = knight_somatophylax_no_tooltip_lowercase
+	}
+	text = {
+		trigger = {
+			culture = { has_cultural_pillar = language_thracian }
+		}
+		localization_key = knight_zibythides_no_tooltip_lowercase
+	}
+	text = {
+		localization_key = knight_default_no_tooltip_lowercase
+		fallback = yes
+	}
+}
+
+KnightCulturePluralNoTooltipLowercase = {
+	type = character
+
+	text = {
+		trigger = {
+			culture = { has_name_list = name_list_laconian }
+		}
+		localization_key = knight_hippagretes_no_tooltip_lowercase_plural
+	}
+	text = {
+		trigger = {
+			culture = { has_cultural_pillar = language_greek }
+		}
+		localization_key = knight_epilektos_hoplites_no_tooltip_lowercase_plural
+	}
+	text = {
+		trigger = {
+			culture = { has_cultural_pillar = language_thracian }
+		}
+		localization_key = knight_zibythides_no_tooltip_lowercase_plural
+	}
+	text = {
+		localization_key = knight_default_no_tooltip_lowercase_plural
+		fallback = yes
+	}
+}
+
+KnightCulturePluralPossessiveNoTooltipLowercase = {
+	type = character
+
+	text = {
+		trigger = {
+			culture = { has_name_list = name_list_laconian }
+		}
+		localization_key = knight_hippagretes_no_tooltip_lowercase_plural_possessive
+	}
+	text = {
+		trigger = {
+			culture = { has_cultural_pillar = language_greek }
+		}
+		localization_key = knight_somatophylax_no_tooltip_lowercase_plural_possessive
+	}
+	text = {
+		trigger = {
+			culture = { has_cultural_pillar = language_thracian }
+		}
+		localization_key = knight_zibythides_no_tooltip_lowercase_plural_possessive
+	}
+	text = {
+		localization_key = knight_default_no_tooltip_lowercase_plural_possessive
+		fallback = yes
+	}
+}
+
+KnightCultureAdjectiveNoTooltipLowercase = {
+	type = character
+
+	text = {
+		trigger = {
+			culture = { has_name_list = name_list_laconian }
+		}
+		localization_key = knight_hippagretes_no_tooltip_lowercase_adjective
+	}
+	text = {
+		trigger = {
+			culture = { has_cultural_pillar = language_greek }
+		}
+		localization_key = knight_somatophylax_no_tooltip_lowercase_adjective
+	}
+	text = {
+		trigger = {
+			culture = { has_cultural_pillar = language_thracian }
+		}
+		localization_key = knight_zibythides_no_tooltip_lowercase_adjective
+	}
+	text = {
+		localization_key = knight_default_no_tooltip_lowercase_adjective
+		fallback = yes
+	}
+}

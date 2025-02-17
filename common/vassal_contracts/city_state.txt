@@ -1,0 +1,495 @@
+﻿@ai_standard_liege_desire = 2
+@ai_standard_vassal_desire = 1
+@ai_desire_always = 10
+@ai_desire_never = 0
+
+# city_state_government_taxes = {
+# 	display_mode = tree
+# 	icon = gold_icon
+
+# 	obligation_levels = {
+# 		city_state_tax_exempt = {
+# 			position = { 0 0 }
+
+# 			tax = exempt_city_state_tax
+# 			vassal_opinion = 10
+
+# 			ai_liege_desire = 1
+# 			ai_vassal_desire = 5
+# 		}
+# 		city_state_tax_low = {
+# 			parent = city_state_tax_exempt
+# 			position = { 1 0 }
+
+# 			tax = low_city_state_tax
+# 			vassal_opinion = 5
+
+# 			ai_liege_desire = 2
+# 			ai_vassal_desire = 4
+# 		}
+# 		city_state_tax_normal = {
+# 			default = yes
+# 			parent = city_state_tax_low
+# 			position = { 2 0 }
+
+# 			tax = normal_city_state_tax
+
+# 			ai_liege_desire = 3
+# 			ai_vassal_desire = 3
+# 		}
+# 		city_state_tax_high = {
+# 			parent = city_state_tax_normal
+# 			position = { 3 0 }
+			
+# 			tax = high_city_state_tax
+# 			vassal_opinion = -15
+
+# 			ai_liege_desire = 4
+# 			ai_vassal_desire = 2
+# 		}
+# 		city_state_tax_extortionate = {
+# 			parent = city_state_tax_high
+# 			position = { 4 0 }
+			
+# 			tax = extortionate_city_state_tax
+# 			vassal_opinion = -25
+
+# 			ai_liege_desire = 5
+# 			ai_vassal_desire = 1
+# 		}
+# 	}
+# }
+# city_state_government_levies = {
+# 	display_mode = tree
+# 	icon = soldier_icon
+# 	obligation_levels = {
+# 		city_state_levies_exempt = {
+# 			position = { 0 0 }
+
+# 			levies = exempt_city_state_levies
+# 			vassal_opinion = 10
+
+# 			ai_liege_desire = 1
+# 			ai_vassal_desire = 5
+# 		}
+# 		city_state_levies_low = {
+# 			parent = city_state_levies_exempt
+# 			position = { 1 0 }
+
+# 			levies = low_city_state_levies
+# 			vassal_opinion = 5
+
+# 			ai_liege_desire = 2
+# 			ai_vassal_desire = 4
+# 		}
+# 		city_state_levies_normal = {
+# 			default = yes
+# 			parent = city_state_levies_low
+# 			position = { 2 0 }
+
+# 			levies = normal_city_state_levies
+
+# 			ai_liege_desire = 3
+# 			ai_vassal_desire = 3
+# 		}
+# 		city_state_levies_high = {
+# 			parent = city_state_levies_normal
+# 			position = { 3 0 }
+			
+# 			levies = high_city_state_levies
+# 			vassal_opinion = -15
+
+# 			ai_liege_desire = 4
+# 			ai_vassal_desire = 2
+# 		}
+# 		city_state_levies_extortionate = {
+# 			parent = city_state_levies_high
+# 			position = { 4 0 }
+			
+# 			levies = extortionate_city_state_levies
+# 			vassal_opinion = -25
+
+# 			ai_liege_desire = 5
+# 			ai_vassal_desire = 1
+# 		}
+# 	}
+# }
+# city_state_role = {
+# 	display_mode = radiobutton
+
+# 	obligation_levels = {
+# 		city_state_role_none = {
+# 			default = yes
+# 			position = { 0 1 }
+
+# 			levies = 0.15
+# 			tax = 0.15
+
+# 			ai_liege_desire = 2
+# 			ai_vassal_desire = 2
+# 		}
+# 		city_state_role_divine_territory = {
+# 			position = { 1 1 }
+
+# 			levies = 0.15
+# 			tax = 0.15
+
+# 			liege_modifier = {
+# 				monthly_piety = 0.3
+# 			}
+# 			vassal_modifier = {
+# 				monthly_piety = 2
+# 				development_growth_factor = -0.3
+# 			}
+# 			vassal_opinion = -40
+
+# 			ai_liege_desire = 2
+# 			ai_vassal_desire = @ai_desire_never
+# 		}
+# 		city_state_role_autonomy = {
+# 			position = { 0 2 }
+
+# 			levies = -0.8
+# 			tax = -0.8
+
+# 			flag = city_state_autonomous
+
+# 			vassal_opinion = 30
+
+# 			ai_liege_desire = @ai_desire_never
+# 			ai_vassal_desire = @ai_desire_always
+# 		}
+# 		city_state_role_klerouchy = {
+# 			position = { 0 3 }
+# 			is_valid = {
+# 				custom_description = { 	# Custom description nor very intricate triggers are not presented
+# 										# well in the UI. Therefore, explain the trigger in the desc.
+# 					scope:vassal = {
+# 						culture = scope:liege.culture
+# 						any_held_title = {
+# 							limit = { tier = tier_county }
+# 							NOT = { culture = scope:vassal.culture }
+# 						}
+# 					}
+# 				}
+# 			}
+
+# 			levies = -0.15
+# 			tax = 0.15
+# 			vassal_opinion = 10
+
+# 			flag = city_state_encouraged_culture_flipping
+
+# 			ai_liege_desire = {
+# 				value = 0
+# 				if = { # If the liege is humble or happy with the situation, he will be less likely to do this.
+# 					limit = {
+# 						scope:liege = {
+# 							OR = {
+# 								has_trait = humble
+# 								has_trait = content
+# 							}
+# 						}
+# 					}
+# 					subtract = 1
+# 				}
+# 				if = { # Just lieges will not want to do such an extensive colonisation.
+# 					limit = {
+# 						scope:liege = {
+# 							has_trait = just
+# 						}
+# 					}
+# 					subtract = 2
+# 				}
+# 				if = { # Trusting or compassionate lieges sympathize or trust the natives too much.
+# 					limit = {
+# 						scope:liege = {
+# 							OR = {
+# 								has_trait = trusting
+# 								has_trait = compassionate
+# 							}
+# 						}
+# 					}
+# 					subtract = 1
+# 				}
+# 				if = { # Wrathful and sadistic lieges love suffering. Paranoid lieges do not trust those of other cultures.
+# 					limit = {
+# 						scope:liege = {
+# 							OR = {
+# 								has_trait = wrathful
+# 								has_trait = sadistic
+# 								has_trait = paranoid
+# 							}
+# 						}
+# 					}
+# 					add = 1
+# 				}
+# 				if = { # Ambitious empire builders want only one ethnicity.
+# 					limit = {
+# 						scope:liege = {
+# 							has_trait = ambitious
+# 						}
+# 					}
+# 					add = 2
+# 				}
+# 				if = { # Impatient lieges want everything to be done fast!
+# 					limit = {
+# 						scope:liege = {
+# 							has_trait = impatient
+# 						}
+# 					}
+# 					add = 2
+# 				}
+# 			}
+# 			ai_vassal_desire = {
+# 				value = 0
+# 				if = { # If the vassal is humble or happy with the situation, he will be less likely to do this.
+# 					limit = {
+# 						scope:vassal = {
+# 							OR = {
+# 								has_trait = humble
+# 								has_trait = content
+# 							}
+# 						}
+# 					}
+# 					subtract = 1
+# 				}
+# 				if = { # Just vassals will not want to do such an extensive colonisation.
+# 					limit = {
+# 						scope:vassal = {
+# 							has_trait = just
+# 						}
+# 					}
+# 					subtract = 2
+# 				}
+# 				if = { # Trusting or compassionate vassals sympathize or trust the natives too much.
+# 					limit = {
+# 						scope:vassal = {
+# 							OR = {
+# 								has_trait = trusting
+# 								has_trait = compassionate
+# 							}
+# 						}
+# 					}
+# 					subtract = 1
+# 				}
+# 				if = { # Wrathful and sadistic vassals love suffering. Paranoid vassals do not trust those of other cultures.
+# 					limit = {
+# 						scope:vassal = {
+# 							OR = {
+# 								has_trait = wrathful
+# 								has_trait = sadistic
+# 								has_trait = paranoid
+# 							}
+# 						}
+# 					}
+# 					add = 1
+# 				}
+# 				if = { # Ambitious empire builders want only one ethnicity.
+# 					limit = {
+# 						scope:vassal = {
+# 							has_trait = ambitious
+# 						}
+# 					}
+# 					add = 2
+# 				}
+# 				if = { # Impatient vassals want everything to be done fast!
+# 					limit = {
+# 						scope:vassal = {
+# 							has_trait = impatient
+# 						}
+# 					}
+# 					add = 2
+# 				}
+# 			}
+# 		}
+# 	}
+# }
+# city_state_enforced_government = {
+# 	display_mode = radiobutton
+# 	is_shown = {
+# 	 	scope:vassal = {
+# 	 		OR = {
+# 	 			NOT = { vassal_contract_has_flag = city_state_autonomous }
+# 	 			vassal_contract_has_flag = city_state_enforced_aristocratic
+# 	 			vassal_contract_has_flag = city_state_enforced_democratic
+# 	 			vassal_contract_has_flag = city_state_enforced_oligarchic
+# 	 			vassal_contract_has_flag = city_state_enforced_tyrannical
+# 	 		}
+# 	 	}
+# 	}
+
+# 	obligation_levels = {
+# 		city_state_government_free = {
+# 			default = yes
+# 			position = { 0 1 }
+
+# 			ai_liege_desire = 0
+# 			ai_vassal_desire = @ai_standard_vassal_desire
+# 		}
+# 		city_state_enforced_aristocratic = {
+# 			position = { 0 2 }
+# 			is_valid = {
+# 				scope:vassal = {
+# 					OR = {
+# 						NOT = { vassal_contract_has_flag = city_state_autonomous }
+# 						vassal_contract_has_flag = city_state_enforced_aristocratic
+# 					}
+# 				}
+# 			}
+
+# 			flag = city_state_enforced_aristocratic
+
+# 			ai_liege_desire = 0 # TODO: Extra desire for aristocratic city states.
+# 			ai_vassal_desire = 0
+# 		}
+# 		city_state_enforced_democratic = {
+# 			position = { 0 3 }
+# 			is_valid = {
+# 				scope:vassal = {
+# 					OR = {
+# 						NOT = { vassal_contract_has_flag = city_state_autonomous }
+# 						vassal_contract_has_flag = city_state_enforced_democratic
+# 					}
+# 				}
+# 			}
+
+# 			flag = city_state_enforced_democratic
+
+# 			ai_liege_desire = 0 # TODO: Extra desire for democratic city states.
+# 			ai_vassal_desire = 0
+# 		}
+# 		city_state_enforced_oligarchic = {
+# 			position = { 0 4 }
+# 			is_valid = {
+# 				scope:vassal = {
+# 					OR = {
+# 						NOT = { vassal_contract_has_flag = city_state_autonomous }
+# 						vassal_contract_has_flag = city_state_enforced_oligarchic
+# 					}
+# 				}
+# 			}
+
+# 			flag = city_state_enforced_oligarchic
+
+# 			ai_liege_desire = 0 # TODO: Extra desire for oligarchic city states.
+# 			ai_vassal_desire = 0
+# 		}
+# 		city_state_enforced_tyrannical = {
+# 			position = { 0 5 }
+# 			is_valid = {
+# 				scope:vassal = {
+# 					OR = {
+# 						NOT = { vassal_contract_has_flag = city_state_autonomous }
+# 						vassal_contract_has_flag = city_state_enforced_tyrannical
+# 					}
+# 				}
+# 			}
+
+# 			flag = city_state_enforced_tyrannical
+
+# 			ai_liege_desire = 0 # TODO: Extra desire for tyrannical city states.
+# 			ai_vassal_desire = 0
+# 		}
+# 	}
+# }
+# city_state_garrison_right = {
+# 	display_mode = checkbox
+# 	is_shown = {
+# 	 	scope:vassal = {
+# 	 		OR = {
+# 	 			NOT = { vassal_contract_has_flag = city_state_autonomous }
+# 	 			vassal_contract_has_flag = city_state_installed_garrison
+# 	 		}
+# 	 	}
+# 	}
+# 	obligation_levels = {
+# 		city_state_garrison_none = {
+# 			default = yes
+# 			position = { 0 0 }
+
+# 			ai_liege_desire = @ai_desire_always
+# 			ai_vassal_desire = @ai_standard_vassal_desire
+# 		}
+# 		city_state_garrison_installed = {
+# 			parent = city_state_garrison_none
+# 			position = { 0 1 }
+
+# 			flag = city_state_installed_garrison
+
+# 			vassal_opinion = -20
+# 			ai_liege_desire = @ai_standard_liege_desire
+# 			ai_vassal_desire = @ai_desire_never
+# 		}
+# 	}
+# }
+# city_state_fortification_right = {
+# 	display_mode = checkbox
+# 	is_shown = {
+# 		scope:vassal = {
+# 			OR = {
+# 				NOT = { vassal_contract_has_flag = city_state_autonomous }
+# 				vassal_contract_has_flag = city_state_limited_fortifications
+# 			}
+# 		}
+# 	}
+# 	obligation_levels = {
+# 		city_state_fortifications_free = {
+# 			default = yes
+# 			position = { 0 0 }
+
+# 			ai_liege_desire = @ai_standard_liege_desire # Some lieges may want this so the area is better protected.
+# 			ai_vassal_desire = @ai_standard_vassal_desire
+# 		}
+# 		city_state_fortifications_limited = {
+# 			parent = city_state_fortifications_free
+# 			position = { 0 1 }
+
+# 			flag = city_state_limited_fortifications
+
+# 			vassal_opinion = -15
+# 			ai_liege_desire = @ai_standard_liege_desire # TODO: Identify control freaks
+# 			ai_vassal_desire = @ai_desire_never
+# 		}
+# 	}
+# }
+# city_state_ritual_coronations_right = {
+# 	display_mode = checkbox
+# 	is_shown = {
+# 		scope:liege = {
+# 			OR = {
+# 				AND = { # TODO: Identify tyrannies.
+# 					has_government = city_state_government
+# 					has_realm_law = confederate_partition_succession_law
+# 				}
+# 				government_has_flag = government_is_feudal
+# 				government_has_flag = government_is_tribal
+# 				government_has_flag = government_is_clan
+# 			}
+# 		}
+# 	}
+# 	obligation_levels = {
+# 		city_state_ritual_coronations_none = {
+# 			default = yes
+# 			position = { 0 0 }
+
+# 			ai_liege_desire = @ai_standard_liege_desire # TODO: Proud or tribal people may not want this.
+# 			ai_vassal_desire = @ai_standard_vassal_desire
+# 		}
+# 		city_state_ritual_coronations_enabled = {
+# 			parent = city_state_ritual_coronations_none
+# 			position = { 0 1 }
+
+# 			liege_modifier = {
+# 				monthly_prestige = 0.1
+# 			}
+# 			vassal_modifier = {
+# 				monthly_prestige = -0.2
+# 			}
+# 			tax = -0.2
+
+# 			ai_liege_desire = @ai_standard_liege_desire
+# 			ai_vassal_desire = @ai_standard_vassal_desire # TODO: Some vassal may not want this.
+# 		}
+# 	}
+# }

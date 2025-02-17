@@ -1,0 +1,9 @@
+﻿# Special Titles
+tithanos = {
+	type = character
+	gender = male
+	special = holder
+	priority = 301
+	titles = { d_tithanos }
+	top_liege = no
+}

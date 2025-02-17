@@ -1,0 +1,16 @@
+﻿difficulty = {
+	default = normal_difficulty
+
+	normal_difficulty = {
+
+	}
+
+	hard_difficulty = {
+		apply_modifier = ai:ai_hard_difficulty
+	}
+
+	very_hard_difficulty = {
+		apply_modifier = ai:ai_very_hard_difficulty
+	}
+	
+}

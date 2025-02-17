@@ -1,0 +1,30 @@
+﻿############################################
+##   Scripted Localization for German Loc ##
+###           BY Kai Bagehorn            ###
+############################################
+
+DE_1_GetAppropriateGodname = {
+	type = character
+	log_loc_errors = no
+
+	text = {
+		trigger = {
+			always = no
+		}
+		localization_key = CustomLoc_DE_1_motto_the_gods
+		fallback = yes
+	}
+}
+
+DE_2_GetAppropriateGodname = {
+	type = character
+	log_loc_errors = no
+
+	text = {
+		trigger = {
+			always = no
+		}
+		localization_key = CustomLoc_DE_2_motto_the_gods
+		fallback = yes
+	}
+}

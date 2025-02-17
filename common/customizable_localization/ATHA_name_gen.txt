@@ -1,0 +1,157 @@
+﻿ATHAUIName = {
+	type = character
+	text = {
+		trigger = {
+			culture = {
+				has_cultural_pillar = language_celtic
+			}
+            is_landed = yes
+            has_any_nickname = yes
+		}
+		localization_key = UIName_landed_celtic_nickname
+	}
+	text = {
+		trigger = {
+			culture = {
+				has_cultural_pillar = language_celtic
+			}
+            is_landed = yes
+		}
+		localization_key = UIName_landed_celtic
+	}
+    text = {
+		trigger = {
+			culture = {
+				has_cultural_pillar = language_celtic
+			}
+            is_landed = no
+            has_any_nickname = yes
+		}
+		localization_key = UIName_unlanded_celtic_nickname
+	}
+    text = {
+		trigger = {
+			culture = {
+				has_cultural_pillar = language_celtic
+			}
+            is_landed = no
+		}
+		localization_key = UIName_unlanded_celtic
+	}
+	text = {
+		fallback = yes
+		localization_key = UIName_fallback
+	}
+}
+#  ^^^^ need one for each used 'GetName'
+
+UiNameCheck = {
+    type = character
+    text = {
+        trigger = {
+            exists = father
+            culture = {
+				has_cultural_pillar = language_celtic
+			}
+            father = {
+                save_temporary_scope_as = daddy #we want to check that the dad has support
+                any_in_global_list = { #longer lists for lowborns
+                    variable = celtic_name_support
+                    this = scope:daddy
+                }
+            }
+        }
+        localization_key = ATHA_name_with_patronymic
+    }
+    text = {
+        fallback = yes
+        localization_key = ATHA_first_name_only
+    }
+}
+NameCheck = {
+    type = character
+    text = {
+        trigger = {
+            culture = {
+				has_cultural_pillar = language_celtic
+			}
+            OR = {
+                AND = {
+                    exists = dynasty #shorten lists for highborns
+                    dynasty = {
+                        any_in_list = {
+                            variable = celtic_name_support
+                            this = root
+                        }
+                    }
+                }
+                any_in_global_list = { #longer lists for lowborns
+                    variable = celtic_name_support
+                    this = root
+                }
+            }
+        }
+        localization_key = ATHA_supported_name
+    }
+    text = {
+        fallback = yes
+        localization_key = ATHA_unsupported_name
+    }
+}
+PatCheck = {
+    type = character
+    text = {
+        trigger = {
+            exists = father
+            culture = {
+				has_cultural_pillar = language_celtic
+			}
+            father = {
+                save_temporary_scope_as = daddy #we want to check that the dad has support
+                any_in_global_list = { #longer lists for lowborns
+                    variable = celtic_name_support
+                    this = scope:daddy
+                }
+            }
+        }
+        localization_key = ATHA_supported_pat
+    }
+    text = {
+        fallback = yes
+        localization_key = ATHA_unsupported_pat
+    }
+}
+CharCult = {
+    type = character
+    log_loc_errors = no
+    text = {
+        trigger = {
+            culture = {
+				has_cultural_pillar = language_celtic
+			}
+        }
+        localization_key = _celtic #no need to localize this string
+    }
+    #add in more cultures here
+    text = {
+        fallback = yes
+        localization_key = gui_blank #in case of emerigencies the name will just show it's self
+    }
+}
+CharGender = {
+    type = character
+    log_loc_errors = no
+    #you could technically check for third gender if that character has a variable/flag here, some cultures have more than 2
+    text = {
+        trigger = {
+            is_male = yes
+        }
+        localization_key = _male #no need to localize this string
+    }
+    text = {
+        trigger = {
+            is_female = yes
+        }
+        localization_key = _male #no need to localize this string
+    }
+}

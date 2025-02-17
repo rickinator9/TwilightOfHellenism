@@ -1,0 +1,68 @@
+# INTRO:
+# - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D1%3Asection%3D16
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D2%3Asection%3D4
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0070:speech=4
+
+# CONCLUSION:
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3%3Asection%3D32
+
+# We need reforms:
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D2%3Asection%3D13
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D2%3Asection%3D29 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D2%3Asection%3D30
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3%3Asection%3D10 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3%3Asection%3D11
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3%3Asection%3D19
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3%3Asection%3D34 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3%3Asection%3D35
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D1%3Asection%3D19 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D1%3Asection%3D20
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3%3Asection%3D14
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3%3Asection%3D31
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D26 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D27
+
+# Call to action:
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3%3Asection%3D20
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3%3Asection%3D21
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3%3Asection%3D33
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D2%3Asection%3D31 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3%3Asection%3D24 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3%3Asection%3D25 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3%3Asection%3D26
+
+# Diplomacy:
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D2%3Asection%3D12
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3%3Asection%3D18
+
+# Compliments:
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3%3Asection%3D15
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3%3Asection%3D23
+
+# Incompetence:
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3%3Asection%3D29
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3%3Asection%3D31
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D3 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D4 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D5 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D6
+
+# Development:
+#   - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D1%3Asection%3D11
+
+# Duty:
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D2
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D7
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D10
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D11 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D12
+
+# Character:
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D8
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D9
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D42
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D49
+
+# Expedition:
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D13
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D14 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D15
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D16 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D18
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D19 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D20 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D21 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D22 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D23 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D25
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D28 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D29
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D33
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D44
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D45
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D46 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D47
+
+
+# Conclusion:
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D38 http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D39
+#	- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D51

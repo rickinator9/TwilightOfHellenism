@@ -1,0 +1,198 @@
+﻿FamousBattle = {
+	type = character
+	random_valid = yes # Will pick any valid random text.
+
+	text = {
+		localization_key = battle_hysiai # Argive Victory over Sparta, 669 BC
+		trigger = {
+			has_culture = culture:dorian
+		}
+	}
+	text = {
+		localization_key = battle_fetters # Arcadian Victory over Sparta, 550 BC
+		trigger = {
+			has_culture = culture:arcadian
+		}
+	}
+	text = { 
+		localization_key = battle_pedasos # Ionian Revolt Victory over Persia, 496 BC
+		trigger = {
+			OR = {
+				has_culture = culture:dorian
+				has_culture = culture:ionian
+			}
+		}
+	}
+	text = {
+		localization_key = battle_marathon # Athenian Victory over Persia, 490 BC
+		trigger = {
+			has_culture = culture:athenian
+		}
+	}
+	text = {
+		localization_key = battle_thermopylai # Famous Spartan Last Stand, 480 BC
+	}
+	text = {
+		localization_key = battle_salamis # Greek Coalition Victory over Persia, 480 BC
+		trigger = { 
+			NOR = { # Spartans / Cretans probably do not care too much about a naval victory.
+				has_culture = culture:cretan 
+				has_culture = culture:laconian 
+				has_culture = culture:messenian 
+			} 
+		}
+	}
+	text = {
+		localization_key = battle_plataiai # Greek Coalition Victory over Persia, 479 BC
+	}
+	text = {
+		localization_key = battle_mykale # Greek Coalition Victory over Persia, 479 BC
+		trigger = { 
+			NOR = { # Spartans / Cretans probably do not care too much about a naval victory.
+				has_culture = culture:cretan 
+				has_culture = culture:laconian 
+				has_culture = culture:messenian 
+			} 
+		}
+	}
+	text = {
+		localization_key = battle_eurymedon # Delian Victory over Persia, 469/466 BC
+		trigger = {
+			OR = {
+				has_culture = culture:athenian
+				has_culture = culture:aeolian
+				has_culture = culture:ionian
+				has_culture = culture:dorian
+			}
+		}
+	}
+	text = {
+		localization_key = battle_koroneia # Boeotian Victory over the Athenians, 447 BC
+										  # Spartan Victory over Thebes, 394 BC
+		trigger = {
+			OR = {
+				has_culture = culture:boeotian
+				has_culture = culture:laconian
+			}
+		}
+	}
+	text = {
+		localization_key = battle_pylos # Athenian Victory over the Spartans, 425 BC
+		trigger = {
+			has_culture = culture:athenian 
+		}
+	}
+	text = {
+		localization_key = battle_amphipolis # Spartan Victory over the Athenians, 422 BC
+		trigger = {
+			has_culture = culture:laconian
+		}
+	}
+	text = {
+		localization_key = battle_kyzikos # Athenian Victory over Sparta, 410 BC
+		trigger = {
+			has_culture = culture:athenian
+		}
+	}
+	text = {
+		localization_key = battle_arginousai # Athenian Victory over Sparta, 406 BC
+		trigger = {
+			has_culture = culture:athenian
+		}
+	}
+	text = {
+		localization_key = battle_aigospotamoi # Spartan Victory over Athens, 405 BC
+		trigger = {
+			has_culture = culture:laconian
+		}
+	}
+	text = {
+		localization_key = battle_kounaxa # Not a victory, but still famous due to the trip back. 401 BC 
+	}
+	text = {
+		localization_key = battle_leuktra # Boeotian Victory over the Spartans, 371 BC
+		trigger = {
+			has_culture = culture:boeotian
+		}
+	}
+	text = {
+		localization_key = battle_mantineia # Boeotian Victory over the Spartans, 362 BC
+		trigger = {
+			has_culture = culture:boeotian
+		}
+	}
+	text = {
+		localization_key = battle_lynkos # Macedonian Victory over the Dardanians, 358 BC
+		trigger = {
+			has_culture = culture:macedonian
+		}
+	}
+	text = {
+		localization_key = battle_krokion # Macedonian Victory over the Phocians, 353/352 BC
+		trigger = {
+			OR = {
+				has_culture = culture:macedonian
+				has_culture = culture:thessalian
+			}
+		}
+	}
+	text = {
+		localization_key = battle_chaironeia # Macedonian Victory over the Greeks, 338 BC
+		trigger = {
+			has_culture = culture:macedonian
+		}
+	}
+	text = {
+		localization_key = battle_granikos # Macedonian Victory over the Persians, 338 BC
+		trigger = {
+			has_culture = culture:macedonian
+		}
+	}
+	text = {
+		localization_key = battle_issos # Macedonian Victory over the Persians, 333 BC
+		trigger = {
+			has_culture = culture:macedonian
+		}
+	}
+	text = {
+		localization_key = battle_gaugamela # Macedonian Victory over the Persians, 331 BC
+		trigger = {
+			has_culture = culture:macedonian
+		}
+	}
+	text = {
+		localization_key = battle_jaxartes # Macedonian Victory over the Scythians, 329 BC
+		trigger = {
+			has_culture = culture:macedonian
+		}
+	}
+	text = {
+		localization_key = battle_hydaspes # Macedonian Victory over the Indians, 326 BC
+		trigger = {
+			has_culture = culture:macedonian
+		}
+	}
+}
+
+FoundedCity = {
+	type = character
+
+	text = {
+		localization_key = city_nikomedeia # Nikomēdeia
+		trigger = {
+			this = character:bithynian00105
+		}
+	}
+	text = {
+		localization_key = city_prousa # Proûsa
+		trigger = {
+			this = character:bithynian00109
+		}
+	}
+	text = {
+		localization_key = city_ziaela # Ziaēla
+		trigger = {
+			this = character:bithynian00110
+		}
+	}
+}

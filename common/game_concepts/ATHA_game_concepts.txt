@@ -1,0 +1,217 @@
+﻿debate = {
+    alias = { debates speech speeches }
+}
+
+city_state = {
+    alias = { city_states }
+    parent = government
+}
+
+city_state_democracy = {
+    alias = { city_state_democracies city_state_democratic }
+    parent = government
+}
+
+city_state_tyranny = {
+    alias = { city_state_tyrannies city_state_tyrannical city_state_tyrannic city_state_tyrant }
+    parent = government
+}
+
+city_state_oligarchy = {
+    alias = { city_state_oligarchies city_state_oligarchic city_state_oligarch }
+    parent = government
+}
+
+city_state_aristocracy = {
+    alias = { city_state_aristocracies city_state_aristocratic city_state_aristocrat }
+    parent = government
+}
+
+city_state_rhetra = {
+    alias = { city_state_spartan_government }
+    parent = government
+}
+
+city_state_desired_franchise = {
+    alias = { city_state_desired_government }
+    parent = city_state
+}
+
+city_state_corruption = {
+    alias = { city_state_level_of_corruption }
+    parent = city_state
+}
+
+city_state_issue = {
+    alias = { city_state_issues }
+    parent = city_state
+}
+
+city_state_emergency = {
+    alias = { city_state_emergencies }
+    parent = city_state
+}
+
+city_state_policy = {
+    alias = { city_state_policies }
+    parent = city_state
+}
+
+fort_holding = {
+	alias = { fort forts fort_holdings }
+	parent = holding_type
+	texture = "gfx/interface/icons/icon_holding_castle.dds"
+}
+
+colony_holding = {
+	alias = { colony colonies colony_holdings }
+	parent = holding_type
+	texture = "gfx/interface/icons/icon_holding_castle.dds"
+}
+
+coalition = {
+	alias = { coalitions }
+}
+
+coalition_allied = { 
+    alias = { coalition_alliance coalition_alliances }
+    parent = government
+}
+
+sympolity = { 
+    alias = { sympolities }
+    parent = government
+}
+
+league = { 
+    alias = { leagues }
+    parent = government
+}
+
+hegemony = {
+	alias = { hegemonies hegemonic hegemon hegemons }
+    parent = government
+}
+
+federation = { 
+	alias = { federations federal }
+    parent = government
+}
+
+amphictyony = { 
+	alias = { amphictyonies amphictyonic }
+    parent = government
+}
+
+federal_allied = { 
+    alias = { federal_alliance federal_alliances }
+    parent = government
+}
+
+federal_sympolity = { 
+    alias = { federal_sympolities }
+    parent = government
+}
+
+federal_league = { 
+    alias = { federal_leagues }
+    parent = government
+}
+
+hegemonic_allied = { 
+    alias = { hegemonic_alliance hegemonic_alliances }
+    parent = government
+}
+
+hegemonic_sympolity = { 
+    alias = { hegemonic_sympolities }
+    parent = government
+}
+
+hegemonic_league = { 
+    alias = { hegemonic_leagues }
+    parent = government
+}
+
+bureaucracy = { 
+	alias = { bureaucracies bureaucratic bureaucrat bureaucrats }
+    parent = government
+}
+
+military_command = { 
+    alias = { military_commands }
+    parent = government
+}
+
+civil_bureaucracy = { 
+    alias = { civil_bureaucracies }
+    parent = government
+}
+
+
+vassal_role = { 
+    parent = feudal_contract
+}
+
+autonomous_vassal = { 
+    alias = { autonomous }
+    parent = vassal_role
+}
+
+dependent_vassal = { 
+    alias = { dependent }
+    parent = vassal_role
+}
+
+imposed_franchise = { 
+    parent = feudal_contract
+}
+
+enforced_centralisation = { 
+    parent = feudal_contract
+}
+
+enforced_federalism = { 
+    parent = feudal_contract
+}
+
+spartan_dual_monarch = {
+    alias = { spartan_dual_monarchs spartan_dual_basileus }
+}
+
+### ANCESTRY
+
+ancestry = {
+    texture = "gfx/interface/icons/modifiers/bloodline_3_positive.dds"
+}
+ancestry_modifier = {
+    alias = { ancestry_modifiers }
+    texture = "gfx/interface/icons/modifiers/bloodline_3_positive.dds"
+}
+claim_strength = {
+    parent = ancestry
+}
+claim_risk = {
+    parent = ancestry
+}
+
+aiakid_ancestry = {
+    alias = { aiakid aiakids aiakidai }
+}
+atreid_ancestry = {
+    alias = { atreid atreids atreidai }
+}
+heraklid_ancestry = {
+    alias = { heraklid heraklids heraklidai }
+}
+sapphic_ancestry = {
+    alias = { sapphic sapphics }
+}
+
+military_experience = {
+    alias = {
+        military_experience_green military_experience_inexperienced
+        military_experience_inept military_experience_incompetent military_experience_disastrous
+        military_experience_successful military_experience_victorious military_experience_invincible
+    }
+}

@@ -1,0 +1,4950 @@
+﻿# GENERIC
+
+## TITLE ###################################
+
+### County
+topos_county_generic = { # Tópos
+	type = title
+	top_liege = no
+	tier = county
+	priority = 14
+	#heritages = { greek_heritage }
+}
+
+### Duchy
+dynasteia_duchy_generic = { # Dynasteía
+	type = title
+	top_liege = no
+	tier = duchy
+	priority = 24
+	#heritages = { greek_heritage }
+}
+
+### Kingdom
+basileia_kingdom_generic = { # Basileía
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 44
+	#heritages = { greek_heritage }
+}
+basileie_kingdom_generic = { # Basilēíē
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 45
+	name_lists = { name_list_ionian }
+}
+
+### Empire
+arche_empire_generic = { # Arkhē
+	type = title
+	top_liege = no
+	tier = empire
+	priority = 99
+	#heritages = { greek_heritage }
+}
+archa_empire_generic = { # Arkhá
+	type = title
+	top_liege = no
+	tier = empire
+	priority = 100
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+## MALE ###################################
+
+### Baron
+kyrios_baron_generic = { # Kýrios
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 4
+	#heritages = { greek_heritage }
+}
+kourios_baron_generic = { # Koúrios
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 5
+	name_lists = { name_list_boeotian }
+}
+kyrrhos_baron_generic = { # Kŷrrhos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 5
+	name_lists = { name_list_thessalian }
+}
+
+### Count
+kyrios_count_generic = { # Kýrios
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 14
+	#heritages = { greek_heritage }
+}
+kourios_count_generic = { # Koúrios
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 15
+	name_lists = { name_list_boeotian }
+}
+kyrrhos_count_generic = { # Kŷrrhos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 15
+	name_lists = { name_list_thessalian }
+}
+
+### Duke
+dynastes_duke_generic = { # Dynástēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 24
+	#heritages = { greek_heritage }
+}
+dynastas_duke_generic = { # Dynástas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 25
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### King
+basileus_king_generic = { # Basileús
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 44
+	#heritages = { greek_heritage }
+}
+basiles_king_generic = { # Basilēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 45
+	name_lists = { name_list_arcadian }
+}
+
+### Emperor
+basileus_emperor_generic = { # Basileús
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 99
+	#heritages = { greek_heritage }
+}
+basiles_emperor_generic = { # Basilēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 100
+	name_lists = { name_list_arcadian }
+}
+
+## FEMALE ###################################
+
+### Baron
+despoina_baron_female_generic = { # Déspoina
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 4
+	#heritages = { greek_heritage }
+}
+
+### Count
+despoina_count_female_generic = { # Déspoina
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 14
+	#heritages = { greek_heritage }
+}
+
+### Duke
+dynastis_duke_female_generic = { # Dynástis
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 24
+	#heritages = { greek_heritage }
+}
+
+### King
+basilissa_king_female_generic = { # Basílissa
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 44
+	#heritages = { greek_heritage }
+}
+
+### Emperor
+basilissa_emperor_female_generic = { # Basílissa
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 99
+	#heritages = { greek_heritage }
+}
+
+# LANDED TITLES
+
+## HOLDINGS ###################################
+
+### City (Castle)
+polis_castle = { # Pólis
+	type = title
+	top_liege = no
+	tier = barony
+	priority = 7
+	holding = castle_holding
+	#heritages = { greek_heritage }
+}
+
+### Rural Settlement (City)
+kome_city = { # Kōmē
+	type = title
+	top_liege = no
+	tier = barony
+	priority = 7
+	holding = city_holding
+	#heritages = { greek_heritage }
+}
+koma_city = { # Kōma
+	type = title
+	top_liege = no
+	tier = barony
+	priority = 8
+	holding = city_holding
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+demos_city = { # Dêmos
+	type = title
+	top_liege = no
+	tier = barony
+	priority = 8
+	holding = city_holding
+	name_lists = { name_list_athenian name_list_ionian }
+}
+demos_city_d_doris = { # Dêmos
+	type = title
+	top_liege = no
+	tier = barony
+	priority = 9
+	holding = city_holding
+	de_jure_liege = { d_doris }
+	#heritages = { greek_heritage }
+}
+damos_city_d_doris = { # Dâmos
+	type = title
+	top_liege = no
+	tier = barony
+	priority = 10
+	holding = city_holding
+	de_jure_liege = { d_doris }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### Tribal
+kome_tribal = { # Kōmē
+	type = title
+	top_liege = no
+	tier = barony
+	priority = 7
+	holding = tribal_holding
+	#heritages = { greek_heritage }
+}
+koma_tribal = { # Kōma
+	type = title
+	top_liege = no
+	tier = barony
+	priority = 8
+	holding = tribal_holding
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### Sanctuary (Church)
+temenos_church = { # Témenos
+	type = title
+	top_liege = no
+	tier = barony
+	priority = 7
+	holding = church_holding
+	#heritages = { greek_heritage }
+}
+temenes_church = { # Témenes
+	type = title
+	top_liege = no
+	tier = barony
+	priority = 7
+	holding = church_holding
+	name_lists = { name_list_arcadian }
+}
+
+### Fort
+phrourion_fort = { # Phroúrion
+	type = title
+	top_liege = no
+	tier = barony
+	priority = 7
+	holding = fort_holding
+	#heritages = { greek_heritage }
+}
+
+### Colony
+klerouchia_colony = { # Klēroukhía
+	type = title
+	top_liege = no
+	tier = barony
+	priority = 7
+	holding = colony_holding
+	#heritages = { greek_heritage }
+}
+
+## THEOCRATIC ###################################
+
+### ==> TODO <== ###
+
+
+
+## FEUDAL ###################################
+
+### County
+topos_county = { # Tópos
+	type = title
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { feudal_government bureaucracy_military_government bureaucracy_civil_government }
+	#heritages = { greek_heritage }
+}
+
+### Duchy
+dynasteia_duchy = { # Dynasteía
+	type = title
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { feudal_government }
+	#heritages = { greek_heritage }
+}
+
+### Kingdom
+dynasteia_kingdom = { # Dynasteía
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { feudal_government }
+	#heritages = { greek_heritage }
+}
+basileia_kingdom_independent = { # Basileía
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 49
+	only_independent = yes
+	governments = { feudal_government }
+	#heritages = { greek_heritage }
+}
+basileie_kingdom_independent = { # Basilēíē
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 50
+	only_independent = yes
+	governments = { feudal_government }
+	name_lists = { name_list_ionian }
+}
+
+### Empire
+arche_empire = { # Arkhē
+	type = title
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { feudal_government republic_government clan_government tribal_government city_state_democratic_government city_state_oligarchic_government city_state_aristocratic_government city_state_tyrannical_government city_state_spartan_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	#heritages = { greek_heritage }
+}
+archa_empire = { # Arkhá
+	type = title
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { feudal_government republic_government clan_government tribal_government city_state_democratic_government city_state_oligarchic_government city_state_aristocratic_government city_state_tyrannical_government city_state_spartan_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+## COMMUNITY ###################################
+
+### County
+phyle_county = { # Phylē
+	type = title
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { republic_government clan_government tribal_government }
+	#heritages = { greek_heritage }
+}
+phyla_county = { # Phylá
+	type = title
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { republic_government clan_government tribal_government }
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+phoula_county = { # Phoulá
+	type = title
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { republic_government clan_government tribal_government }
+	name_lists = { name_list_boeotian }
+}
+
+### Duchy
+ethnos_duchy = { # Éthnos
+	type = title
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { republic_government clan_government tribal_government }
+	#heritages = { greek_heritage }
+}
+
+### Kingdom
+basileia_kingdom = { # Basileía
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { republic_government clan_government tribal_government }
+	#heritages = { greek_heritage }
+}
+basileie_kingdom = { # Basilēíē
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { republic_government clan_government tribal_government }
+	name_lists = { name_list_ionian }
+}
+
+## MILITARY COMMAND ###################################
+
+### County
+synteleia_county = { # Syntéleia
+	type = title
+	top_liege = no
+	tier = county
+	priority = 19
+	governments = { bureaucracy_military_government bureaucracy_civil_government }
+	name_lists = { name_list_achaean }
+}
+telos_county = { # Télos
+	type = title
+	top_liege = no
+	tier = county
+	priority = 19
+	governments = { bureaucracy_military_government bureaucracy_civil_government }
+	name_lists = { name_list_boeotian name_list_dorian_northwest }
+}
+
+### Duchy
+strategia_duchy = { # Stratēgía
+	type = title
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { bureaucracy_military_government bureaucracy_civil_government }
+	#heritages = { greek_heritage }
+}
+stratagia_duchy = { # Stratagía
+	type = title
+	top_liege = no
+	tier = duchy
+	priority = 28
+	governments = { bureaucracy_military_government bureaucracy_civil_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+strategie_duchy = { # Stratēgíē
+	type = title
+	top_liege = no
+	tier = duchy
+	priority = 28
+	governments = { bureaucracy_military_government bureaucracy_civil_government }
+	name_lists = { name_list_ionian }
+}
+strotagia_duchy = { # Strotagía
+	type = title
+	top_liege = no
+	tier = duchy
+	priority = 28
+	governments = { bureaucracy_military_government bureaucracy_civil_government }
+	name_lists = { name_list_aeolian }
+}
+hyparcheia_duchy = { # Hyparkheía
+	type = title
+	top_liege = no
+	tier = duchy
+	priority = 29
+	de_jure_liege = { e_asia }
+	governments = { bureaucracy_military_government }
+	#heritages = { greek_heritage }
+}
+
+### Kingdom
+strategia_kingdom = { # Stratēgía
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { bureaucracy_military_government bureaucracy_civil_government }
+	#heritages = { greek_heritage }
+}
+stratagia_kingdom = { # Stratagía
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { bureaucracy_military_government bureaucracy_civil_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+strategie_kingdom = { # Stratēgíē
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { bureaucracy_military_government bureaucracy_civil_government }
+	name_lists = { name_list_ionian }
+}
+strotagia_kingdom = { # Strotagía
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { bureaucracy_military_government bureaucracy_civil_government }
+	name_lists = { name_list_aeolian }
+}
+satrapeia_kingdom = { # Satrapeía
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 49
+	de_jure_liege = { e_asia }
+	governments = { bureaucracy_military_government }
+	#heritages = { greek_heritage }
+}
+satrapeie_kingdom = { # Satrapeie
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 50
+	de_jure_liege = { e_asia }
+	governments = { bureaucracy_military_government }
+	name_lists = { name_list_ionian }
+}
+
+## DEMOCRATIC ###################################
+
+### County
+polis_county = { # Pólis
+	type = title
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { city_state_democratic_government city_state_oligarchic_government city_state_aristocratic_government city_state_tyrannical_government city_state_spartan_government federal_alliance_government federal_sympolity_government federal_league_government amphictyony_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	#heritages = { greek_heritage }
+}
+
+### Duchy
+polis_duchy = { # Pólis
+	type = title
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { city_state_democratic_government city_state_oligarchic_government city_state_aristocratic_government city_state_tyrannical_government city_state_spartan_government }
+	#heritages = { greek_heritage }
+}
+
+### Kingdom
+polis_kingdom = { # Pólis
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { city_state_democratic_government city_state_oligarchic_government city_state_aristocratic_government city_state_tyrannical_government city_state_spartan_government }
+	#heritages = { greek_heritage }
+}
+
+## FEDERAL ALLIED ###################################
+
+### Duchy
+symmachia_duchy = { # Symmakhía
+	type = title
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { federal_alliance_government hegemonic_alliance_government }
+	#heritages = { greek_heritage }
+}
+symmachie_duchy = { # Symmakhíē
+	type = title
+	top_liege = no
+	tier = duchy
+	priority = 28
+	governments = { federal_alliance_government hegemonic_alliance_government }
+	name_lists = { name_list_ionian }
+}
+
+### Kingdom
+symmachia_kingdom = { # Symmakhía
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { federal_alliance_government hegemonic_alliance_government }
+	#heritages = { greek_heritage }
+}
+symmachie_kingdom = { # Symmakhíē
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { federal_alliance_government hegemonic_alliance_government }
+	name_lists = { name_list_ionian }
+}
+
+### Empire
+symmachia_empire = { # Symmakhía
+	type = title
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { federal_alliance_government }
+	#heritages = { greek_heritage }
+}
+symmachie_empire = { # Symmakhíē
+	type = title
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { federal_alliance_government }
+	name_lists = { name_list_ionian }
+}
+
+## FEDERAL SYMPOLITY ###################################
+
+### Duchy
+sympoliteia_duchy = { # Sympoliteía
+	type = title
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { federal_sympolity_government hegemonic_sympolity_government }
+	#heritages = { greek_heritage }
+}
+sympoliteie_duchy = { # Sympolitēíē
+	type = title
+	top_liege = no
+	tier = duchy
+	priority = 28
+	governments = { federal_sympolity_government hegemonic_sympolity_government }
+	name_lists = { name_list_ionian }
+}
+
+### Kingdom
+sympoliteia_kingdom = { # Sympoliteía
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { federal_sympolity_government hegemonic_sympolity_government }
+	#heritages = { greek_heritage }
+}
+sympoliteie_kingdom = { # Sympolitēíē
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { federal_sympolity_government hegemonic_sympolity_government }
+	name_lists = { name_list_ionian }
+}
+
+### Empire
+sympoliteia_empire = { # Sympoliteía
+	type = title
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { federal_sympolity_government }
+	#heritages = { greek_heritage }
+}
+sympoliteie_empire = { # Sympolitēíē
+	type = title
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { federal_sympolity_government }
+	name_lists = { name_list_ionian }
+}
+
+## FEDERAL LEAGUE ###################################
+
+### Duchy
+koinon_duchy = { # Koinón
+	type = title
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { federal_league_government hegemonic_league_government }
+	#heritages = { greek_heritage }
+}
+kynon_duchy = { # Kynón
+	type = title
+	top_liege = no
+	tier = duchy
+	priority = 28
+	governments = { federal_league_government hegemonic_league_government }
+	name_lists = { name_list_boeotian }
+}
+
+### Kingdom
+koinon_kingdom = { # Koinón
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { federal_league_government hegemonic_league_government }
+	#heritages = { greek_heritage }
+}
+kynon_kingdom = { # Kynón
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { federal_league_government hegemonic_league_government }
+	name_lists = { name_list_boeotian }
+}
+
+### Empire
+koinon_empire = { # Koinón
+	type = title
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { federal_league_government hegemonic_league_government }
+	#heritages = { greek_heritage }
+}
+kynon_empire = { # Kynón
+	type = title
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { federal_league_government hegemonic_league_government }
+	name_lists = { name_list_boeotian }
+}
+
+## AMPHICTYONIC ###################################
+
+### Duchy
+amphiktyonia_duchy = { # Amphiktyonía
+	type = title
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { amphictyony_government }
+	#heritages = { greek_heritage }
+}
+
+### Kingdom
+amphiktyonia_kingdom = { # Amphiktyonía
+	type = title
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { amphictyony_government }
+	#heritages = { greek_heritage }
+}
+
+### Empire
+amphiktyonia_empire = { # Amphiktyonía
+	type = title
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { amphictyony_government }
+	#heritages = { greek_heritage }
+}
+
+# MALE RULERS
+
+## THEOCRATIC ###################################
+
+### Baron
+hiereus_baron = { # Hiereús
+	type = character
+	gender = male
+	special = holder
+	tier = barony
+	priority = 7
+	top_liege = no
+	governments = { theocracy_government }
+	#heritages = { greek_heritage }
+}
+hiareus_baron = { # Hiareús
+	type = character
+	gender = male
+	special = holder
+	tier = barony
+	priority = 8
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	}
+}
+hireus_baron = { # Hireús
+	type = character
+	gender = male
+	special = holder
+	tier = barony
+	priority = 8
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_ionian }
+}
+hiares_baron = { # Hiarēs
+	type = character
+	gender = male
+	special = holder
+	tier = barony
+	priority = 8
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_arcadian }
+}
+
+### Count
+hiereus_count = { # Hiereús
+	type = character
+	gender = male
+	special = holder
+	tier = county
+	priority = 17
+	top_liege = no
+	governments = { theocracy_government }
+	#heritages = { greek_heritage }
+}
+hiareus_count = { # Hiareús
+	type = character
+	gender = male
+	special = holder
+	tier = county
+	priority = 18
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	}
+}
+hireus_count = { # Hireús
+	type = character
+	gender = male
+	special = holder
+	tier = county
+	priority = 18
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_ionian }
+}
+hiares_count = { # Hiarēs
+	type = character
+	gender = male
+	special = holder
+	tier = county
+	priority = 18
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_arcadian }
+}
+
+### Duke
+archiereus_duke = { # Arkhiereús
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 27
+	top_liege = no
+	governments = { theocracy_government }
+	#heritages = { greek_heritage }
+}
+archiareus_duke = { # Arkhiareús
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 28
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_boeotian
+		name_list_thessalian
+	}
+}
+archiereos_duke = { # Arkhiéreōs
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 28
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_ionian }
+}
+archeireus_duke = { # Arkheíreus
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 28
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_aeolian }
+}
+archiares_duke = { # Arkhiarēs
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 28
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_arcadian }
+}
+archieristes_duke = { # Arkhieristēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 29
+	de_jure_liege = { d_doris }
+	governments = { theocracy_government }
+	#heritages = { greek_heritage }
+}
+archiaristas_duke = { # Arkhiaristás
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 30
+	de_jure_liege = { d_doris }
+	governments = { theocracy_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hierarches_duke = { # Hierárkhēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 29
+	de_jure_liege = { d_boiotia }
+	governments = { theocracy_government }
+	#heritages = { greek_heritage }
+}
+hiararchas_duke = { # Hiarárkhas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 30
+	de_jure_liege = { d_boiotia }
+	governments = { theocracy_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### King
+archiereus_king = { # Arkhiereús
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 47
+	top_liege = no
+	governments = { theocracy_government }
+	#heritages = { greek_heritage }
+}
+archiareus_king = { # Arkhiareús
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 48
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_boeotian
+		name_list_thessalian
+	}
+}
+archiereos_king = { # Arkhiéreōs
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 48
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_ionian }
+}
+archeireus_king = { # Arkheíreus
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 48
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_aeolian }
+}
+archiares_king = { # Arkhiarēs
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 48
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_arcadian }
+}
+archieristes_king = { # Arkhieristēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 49
+	de_jure_liege = { d_doris }
+	governments = { theocracy_government }
+	#heritages = { greek_heritage }
+}
+archiaristas_king = { # Arkhiaristás
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 50
+	de_jure_liege = { d_doris }
+	governments = { theocracy_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hierarches_king = { # Hierárkhēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 49
+	de_jure_liege = { d_boiotia }
+	governments = { theocracy_government }
+	#heritages = { greek_heritage }
+}
+hiararchas_king = { # Hiarárkhas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 50
+	de_jure_liege = { d_boiotia }
+	governments = { theocracy_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### Emperor
+archiereus_emperor = { # Arkhiereús
+	type = character
+	gender = male
+	special = holder
+	tier = empire
+	priority = 102
+	top_liege = no
+	governments = { theocracy_government }
+	#heritages = { greek_heritage }
+}
+archiareus_emperor = { # Arkhiareús
+	type = character
+	gender = male
+	special = holder
+	tier = empire
+	priority = 103
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_boeotian
+		name_list_thessalian
+	}
+}
+archiereos_emperor = { # Arkhiéreōs
+	type = character
+	gender = male
+	special = holder
+	tier = empire
+	priority = 103
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_ionian }
+}
+archeireus_emperor = { # Arkheíreus
+	type = character
+	gender = male
+	special = holder
+	tier = empire
+	priority = 103
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_aeolian }
+}
+archiares_emperor = { # Arkhiarēs
+	type = character
+	gender = male
+	special = holder
+	tier = empire
+	priority = 103
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_arcadian }
+}
+archieristes_emperor = { # Arkhieristēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 104
+	de_jure_liege = { d_doris }
+	governments = { theocracy_government }
+	#heritages = { greek_heritage }
+}
+archiaristas_emperor = { # Arkhiaristás
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 105
+	de_jure_liege = { d_doris }
+	governments = { theocracy_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hierarches_emperor = { # Hierárkhēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 104
+	de_jure_liege = { d_boiotia }
+	governments = { theocracy_government }
+	#heritages = { greek_heritage }
+}
+hiararchas_emperor = { # Hiarárkhas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 105
+	de_jure_liege = { d_boiotia }
+	governments = { theocracy_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+## FEUDAL ###################################
+
+### Baron
+kyrios_baron = { # Kýrios
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { feudal_government }
+	#heritages = { greek_heritage }
+}
+kourios_baron = { # Koúrios
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 8
+	governments = { feudal_government }
+	name_lists = { name_list_boeotian }
+}
+kyrrhos_baron = { # Kŷrrhos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 8
+	governments = { feudal_government }
+	name_lists = { name_list_thessalian }
+}
+
+### Count
+kyrios_count = { # Kýrios
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { feudal_government }
+	#heritages = { greek_heritage }
+}
+kourios_count = { # Koúrios
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { feudal_government }
+	name_lists = { name_list_boeotian }
+}
+kyrrhos_count = { # Kŷrrhos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { feudal_government }
+	name_lists = { name_list_thessalian }
+}
+
+### Duke
+dynastes_duke = { # Dynástēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { feudal_government }
+	#heritages = { greek_heritage }
+}
+dynastas_duke = { # Dynástas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 28
+	governments = { feudal_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### King
+dynastes_king = { # Dynástēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { feudal_government }
+	#heritages = { greek_heritage }
+}
+dynastas_king = { # Dynástas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { feudal_government }
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+basileus_king_independent = { # Basileús
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 49
+	only_independent = yes
+	governments = { feudal_government }
+	#heritages = { greek_heritage }
+}
+basiles_king_independent = { # Basilēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 50
+	only_independent = yes
+	governments = { feudal_government }
+	name_lists = { name_list_arcadian }
+}
+
+### Emperor
+basileus_emperor = { # Basileús
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { feudal_government republic_government clan_government tribal_government city_state_spartan_government }
+	#heritages = { greek_heritage }
+}
+basiles_emperor = { # Basilēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { feudal_government republic_government clan_government tribal_government city_state_spartan_government }
+	name_lists = { name_list_arcadian }
+}
+
+## COMMUNITY ###################################
+
+### Baron
+komarches_baron = { # Kōmárkhēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { republic_government clan_government tribal_government }
+	#heritages = { greek_heritage }
+}
+demarchos_baron = { # Dēmarkhos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 8
+	governments = { republic_government }
+	name_lists = { name_list_athenian name_list_ionian }
+}
+komarchas_baron = { # Kōmárkhas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 8
+	governments = { republic_government clan_government tribal_government }
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+demarchos_baron_d_doris = { # Dēmarkhos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 9
+	de_jure_liege = { d_doris }
+	governments = { republic_government }
+	#heritages = { greek_heritage }
+}
+damarchos_baron_d_doris = { # Dámarkhos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 10
+	de_jure_liege = { d_doris }
+	governments = { republic_government }
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### Count
+phylarchos_count = { # Phýlarkhos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { republic_government clan_government tribal_government }
+	#heritages = { greek_heritage }
+}
+phoularchos_count = { # Phoúlarkhos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { republic_government clan_government tribal_government }
+	name_lists = { name_list_boeotian }
+}
+
+### Duke
+prostates_duke = { # Prostátēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { republic_government clan_government tribal_government city_state_democratic_government }
+	#heritages = { greek_heritage }
+}
+prostatas_duke = { # Prostátas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 28
+	governments = { republic_government clan_government tribal_government city_state_democratic_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### King
+basileus_king = { # Basileús
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { republic_government clan_government tribal_government city_state_spartan_government }
+	#heritages = { greek_heritage }
+}
+basiles_king = { # Basilēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { republic_government clan_government tribal_government city_state_spartan_government }
+	name_lists = { name_list_arcadian }
+}
+
+## CLAN ###################################
+
+### Duke
+basileus_duke_independent = { # Basileús
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 29
+	only_independent = yes
+	governments = { clan_government }
+	#heritages = { greek_heritage }
+}
+basiles_duke_independent = { # Basilēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 30
+	only_independent = yes
+	governments = { clan_government }
+	name_lists = { name_list_arcadian }
+}
+
+## MILITARY COMMAND ###################################
+
+### Baron
+phrourarchos_baron = { # Phroúrarkhos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { bureaucracy_military_government }
+	#heritages = { greek_heritage }
+}
+
+### Count
+toparches_count = { # Topárkhēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { bureaucracy_military_government }
+	#heritages = { greek_heritage }
+}
+toparchas_count = { # Topárkhas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { bureaucracy_military_government }
+	name_lists = { 
+	# DORIC
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hypostratagos_count = { # Hypostrátagos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { bureaucracy_military_government }
+	name_lists = { name_list_achaean }
+}
+
+### Duke
+strategos_duke = { # Stratēgós
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { bureaucracy_military_government federal_alliance_government federal_sympolity_government federal_league_government }
+	#heritages = { greek_heritage }
+}
+stratagos_duke = { # Stratagós
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 28
+	governments = { bureaucracy_military_government federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+strotagos_duke = { # Strótagos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 28
+	governments = { bureaucracy_military_government federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { name_list_aeolian }
+}
+hyparchos_duke = { # Hýparkhos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 29
+	de_jure_liege = { e_asia }
+	governments = { bureaucracy_military_government }
+	#heritages = { greek_heritage }
+}
+
+### King
+strategos_king = { # Stratēgós
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { bureaucracy_military_government }
+	#heritages = { greek_heritage }
+}
+stratagos_king = { # Stratagós
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { bureaucracy_military_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+strotagos_king = { # Strótagos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { bureaucracy_military_government }
+	name_lists = { name_list_aeolian }
+}
+
+### Emperor
+strategos_emperor = { # Stratēgós
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { bureaucracy_military_government }
+	#heritages = { greek_heritage }
+}
+stratagos_emperor = { # Stratagós
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { bureaucracy_military_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+strotagos_emperor = { # Strótagos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { bureaucracy_military_government }
+	name_lists = { name_list_aeolian }
+}
+
+## CIVIL BUREAURACY ###################################
+
+### Baron
+epistates_baron = { # Epistátēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { bureaucracy_civil_government }
+	#heritages = { greek_heritage }
+}
+epistatas_baron = { # Epistátas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 8
+	governments = { bureaucracy_civil_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### Count
+epistates_count = { # Epistátēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { bureaucracy_civil_government }
+	#heritages = { greek_heritage }
+}
+epistatas_count = { # Epistátas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { bureaucracy_civil_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### Duke
+epimeletes_duke = { # Epimelētēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { bureaucracy_civil_government amphictyony_government }
+	#heritages = { greek_heritage }
+}
+epimeletas_duke = { # Epimelētas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 28
+	governments = { bureaucracy_civil_government amphictyony_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### King
+epimeletes_king = { # Epimelētēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { bureaucracy_civil_government amphictyony_government }
+	#heritages = { greek_heritage }
+}
+epimeletas_king = { # Epimelētas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { bureaucracy_civil_government amphictyony_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### Emperor
+epimeletes_emperor = { # Epimelētēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { bureaucracy_civil_government amphictyony_government }
+	#heritages = { greek_heritage }
+}
+epimeletas_emperor = { # Epimelētas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { bureaucracy_civil_government amphictyony_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+## DEMOCRATIC ###################################
+
+### Baron
+prostates_baron = { # Prostátēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { city_state_democratic_government }
+	#heritages = { greek_heritage }
+}
+prostatas_baron = { # Prostátas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 8
+	governments = { city_state_democratic_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### Count
+prostates_count = { # Prostátēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { city_state_democratic_government }
+	#heritages = { greek_heritage }
+}
+prostatas_count = { # Prostátas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { city_state_democratic_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### King
+prostates_king = { # Prostátēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { city_state_democratic_government }
+	#heritages = { greek_heritage }
+}
+prostatas_king = { # Prostátas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { city_state_democratic_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### Emperor
+prostates_emperor = { # Prostátēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { city_state_democratic_government }
+	#heritages = { greek_heritage }
+}
+prostatas_emperor = { # Prostátas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { city_state_democratic_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+## OLIGARCHIC ###################################
+
+### Baron
+hegemon_baron = { # Hēgemōn
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { city_state_oligarchic_government city_state_aristocratic_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	#heritages = { greek_heritage }
+}
+hagemon_baron = { # Hagemōn 
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 8
+	governments = { city_state_oligarchic_government city_state_aristocratic_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hagimon_baron = { # Hagímōn 
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 8
+	governments = { city_state_oligarchic_government city_state_aristocratic_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	}
+}
+protokosmos_baron = { # Prōtókosmos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 9
+	de_jure_liege = { k_krete }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_cretan }
+}
+archipoliarchos_baron = { # Arkhipolíarkhos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 9
+	de_jure_liege = { k_thessalia }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_thessalian }
+}
+
+### Count
+hegemon_count = { # Hēgemōn
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { city_state_oligarchic_government city_state_aristocratic_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	#heritages = { greek_heritage }
+}
+hagemon_count = { # Hagemōn 
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { city_state_oligarchic_government city_state_aristocratic_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hagimon_count = { # Hagímōn 
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { city_state_oligarchic_government city_state_aristocratic_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	}
+}
+protokosmos_count = { # Prōtókosmos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 19
+	de_jure_liege = { k_krete }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_cretan }
+}
+archipoliarchos_count = { # Arkhipolíarkhos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 19
+	de_jure_liege = { k_thessalia }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_thessalian }
+}
+
+### Duke
+hegemon_duke = { # Hēgemōn
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { city_state_oligarchic_government city_state_aristocratic_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	#heritages = { greek_heritage }
+}
+hagemon_duke = { # Hagemōn 
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 28
+	governments = { city_state_oligarchic_government city_state_aristocratic_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hagimon_duke = { # Hagímōn 
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 28
+	governments = { city_state_oligarchic_government city_state_aristocratic_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	}
+}
+protokosmos_duke = { # Prōtókosmos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 29
+	de_jure_liege = { k_krete }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_cretan }
+}
+archipoliarchos_duke = { # Arkhipolíarkhos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 29
+	de_jure_liege = { k_thessalia }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_thessalian }
+}
+
+### King
+hegemon_king = { # Hēgemōn
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	#heritages = { greek_heritage }
+}
+hagemon_king = { # Hagemōn 
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hagimon_king = { # Hagímōn 
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { 
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	}
+}
+protokosmos_king = { # Prōtókosmos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 49
+	de_jure_liege = { k_krete }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_cretan }
+}
+archipoliarchos_king = { # Arkhipolíarkhos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 49
+	de_jure_liege = { k_thessalia }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_thessalian }
+}
+
+### Emperor
+hegemon_emperor = { # Hēgemōn
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	#heritages = { greek_heritage }
+}
+hagemon_emperor = { # Hagemōn 
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hagimon_emperor = { # Hagímōn 
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { 
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	}
+}
+protokosmos_emperor = { # Prōtókosmos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 104
+	de_jure_liege = { k_krete }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_cretan }
+}
+archipoliarchos_emperor = { # Arkhipolíarkhos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 104
+	de_jure_liege = { k_thessalia }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_thessalian }
+}
+
+## TYRANNIC ###################################
+
+### Baron
+tyrannos_baron = { # Týrannos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { city_state_tyrannical_government }
+	#heritages = { greek_heritage }
+}
+
+### Count
+tyrannos_count = { # Týrannos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { city_state_tyrannical_government }
+	#heritages = { greek_heritage }
+}
+
+### Duke
+tyrannos_duke = { # Týrannos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { city_state_tyrannical_government }
+	#heritages = { greek_heritage }
+}
+
+### King
+tyrannos_king = { # Týrannos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { city_state_tyrannical_government }
+	#heritages = { greek_heritage }
+}
+
+### Emperor
+tyrannos_emperor = { # Týrannos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { city_state_tyrannical_government }
+	#heritages = { greek_heritage }
+}
+
+## RHETRA ###################################
+
+### Baron
+basileus_baron = { # Basileús
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { city_state_spartan_government }
+	#heritages = { greek_heritage }
+}
+basiles_baron = { # Basilēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 8
+	governments = { city_state_spartan_government }
+	name_lists = { name_list_arcadian }
+}
+
+### Count
+basileus_count = { # Basileús
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { city_state_spartan_government }
+	#heritages = { greek_heritage }
+}
+basiles_count = { # Basilēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { city_state_spartan_government }
+	name_lists = { name_list_arcadian }
+}
+
+### Duke
+basileus_duke = { # Basileús
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { city_state_spartan_government }
+	#heritages = { greek_heritage }
+}
+basiles_duke = { # Basilēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 28
+	governments = { city_state_spartan_government }
+	name_lists = { name_list_arcadian }
+}
+
+## FEDERAL ALLIED ###################################
+
+### Baron
+strategos_baron = { # Stratēgós
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	#heritages = { greek_heritage }
+}
+stratagos_baron = { # Stratagós
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 8
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+strotagos_baron = { # Strótagos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 8
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { name_list_aeolian }
+}
+
+### Count
+strategos_count = { # Stratēgós
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	#heritages = { greek_heritage }
+}
+stratagos_count = { # Stratagós
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+strotagos_count = { # Strótagos
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { name_list_aeolian }
+}
+
+### King
+strategos_autokrator_king = { # Stratēgós Autokrátōr
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	#heritages = { greek_heritage }
+}
+stratagos_autokrator_king = { # Stratagós Autokrátōr
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+strotagos_autokrator_king = { # Strótagos Autokrátōr
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { name_list_aeolian }
+}
+
+### Emperor
+strategos_autokrator_emperor = { # Stratēgós Autokrátōr
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	#heritages = { greek_heritage }
+}
+stratagos_autokrator_emperor = { # Stratagós Autokrátōr
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+strotagos_autokrator_emperor = { # Strótagos Autokrátōr
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { name_list_aeolian }
+}
+
+## AMPHICTYONIC ###################################
+
+### Baron
+epimeletes_baron = { # Epimelētēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { amphictyony_government }
+	#heritages = { greek_heritage }
+}
+epimeletas_baron = { # Epimelētas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 8
+	governments = { amphictyony_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### Count
+epimeletes_count = { # Epimelētēs
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { amphictyony_government }
+	#heritages = { greek_heritage }
+}
+epimeletas_count = { # Epimelētas
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { amphictyony_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+## HEGEMONIC ALLIED ###################################
+
+### King
+hegemon_autokrator_king = { # Hēgemōn Autokrátōr 
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	#heritages = { greek_heritage }
+}
+hagemon_autokrator_king = { # Hagemōn Autokrátōr 
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hagimon_autokrator_king = { # Hagímōn Autokrátōr 
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	}
+}
+
+### Emperor
+hegemon_autokrator_emperor = { # Hēgemōn Autokrátōr 
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	#heritages = { greek_heritage }
+}
+hagemon_autokrator_emperor = { # Hagemōn Autokrátōr 
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hagimon_autokrator_emperor = { # Hagímōn Autokrátōr 
+	type = character
+	gender = male
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	}
+}
+
+# FEMALE RULERS
+
+## THEOCRATIC ###################################
+
+### Baron
+hiereia_baron_female = { # Hiéreia
+	type = character
+	gender = female
+	special = holder
+	tier = barony
+	priority = 7
+	top_liege = no
+	governments = { theocracy_government }
+	#heritages = { greek_heritage }
+}
+hiarea_baron_female = { # Hiaréa
+	type = character
+	gender = female
+	special = holder
+	tier = barony
+	priority = 8
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hireie_baron_female = { # Hireíē
+	type = character
+	gender = female
+	special = holder
+	tier = barony
+	priority = 8
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_ionian }
+}
+hiareia_baron_female = { # Ηiáreia
+	type = character
+	gender = female
+	special = holder
+	tier = barony
+	priority = 8
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_boeotian }
+}
+
+### Count
+hiereia_count_female = { # Hiéreia
+	type = character
+	gender = female
+	special = holder
+	tier = county
+	priority = 17
+	top_liege = no
+	governments = { theocracy_government }
+	#heritages = { greek_heritage }
+}
+hiarea_count_female = { # Hiaréa
+	type = character
+	gender = female
+	special = holder
+	tier = county
+	priority = 18
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hireie_count_female = { # Hireíē
+	type = character
+	gender = female
+	special = holder
+	tier = county
+	priority = 18
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_ionian }
+}
+hiareia_count_female = { # Ηiáreia
+	type = character
+	gender = female
+	special = holder
+	tier = county
+	priority = 18
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_boeotian }
+}
+
+### Duke
+archiereia_duke_female = { # Αrkhiéreia
+	type = character
+	gender = female
+	special = holder
+	tier = duchy
+	priority = 27
+	top_liege = no
+	governments = { theocracy_government }
+	#heritages = { greek_heritage }
+}
+archiarea_duke_female = { # Αrkhiaréa
+	type = character
+	gender = female
+	special = holder
+	tier = duchy
+	priority = 28
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+archireie_duke_female = { # Arkhireíē
+	type = character
+	gender = female
+	special = holder
+	tier = duchy
+	priority = 28
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_ionian }
+}
+archiareia_duke_female = { # Arkhiáreia 
+	type = character
+	gender = female
+	special = holder
+	tier = duchy
+	priority = 28
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_boeotian }
+}
+
+### King
+archiereia_king_female = { # Αrkhiéreia
+	type = character
+	gender = female
+	special = holder
+	tier = kingdom
+	priority = 47
+	top_liege = no
+	governments = { theocracy_government }
+	#heritages = { greek_heritage }
+}
+archiarea_king_female = { # Αrkhiaréa
+	type = character
+	gender = female
+	special = holder
+	tier = kingdom
+	priority = 48
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+archireie_king_female = { # Arkhireíē
+	type = character
+	gender = female
+	special = holder
+	tier = kingdom
+	priority = 48
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_ionian }
+}
+archiareia_king_female = { # Arkhiáreia 
+	type = character
+	gender = female
+	special = holder
+	tier = kingdom
+	priority = 48
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_boeotian }
+}
+
+### Emperor
+archiereia_emperor_female = { # Αrkhiéreia
+	type = character
+	gender = female
+	special = holder
+	tier = empire
+	priority = 102
+	top_liege = no
+	governments = { theocracy_government }
+	#heritages = { greek_heritage }
+}
+archiarea_emperor_female = { # Αrkhiaréa
+	type = character
+	gender = female
+	special = holder
+	tier = empire
+	priority = 103
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+archireie_emperor_female = { # Arkhireíē
+	type = character
+	gender = female
+	special = holder
+	tier = empire
+	priority = 103
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_ionian }
+}
+archiareia_emperor_female = { # Arkhiáreia 
+	type = character
+	gender = female
+	special = holder
+	tier = empire
+	priority = 103
+	top_liege = no
+	governments = { theocracy_government }
+	name_lists = { name_list_boeotian }
+}
+
+## FEUDAL ###################################
+
+### Baron
+despoina_baron_female = { # Déspoina
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { feudal_government }
+	#heritages = { greek_heritage }
+}
+
+### Count
+despoina_count_female = { # Déspoina
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { feudal_government }
+	#heritages = { greek_heritage }
+}
+
+### Duke
+dynastis_duke_female = { # Dynástis
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { feudal_government }
+	#heritages = { greek_heritage }
+}
+
+### King
+dynastis_king_female = { # Dynástis
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { feudal_government }
+	#heritages = { greek_heritage }
+}
+basilissa_king_independent = { # Basílissa
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 49
+	only_independent = yes
+	governments = { feudal_government }
+	#heritages = { greek_heritage }
+}
+
+### Emperor
+basilissa_emperor_female = { # Basílissa
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { feudal_government republic_government clan_government tribal_government city_state_spartan_government }
+	#heritages = { greek_heritage }
+}
+
+## COMMUNITY ###################################
+
+### Baron
+komarches_baron_female = { # Kōmárkhēs
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { republic_government clan_government tribal_government }
+	#heritages = { greek_heritage }
+}
+demarchos_baron_female = { # Dēmarkhos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 8
+	governments = { republic_government }
+	name_lists = { name_list_athenian name_list_ionian }
+}
+komarchas_baron_female = { # Kōmárkhas
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 8
+	governments = { republic_government clan_government tribal_government }
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+demarchos_baron_d_doris_female = { # Dēmarkhos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 9
+	de_jure_liege = { d_doris }
+	governments = { republic_government }
+	#heritages = { greek_heritage }
+}
+damarchos_baron_d_doris_female = { # Dámarkhos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 10
+	de_jure_liege = { d_doris }
+	governments = { republic_government }
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### Count
+phylarchos_count_female = { # Phýlarkhos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { republic_government clan_government tribal_government }
+	#heritages = { greek_heritage }
+}
+phoularchos_count_female = { # Phoúlarkhos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { republic_government clan_government tribal_government }
+	name_lists = { name_list_boeotian }
+}
+
+### Duke
+prostatis_duke_female = { # Prostátis
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { republic_government clan_government tribal_government city_state_democratic_government }
+	#heritages = { greek_heritage }
+}
+
+### King
+basilissa_king_female = { # Basílissa
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { republic_government clan_government tribal_government city_state_spartan_government }
+	#heritages = { greek_heritage }
+}
+
+## CLAN ###################################
+
+### Duke
+basilissa_duke_independent = { # Basílissa
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 29
+	only_independent = yes
+	governments = { clan_government }
+	#heritages = { greek_heritage }
+}
+
+## MILITARY COMMAND ###################################
+
+### Baron
+phrourarchos_baron_female = { # Phroúrarkhos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { bureaucracy_military_government }
+	#heritages = { greek_heritage }
+}
+
+### Count
+toparches_count_female = { # Topárkhēs
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { bureaucracy_military_government }
+	#heritages = { greek_heritage }
+}
+toparchas_count_female = { # Topárkhas
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { bureaucracy_military_government }
+	name_lists = { 
+	# DORIC
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hypostratagis_count_female = { # Hypostrátagis
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { bureaucracy_military_government }
+	name_lists = { name_list_achaean }
+}
+
+### Duke
+strategis_duke_female = { # Stratēgís
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { bureaucracy_military_government federal_alliance_government federal_sympolity_government federal_league_government }
+	#heritages = { greek_heritage }
+}
+stratagis_duke_female = { # Stratagís
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 28
+	governments = { bureaucracy_military_government federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+strotagis_duke_female = { # Strótagis
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 28
+	governments = { bureaucracy_military_government federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { name_list_aeolian }
+}
+hyparchos_duke_female = { # Hýparkhos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 29
+	de_jure_liege = { e_asia }
+	governments = { bureaucracy_military_government }
+	#heritages = { greek_heritage }
+}
+
+### King
+strategis_king_female = { # Stratēgís
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { bureaucracy_military_government }
+	#heritages = { greek_heritage }
+}
+stratagis_king_female = { # Stratagís
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { bureaucracy_military_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+strotagis_king_female = { # Strótagis
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { bureaucracy_military_government }
+	name_lists = { name_list_aeolian }
+}
+
+### Emperor
+strategis_emperor_female = { # Stratēgís
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { bureaucracy_military_government }
+	#heritages = { greek_heritage }
+}
+stratagis_emperor_female = { # Stratagís
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { bureaucracy_military_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+strotagis_emperor_female = { # Strótagis
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { bureaucracy_military_government }
+	name_lists = { name_list_aeolian }
+}
+
+## CIVIL BUREAURACY ###################################
+
+### Baron
+epistatis_baron_female = { # Epistátis
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { bureaucracy_civil_government }
+	#heritages = { greek_heritage }
+}
+
+### Count
+epistatis_count_female = { # Epistátis
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { bureaucracy_civil_government }
+	#heritages = { greek_heritage }
+}
+
+### Duke
+epimeletes_duke_female = { # Epimelētēs
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { bureaucracy_civil_government amphictyony_government }
+	#heritages = { greek_heritage }
+}
+epimeletas_duke_female = { # Epimelētas
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 28
+	governments = { bureaucracy_civil_government amphictyony_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### King
+epimeletes_king_female = { # Epimelētēs
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { bureaucracy_civil_government amphictyony_government }
+	#heritages = { greek_heritage }
+}
+epimeletas_king_female = { # Epimelētas
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { bureaucracy_civil_government amphictyony_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### Emperor
+epimeletes_emperor_female = { # Epimelētēs
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { bureaucracy_civil_government amphictyony_government }
+	#heritages = { greek_heritage }
+}
+epimeletas_emperor_female = { # Epimelētas
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { bureaucracy_civil_government amphictyony_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+## DEMOCRATIC ###################################
+
+### Baron
+prostatis_baron_female = { # Prostátis
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { city_state_democratic_government }
+	#heritages = { greek_heritage }
+}
+
+### Count
+prostatis_count_female = { # Prostátis
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { city_state_democratic_government }
+	#heritages = { greek_heritage }
+}
+
+### King
+prostatis_king_female = { # Prostátis
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { city_state_democratic_government }
+	#heritages = { greek_heritage }
+}
+
+### Emperor
+prostatis_emperor_female = { # Prostátis
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { city_state_democratic_government }
+	#heritages = { greek_heritage }
+}
+
+## OLIGARCHIC ###################################
+
+### Baron
+hegemone_baron_female = { # Hēgemónē
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { city_state_oligarchic_government city_state_aristocratic_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	#heritages = { greek_heritage }
+}
+hagemona_baron_female = { # Hagemóna 
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 8
+	governments = { city_state_oligarchic_government city_state_aristocratic_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hagimona_baron_female = { # Hagímona 
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 8
+	governments = { city_state_oligarchic_government city_state_aristocratic_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	}
+}
+protokosmos_baron_female = { # Prōtókosmos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 9
+	de_jure_liege = { k_krete }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_cretan }
+}
+archipoliarchos_baron_female = { # Arkhipolíarkhos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 9
+	de_jure_liege = { k_thessalia }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_thessalian }
+}
+
+### Count
+hegemone_count_female = { # Hēgemónē
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { city_state_oligarchic_government city_state_aristocratic_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	#heritages = { greek_heritage }
+}
+hagemona_count_female = { # Hagemóna 
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { city_state_oligarchic_government city_state_aristocratic_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hagimona_count_female = { # Hagímona 
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { city_state_oligarchic_government city_state_aristocratic_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	}
+}
+protokosmos_count_female = { # Prōtókosmos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 19
+	de_jure_liege = { k_krete }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_cretan }
+}
+archipoliarchos_count_female = { # Arkhipolíarkhos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 19
+	de_jure_liege = { k_thessalia }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_thessalian }
+}
+
+### Duke
+hegemone_duke_female = { # Hēgemónē
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { city_state_oligarchic_government city_state_aristocratic_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	#heritages = { greek_heritage }
+}
+hagemona_duke_female = { # Hagemóna 
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 28
+	governments = { city_state_oligarchic_government city_state_aristocratic_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hagimona_duke_female = { # Hagímona 
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 28
+	governments = { city_state_oligarchic_government city_state_aristocratic_government hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	}
+}
+protokosmos_duke_female = { # Prōtókosmos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 29
+	de_jure_liege = { k_krete }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_cretan }
+}
+archipoliarchos_duke_female = { # Arkhipolíarkhos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 29
+	de_jure_liege = { k_thessalia }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_thessalian }
+}
+
+### King
+hegemone_king_female = { # Hēgemónē
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	#heritages = { greek_heritage }
+}
+hagemona_king_female = { # Hagemóna 
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hagimona_king_female = { # Hagímona 
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { 
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	}
+}
+protokosmos_king_female = { # Prōtókosmos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 49
+	de_jure_liege = { k_krete }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_cretan }
+}
+archipoliarchos_king_female = { # Arkhipolíarkhos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 49
+	de_jure_liege = { k_thessalia }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_thessalian }
+}
+
+### Emperor
+hegemone_emperor_female = { # Hēgemónē
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	#heritages = { greek_heritage }
+}
+hagemona_emperor_female = { # Hagemóna 
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hagimona_emperor_female = { # Hagímona 
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { 
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	}
+}
+protokosmos_emperor_female = { # Prōtókosmos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 104
+	de_jure_liege = { k_krete }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_cretan }
+}
+archipoliarchos_emperor_female = { # Arkhipolíarkhos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 104
+	de_jure_liege = { k_thessalia }
+	governments = { city_state_oligarchic_government city_state_aristocratic_government }
+	name_lists = { name_list_thessalian }
+}
+
+## TYRANNIC ###################################
+
+### Baron
+tyrannos_baron_female = { # Týrannos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { city_state_tyrannical_government }
+	#heritages = { greek_heritage }
+}
+
+### Count
+tyrannos_count_female = { # Týrannos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { city_state_tyrannical_government }
+	#heritages = { greek_heritage }
+}
+
+### Duke
+tyrannos_duke_female = { # Týrannos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { city_state_tyrannical_government }
+	#heritages = { greek_heritage }
+}
+
+### King
+tyrannos_king_female = { # Týrannos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { city_state_tyrannical_government }
+	#heritages = { greek_heritage }
+}
+
+### Emperor
+tyrannos_emperor_female = { # Týrannos
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { city_state_tyrannical_government }
+	#heritages = { greek_heritage }
+}
+
+## RHETRA ###################################
+
+### Baron
+basilissa_baron_female = { # Basílissa
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { city_state_spartan_government }
+	#heritages = { greek_heritage }
+}
+
+### Count
+basilissa_count_female = { # Basílissa
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { city_state_spartan_government }
+	#heritages = { greek_heritage }
+}
+
+### Duke
+basilissa_duke_female = { # Basílissa
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = duchy
+	priority = 27
+	governments = { city_state_spartan_government }
+	#heritages = { greek_heritage }
+}
+
+## FEDERAL ALLIED ###################################
+
+### Baron
+strategis_baron_female = { # Stratēgís
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	#heritages = { greek_heritage }
+}
+stratagis_baron_female = { # Stratagís
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 8
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+strotagis_baron_female = { # Strótagis
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 8
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { name_list_aeolian }
+}
+
+### Count
+strategis_count_female = { # Stratēgís
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	#heritages = { greek_heritage }
+}
+stratagis_count_female = { # Stratagís
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+strotagis_count_female = { # Strótagis
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { name_list_aeolian }
+}
+
+### King
+strategis_autokrator_king_female = { # Stratēgís Autokrátōr
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	#heritages = { greek_heritage }
+}
+stratagis_autokrator_king_female = { # Stratagís Autokrátōr
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+strotagis_autokrator_king_female = { # Strótagis Autokrátōr
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { name_list_aeolian }
+}
+
+### Emperor
+strategis_autokrator_emperor_female = { # Stratēgís Autokrátōr
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	#heritages = { greek_heritage }
+}
+stratagis_autokrator_emperor_female = { # Stratagís Autokrátōr
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+strotagis_autokrator_emperor_female = { # Strótagis Autokrátōr
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { federal_alliance_government federal_sympolity_government federal_league_government }
+	name_lists = { name_list_aeolian }
+}
+
+## AMPHICTYONIC ###################################
+
+### Baron
+epimeletes_baron_female = { # Epimelētēs
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 7
+	governments = { amphictyony_government }
+	#heritages = { greek_heritage }
+}
+epimeletas_baron_female = { # Epimelētas
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = barony
+	priority = 8
+	governments = { amphictyony_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+### Count
+epimeletes_count_female = { # Epimelētēs
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 17
+	governments = { amphictyony_government }
+	#heritages = { greek_heritage }
+}
+epimeletas_count_female = { # Epimelētas
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = county
+	priority = 18
+	governments = { amphictyony_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+
+## HEGEMONIC ALLIED ###################################
+
+### King
+hegemone_autokrator_king_female = { # Hēgemónē Autokrátōr 
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 47
+	governments = { hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	#heritages = { greek_heritage }
+}
+hagemona_autokrator_king_female = { # Hagemóna Autokrátōr 
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hagimona_autokrator_king_female = { # Hagímona Autokrátōr 
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = kingdom
+	priority = 48
+	governments = { hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	}
+}
+
+### Emperor
+hegemone_autokrator_emperor_female = { # Hēgemónē Autokrátōr 
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 102
+	governments = { hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	#heritages = { greek_heritage }
+}
+hagemona_autokrator_emperor_female = { # Hagemóna Autokrátōr 
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+hagimona_autokrator_emperor_female = { # Hagímona Autokrátōr 
+	type = character
+	gender = female
+	special = holder
+	top_liege = no
+	tier = empire
+	priority = 103
+	governments = { hegemonic_alliance_government hegemonic_sympolity_government hegemonic_league_government }
+	name_lists = { 
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	}
+}

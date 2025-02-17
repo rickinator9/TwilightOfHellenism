@@ -1,0 +1,189 @@
+﻿# Accepted categories are: governments, name_lists, heritages, faiths, religions
+# A Flavorization will apply if ALL specified categories have ANY of their entries
+# represented in the character/title
+# So for example:
+# governments = { feudal_government }
+# heritages = { mongolic_group central_germanic_group }
+# For this to apply a character MUST BE feudal, AND must also be EITHER altaic OR germanic
+# priority is used to determine priority, if they are the same then the LAST will be selected,
+# and honorifics will be prefered over landed titles. Default priority is 1
+# If a flavorization does not have a tier it can apply to all tiers of characters, too many non-tiered
+# flavorizations is bad for performance though, YOU HAVE BEEN WARNED!
+# 'top_liege = no' means that its the holder of the title causing the honorific that is tested for
+# 'only_holder = yes' means that this will only be applied to the person holding the title, not their spouse and such
+# the various categories, so for a prince it is the king that is tested, for a queen mother it is her son
+# if this is not specified ( or 'top_liege = yes' the default ) then it is the top liege of that character
+# that is tested, this means that most title flavor comes from the top liege of the title not the holder
+####################################################
+
+# GREEK
+
+basilissa_empress_mother = { # Basílissa
+	type = character
+	gender = female
+	special = queen_mother
+	tier = empire
+	governments = { feudal_government clan_government city_state_spartan_government }
+	priority = 76
+	top_liege = no
+	#heritages = { greek_heritage }
+}
+basilissa_queen_mother = { # Basílissa
+	type = character
+	gender = female
+	special = queen_mother
+	tier = kingdom
+	governments = { clan_government city_state_spartan_government }
+	priority = 43
+	top_liege = no
+	#heritages = { greek_heritage }
+}
+basilissa_queen_mother_independent = { # Basílissa
+	type = character
+	gender = female
+	special = queen_mother
+	tier = kingdom
+	only_independent = yes
+	governments = { feudal_government }
+	priority = 43
+	top_liege = no
+	#heritages = { greek_heritage }
+}
+basileides_prince = { # Basileídēs
+	type = character
+	gender = male
+	special = ruler_child
+	tier = kingdom
+	governments = { clan_government city_state_spartan_government }
+	priority = 36
+	top_liege = no
+	#heritages = { greek_heritage }
+}
+basileidas_prince = { # Basileídas
+	type = character
+	gender = male
+	special = ruler_child
+	tier = kingdom
+	governments = { clan_government city_state_spartan_government }
+	priority = 37
+	top_liege = no
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+basileides_prince_independent = { # Basileídēs
+	type = character
+	gender = male
+	special = ruler_child
+	tier = kingdom
+	only_independent = yes
+	governments = { feudal_government }
+	priority = 36
+	top_liege = no
+	#heritages = { greek_heritage }
+}
+basileidas_prince_independent = { # Basileídas
+	type = character
+	gender = male
+	special = ruler_child
+	tier = kingdom
+	only_independent = yes
+	governments = { feudal_government }
+	priority = 37
+	top_liege = no
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+basilis_princess = { # Basilís
+	type = character
+	gender = female
+	special = ruler_child
+	tier = kingdom
+	governments = { clan_government city_state_spartan_government }
+	priority = 36
+	top_liege = no
+	#heritages = { greek_heritage }
+}
+basilis_princess_independent = { # Basilís
+	type = character
+	gender = female
+	special = ruler_child
+	tier = kingdom
+	only_independent = yes
+	governments = { feudal_government }
+	priority = 36
+	top_liege = no
+	#heritages = { greek_heritage }
+}
+basileides_prince_empire = { # Basileídēs
+	type = character
+	gender = male
+	special = ruler_child
+	tier = empire
+	governments = { feudal_government clan_government city_state_spartan_government }
+	priority = 36
+	top_liege = no
+	#heritages = { greek_heritage }
+}
+basileidas_prince_empire = { # Basileídas
+	type = character
+	gender = male
+	special = ruler_child
+	tier = empire
+	governments = { feudal_government clan_government city_state_spartan_government }
+	priority = 37
+	top_liege = no
+	name_lists = {
+	# DORIC
+		name_list_achaean
+		name_list_cretan
+		name_list_dorian
+		name_list_dorian_northwest
+		name_list_epirote
+		name_list_laconian
+		name_list_messenian
+	# AEOLIC
+		name_list_aeolian
+		name_list_boeotian
+		name_list_thessalian
+	# ARCADO-CYPRIOT
+		name_list_arcadian
+	}
+}
+basilis_princess_empire = { # Basilís
+	type = character
+	gender = female
+	special = ruler_child
+	tier = empire
+	governments = { feudal_government clan_government city_state_spartan_government }
+	priority = 36
+	top_liege = no
+	#heritages = { greek_heritage }
+}

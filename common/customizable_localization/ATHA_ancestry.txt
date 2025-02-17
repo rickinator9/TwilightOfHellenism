@@ -1,0 +1,447 @@
+﻿AncestorSymbol = {
+	type = character
+
+	text = {
+		localization_key = AncestorSymbol_sword
+		trigger = {
+			this = character:test_atreus
+		}
+	}
+	text = {
+		localization_key = AncestorSymbol_club
+		trigger = {
+			this = character:test_herakles
+		}
+	}
+}
+AncestorAdjective = {
+	type = character
+
+	text = {
+		localization_key = AncestorAdjective_vengeful
+		trigger = {
+			this = character:test_atreus
+		}
+	}
+	text = {
+		localization_key = AncestorAdjective_mighty
+		trigger = {
+			this = character:test_herakles
+		}
+	}
+}
+AncestorLine = {
+	type = character
+
+	text = {
+		localization_key = AncestorLine_Atreid
+		trigger = {
+			this = character:test_atreus
+		}
+	}
+	text = {
+		localization_key = AncestorLine_Heraklid
+		trigger = {
+			this = character:test_herakles
+		}
+	}
+}
+AncestorLineInDef = {
+	type = character
+
+	text = {
+		localization_key = AncestorLineInDef_Atreid
+		trigger = {
+			this = character:test_atreus
+		}
+	}
+	text = {
+		localization_key = AncestorLineInDef_Heraklid
+		trigger = {
+			this = character:test_herakles
+		}
+	}
+}
+TombType = {
+	type = character
+
+	random_valid = yes
+
+	text = { 
+		localization_key = TombType_mound
+	}
+	text = { 
+		localization_key = TombType_cliff 
+	}
+}
+TombSize = {
+	type = character
+
+	random_valid = yes
+
+	text = { 
+		localization_key = TombSize_claustrophic
+	}
+	text = { 
+		localization_key = TombSize_small 
+	}
+	text = {
+		localization_key = TombSize_large
+	}
+	text = {
+		localization_key = TombSize_monumental
+	}
+}
+TombShape = {
+	type = character
+
+	random_valid = yes
+
+	text = { 
+		localization_key = TombShape_round
+	}
+	text = {
+		localization_key = TombShape_rectangular
+	}
+	text = {
+		localization_key = TombShape_square
+	}
+}
+TombWalls = {
+	type = character
+
+	random_valid = yes
+
+	text = { 
+		localization_key = TombWalls_masonry_imposing
+	}
+	text = { 
+		localization_key = TombWalls_masonry_rough
+	}
+	text = { 
+		localization_key = TombWalls_masonry_precise
+	}
+	text = {
+		localization_key = TombWalls_painted_scenes
+	}
+	text = {
+		localization_key = TombWalls_painted_motifs
+	}
+}
+TombContents = {
+	type = character
+
+	random_valid = yes
+
+	text = { 
+		localization_key = TombContents_robbed
+	}
+	text = {
+		localization_key = TombContents_untouched
+	}
+	text = {
+		localization_key = TombContents_bare
+	}
+}
+GraveType = {
+	type = character
+
+	random_valid = yes
+
+	text = { 
+		localization_key = GraveType_marble_sarcophagus
+	}
+	text = { 
+		localization_key = GraveType_stone_sarcophagus
+	}
+	text = { 
+		localization_key = GraveType_wooden_sarcophagus
+	}
+	text = {
+		localization_key = GraveType_clay_larnax
+	}
+	text = {
+		localization_key = GraveType_wooden_larnax
+	}
+	text = {
+		localization_key = GraveType_limestone_ossuary
+	}
+	text = {
+		localization_key = GraveType_stone_ossuary
+	}
+	text = {
+		localization_key = GraveType_clay_urn
+	}
+	text = {
+		localization_key = GraveType_clay_amphora
+	}
+}
+GraveAdjective = {
+	type = character
+
+	random_valid = yes
+
+	text = { 
+		localization_key = GraveAdjective_impressive
+	}
+	text = {
+		localization_key = GraveAdjective_massive
+	}
+	text = {
+		localization_key = GraveAdjective_modest
+	}
+	text = {
+		localization_key = GraveAdjective_large
+	}
+	text = {
+		localization_key = GraveAdjective_small
+	}
+}
+GraveDecoration = {
+	type = character
+
+	random_valid = yes
+
+	text = { 
+		localization_key = GraveDecoration_undecorated
+	}
+	text = {
+		localization_key = GraveDecoration_simple_motifs
+	}
+	text = {
+		localization_key = GraveDecoration_intricate_patterns
+	}
+	text = {
+		localization_key = GraveDecoration_nature_motifs
+	}
+	text = {
+		localization_key = GraveDecoration_funeral_scene
+	}
+	text = {
+		localization_key = GraveDecoration_combat_scene
+	}
+	text = {
+		localization_key = GraveDecoration_mythological_scene
+	}
+}
+FigurineType = {
+	type = character
+
+	random_valid = yes
+
+	text = { 
+		localization_key = FigurineType_ornate
+	}
+	text = {
+		localization_key = FigurineType_delicate
+	}
+	text = {
+		localization_key = FigurineType_simple
+	}
+	text = {
+		localization_key = FigurineType_crude
+	}
+}
+FigurineMaterial = {
+	type = character
+
+	random_valid = yes
+
+	text = { 
+		localization_key = FigurineMaterial_wooden
+	}
+	text = { 
+		localization_key = FigurineMaterial_terracotta
+	}
+	text = {
+		localization_key = FigurineMaterial_stone
+	}
+	text = {
+		localization_key = FigurineMaterial_ivory
+	}
+	text = {
+		localization_key = FigurineMaterial_bone
+	}
+	text = {
+		localization_key = FigurineMaterial_metal
+	}
+	text = {
+		localization_key = FigurineMaterial_faience
+	}
+}
+
+AncestorEquipment = {
+	type = character
+
+	text = {
+		trigger = { var:ancestor_equipment = flag:panoply }
+		localization_key = AncestorEquipment_panoply
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:shield }
+		localization_key = AncestorEquipment_shield
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:helmet }
+		localization_key = AncestorEquipment_helmet
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:breastplate }
+		localization_key = AncestorEquipment_breastplate
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:greaves }
+		localization_key = AncestorEquipment_greaves
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:sword }
+		localization_key = AncestorEquipment_sword
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:axe }
+		localization_key = AncestorEquipment_axe
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:spear }
+		localization_key = AncestorEquipment_spear
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:chariot }
+		localization_key = AncestorEquipment_chariot
+	}
+}
+
+AncestorEquipmentInDef = {
+	type = character
+
+	text = {
+		trigger = { var:ancestor_equipment = flag:panoply }
+		localization_key = AncestorEquipmentInDef_panoply
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:shield }
+		localization_key = AncestorEquipmentInDef_shield
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:helmet }
+		localization_key = AncestorEquipmentInDef_helmet
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:breastplate }
+		localization_key = AncestorEquipmentInDef_breastplate
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:greaves }
+		localization_key = AncestorEquipmentInDef_greaves
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:sword }
+		localization_key = AncestorEquipmentInDef_sword
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:axe }
+		localization_key = AncestorEquipmentInDef_axe
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:spear }
+		localization_key = AncestorEquipmentInDef_spear
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:chariot }
+		localization_key = AncestorEquipmentInDef_chariot
+	}
+}
+
+AncestorEquipmentAction = {
+	type = character
+
+	text = {
+		trigger = { 
+			OR = {
+				var:ancestor_equipment = flag:panoply 
+				var:ancestor_equipment = flag:helmet 
+				var:ancestor_equipment = flag:breastplate 
+				var:ancestor_equipment = flag:greaves 
+			}
+		}
+		localization_key = AncestorEquipmentAction_wearing
+	}
+	text = {
+		trigger = { 
+			OR = {
+				var:ancestor_equipment = flag:sword 
+				var:ancestor_equipment = flag:axe 
+				var:ancestor_equipment = flag:spear 
+			}
+		}
+		localization_key = AncestorEquipmentAction_wielding
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:shield }
+		localization_key = AncestorEquipmentInDef_bearing
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:chariot }
+		localization_key = AncestorEquipmentInDef_guarding
+	}
+}
+
+AncestorEquipmentTake = {
+	type = character
+
+	text = {
+		trigger = { 
+			OR = {
+				var:ancestor_equipment = flag:panoply 
+				var:ancestor_equipment = flag:helmet 
+				var:ancestor_equipment = flag:breastplate 
+				var:ancestor_equipment = flag:greaves 
+			}
+		}
+		localization_key = AncestorEquipmentTake_strip
+	}
+	text = {
+		trigger = { 
+			OR = {
+				var:ancestor_equipment = flag:sword 
+				var:ancestor_equipment = flag:axe 
+				var:ancestor_equipment = flag:spear 
+				var:ancestor_equipment = flag:shield
+			}
+		}
+		localization_key = AncestorEquipmentTake_pick_up
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:chariot }
+		localization_key = AncestorEquipmentTake_step_over
+	}
+}
+
+AncestorEquipmentInscription = {
+	type = character
+
+	text = {
+		trigger = { always = no }
+		localization_key = AncestorEquipmentInscription_surface
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:shield }
+		localization_key = AncestorEquipmentInscription_rim
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:sword }
+		localization_key = AncestorEquipmentInscription_blade
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:axe }
+		localization_key = AncestorEquipmentInscription_handle
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:spear }
+		localization_key = AncestorEquipmentInscription_shaft
+	}
+	text = {
+		trigger = { var:ancestor_equipment = flag:chariot }
+		localization_key = AncestorEquipmentInscription_carriage
+	}
+}

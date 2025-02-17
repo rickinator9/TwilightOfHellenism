@@ -1,0 +1,197 @@
+﻿#CityStateGUIGovernmentType = { ### We'll probably need something like this in the future for when we have city-states with temporarily changed government & succession (e.g. if they become leader of a coalition realm)
+#	type = character
+#
+#	text = {
+#		localization_key = CITY_STATE_GUI_DEMOCRATIC
+#		trigger = {
+#			primary_title = {
+#				has_title_law = democratic_succession_law
+#			}
+#		}
+#	}
+#	text = {
+#		fallback = yes
+#		localization_key = CITY_STATE_GUI_TYRANNY
+#	}
+#}
+
+CityStateGUICorruptionLevel = {
+	type = character
+
+	text = {
+		localization_key = CITY_STATE_CORRUPTION_CRITICAL
+		trigger = {
+			OR = {
+				AND = {
+					is_city_state = yes
+					has_critical_corruption_level = yes
+				}
+				AND = {
+					is_city_state_bureaucracy = yes
+					liege = { has_critical_corruption_level = yes }
+				}
+			}
+		}
+	}
+	text = {
+		localization_key = CITY_STATE_CORRUPTION_HIGH
+		trigger = {
+			OR = {
+				AND = {
+					is_city_state = yes
+					has_high_corruption_level = yes
+				}
+				AND = {
+					is_city_state_bureaucracy = yes
+					liege = { has_high_corruption_level = yes }
+				}
+			}
+		}
+	}
+	text = {
+		localization_key = CITY_STATE_CORRUPTION_MODERATE
+		trigger = {
+			OR = {
+				AND = {
+					is_city_state = yes
+					has_medium_corruption_level = yes
+				}
+				AND = {
+					is_city_state_bureaucracy = yes
+					liege = { has_medium_corruption_level = yes }
+				}
+			}
+		}
+	}
+	text = {
+		localization_key = CITY_STATE_CORRUPTION_LOW
+		fallback = yes
+	}
+}
+
+CityStateGUICorruptionValue = {
+	type = character
+	text = {
+		trigger = {
+			is_city_state_bureaucracy = yes
+			liege = { has_corruption_trigger = yes }
+		}
+		localization_key = CITY_STATE_CORRUPTION_PERCENTAGE_LIEGE
+	}
+	text = {
+		trigger = {
+			government_has_flag = is_city_state_government
+			has_corruption_trigger = yes
+		}
+		localization_key = CITY_STATE_CORRUPTION_PERCENTAGE_SELF
+	}
+	text = {
+		fallback = yes
+		localization_key = ZERO
+	}
+}
+
+CityStateGUIFranchiseValue = {
+	type = character
+	text = {
+		trigger = {
+			is_city_state_bureaucracy = yes
+			liege.primary_title = { has_variable = city_state_franchise }
+		}
+		localization_key = CITY_STATE_FRANCHISE_PERCENTAGE_LIEGE
+	}
+	text = {
+		trigger = {
+			government_has_flag = is_city_state_government
+			primary_title = { has_variable = city_state_franchise }
+		}
+		localization_key = CITY_STATE_FRANCHISE_PERCENTAGE_SELF
+	}
+	text = {
+		fallback = yes
+		localization_key = ZERO
+	}
+}
+
+CityStateGUIDesiredGovernment = {
+	type = character
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					is_city_state = yes
+					is_desired_franchise_democratic = yes
+				}
+				AND = {
+					is_city_state_bureaucracy = yes
+					liege = { is_desired_franchise_democratic = yes }
+				}
+			}
+		}
+		localization_key = CITY_STATE_GOVERNMENT_DEMOCRATIC
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					is_city_state = yes
+					is_desired_franchise_oligarchic = yes
+				}
+				AND = {
+					is_city_state_bureaucracy = yes
+					liege = { is_desired_franchise_oligarchic = yes }
+				}
+			}
+		}
+		localization_key = CITY_STATE_GOVERNMENT_OLIGARCHIC
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					is_city_state = yes
+					is_desired_franchise_aristocratic = yes
+				}
+				AND = {
+					is_city_state_bureaucracy = yes
+					liege = { is_desired_franchise_aristocratic = yes }
+				}
+			}
+		}
+		localization_key = CITY_STATE_GOVERNMENT_ARISTOCRATIC
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					is_city_state = yes
+					is_desired_franchise_spartan = yes
+				}
+				AND = {
+					is_city_state_bureaucracy = yes
+					liege = { is_desired_franchise_spartan = yes }
+				}
+			}
+		}
+		localization_key = CITY_STATE_GOVERNMENT_SPARTAN
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					is_city_state = yes
+					is_desired_franchise_tyrannical = yes
+				}
+				AND = {
+					is_city_state_bureaucracy = yes
+					liege = { is_desired_franchise_tyrannical = yes }
+				}
+			}
+		}
+		localization_key = CITY_STATE_GOVERNMENT_TYRANNICAL
+	}
+	text = {
+		fallback = yes
+		localization_key = INVALID_GOVERNMENT
+	}
+}

@@ -1,6 +1,6 @@
 ﻿##### MAINTHEME
 
-main_theme_track = {
+main_theme_track_zzz_ATHA = {
 	music = "file:/sound/ATHA_music/paean_to_ares.ogg"
 	can_be_interrupted = yes
 }

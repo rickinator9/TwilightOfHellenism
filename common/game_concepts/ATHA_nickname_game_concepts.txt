@@ -1,0 +1,394 @@
+﻿## EXCLUSIVELY HISTORICAL ###################################
+
+nick_aitolikos = {
+    parent = nickname
+}
+nick_andromachou = {
+    parent = nickname
+}
+nick_arrhidaios = {
+    parent = nickname
+}
+nick_gonatas = {
+    parent = nickname
+}
+nick_hadea = {
+    parent = nickname
+}
+nick_ho_pyrrhos = {
+    parent = nickname
+}
+nick_kyniskos = {
+    parent = nickname
+}
+nick_lakonikos = {
+    parent = nickname
+}
+nick_stratonike = {
+    parent = nickname
+}
+
+## MAJOR DECISIONS ###################################
+
+nick_pelopidas = {
+    parent = cognomen
+}
+nick_the_reformer = {
+    parent = cognomen
+}
+nick_the_liberator = {
+    parent = cognomen
+}
+nick_macedonicus = {
+    alias = { nick_makedonikos }
+    parent = cognomen
+}
+nick_philhellene = {
+    alias = { nick_philellen }
+    parent = cognomen
+}
+nick_the_hospitable = {
+    alias = { nick_philoxenos }
+    parent = cognomen
+}
+
+## VANILLA NICKNAMES ###################################
+
+nick_the_blushing = {
+    alias = { nick_ho_phoinikopareios nick_ho_phoinikopareios_1 }
+    parent = nickname
+}
+nick_the_clumsy = {
+    alias = { nick_ho_eparisteros }
+    parent = nickname
+}
+nick_the_eloquent = {
+    alias = { nick_ho_euglossos }
+    parent = nickname
+}
+nick_the_foreigner = {
+    alias = { nick_ho_xenos }
+    parent = nickname
+}
+nick_the_graceful = {
+    alias = { nick_ho_euschemon }
+    parent = nickname
+}
+nick_the_headless = {
+    alias = { nick_ho_akephalos }
+    parent = nickname
+}
+nick_the_heart_throb = {
+    alias = { nick_ho_erastes }
+    parent = nickname
+}
+nick_the_slow = {
+    alias = { nick_ho_bradynoos }
+    parent = nickname
+}
+nick_the_stammerer = {
+    alias = { nick_ho_battos }
+    parent = nickname
+}
+nick_the_stutterer = {
+    alias = { nick_ho_battaristes }
+    parent = nickname
+}
+
+## ATHA NICKNAMES ###################################
+
+nick_the_autocrat = {
+    alias = { nick_autokrator }
+    parent = nickname
+}
+nick_the_bastard = {
+    alias = { nick_nothos }
+    parent = nickname
+}
+nick_the_beautifully_triumphant = {
+    alias = { nick_kallinikos }
+    parent = nickname
+}
+nick_the_benefactor = {
+    alias = { nick_euergetes nick_euergetis }
+    parent = nickname
+}
+nick_the_besieger = {
+    alias = { nick_poliorketes }
+    parent = nickname
+}
+nick_the_bold = {
+    alias = { nick_keraunos }
+    parent = nickname
+}
+nick_the_builder = {
+    alias = { nick_ktistes }
+    parent = nickname
+}
+nick_the_clubfooted = {
+    alias = { nick_barypous }
+    parent = nickname
+}
+nick_the_devourer = {
+    alias = { nick_ho_androboros }
+    parent = nickname
+}
+nick_the_divine = {
+    alias = { nick_theos nick_thea }
+    parent = nickname
+}
+nick_the_dowry_bearer = {
+    alias = { nick_phernophoros }
+    parent = nickname
+}
+nick_the_eagle = {
+    alias = { nick_aetos nick_aietos nick_aietos_1 }
+    parent = nickname
+}
+nick_the_fair = {
+    alias = { nick_ho_kalos }
+    parent = nickname
+}
+nick_the_fat = {
+    alias = { nick_physkon }
+    parent = nickname
+}
+nick_the_father_loving = {
+    alias = { nick_philopator }
+    parent = nickname
+}
+nick_the_flautist = {
+    alias = { nick_auletes }
+    parent = nickname
+}
+nick_the_flayer = {
+    alias = { nick_the_flayer_greek }
+    parent = nickname
+}
+nick_the_gardener = {
+    alias = { nick_ho_kepouros }
+    parent = nickname
+}
+nick_the_godbought = {
+    alias = { nick_zabinas }
+    parent = nickname
+}
+nick_the_godlike = {
+    alias = { nick_theotropos nick_theatropos }
+    parent = nickname
+}
+nick_the_good = {
+    alias = { nick_ho_chrestos }
+    parent = nickname
+}
+nick_the_great = {
+    alias = { nick_ho_megas }
+    parent = nickname
+}
+nick_the_hawk = {
+    alias = { nick_hierax }
+    parent = nickname
+}
+nick_the_hunter = {
+    alias = { nick_kynegos }
+    parent = nickname
+}
+nick_the_illustrious = {
+    alias = { nick_epiphanes }
+    parent = nickname
+}
+nick_the_invincible = {
+    alias = { nick_ho_aniketos }
+    parent = nickname
+}
+nick_the_just = {
+    alias = { nick_dikaios }
+    parent = nickname
+}
+nick_the_lame = {
+    alias = { nick_cholos }
+    parent = nickname
+}
+nick_the_mad = {
+    alias = { nick_epimanes }
+    parent = nickname
+}
+nick_the_cruel = {
+    alias = { nick_kakergetes }
+    parent = nickname
+}
+nick_the_mindbreaker = {
+    alias = { nick_the_mindbreaker_greek }
+    parent = nickname
+}
+nick_the_mother_loving = {
+    alias = { nick_philometor }
+    parent = nickname
+}
+nick_the_one_eyed = {
+    alias = { nick_ho_monophthalmos }
+    parent = nickname
+}
+nick_the_overpromiser = {
+    alias = { nick_doson }
+    parent = nickname
+}
+nick_the_pious = {
+    alias = { nick_eusebes }
+    parent = nickname
+}
+nick_the_poet_good = {
+    alias = { nick_ho_poietes_good }
+    parent = nickname
+}
+nick_the_poet_bad = {
+    alias = { nick_ho_poietes_bad }
+    parent = nickname
+}
+nick_the_sacrificed = {
+    alias = { nick_ho_pharmakos }
+    parent = nickname
+}
+nick_the_saviour = {
+    alias = { nick_soter nick_soteira }
+    parent = nickname
+}
+nick_the_short_lived = {
+    alias = { nick_etesias }
+    parent = nickname
+}
+nick_the_scholar = {
+    alias = { nick_ho_philosophos }
+    parent = nickname
+}
+nick_the_sibling_loving = {
+    alias = { nick_philadelphos }
+    parent = nickname
+}
+nick_the_slave = {
+    alias = { nick_the_slave_greek }
+    parent = nickname
+}
+nick_the_small = {
+    alias = { nick_ho_mikros }
+    parent = nickname
+}
+nick_the_smelly = {
+    alias = { nick_kybiosaktes }
+    parent = nickname
+}
+nick_the_thin = {
+    alias = { nick_ho_leptos }
+    parent = nickname
+}
+nick_the_ugly = {
+    alias = { nick_grypos }
+    parent = nickname
+}
+nick_the_victor = {
+    alias = { nick_nikator }
+    parent = nickname
+}
+nick_the_victorious = {
+    alias = { nick_nikephoros }
+    parent = nickname
+}
+nick_the_untimely = {
+    alias = { nick_akairos }
+    parent = nickname
+}
+nick_the_wealthy = {
+    alias = { nick_tryphon }
+    parent = nickname
+}
+nick_the_well_born = {
+    alias = { nick_eupator }
+    parent = nickname
+}
+nick_the_wise = {
+    alias = { nick_ho_sophos }
+    parent = nickname
+}
+nick_the_young = {
+    alias = { nick_neos }
+    parent = nickname
+}
+
+## EPITHETS ###################################
+
+epithet_the_asian = {
+    alias = { epithet_asiatikos }
+    parent = epithet
+}
+epithet_the_autocrat = {
+    alias = { epithet_autokrator }
+    parent = epithet
+}
+epithet_the_beautifully_triumphant = {
+    alias = { epithet_kallinikos }
+    parent = epithet
+}
+epithet_the_benefactor = {
+    alias = { epithet_euergetes epithet_euergetis }
+    parent = epithet
+}
+epithet_the_divine = {
+    alias = { epithet_theos epithet_thea }
+    parent = epithet
+}
+epithet_the_divine_manifest = {
+    alias = { epithet_theos_epiphanes epithet_thea_epiphanes }
+    parent = epithet
+}
+epithet_the_father_loving = {
+    alias = { epithet_philopator }
+    parent = epithet
+}
+epithet_the_generous = {
+    alias = { epithet_eucharistos }
+    parent = epithet
+}
+epithet_the_illustrious = {
+    alias = { epithet_epiphanes }
+    parent = epithet
+}
+epithet_the_just = {
+    alias = { epithet_dikaios }
+    parent = epithet
+}
+epithet_the_mother_loving = {
+    alias = { epithet_philometor }
+    parent = epithet
+}
+epithet_the_pious = {
+    alias = { epithet_eusebes }
+    parent = epithet
+}
+epithet_the_saviour = {
+    alias = { epithet_soter epithet_soteira }
+    parent = epithet
+}
+epithet_the_sibling_loving = {
+    alias = { epithet_philadelphos }
+    parent = epithet
+}
+epithet_the_victor = {
+    alias = { epithet_nikator }
+    parent = epithet
+}
+epithet_the_victorious = {
+    alias = { epithet_nikephoros }
+    parent = epithet
+}
+epithet_the_wealthy = {
+    alias = { epithet_tryphon }
+    parent = epithet
+}
+epithet_the_well_born = {
+    alias = { epithet_eupator }
+    parent = epithet
+}
+epithet_the_wise = {
+    alias = { epithet_ho_sophos }
+    parent = epithet
+}

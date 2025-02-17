@@ -1,0 +1,8 @@
+﻿### Use this file for game concepts related to history and other flavour
+
+flavor_oracle_of_delphi = {
+    alias = { flavor_delphic_oracle }
+}
+
+flavor_gigantomachy = {
+}

@@ -1,0 +1,17 @@
+﻿IberiaSacredLanguage = {
+	type = character
+	
+	text = {
+		fallback = yes
+		localization_key = language_arabic_name #Arabic
+	}
+}
+
+IberiaRomanceLanguage = {
+	type = character
+	
+	text = {
+		fallback = yes
+		localization_key = IberiaRomanceLanguage_mozarabic #Mozarabic #TO_DO_CD: This should be an actual language for our Mozarabs, but would require a culture creation - AN
+	}
+}

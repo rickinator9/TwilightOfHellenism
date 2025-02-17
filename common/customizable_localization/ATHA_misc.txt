@@ -1,0 +1,80 @@
+﻿GentlemanLady = {
+	type = character
+
+	text = {
+		localization_key = GENTLEMAN
+		trigger = { is_male = yes }
+	}
+	text = {
+		localization_key = LADY
+		trigger = { is_female = yes }
+	}
+}
+
+OppositeWomenMen = {
+	type = character
+
+	text = {
+		localization_key = men
+		trigger = { is_female = yes }
+	}
+	text = {
+		localization_key = women
+		trigger = { is_male = yes }
+	}
+}
+
+DerogatoryOppositeWomenMen = {
+	type = character
+
+	text = {
+		localization_key = BASTARDS
+		trigger = { is_female = yes }
+	}
+	text = {
+		localization_key = WENCHES
+		trigger = { is_male = yes }
+	}
+}
+
+HeavyObjectForWeakRulerPossessive = {
+	type = character
+	random_valid = yes
+
+	text = {
+		localization_key = HEAVY_OBJECT_CHILD_POSSESSIVE
+		trigger = {
+			any_child = { age < 3 }
+		}
+	}
+	text = {
+		localization_key = HEAVY_OBJECT_SPEAR_POSSESSIVE
+		trigger = {
+			can_be_commander_basic_trigger = { ARMY_OWNER = root }
+		}
+	}
+	text = {
+		localization_key = HEAVY_OBJECT_DEFAULT_POSSESSIVE
+	}
+}
+
+MilitaryGenderPlural = {
+	type = character
+
+	text = {
+		localization_key = men
+		trigger = {
+			culture = { has_cultural_parameter = martial_custom_male_only_combatant }
+		}
+	}
+	text = {
+		localization_key = women
+		trigger = {
+			culture = { has_cultural_parameter = martial_custom_female_only_combatant }
+		}
+	}
+	text = {
+		localization_key = people
+		fallback = yes
+	}
+}

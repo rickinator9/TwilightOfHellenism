@@ -1,0 +1,11 @@
+﻿# Human heads
+
+# Human head (personal)
+human_head = {
+	slot = miscellaneous
+}
+
+#Human head (court)
+mounted_human_head = {
+	slot = pedestal
+}

@@ -1,0 +1,6 @@
+﻿human_head_to_court = {
+	in_type = human_head
+	in_visuals = head
+	out_type = mounted_human_head
+	out_visuals = head
+}

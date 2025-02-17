@@ -1,0 +1,4 @@
+﻿embrace_polygamy = {
+	alias = { embrace_polygamy_decision }
+	parent = decision
+}

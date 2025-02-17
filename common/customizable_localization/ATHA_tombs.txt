@@ -1,0 +1,69 @@
+﻿TombTitleText = {
+	type = province
+
+	text = {
+		localization_key = gui_tomb_of_primary_occupant_text
+		trigger = {
+			has_variable = tomb_primary_occupant
+		}
+	}
+	text = {
+		localization_key = gui_tomb_empty_tomb_text
+		fallback = yes
+	}
+}
+
+TombTypeTextDated = {
+	type = province
+
+	text = {
+		localization_key = gui_tomb_type_with_build_date_text
+		trigger = {
+			has_variable = tomb_build_year
+		}
+	}
+	text = {
+		localization_key = gui_tomb_type_no_build_date_text
+		fallback = yes
+	}
+}
+
+TombLootedText = {
+	type = province
+
+	text = {
+		localization_key = gui_tomb_looted_text_date
+		trigger = {
+			has_variable = tomb_looter
+			has_variable = tomb_looted_date
+		}
+	}
+	text = {
+		localization_key = gui_tomb_looted_text_no_date
+		trigger = {
+			has_variable = tomb_looter
+		}
+	}
+	text = {
+		localization_key = gui_tomb_looted_text_unknown_looter
+		fallback = yes
+	}
+}
+
+TombOccupantsText = {
+	type = province
+
+	text = {
+		localization_key = gui_tomb_occupants_filled_text
+		trigger = {
+			OR = {
+				has_variable = tomb_primary_occupant
+				has_variable_list = tomb_secondary_occupants
+			}
+		}
+	}
+	text = {
+		localization_key = gui_tomb_occupants_empty_text
+		fallback = yes
+	}
+}

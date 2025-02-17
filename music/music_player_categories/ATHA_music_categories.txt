@@ -1,0 +1,36 @@
+﻿
+#### Mood tracks of the base game.
+
+category = {
+	id = "ATHA_soundtrack"
+	name = "ATHA_soundtrack_list"
+	tracks = {
+		"demeters_grief_for_persephone"							
+		"meditations_of_polyhemnia"
+		"ode_to_achlys"
+		"song_of_selene"
+		"the_trance_of_terpsichore"
+		"the_underworld_of_hades"
+		"the_only_thing_certain_is_uncertainty"
+		"tears_of_the_hyades"
+		"the_chronicles_of_cronus"
+		"the_apparitions_of_phanatos"
+		"pensive_thoughts"
+		"lost_in_the_dark_forest_of_questioning"
+		"to_seek_meaning_seek_the_inner_shaman"
+		"finite_understanding_in_an_infinite_universe"
+		"the_regrets_of_mortality"
+		"seek_comfort_in_the_arms_of_mother_nature"
+		"hymn_to_artemis"
+		"hymn_to_hercules_the_lionhearted"
+		"lament_of_simonides"
+		"ancient_greek_musical_fragment_anonymi_bellerman_97"
+		"ancient_greek_musical_fragment_poem_mor_1_11f_migne_37_523"
+		"epitaph_of_seikilos"
+		"the_first_delphic_hymn_to_apollo"
+		"hymn_to_the_muse"
+		"paean"
+		"procession_of_the_olympians"
+		"hymn_to_poseidon"
+	}
+}

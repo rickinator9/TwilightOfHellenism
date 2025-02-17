@@ -1,0 +1,101 @@
+Aeschines:
+- http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0002:speech=1
+- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0002%3Aspeech%3D2
+- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0002%3Aspeech%3D3
+
+Andocides:
+- http://www.perseus.tufts.edu/hopper/text?doc=Andoc.+1+1&redirect=true
+- http://www.perseus.tufts.edu/hopper/text?doc=Andoc.+2+1&redirect=true
+- http://www.perseus.tufts.edu/hopper/text?doc=Andoc.+3+1&redirect=true
+- http://www.perseus.tufts.edu/hopper/text?doc=Andoc.+4+1&redirect=true
+
+Antiphon:
+- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0020%3Aspeech%3D1
+- http://www.perseus.tufts.edu/hopper/text?doc=Antiph.+2+1
+- http://www.perseus.tufts.edu/hopper/text?doc=Antiph.+3+1
+- http://www.perseus.tufts.edu/hopper/text?doc=Antiph.+4+1
+- http://www.perseus.tufts.edu/hopper/text?doc=Antiph.+5+1
+- http://www.perseus.tufts.edu/hopper/text?doc=Antiph.+6+1
+
+Demosthenes:
+- http://www.attalus.org/info/demosthenes.html
+
+Dinarchus:
+- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0082&redirect=true
+
+Hyperides:
+- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0140%3Aspeech%3D1
+
+Isaeus:
+- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0142&redirect=true
+
+Lycurgus:
+- http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0152
+
+Lysias:
+- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0154&redirect=true
+
+SUBJECTS:
+- Incompetence of the office.
+    - http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0002:speech=1
+    - 
+- Declaring peace for long wars.
+- Accusing someone else of bad behavior:
+    - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0018%3Aspeech%3D4%3Asection%3D1
+- Crimes?
+    - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0020%3Aspeech%3D1%3Asection%3D1
+    - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0020%3Aspeech%3D2%3Atetralogy%3D1%3Asection%3D1
+    - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0020%3Aspeech%3D3
+    - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0020%3Aspeech%3D4
+    - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0020%3Aspeech%3D5
+    - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0020%3Aspeech%3D6%3Asection%3D1
+    - http://artflsrv02.uchicago.edu/cgi-bin/perseus/citequery3.pl?dbname=GreekSept18&getid=1&query=Dem.+19
+    - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0082&redirect=true
+    - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0140%3Aspeech%3D4
+    - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0140%3Aspeech%3D5
+
+    Might be useless:
+        - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0142%3Aspeech%3D1%3Asection%3D3
+        - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0142%3Aspeech%3D2%3Asection%3Dhypothesis
+        - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0142%3Aspeech%3D3%3Asection%3Dhypothesis
+        - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0142%3Aspeech%3D4
+        - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0142%3Aspeech%3D6%3Asection%3Dhypothesis
+        - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0142%3Aspeech%3D7%3Asection%3Dhypothesis
+        - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0142%3Aspeech%3D8%3Asection%3Dhypothesis
+        
+
+
+- Insults:
+    - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0082%3Aspeech%3D2
+    - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0082%3Aspeech%3D3
+    - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0142%3Aspeech%3D5
+
+
+
+- Foreign policy:
+    - Defense:
+        - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D1%3Asection%3D1
+        - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D2%3Asection%3D18
+        - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D3
+    - Offense:
+        - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D4%3Asection%3D1
+        - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D6
+        - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D8
+    - Conquest:
+        - http://artflsrv02.uchicago.edu/cgi-bin/perseus/citequery3.pl?dbname=GreekSept18&getid=1&query=Dem.+16
+    - Peace:
+        - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D7%3Asection%3D17
+        - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0018%3Aspeech%3D3%3Asection%3D1
+    - Warfare:
+        - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0070%3Aspeech%3D8
+- Funeral speeches:
+    - http://artflsrv02.uchicago.edu/cgi-bin/perseus/citequery3.pl?dbname=GreekSept18&getid=1&query=Dem.+60
+    - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0140%3Aspeech%3D6%3Asection%3D1
+    - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0140%3Aspeech%3D6
+
+    
+
+DEFENSE:
+- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0002%3Aspeech%3D2
+- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0018%3Aspeech%3D1%3Asection%3D2
+- http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0018%3Aspeech%3D2%3Asection%3D14
