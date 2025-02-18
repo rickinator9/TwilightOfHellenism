@@ -17,7 +17,7 @@ tags={
     "Total Conversion"
 }
 picture="thumbnail.png"
-remote_file_id="2618149514"
+
 
 replace_path = "common/culture/aesthetics_bundles"
 replace_path = "common/culture/creation_names"
@@ -32,6 +32,3 @@ replace_path = "history/titles"
 replace_path = "history/wars"
 replace_path = "gfx/interface/illustrations/loading_screens"
 replace_path = "map_data"
-picture="thumbnail.png"
-supported_version="1.9.1"
-remote_file_id="2524797018"
