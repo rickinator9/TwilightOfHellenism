@@ -1,0 +1,139 @@
+﻿# Assigns the default corruption value to a character's city state if it does not have any corruption values assigned.
+assign_initial_corruption_value = {
+	if = {
+		limit = {
+			can_have_corruption_trigger = yes
+			NOT = { has_corruption_trigger = yes }
+		}
+
+		if = {
+			limit = { government_has_flag = government_is_democratic_city_state }
+			set_city_state_corruption = { AMOUNT_ARG = corruption_democratic_initial_value }
+		} else_if = {
+			limit = { government_has_flag = government_is_oligarchic_city_state }
+			set_city_state_corruption = { AMOUNT_ARG = corruption_oligarchic_initial_value }
+		} else_if = {
+			limit = { government_has_flag = government_is_tyrannical_city_state }
+			set_city_state_corruption = { AMOUNT_ARG = corruption_tyrannical_initial_value }
+		} else_if = {
+			limit = {
+				OR = {
+					government_has_flag = government_is_aristocratic_city_state
+					government_has_flag = government_is_spartan_city_state
+				}
+			}
+			set_city_state_corruption = { AMOUNT_ARG = corruption_aristocratic_initial_value }
+		}
+	}
+}
+
+# Sets the amount of corruption in a city state.
+#	- AMOUNT_ARG: The amount to set the corruption.
+set_city_state_corruption = {
+	if = {
+		limit = { can_have_corruption_trigger = yes }
+
+		primary_title = {
+			set_city_state_corruption_on_scope = { AMOUNT_ARG = $AMOUNT_ARG$ }
+		}
+		invoke_corruption_change_effect = yes
+	}
+}
+
+# Sets the amount of corruption on this scope.
+#	- AMOUNT_ARG: The amount to set the corruption.
+set_city_state_corruption_on_scope = {
+	set_variable = { name = city_state_corruption value = $AMOUNT_ARG$ }
+}
+
+# Changes the amount of corruption in a city state.
+#	- AMOUNT_ARG: The amount to change the corruption. Valid values can be found in ATHA_city_state_values.txt
+change_city_state_corruption = {
+	change_city_state_corruption_with_tooltip = { AMOUNT_ARG = $AMOUNT_ARG$ TOOLTIP_ARG = $AMOUNT_ARG$_tooltip }
+}
+
+# Changes the amount of corruption in a city state.
+#	- AMOUNT_ARG: The amount to change the corruption. Valid values can be found in ATHA_city_state_values.txt
+#	- TOOLTIP_ARG: The tooltip to display when changing corruption.
+change_city_state_corruption_with_tooltip = {
+	if = {
+		limit = { can_have_corruption_trigger = yes }
+
+		set_variable = {
+			name = city_state_corruption_change
+			value = $AMOUNT_ARG$
+		}
+	
+		custom_tooltip = $TOOLTIP_ARG$
+		hidden_effect = {
+			primary_title = {
+				# Make sure that the variable is even present.
+				if = {
+					limit = { NOT = { has_variable = city_state_corruption } }
+	
+					#Leave this set to the default value as a failsafe for city-states that don't recieve the correct value
+					set_variable = {
+						name = city_state_corruption
+						value = corruption_initial_value
+					}
+				}
+	
+				# Change the value.
+				change_variable = {
+					name = city_state_corruption
+					add = holder.var:city_state_corruption_change
+				}
+	
+				# Constrain the corruption between 0 and 100.
+				if = {
+					limit = { var:city_state_corruption < 0 }
+	
+					set_variable = {
+						name = city_state_corruption
+						value = 0
+					}
+				} else_if = {
+					limit = { var:city_state_corruption > 100 }
+	
+					set_variable = {
+						name = city_state_corruption
+						value = 100
+					}
+				}
+	
+				holder = { 
+					if = {
+						limit = { var:city_state_corruption_change > 0 }
+						trigger_event = {
+							on_action = on_corruption_gain
+						}
+					}
+		
+					else_if = {
+						limit = { var:city_state_corruption_change < 0 }
+						trigger_event = {
+							on_action = on_corruption_loss
+						}
+					}
+					
+					invoke_corruption_change_effect = yes
+				}
+			}
+		}
+	}
+}
+
+# Invokes the corruption change on-action.
+invoke_corruption_change_effect = {
+	save_scope_as = affected_character
+	trigger_event = { on_action = on_corruption_change }
+}
+
+# Invokes the corruption change on-action.
+invoke_corruption_change_with_delay_effect = {
+	save_scope_as = affected_character
+	trigger_event = {
+		on_action = on_corruption_change
+		days = 1
+	}
+}

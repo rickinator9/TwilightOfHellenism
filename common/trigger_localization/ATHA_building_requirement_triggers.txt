@@ -1,0 +1,25 @@
+﻿can_build_tribal = {
+	global = CAN_BUILD_TRIBAL_GLOBAL
+	global_not = CAN_NOT_BUILD_TRIBAL_GLOBAL
+	first = CAN_BUILD_TRIBAL_FIRST
+	first_not = CAN_NOT_BUILD_TRIBAL_FIRST
+	third = CAN_BUILD_TRIBAL_THIRD
+	third_not = CAN_NOT_BUILD_TRIBAL_THIRD
+}
+has_colony_rights_contract = {
+	global = HAS_COLONY_RIGHTS_CONTRACT_GLOBAL
+	first = HAS_COLONY_RIGHTS_CONTRACT_FIRST
+	third = HAS_COLONY_RIGHTS_CONTRACT_THIRD
+}
+
+holy_site_olympian_or_holy_site_trigger = {
+	global_not = NOT_holy_site_olympian_or_holy_site_trigger
+}
+
+holy_site_thracian_or_holy_site_trigger = {
+	global_not = NOT_holy_site_thracian_or_holy_site_trigger
+}
+
+cybele_relief_trigger = {
+	global_not = NOT_CYBELE_RELIEF_ENABLED
+}

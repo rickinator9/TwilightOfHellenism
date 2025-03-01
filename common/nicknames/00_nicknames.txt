@@ -1,0 +1,21 @@
+﻿# Vanilla nicknames that are still used in ATHA.
+
+nick_the_blushing = { }
+
+nick_the_clumsy = { }
+
+nick_the_eloquent = { }
+
+nick_the_foreigner = { }
+
+nick_the_graceful = { }
+
+nick_the_headless = { }
+
+nick_the_heart_throb = { }
+
+nick_the_slow = { }
+
+nick_the_stammerer = { }
+
+nick_the_stutterer = { }

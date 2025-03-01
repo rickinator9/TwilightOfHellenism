@@ -1,0 +1,20 @@
+﻿has_city_state_government = {
+	first = HAS_CITY_STATE_GOVERNMENT_FIRST
+	third = HAS_CITY_STATE_GOVERNMENT_THIRD
+}
+has_bureaucracy_government = {
+	first = HAS_BUREAUCRACY_GOVERNMENT_FIRST
+	third = HAS_BUREAUCRACY_GOVERNMENT_THIRD
+}
+has_coalition_government = {
+	first = HAS_COALITION_GOVERNMENT_FIRST
+	third = HAS_COALITION_GOVERNMENT_THIRD
+}
+has_hegemonic_government = {
+	first = HAS_HEGEMONIC_GOVERNMENT_FIRST
+	third = HAS_HEGEMONIC_GOVERNMENT_THIRD
+}
+has_federal_government = {
+	first = HAS_FEDERAL_GOVERNMENT_FIRST
+	third = HAS_FEDERAL_GOVERNMENT_THIRD
+}

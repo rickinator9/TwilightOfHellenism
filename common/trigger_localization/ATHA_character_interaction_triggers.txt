@@ -1,0 +1,37 @@
+﻿has_a_corrupt_secret_known_by_character = {
+	third = CHARCTER_HAS_A_CORRUPT_SECRET_KNOWN_BY_CHARACTER
+	third_not = CHARCTER_HAS_A_CORRUPT_SECRET_NOT_KNOWN_BY_CHARACTER
+	global = HAS_A_CORRUPT_SECRET_KNOWN_BY_CHARACTER
+}
+
+is_corrupt = {
+	third = CHARACTER_IS_CORRUPT
+	global = IS_CORRUPT
+}
+
+is_county = {
+	global = IS_COUNTY
+	global_not = IS_NOT_A_COUNTY
+}
+
+has_no_unoccupied_tomb = {
+	global = HAS_NO_UNOCCUPIED_TOMB
+	global_not = HAS_UNOCCUPIED_TOMB
+}
+
+character_already_has_tomb = {
+	first = DOES_NOT_HAVE_TOMB_FIRST
+	first_not = ALREADY_HAS_TOMB_FIRST
+	third = DOES_NOT_HAVE_TOMB_THIRD
+	third_not = ALREADY_HAS_TOMB_THIRD
+}
+
+can_sacrifice_at_tomb_due_to_prior_sacrifices = {
+	first = HAS_NOT_SACRIFICED_AT_TOMB_RECENTLY_FIRST
+	first_not = HAS_SACRIFICED_AT_TOMB_RECENTLY_FIRST_NOT
+}
+
+has_tomb_with_buried_character = {
+	global = HAS_TOMB_WITH_BURIED_CHARACTER
+	global_not = HAS_NO_TOMB_WITH_BURIED_CHARACTER
+}

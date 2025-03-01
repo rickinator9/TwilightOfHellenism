@@ -1,0 +1,57 @@
+﻿##############################
+# Claim Ancestry		 	 #
+##############################
+
+claim_atreid_ancestry_decision = { # Claim Atreid Ancestry
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
+	decision_group_type = major
+
+	ai_check_interval = 120
+
+	desc = claim_atreid_ancestry_decision_desc
+	selection_tooltip = claim_atreid_ancestry_decision_tooltip
+
+	is_shown = {
+		always = no
+	}
+
+	is_valid = {
+		is_independent_ruler = yes
+		is_dynast = yes
+		#prestige_level >= very_high_prestige_level
+	}
+
+	is_valid_showing_failures_only = {
+		is_capable_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	effect = {
+		character:test_atreus = { save_scope_as = ancestor }
+
+		#Tooltips
+		custom_tooltip = claim_ancestry_decision.process.tt
+		custom_tooltip = claim_ancestry_decision.outcome.tt
+		custom_tooltip = claim_ancestry_decision.claim_strength.tt
+		custom_tooltip = claim_ancestry_decision.claim_risk.tt
+
+		#Events
+		trigger_event = ancestry.0001
+	}
+
+	cost = {
+		#prestige = 1000
+		#gold = major_gold_value
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}

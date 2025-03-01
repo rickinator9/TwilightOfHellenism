@@ -1,0 +1,4 @@
+﻿is_title_created = {
+	global = HAS_BEEN_CREATED
+	global_not = HAS_NOT_BEEN_CREATED
+}

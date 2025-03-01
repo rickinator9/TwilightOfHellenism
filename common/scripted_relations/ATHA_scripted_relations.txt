@@ -1,0 +1,4 @@
+﻿# To keep track of receivers for Ceremonial Gifts (from the Ceremonial Generosity) that need to outdo the gifter.
+ceremonial_gift_giver = {
+	hidden = yes
+}

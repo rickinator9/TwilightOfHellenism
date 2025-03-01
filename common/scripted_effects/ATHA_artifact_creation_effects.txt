@@ -1,0 +1,122 @@
+﻿# Artifacts Creation #
+
+get_head_quality_effect = {
+	# Some random variance is added so artifact quality isn't completely deterministic
+	hidden_effect = {
+		random_list = {
+			20 = {
+				save_scope_value_as = {
+					name = random_quality_bonus
+					value = 4
+				} 
+			}
+			20 = {
+				save_scope_value_as = {
+					name = random_quality_bonus
+					value = 8
+				} 
+			}
+			20 = {
+				save_scope_value_as = {
+					name = random_quality_bonus
+					value = 12
+				} 
+			}
+			20 = {
+				save_scope_value_as = {
+					name = random_quality_bonus
+					value = 16
+				} 
+			}
+			20 = {
+				save_scope_value_as = {
+					name = random_quality_bonus
+					value = 20
+				} 
+			}
+		}
+	}
+
+	# Calculate the final quality of the artifact
+	save_scope_value_as = {
+		name = quality
+
+		value = {
+			value = 1
+
+			# Determine value by tier level of victim
+			if = { 
+				limit = { scope:headless_victim = { highest_held_title_tier = tier_empire } }
+				min = 180
+			}
+			if = { 
+				limit = { scope:headless_victim = { highest_held_title_tier = tier_kingdom } }
+				max = 179
+				min = 130
+			}
+			if = { 
+				limit = { scope:headless_victim = { highest_held_title_tier = tier_duchy } }
+				max = 129
+				min = 90
+			}
+			if = { 
+				limit = { scope:headless_victim = { highest_held_title_tier = tier_county } }
+				max = 129
+				min = 50
+			}
+			if = { 
+				limit = { scope:headless_victim = { highest_held_title_tier = tier_barony } }
+				max = 49
+				min = 25
+			}
+
+			# Add variance to the quality
+			add = scope:random_quality_bonus
+		}
+	}
+}
+
+create_artifact_hunted_head_effect = {
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+	# Get artifact quality and wealth
+	get_head_quality_effect = yes
+	get_artifact_wealth_effect = yes
+
+	# Create the artifact
+	create_artifact = {	
+		name = artifact_hunted_head_name
+		description = placeholder
+		visuals = head
+		type = human_head
+		modifier = artifact_placeholder_modifier
+		wealth = scope:wealth
+		quality = scope:quality
+		save_scope_as = newly_created_artifact
+		history = {
+			location = scope:location.title_province
+			actor = scope:headless_victim
+			recipient = root
+			type = stolen
+		}
+	}
+
+	hidden_effect_new_object = {
+		scope:newly_created_artifact = {
+			#Loc
+			set_artifact_description = artifact_hunted_head_description
+			remove_artifact_modifier = artifact_placeholder_modifier
+			add_scaled_artifact_modifier_minor_prestige_effect = yes
+
+			set_variable = {
+				name = quality
+				value = scope:quality
+			}
+			set_variable = {
+				name = wealth
+				value = scope:wealth
+			}
+			save_scope_as = newly_created_artifact
+		}
+	}
+}

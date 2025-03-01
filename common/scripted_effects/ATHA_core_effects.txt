@@ -1,0 +1,23 @@
+﻿# Adds the specified value to the variable. Creates a new variable with the same value if it does not already exist.
+# - VAR is the name of the variable to add the value to.
+# - ADD is the value to add. 
+add_to_var_effect = {
+	if = {
+		limit = {
+			NOT = { has_variable = $VAR$ }
+		}
+
+		set_variable = { name = $VAR$ value = $ADD$ }
+	} else = {
+		change_variable = { name = $VAR$ add = $ADD$ }
+	}
+}
+
+# Removes the character modifier if it is assigned to this character.
+# - MODIFIER: The modifier to remove.
+remove_character_modifier_if_present = {
+	if = {
+		limit = { has_character_modifier = $MODIFIER$ }
+		remove_character_modifier = $MODIFIER$
+	}
+}

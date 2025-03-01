@@ -1,0 +1,3 @@
+﻿entice_scheme_blocked = {
+	global = GENERAL_ENTICE_COOLDOWN
+}

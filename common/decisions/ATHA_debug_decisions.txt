@@ -1,0 +1,17 @@
+﻿debug_religion_localization = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	desc = debug_religion_localization_desc
+	ai_check_interval = 0 # Never check.
+
+	is_shown = {
+		debug_only = yes
+	}
+
+	ai_potential = { always = no }
+
+	effect = {
+		# No effect. Purely to check if all localization string for religion are set correctly.
+	}
+}

@@ -1,0 +1,16 @@
+﻿save_friends_and_family_effect = {
+	scope:headless_victim = {
+		every_close_family_member = {
+			add_to_temporary_list = friends_and_family
+			custom = all_family_members
+		}
+		every_relation = {
+			type = friend
+			add_to_temporary_list = friends_and_family
+		}
+		every_relation = {
+			type = best_friend
+			add_to_temporary_list = friends_and_family
+		}
+	}
+}

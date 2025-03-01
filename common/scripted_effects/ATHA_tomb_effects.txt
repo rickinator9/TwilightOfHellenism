@@ -1,0 +1,225 @@
+﻿##
+#  Builds an unoccupied tomb, including costs. Should be called from the province where the tomb should appear.
+#  BUILDER - the builder of the tomb, who will also likely occupy the tomb.
+##
+
+build_tomb_in_province_effect = {
+	$BUILDER$ = {
+		remove_short_term_gold = massive_gold_value
+	}
+
+	if = {
+		limit = {
+			has_variable = tomb_primary_occupant
+		}
+
+		custom_tooltip = BUILD_TOMB_WILL_REMOVE_EXISTING_TOMB
+		hidden_effect = {
+			clear_tomb_effect = yes
+		}
+	}
+
+	custom_tooltip = BUILDS_TOMB_AT_LOCATION
+	hidden_effect = {
+		build_tomb_effect = { BUILDER = $BUILDER$ }
+	}
+}
+
+##
+#	Builds an unoccupied tomb. Should be called from the province where the tomb should appear.
+#	BUILDER - the builder of the tomb, who will also likely occupy the tomb
+##
+
+build_tomb_effect = {
+	save_scope_as = tomb_location
+	$BUILDER$ = {
+		set_variable = {
+			name = tomb_location
+			value = scope:tomb_location
+		}
+	}
+
+	set_variable = {
+		name = tomb_present
+	}
+	set_variable = {
+		name = tomb_builder
+		value = $BUILDER$
+	}
+	set_variable = {
+		name = tomb_location
+		value = this
+	}
+	set_variable = {
+		name = tomb_build_year
+		value = current_year
+	}
+	add_province_modifier = {
+		modifier = built_tomb_modifier
+	}
+	set_variable = {
+		name = tomb_treasure
+		value = 0
+	}
+}
+
+##
+# Clears a tomb from a province. Must be called from province scope.
+##
+clear_tomb_effect = {
+	remove_variable = tomb_builder
+	remove_variable = tomb_location
+	remove_variable = tomb_buried_person
+
+	remove_county_modifier = built_tomb_modifier
+}
+
+##
+# Adds a historical tomb to the scope (province).
+# OCCUPANT - the primary occupant of the tomb.
+# DATE - the date when the tomb was constructed.
+##
+
+add_historical_tomb_with_date_effect = {
+	set_variable = {
+		name = tomb_present
+	}
+	set_variable = {
+		name = tomb_builder
+		value = $OCCUPANT$
+	}
+	set_variable = {
+		name = tomb_primary_occupant
+		value = $OCCUPANT$
+	}
+	set_variable = {
+		name = tomb_location
+		value = this
+	}
+	set_variable = {
+		name = tomb_build_year
+		value = $DATE$
+	}
+	add_province_modifier = {
+		modifier = built_tomb_modifier
+	}
+	set_variable = {
+		name = tomb_treasure
+		value = 0
+	}
+}
+
+##
+# Set the primary occupant of a tomb.
+# OCCUPANT - the occupant to set.
+##
+
+set_primary_occupant_of_tomb_effect = {
+	set_variable = {
+		name = tomb_primary_occupant
+		value = $OCCUPANT$
+	}
+}
+
+##
+# Adds a secondary occupant to a tomb.
+# OCCUPANT - the occupant to add.
+##
+
+add_secondary_occupant_to_tomb_effect = {
+	add_to_variable_list = {
+		name = tomb_secondary_occupants
+		target = $OCCUPANT$ 
+	}
+}
+
+##
+# Designates a tomb as being looted (with a historical date)
+# LOOTER - the looter of the tomb
+# DATE - the year when the tomb was looted
+##
+
+set_tomb_looted_historical_effect = {
+	set_variable = {
+		name = tomb_looter
+		value = $LOOTER$
+	}
+	set_variable = {
+		name = tomb_looted_date
+		value = $DATE$
+	}
+
+	remove_province_modifier = {
+		modifier = built_tomb_modifier
+	}
+}
+
+##
+# Designates a tomb as being looted. (province scope)
+# LOOTER - the looter of the tomb
+##
+
+loot_tomb_effect = {
+	# Save scopes for localization
+	custom_description = {
+		text = loot_tomb_effect
+		set_variable = {
+			name = tomb_looter
+			value = $LOOTER$
+		}
+		set_variable = {
+			name = tomb_looted_date
+			value = current_year
+		}
+		set_variable = {
+			name = tomb_treasure
+			value = 0
+		}
+
+		remove_province_modifier = built_tomb_modifier
+	}
+}
+
+##
+# Sacrifices to a tomb occupant (from province scope).
+# SACRIFICER - the character that is initiating the sacrifice.
+# OCCUPANT - the character that is being sacrificed to.
+##
+sacrifice_to_tomb_occupant_effect = {
+	save_scope_as = tomb_location
+	$OCCUPANT$ = {
+		save_scope_as = tomb_occupant
+	}
+
+	if = {
+		limit = {
+			$SACRIFICER$ = {
+				faith = { has_doctrine_parameter = human_sacrifice_active }
+			}
+		}
+
+		custom_tooltip = SACRIFICE_TO_TOMB_CHARACTER_WITH_HUMAN_SACRIFICE_TOOLTIP
+	} else = {
+		custom_tooltip = SACRIFICE_TO_TOMB_CHARACTER_TOOLTIP
+	}
+	hidden_effect = {
+		$SACRIFICER$ = {
+			add_character_flag = {
+				flag = has_sacrificed_at_tomb
+				years = 5
+			}
+			trigger_event = ATHA_tomb.0101
+		}
+	}
+}
+
+##
+# Adds gold to the local tomb (from province scope).
+# GOLD = the amount to deposit
+##
+deposit_gold_in_tomb_effect = {
+	change_variable = {
+		name = tomb_treasure
+		add = $GOLD$
+	}
+}

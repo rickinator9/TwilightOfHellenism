@@ -1,0 +1,47 @@
+﻿ai_medium_infantry_modifier = {
+	modifier = {
+		add = stationed_maa_bonus
+		has_stationed_regiment_of_base_type = medium_infantry
+	}
+	modifier = { # If the holder has a preference for the MaA
+		add = likes_maa_value
+		scope:holder = {
+			highest_held_title_tier >= tier_county
+			OR = {
+				culture = {
+					culture_has_medium_infantry_maa = yes
+				}
+				culture = {
+					OR = {
+						# has_cultural_pillar = heritage_italic # TODO
+					}
+				}
+			}
+		}
+	}
+	modifier = { # If the holder really likes the MaA type and is suited for it
+		add = really_likes_maa_value
+		scope:holder = {
+			highest_held_title_tier >= tier_county
+			max_number_maa_soldiers_of_base_type = {
+				type = medium_infantry
+				value >= 400
+			}
+		}
+	}
+	modifier = { # If the holder doesn't care for the MaA type
+		add = dislikes_maa_value
+		scope:holder = {
+			# highest_held_title_tier >= tier_county
+			# OR = {
+			# 	number_maa_regiments_of_base_type = {
+			# 		type = medium_infantry
+			# 		value <= 0
+			# 	}
+			# 	culture = { has_cultural_pillar = heritage_central_germanic }
+			# 	culture = { has_cultural_pillar = heritage_latin }
+			# }
+			always = no
+		}
+	}
+}

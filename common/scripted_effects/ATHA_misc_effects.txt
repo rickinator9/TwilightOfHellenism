@@ -1,0 +1,39 @@
+﻿# Registers a won battle / duel for this character.
+register_battle_win_effect = {
+	add_to_var_effect = { VAR = battle_wins ADD = 1 }
+}
+
+# Registers a lost battle / duel for this character.
+register_battle_loss_effect = {
+	add_to_var_effect = { VAR = battle_losses ADD = 1 }
+}
+
+# Registers a won offensive war for this character.
+register_offensive_war_win_effect = {
+	add_to_var_effect = { VAR = war_wins ADD = 1 }
+}
+
+# Registers a whitepeaced offensive war for this character.
+register_offensive_war_whitepeace_effect = {
+	add_to_var_effect = { VAR = war_losses ADD = 1 } # Whitepeacing would probably be chucked up as a loss by subjects.
+}
+
+# Registers a lost offensive war for this character.
+register_offensive_war_loss_effect = {
+	add_to_var_effect = { VAR = war_losses ADD = 1 }
+}
+
+# Registers a won defensive war for this character.
+register_defensive_war_win_effect = {
+	add_to_var_effect = { VAR = war_wins ADD = 1 }
+}
+
+# Registers a whitepeaced defensive war for this character.
+register_defensive_war_whitepeace_effect = {
+	add_to_var_effect = { VAR = war_wins ADD = 1 } # Whitepeacing would probably be chucked up as a win by subjects.
+}
+
+# Registers a lost defensive war for this character.
+register_defensive_war_loss_effect = {
+	add_to_var_effect = { VAR = war_losses ADD = 1 }
+}

@@ -1,0 +1,95 @@
+﻿debate_interaction_holder = {
+    category = interaction_category_political
+	common_interaction = yes
+
+    send_name = PREPARE_DEBATE
+
+    interface_priority = 100
+
+    scheme = debate
+	ignores_pending_interaction_block = yes
+    auto_accept = yes # Since this is a scheme interaction, the AI should always accept.
+
+    ai_targets = {
+        ai_recipients = vassals
+    }
+    ai_frequency = 12 # Every 12 months.
+
+    # Is the interaction shown in the menu?
+    is_shown = { # Can only debate electors and candidates.
+        # Cannot debate yourself.
+        NOT = { scope:actor = scope:recipient }
+
+        # The title must be a democracy.
+        scope:actor = {
+            primary_title = {
+                has_title_law = democratic_succession_law
+            }
+        }
+
+        # Anyone to debate should be a vassal and a valid elector or candidate.
+        scope:recipient = {
+            # The player heir is excluded here, since we do not want the holder to debate his pick. The holder will always go for the player heir.
+            # To be a candidate, the recipient needs to be the same culture as the capital.
+            culture = scope:actor.capital_province.culture
+            liege = scope:actor 
+            highest_held_title_tier = 2
+        }
+
+        # Holders will not want to debate their own candidate.
+        NOT = { 
+            scope:actor = {
+                primary_title = {
+                    any_election_candidate = {
+                        has_election_vote_of = {
+                            who = scope:actor
+                            title = scope:actor.primary_title
+                        }
+                        this = scope:recipient
+                    }
+                }
+            }
+        }
+    }
+
+    # Called when the interaction is made.
+    on_accept = {
+		scope:actor = {
+			stress_impact = {
+				shy = medium_stress_impact_gain
+			}
+		}
+		hidden_effect = {
+			scope:actor = {
+				start_scheme = {
+					type = debate
+					target = scope:recipient
+				}
+                add_character_flag = debating_vassal_of_title
+				send_interface_toast = {
+					title = debate_interaction_notification_title
+                    custom_tooltip = debate_interaction_notification_desc
+
+					left_icon = scope:actor					
+					right_icon = scope:recipient
+
+					show_as_tooltip = {
+						stress_impact = {
+							shy = medium_stress_impact_gain
+						}
+					}
+				}
+			}
+		}
+    }
+
+    # Determines whether the AI is allowed to perform the interaction.
+    ai_potential = {
+
+    }
+
+    # Determines whether the AI will perform the interaction.
+    ai_will_do = {
+
+    }
+}

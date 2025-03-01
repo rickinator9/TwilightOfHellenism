@@ -1,0 +1,31 @@
+﻿# Set up the required properties to track the amount needed to surpass the gift that was given. GIVER is the character that made the gift.
+set_ceremonial_gift_receiver_effect = {
+    set_relation_ceremonial_gift_giver = $GIVER$
+    create_story = story_ceremonial_gift_repayment
+    set_variable = {
+        name = pay_back_ceremonial_gift_amount
+        value = ceremonial_gift_repayment_value
+    }
+    add_character_flag = {
+        flag = received_ceremonial_gift
+        years = 5
+    }
+}
+
+clean_ceremonial_gift_receiver_effect = {
+    custom_description = {
+        text = end_ceremonial_gift_obligation_effect
+        every_relation = {
+            type = ceremonial_gift_giver
+            remove_relation_ceremonial_gift_giver = this
+        }
+        random_owned_story = {
+            limit = {
+                story_type = story_ceremonial_gift_repayment
+            }
+            end_story = yes
+        }
+        remove_variable = pay_back_ceremonial_gift_amount
+        remove_character_flag = ceremonial_gift_partial_payment
+    }
+}

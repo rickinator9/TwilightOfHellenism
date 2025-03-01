@@ -1,0 +1,466 @@
+﻿
+# Saves an epithet suggestion to the specified scope. Supported values for $OPTION$: option1, option2, option3
+	# OPTION: The scope to save the option to.
+save_epithet_suggestion_effect = {
+	random_list = {
+		1 = {
+			trigger = {
+				trigger_if = {
+					limit = { exists = scope:option1 }
+					NOT = { scope:option1 = flag:the_asian }
+				}
+				trigger_if = {
+					limit = { exists = scope:option2 }
+					NOT = { scope:option2 = flag:the_asian }
+				}
+				capital_province = {
+					geographical_region = custom_the_asian_epithet
+				}
+			}
+			save_scope_value_as = {
+				name = $OPTION$
+				value = flag:the_asian
+			}
+		}
+		1 = {
+			trigger = {
+				trigger_if = {
+					limit = { exists = scope:option1 }
+					NOT = { scope:option1 = flag:the_autocrat }
+				}
+				trigger_if = {
+					limit = { exists = scope:option2 }
+					NOT = { scope:option2 = flag:the_autocrat }
+				}
+			}
+			save_scope_value_as = {
+				name = $OPTION$
+				value = flag:the_autocrat
+			}
+		}
+		1 = {
+			trigger = {
+				trigger_if = {
+					limit = { exists = scope:option1 }
+					NOT = { scope:option1 = flag:the_victorious }
+				}
+				trigger_if = {
+					limit = { exists = scope:option2 }
+					NOT = { scope:option2 = flag:the_victorious }
+				}
+			}
+			save_scope_value_as = {
+				name = $OPTION$
+				value = flag:the_victorious
+			}
+		}
+		1 = {
+			trigger = {
+				trigger_if = {
+					limit = { exists = scope:option1 }
+					NOT = { scope:option1 = flag:the_beautifully_triumphant }
+				}
+				trigger_if = {
+					limit = { exists = scope:option2 }
+					NOT = { scope:option2 = flag:the_beautifully_triumphant }
+				}
+			}
+			save_scope_value_as = {
+				name = $OPTION$
+				value = flag:the_beautifully_triumphant
+			}
+		}
+		1 = {
+			trigger = {
+				trigger_if = {
+					limit = { exists = scope:option1 }
+					NOT = { scope:option1 = flag:the_benefactor }
+				}
+				trigger_if = {
+					limit = { exists = scope:option2 }
+					NOT = { scope:option2 = flag:the_benefactor }
+				}
+			}
+			save_scope_value_as = {
+				name = $OPTION$
+				value = flag:the_benefactor
+			}
+		}
+		1 = {
+			trigger = {
+				trigger_if = {
+					limit = { exists = scope:option1 }
+					NOT = { scope:option1 = flag:the_divine }
+				}
+				trigger_if = {
+					limit = { exists = scope:option2 }
+					NOT = { scope:option2 = flag:the_divine }
+				}
+			}
+			save_scope_value_as = {
+				name = $OPTION$
+				value = flag:the_divine
+			}
+		}
+		1 = {
+			trigger = {
+				trigger_if = {
+					limit = { exists = scope:option1 }
+					NOT = { scope:option1 = flag:the_divine_manifest }
+				}
+				trigger_if = {
+					limit = { exists = scope:option2 }
+					NOT = { scope:option2 = flag:the_divine_manifest }
+				}
+			}
+			save_scope_value_as = {
+				name = $OPTION$
+				value = flag:the_divine_manifest
+			}
+		}
+		1 = {
+			trigger = {
+				trigger_if = {
+					limit = { exists = scope:option1 }
+					NOT = { scope:option1 = flag:the_father_loving }
+				}
+				trigger_if = {
+					limit = { exists = scope:option2 }
+					NOT = { scope:option2 = flag:the_father_loving }
+				}
+				exists = father
+			}
+			save_scope_value_as = {
+				name = $OPTION$
+				value = flag:the_father_loving
+			}
+		}
+		1 = {
+			trigger = {
+				trigger_if = {
+					limit = { exists = scope:option1 }
+					NOT = { scope:option1 = flag:the_generous }
+				}
+				trigger_if = {
+					limit = { exists = scope:option2 }
+					NOT = { scope:option2 = flag:the_generous }
+				}
+			}
+			save_scope_value_as = {
+				name = $OPTION$
+				value = flag:the_generous
+			}
+		}
+		1 = {
+			trigger = {
+				trigger_if = {
+					limit = { exists = scope:option1 }
+					NOT = { scope:option1 = flag:the_just }
+				}
+				trigger_if = {
+					limit = { exists = scope:option2 }
+					NOT = { scope:option2 = flag:the_just }
+				}
+			}
+			save_scope_value_as = {
+				name = $OPTION$
+				value = flag:the_just
+			}
+		}
+		1 = {
+			trigger = {
+				trigger_if = {
+					limit = { exists = scope:option1 }
+					NOT = { scope:option1 = flag:the_mother_loving }
+				}
+				trigger_if = {
+					limit = { exists = scope:option2 }
+					NOT = { scope:option2 = flag:the_mother_loving }
+				}
+				exists = mother
+			}
+			save_scope_value_as = {
+				name = $OPTION$
+				value = flag:the_mother_loving
+			}
+		}
+		1 = {
+			trigger = {
+				trigger_if = {
+					limit = { exists = scope:option1 }
+					NOT = { scope:option1 = flag:the_pious }
+				}
+				trigger_if = {
+					limit = { exists = scope:option2 }
+					NOT = { scope:option2 = flag:the_pious }
+				}
+			}
+			save_scope_value_as = {
+				name = $OPTION$
+				value = flag:the_pious
+			}
+		}
+		1 = {
+			trigger = {
+				trigger_if = {
+					limit = { exists = scope:option1 }
+					NOT = { scope:option1 = flag:the_saviour }
+				}
+				trigger_if = {
+					limit = { exists = scope:option2 }
+					NOT = { scope:option2 = flag:the_saviour }
+				}
+			}
+			save_scope_value_as = {
+				name = $OPTION$
+				value = flag:the_saviour
+			}
+		}
+		1 = {
+			trigger = {
+				trigger_if = {
+					limit = { exists = scope:option1 }
+					NOT = { scope:option1 = flag:the_sibling_loving }
+				}
+				trigger_if = {
+					limit = { exists = scope:option2 }
+					NOT = { scope:option2 = flag:the_sibling_loving }
+				}
+				any_sibling = { count > 0 }
+			}
+			save_scope_value_as = {
+				name = $OPTION$
+				value = flag:the_sibling_loving
+			}
+		}
+		1 = {
+			trigger = {
+				trigger_if = {
+					limit = { exists = scope:option1 }
+					NOT = { scope:option1 = flag:the_victor }
+				}
+				trigger_if = {
+					limit = { exists = scope:option2 }
+					NOT = { scope:option2 = flag:the_victor }
+				}
+			}
+			save_scope_value_as = {
+				name = $OPTION$
+				value = flag:the_victor
+			}
+		}
+		1 = {
+			trigger = {
+				trigger_if = {
+					limit = { exists = scope:option1 }
+					NOT = { scope:option1 = flag:the_wealthy }
+				}
+				trigger_if = {
+					limit = { exists = scope:option2 }
+					NOT = { scope:option2 = flag:the_wealthy }
+				}
+			}
+			save_scope_value_as = {
+				name = $OPTION$
+				value = flag:the_wealthy
+			}
+		}
+		1 = {
+			trigger = {
+				trigger_if = {
+					limit = { exists = scope:option1 }
+					NOT = { scope:option1 = flag:the_well_born }
+				}
+				trigger_if = {
+					limit = { exists = scope:option2 }
+					NOT = { scope:option2 = flag:the_well_born }
+				}
+			}
+			save_scope_value_as = {
+				name = $OPTION$
+				value = flag:the_well_born
+			}
+		}
+	}
+}
+
+# Sets the specified epithet to the character.
+	# EPITHET: The id of the epithet to assign.
+set_epithet_effect = {
+	if = {
+		limit = {
+			NOT = { has_any_nickname = yes }
+		}
+
+		give_nickname = $EPITHET$
+	}
+}
+
+# Sets the weight for a certain nickname. Most nicknames appear based on a certain weight that is influenced by decision effects.
+	# NICKNAME: The id of the nickname to affect.
+	# CHANGE: The adjustment in weight.
+change_nickname_weight_effect = {
+	if = {
+		limit = {
+			NOT = { has_variable = $NICKNAME$_weight }
+		}
+		set_variable = {
+			name = $NICKNAME$_weight
+			value = $CHANGE$
+		}
+	} else = {
+		change_variable = {
+			name = $NICKNAME$_weight
+			add = $CHANGE$
+		}
+	}
+}
+
+# Sets the specified nickname on the character. A cooldown of 5 years is assigned to prevent nicknames from jumping around too much.
+	# NICKNAME: The id of the nickname to set.
+set_nickname_with_cooldown_effect = {
+	give_nickname = $NICKNAME$
+	add_character_flag = {
+		flag = nickname_cooldown
+		years = 5
+	}
+
+	remove_nickname_modifier_effect = yes
+	add_character_modifier = { modifier = $NICKNAME$_modifier }
+}
+
+# Sets a cooldown before another nickname effect can occur without assigning a nickname.
+set_nickname_cooldown_effect = {
+	add_character_flag = {
+		flag = nickname_cooldown
+		years = 3
+	}
+}
+
+# Sets the specified nickname permanently; it cannot be overridden by the nickname system.
+	# NICKNAME: The id of the nickname to set.
+set_permanent_nickname_effect = {
+	give_nickname = $NICKNAME$
+	add_character_flag = has_permanent_nickname
+
+	remove_nickname_modifier_effect = yes
+	
+	hidden_effect = {
+		add_character_modifier = { modifier = $NICKNAME$_modifier }
+	}
+}
+
+# Removes any nickname modifiers if they are present.
+remove_nickname_modifier_effect = {
+	remove_character_modifier_if_present = { MODIFIER = nick_aitolikos_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_andromachou_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_arrhidaios_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_gonatas_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_hadea_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_ho_pyrrhos_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_kyniskos_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_stratonike_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_pelopidas_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_reformer_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_liberator_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_macedonicus_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_bastard_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_clubfooted_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_eagle_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_fair_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_lame_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_young_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_short_lived_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_one_eyed_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_sacrificed_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_autocrat_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_benefactor_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_bold_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_builder_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_cruel_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_devourer_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_fat_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_flayer_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_father_loving_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_gardener_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_good_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_hawk_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_hunter_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_illustrious_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_invincible_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_just_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_mad_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_mother_loving_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_mindbreaker_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_overpromiser_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_pious_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_poet_good_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_poet_bad_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_scholar_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_sibling_loving_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_small_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_smelly_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_thin_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_ugly_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_victor_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_victorious_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_wealthy_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_well_born_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_wise_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_besieger_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_dowry_bearer_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_flautist_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_godbought_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_great_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_beautifully_triumphant_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_slave_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_untimely_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_divine_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_godlike_modifier }
+	remove_character_modifier_if_present = { MODIFIER = nick_the_saviour_modifier }
+}
+
+# NICKNAME-SPECIFIC EFFECTS
+
+# Has a random chance to assign nickname nick_the_sacrificed to the currently scoped character.
+# KILLER: The character who killed the character in the current scope.
+possibly_assign_nick_the_sacrificed_effect = {
+	hidden_effect = {
+		if = {
+			limit = { can_get_nick_the_sacrificed = yes }
+	
+			random = {
+				chance = 1
+	
+				$KILLER$ = { save_scope_as = nick_the_sacrificed_killer }
+				save_scope_as = nick_the_sacrificed_receiver
+				set_permanent_nickname_effect = { NICKNAME = nick_the_sacrificed }
+				every_close_family_member = {
+					trigger_event = {
+						id = ATHA_nickname.0110
+						days = { 4 14 }
+					}
+				}
+			}
+		}
+	}
+}
+
+# Changes the weight of nick_the_bold based on the strength ratio between the current character
+# and TARGET.
+change_nick_the_bold_based_on_strength_ratio = {
+	if = {
+		limit = {
+			NOT = { military_strength_greater_than_ratio_trigger = { TARGET = $TARGET$ RATIO = 0.9 } }
+			military_strength_greater_than_ratio_trigger = { TARGET = $TARGET$ RATIO = 0.5 }
+		}
+
+		change_nickname_weight_effect = { NICKNAME = nick_the_bold CHANGE = nickname_weight_medium_increase }
+	} else_if = {
+		limit = {
+			NOT = { military_strength_greater_than_ratio_trigger = { TARGET = $TARGET$ RATIO = 0.5 } }
+		}
+
+		change_nickname_weight_effect = { NICKNAME = nick_the_bold CHANGE = nickname_weight_large_increase }
+	}
+}

@@ -1,0 +1,37 @@
+﻿# Assigns the default franchise value to a character's city state if it does not have any franchise values assigned.
+assign_initial_franchise_value = {
+	if = {
+		limit = {
+			NOT = {
+				primary_title = { has_variable = city_state_franchise }
+			}
+		}
+
+		if = {
+			limit = { government_has_flag = government_is_democratic_city_state }
+			set_city_state_franchise = { AMOUNT_ARG = franchise_democratic_initial_value }
+		} else_if = {
+			limit = { government_has_flag = government_is_oligarchic_city_state }
+			set_city_state_franchise = { AMOUNT_ARG = franchise_oligarchic_initial_value }
+		} else_if = {
+			limit = { government_has_flag = government_is_tyrannical_city_state }
+			set_city_state_franchise = { AMOUNT_ARG = franchise_tyrannical_initial_value }
+		} else_if = {
+			limit = {
+				OR = {
+					government_has_flag = government_is_aristocratic_city_state
+					government_has_flag = government_is_spartan_city_state
+				}
+			}
+			set_city_state_franchise = { AMOUNT_ARG = franchise_aristocratic_initial_value }
+		}
+	}
+}
+
+# Sets the amount of franchise in a city state.
+#	- AMOUNT_ARG: The amount to set the corruption.
+set_city_state_franchise = {
+	primary_title = {
+		set_variable = { name = city_state_franchise value = $AMOUNT_ARG$ }
+	}
+}

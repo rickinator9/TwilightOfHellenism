@@ -1,0 +1,703 @@
+﻿##############################
+# Form k_bithynia		 	 #
+##############################
+
+# TODO: (Probably excessive, but worth considering) Character gains philhellene modifier, boosting their relationship with Greek characters as long as their culture is non-Greek (is this even possible?) - in the future it may be worth looking into whether a similar modifier could be applied to dynasties that became considerably Hellenised, though this should be invalidated for characters who adopt Greek culture. The ideal ultimately would be to have this work dynamically with any culture to reflect peer polity interaction
+
+form_k_bithynia_decision = { # aka: Consolidate the Kingdom of Bithynia
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
+	decision_group_type = major
+
+	ai_check_interval = 120
+
+	desc = form_k_bithynia_decision_desc
+	selection_tooltip = form_k_bithynia_decision_tooltip
+
+	is_shown = {
+		culture = {
+			has_cultural_pillar = heritage_thracian
+			OR = {
+				this = culture:bithynian
+				any_parent_culture_or_above = {
+					this = culture:bithynian
+				}
+			}
+		}
+		highest_held_title_tier <= tier_duchy
+		OR = {
+			government_has_flag = government_is_feudal
+			government_has_flag = government_is_clan
+		}
+		#Must not already exist or have de jure territory
+		title:k_bithynia = { 
+			is_titular = yes
+			is_title_created = no
+		}
+	}
+
+	is_valid = {
+		# Must be independent
+		is_independent_ruler = yes
+
+		# Should have a decent prestige level
+		prestige_level >= high_prestige_level
+
+		# Must control d_bithynia, and at least two of the other component duchies
+		has_primary_title = title:d_bithynia
+		custom_description = {
+			text = "form_k_bithynia_decision_controlled_duchies.tt"
+			any_held_title = {
+				count >= 2
+				OR = {
+					this = title:d_thynia
+					this = title:d_herakleotis
+					this = title:d_mariandynia
+					this = title:d_sangaritis
+					this = title:d_rhebantia
+					this = title:d_askania
+				}
+			}
+		}
+		# Should have a capital in the region
+		custom_description = {
+			text = "form_k_bithynia_decision_capital.tt"
+			capital_province = { geographical_region = custom_bithynia }
+		}
+
+		# Should have control at least one of the main cities of the Bithynian peninsula
+		OR = {
+			completely_controls = title:c_astakos
+			completely_controls = title:c_chalkedon
+		}
+
+		# Should also have asserted dominance over at least one of the other main cities in the broader region
+		OR = {
+			completely_controls = title:c_nikaia
+			completely_controls = title:c_herakleia_pontike
+			completely_controls = title:c_kios
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_capable_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	effect = {
+		save_scope_as = k_bithynia_founder
+		capital_county = { save_scope_as = new_bithynian_capital }
+		capital_barony = { save_scope_as = new_bithynian_capital_barony }
+		capital_county.culture = { save_scope_as = new_bithynian_capital_culture }
+
+		show_as_tooltip = { form_k_bithynia_decision_effects = yes } # Actually applied in anatolia_decisions.0001 - de-jure, title etc
+		show_as_tooltip = { found_bithynian_capital_scripted_effect = yes } # Actually applied in anatolia_decisions.0001 - de-jure, title etc
+		custom_tooltip = form_k_bithynia_decision_effects_de_jure.tt
+		custom_tooltip = form_k_bithynia_decision_effect_tooltip
+
+		#Events
+		trigger_event = anatolia_decisions.0001 # Ruler decides how to govern the new kingdom
+	}
+
+	cost = {
+		gold = 500
+		prestige = 1000
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+##############################
+# k_ionia Decisions		 	 #
+##############################
+# These are identical aside from requirements and flavour
+# - form_k_ionia_decision
+# - liberate_k_ionia_decision
+
+form_k_ionia_decision = { # aka: Unite the poleis of the Ionian coast
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
+	decision_group_type = major
+
+	ai_check_interval = 120
+
+	desc = form_k_ionia_decision_desc
+
+	selection_tooltip = form_k_ionia_decision_tooltip
+
+	is_shown = {
+		culture = {
+			has_cultural_pillar = heritage_greek
+			OR = {
+				this = culture:dorian
+				this = culture:ionian
+				this = culture:aeolian
+				any_parent_culture_or_above = {
+					OR = {
+						this = culture:dorian
+						this = culture:ionian
+						this = culture:aeolian
+					}
+				}
+			}
+		}
+
+		#Must be duke-tier or lower with capital in Ionian region, or be k_ionia
+		OR = {
+			AND = {
+				capital_province = { geographical_region = custom_ionia }
+				highest_held_title_tier <= tier_duchy
+			}
+			has_primary_title = title:k_ionia
+		}
+
+		#Must not already have de jure territory
+		title:k_ionia = { is_titular = yes }
+
+		#The Ionian revolt must have been attempted
+		exists = global_var:ionian_revolt_attempted
+	}
+
+	is_valid = {
+		is_independent_ruler = yes
+
+		#Primary title must be one of the Ionian duchies, or k_ionia
+		OR = {
+			AND = {
+				custom_description = {
+					text = "form_k_ionia_decision.primary_duchy.tt"
+					OR = {
+						has_primary_title = title:d_aiolis
+						has_primary_title = title:d_ionia
+						has_primary_title = title:d_doris
+					}
+				}
+				title:k_ionia = { is_title_created = no }
+			}
+			has_primary_title = title:k_ionia
+		}
+
+		#Must have city-state or coalition government
+		OR = {
+			has_city_state_government = yes
+			has_coalition_government = yes
+		}
+
+		#Has to control the western coast of Asia Minor
+		completely_controls_region = custom_ionia
+	}
+
+	is_valid_showing_failures_only = {
+		is_capable_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	effect = {
+		save_scope_as = ionian_kingdom_founder
+		title:k_ionia = { save_scope_as = ionian_kingdom }
+
+		show_as_tooltip = { form_k_ionia_decision_effects = yes } # Actually applied in anatolia_decisions.0003 - prestige, de-jure, title etc
+		custom_tooltip = form_k_ionia_decision_effects.de_jure.tt
+
+		#Events
+		trigger_event = anatolia_decisions.0003
+
+		#Notify other players
+		every_player = {
+			limit = {
+				NOT = { this = root }
+				is_within_diplo_range = { CHARACTER = root }
+			}
+			trigger_event = anatolia_decisions.0004
+		}
+	}
+
+	cost = {
+		gold = 300
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+liberate_k_ionia_decision = { # aka: Liberate the Ionian coast
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
+	decision_group_type = major
+
+	ai_check_interval = 120
+
+	desc = liberate_k_ionia_decision_desc
+
+	selection_tooltip = liberate_k_ionia_decision_tooltip
+
+	is_shown = {
+		#Must have a culture belonging to the region
+		culture = {
+			has_cultural_pillar = heritage_greek
+			OR = {
+				this = culture:dorian
+				this = culture:ionian
+				this = culture:aeolian
+				any_parent_culture_or_above = {
+					OR = {
+						this = culture:dorian
+						this = culture:ionian
+						this = culture:aeolian
+					}
+				}
+			}
+		}
+
+		#Primary title must be one of the liberated kingdoms in the Greater Ionia region
+		OR = {
+			has_primary_title = title:k_troas
+		}
+
+		#Must not already exist or have de jure territory
+		title:k_ionia = { 
+			is_titular = yes
+			is_title_created = no
+		}
+
+		#The Ionian revolt must have been attempted
+		exists = global_var:ionian_revolt_attempted
+	}
+
+	is_valid = {
+		is_independent_ruler = yes
+
+		#Primary title must be one of the liberated kingdoms in the Greater Ionia region
+		custom_description = {
+			text = "liberate_k_troas_decision.primary_kingdom.tt"
+			OR = {
+				has_primary_title = title:k_troas
+			}
+		}
+
+		#Must have federal government
+		has_federal_government = yes
+
+		#Has to control the western coast of Asia Minor
+		completely_controls_region = custom_ionia
+	}
+
+	is_valid_showing_failures_only = {
+		is_capable_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	effect = {
+		save_scope_as = ionian_kingdom_founder
+		add_character_flag = ionian_kingdom_liberator
+		title:k_ionia = { save_scope_as = ionian_kingdom }
+
+		show_as_tooltip = { form_k_ionia_decision_effects = yes } # Actually applied in anatolia_decisions.0003 - prestige, de-jure, title etc
+		custom_tooltip = form_k_ionia_decision_effects.de_jure.tt
+
+		#Events
+		trigger_event = anatolia_decisions.0003
+
+		#Notify other players
+		every_player = {
+			limit = {
+				NOT = { this = root }
+				is_within_diplo_range = { CHARACTER = root }
+			}
+			trigger_event = anatolia_decisions.0004
+		}
+	}
+
+	cost = {
+		gold = 600
+		prestige = 300
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+##############################
+# k_troas Decisions		 	 #
+##############################
+# These are identical aside from requirements and flavour
+# - form_k_troas_decision
+# - liberate_k_troas_decision
+
+form_k_troas_decision = { # aka: Unite the poleis of the Troadic coast
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
+	decision_group_type = major
+
+	ai_check_interval = 120
+
+	desc = form_k_troas_decision_desc
+
+	selection_tooltip = form_k_troas_decision_tooltip
+
+	is_shown = {
+		culture = {
+			has_cultural_pillar = heritage_greek
+			OR = {
+				this = culture:dorian
+				this = culture:ionian
+				this = culture:aeolian
+				any_parent_culture_or_above = {
+					OR = {
+						this = culture:dorian
+						this = culture:ionian
+						this = culture:aeolian
+					}
+				}
+			}
+		}
+
+		capital_province = { geographical_region = custom_troas }
+
+		highest_held_title_tier <= tier_duchy
+
+		#Must not already exist or have de jure territory
+		title:k_troas = { 
+			is_titular = yes
+			is_title_created = no
+		}
+
+		#The Ionian revolt must have been attempted
+		exists = global_var:ionian_revolt_attempted
+	}
+
+	is_valid = {
+		is_independent_ruler = yes
+
+		#Primary title must be one of the Troadic duchies
+		custom_description = {
+			text = "form_k_troas_decision.primary_duchy.tt"
+			OR = {
+				has_primary_title = title:d_troas
+				has_primary_title = title:d_mysia
+				has_primary_title = title:d_askania
+			}
+		}
+
+		#Must have city-state or coalition government
+		OR = {
+			has_city_state_government = yes
+			has_coalition_government = yes
+		}
+
+		#Has to control the Hellespontine coast of Asia Minor
+		completely_controls_region = custom_troas
+	}
+
+	is_valid_showing_failures_only = {
+		is_capable_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	effect = {
+		save_scope_as = ionian_kingdom_founder
+		title:k_troas = { save_scope_as = ionian_kingdom }
+
+		show_as_tooltip = { form_k_troas_decision_effects = yes } # Actually applied in anatolia_decisions.0003 - prestige, de-jure, title etc
+		custom_tooltip = form_k_troas_decision_effects.de_jure.tt
+
+		#Events
+		trigger_event = anatolia_decisions.0003
+
+		#Notify other players
+		every_player = {
+			limit = {
+				NOT = { this = root }
+				is_within_diplo_range = { CHARACTER = root }
+			}
+			trigger_event = anatolia_decisions.0004
+		}
+	}
+
+	cost = {
+		gold = 300
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+liberate_k_troas_decision = { # aka: Liberate the Troadic coast
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
+	decision_group_type = major
+
+	ai_check_interval = 120
+
+	desc = liberate_k_troas_decision_desc
+
+	selection_tooltip = liberate_k_troas_decision_tooltip
+
+	is_shown = {
+		#Must have a culture belonging to the region
+		culture = {
+			has_cultural_pillar = heritage_greek
+			OR = {
+				this = culture:dorian
+				this = culture:ionian
+				this = culture:aeolian
+				any_parent_culture_or_above = {
+					OR = {
+						this = culture:dorian
+						this = culture:ionian
+						this = culture:aeolian
+					}
+				}
+			}
+		}
+
+		#Primary title must be one of the liberated kingdoms in the Greater Ionia region
+		OR = {
+			has_primary_title = title:k_ionia
+		}
+
+		#Must not already exist or have de jure territory
+		title:k_troas = { 
+			is_titular = yes
+			is_title_created = no
+		}
+
+		#The Ionian revolt must have been attempted
+		exists = global_var:ionian_revolt_attempted
+	}
+
+	is_valid = {
+		is_independent_ruler = yes
+
+		#Primary title must be one of the liberated kingdoms in the Greater Ionia region
+		custom_description = {
+			text = "liberate_k_troas_decision.primary_kingdom.tt"
+			OR = {
+				has_primary_title = title:k_ionia
+			}
+		}
+
+		#Must have federal government
+		has_federal_government = yes
+
+		#Has to control the Hellespontine coast of Asia Minor
+		completely_controls_region = custom_troas
+	}
+
+	is_valid_showing_failures_only = {
+		is_capable_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	effect = {
+		save_scope_as = ionian_kingdom_founder
+		add_character_flag = ionian_kingdom_liberator
+		title:k_troas = { save_scope_as = ionian_kingdom }
+
+		show_as_tooltip = { form_k_troas_decision_effects = yes } # Actually applied in anatolia_decisions.0003 - prestige, de-jure, title etc
+		custom_tooltip = form_k_troas_decision_effects.de_jure.tt
+
+		#Events
+		trigger_event = anatolia_decisions.0003
+
+		#Notify other players
+		every_player = {
+			limit = {
+				NOT = { this = root }
+				is_within_diplo_range = { CHARACTER = root }
+			}
+			trigger_event = anatolia_decisions.0004
+		}
+	}
+
+	cost = {
+		gold = 600
+		prestige = 300
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+##############################
+# Ionian Revolt Decision  	 #
+##############################
+
+ionian_revolt_decision = { # aka: The Ionian Revolt
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
+	decision_group_type = major
+
+	ai_check_interval = 120
+
+	desc = ionian_revolt_decision_desc
+
+	selection_tooltip = ionian_revolt_decision_tooltip
+
+	is_shown = {
+		#Has a culture in the Greek group
+		culture = { has_cultural_pillar = heritage_greek }
+
+		#Cannot be independent
+		is_independent_ruler = no
+
+		#Must be duke or lower
+		highest_held_title_tier <= tier_duchy
+
+		#Capital must be in the Ionian region
+		capital_province = { geographical_region = custom_ionia }
+
+		#Top liege must be a foreign king or emperor
+		top_liege = {
+			highest_held_title_tier >= tier_kingdom
+			NOT = {
+				culture = {
+					has_cultural_pillar = heritage_greek
+					OR = {
+						this = culture:dorian
+						this = culture:ionian
+						this = culture:aeolian
+						any_parent_culture_or_above = {
+							OR = {
+								this = culture:dorian
+								this = culture:ionian
+								this = culture:aeolian
+							}
+						}
+					}
+				}
+			}
+		}
+
+		#Must not have already attempted a revolt
+		NOT = { has_character_flag = attempted_ionian_revolt }
+
+		#Ionia must not already exist or have de jure territory
+		title:k_ionia = { 
+			is_titular = yes
+			is_title_created = no
+		}
+
+		#Cannot be taken while the revolt is in progress
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:ionian_revolt_decision
+			}
+		}
+
+		#Must not have been a recent attempt
+		NOT = { exists = global_var:ionian_revolt_cooldown }
+
+	}
+
+	is_valid = {
+		#Reiterate that ruler can't be independent
+		is_independent_ruler = no
+
+		#Reiterate that ruler must be duke or lower
+		highest_held_title_tier <= tier_duchy
+
+		#De jure capital of primary title must be in Ionia region
+		custom_description = {
+			text = "ionian_revolt_decision.primary_title.tt"
+			primary_title.title_capital_county.title_province = { geographical_region = custom_ionia }
+		}
+		# Should have a decent prestige level
+		prestige_level >= high_prestige_level
+
+		#Must have city-state or coalition government
+		OR = {
+			has_city_state_government = yes
+			has_coalition_government = yes
+		}
+
+		#Top liege must be a foreign king or emperor
+		top_liege = {
+			highest_held_title_tier >= tier_kingdom
+			OR = {
+				government_has_flag = government_is_feudal
+				government_has_flag = government_is_clan
+				government_has_flag = government_is_tribal
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_capable_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	effect = {
+		#Make sure no one can take the decision while the revolt is happening
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:ionian_revolt_decision
+		}
+
+		custom_tooltip = ionian_revolt_decision.preview.tt
+		custom_tooltip = ionian_revolt_decision.clarification.tt
+
+		save_scope_as = ionian_revolt_leader
+		add_character_flag = attempted_ionian_revolt
+		top_liege = { save_scope_as = ionian_revolt_defender }
+		if = {
+			limit = { NOT = { liege = scope:ionian_revolt_defender } }
+			save_scope_as = ionian_revolt_liege
+		}
+
+		#Events
+		trigger_event = anatolia_decisions.0005
+	}
+
+	cost = {
+		gold = 500
+		prestige = 350
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}

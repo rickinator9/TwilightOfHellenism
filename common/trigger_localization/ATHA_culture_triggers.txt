@@ -1,0 +1,15 @@
+﻿is_culture_head = {
+	global = IS_CULTURE_HEAD_GLOBAL
+	global_not = IS_NOT_CULTURE_HEAD_GLOBAL
+	first = IS_CULTURE_HEAD_FIRST
+	first_not = IS_NOT_CULTURE_HEAD_FIRST
+	third = IS_CULTURE_HEAD_THIRD
+	third_not = IS_NOT_CULTURE_HEAD_THIRD
+}
+
+any_culture_county_percent = {
+	global = CULTURE_COUNTY_PERCENT_GLOBAL
+}
+any_culture_county_count = {
+	global = CULTURE_COUNTY_COUNT_GLOBAL
+}

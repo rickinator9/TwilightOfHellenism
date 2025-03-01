@@ -1,0 +1,24 @@
+﻿#############################################
+# CHARACTER EPITHETS
+#############################################
+
+# Epithets are nicknames that rulers can choose from when they succeed to the throne of an independent realm.
+
+epithet_the_asian = { is_bad = yes }
+epithet_the_autocrat = { is_bad = yes }
+epithet_the_beautifully_triumphant = { is_bad = yes }
+epithet_the_benefactor = { is_bad = yes }
+epithet_the_divine = { is_bad = yes }
+epithet_the_divine_manifest = { is_bad = yes }
+epithet_the_father_loving = { is_bad = yes }
+epithet_the_generous = { is_bad = yes }
+epithet_the_illustrious = { is_bad = yes }
+epithet_the_just = { is_bad = yes }
+epithet_the_mother_loving = { is_bad = yes }
+epithet_the_pious = { is_bad = yes }
+epithet_the_saviour = { is_bad = yes }
+epithet_the_sibling_loving = { is_bad = yes }
+epithet_the_victor = { is_bad = yes }
+epithet_the_victorious = { is_bad = yes }
+epithet_the_wealthy = { is_bad = yes }
+epithet_the_well_born = { is_bad = yes }
